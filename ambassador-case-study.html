@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ambassador Platform - Anna Sholomii</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#fff;--bg2:#f7f7f5;--text:#111;--mid:#444;--muted:#888;--line:#e8e8e4;--accent:#EA4520;--green:#1a7a3b;--navy:#0f1f3d;--white:#fff;--wide:1040px}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Figtree',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px}
+.nav-name{font-family:'Figtree',sans-serif;font-size:15px;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.nav-name-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block}
+.nav-tabs{display:flex;gap:2px;align-items:center}
+.tab-btn{background:none;border:none;cursor:pointer;font-family:'Figtree',sans-serif;font-size:14px;font-weight:500;color:var(--mid);padding:8px 16px;border-radius:20px;transition:background .15s,color .15s;white-space:nowrap;text-decoration:none;display:inline-block}
+.tab-btn:hover{background:var(--bg2);color:var(--text)}
+.btn-outline{border:1.5px solid var(--line);color:var(--text)}
+.btn-outline:hover{border-color:var(--text)}
+.btn-dark{background:var(--navy);color:#fff;padding:11px 22px;border-radius:6px;font-size:13px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+.btn-dark:hover{opacity:.88}
+
+/* PROCESS NAV */
+.pnav{position:sticky;top:64px;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 48px;display:flex;gap:4px;align-items:center;height:48px;overflow-x:auto;scrollbar-width:none}
+.pnav::-webkit-scrollbar{display:none}
+.pnav-label{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;margin-right:8px;flex-shrink:0}
+.pnav a{font-size:12px;color:var(--muted);text-decoration:none;padding:4px 14px;border-radius:20px;white-space:nowrap;transition:background .15s,color .15s;flex-shrink:0}
+.pnav a:hover{background:var(--bg2);color:var(--text)}
+.pnav a.active{background:var(--text);color:#fff}
+
+/* LAYOUT */
+.container{max-width:var(--wide);margin:0 auto;padding:0 48px}
+section{padding:80px 0}
+hr.d{border:none;border-top:1px solid var(--line)}
+
+/* EYEBROW */
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.eyebrow .n{font-family:'DM Serif Display',serif;font-size:20px;color:var(--accent);line-height:1}
+
+/* TYPE */
+h1{font-family:'Figtree',sans-serif;font-size:clamp(42px,7vw,80px);font-weight:700;line-height:.95;letter-spacing:-.03em;margin-bottom:8px}
+h2{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,42px);font-weight:400;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px}
+h2 em{color:var(--muted)}
+h3{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+p{color:var(--mid);margin-bottom:16px;line-height:1.75}
+p:last-child{margin-bottom:0}
+strong{color:var(--text);font-weight:500}
+
+/* HERO */
+.hero{padding:120px 0 80px;border-bottom:1px solid var(--line)}
+.hero-eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.hero-sub{font-size:clamp(15px,2vw,19px);color:var(--mid);margin:16px 0 12px}
+.hero-desc{font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:0;max-width:640px}
+.meta-row{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:32px 0}
+.mc{flex:1;padding:14px 18px;border-right:1px solid var(--line);background:var(--white)}
+.mc:last-child{border-right:none}
+.ml{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;font-weight:600}
+.mv{font-size:13px;color:var(--mid);line-height:1.4}
+
+/* HERO VISUAL */
+.hero-visual{margin-top:48px;background:var(--navy);border-radius:14px;padding:52px 48px;position:relative;overflow:hidden}
+.hero-visual::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,rgba(234,69,32,.18) 0%,transparent 70%);pointer-events:none}
+.hero-visual-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.07);border-radius:8px;overflow:hidden}
+.hv-cell{padding:20px 22px;background:rgba(15,31,61,.6)}
+.hv-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:6px;font-weight:600}
+.hv-value{font-family:'DM Serif Display',serif;font-size:28px;color:#fff;line-height:1}
+.hv-sub{font-size:11px;color:rgba(255,255,255,.4);margin-top:4px}
+
+/* PULL QUOTE */
+.pq{font-family:'Figtree',sans-serif;font-weight:500;font-size:clamp(15px,2vw,18px);color:var(--text);line-height:1.6;background:var(--bg2);border-left:3px solid var(--accent);padding:18px 22px;border-radius:0 8px 8px 0;margin:28px 0}
+
+/* PRODUCT AREA CARDS */
+.area-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.area-card{border:1px solid var(--line);border-radius:12px;padding:28px 28px 24px;background:var(--white);position:relative}
+.area-card-n{font-family:'DM Serif Display',serif;font-size:36px;color:var(--line);line-height:1;margin-bottom:12px}
+.area-card-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px}
+.area-card-desc{font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:0}
+.area-stat{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:6px 12px;border-radius:20px;background:#edf7f1;font-size:12px;font-weight:600;color:var(--green)}
+.area-bullets{margin-top:16px;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+.area-bullets li{font-size:13px;color:var(--mid);line-height:1.6;padding-left:16px;position:relative}
+.area-bullets li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.area-stat::before{content:'↑';font-size:11px}
+
+/* NDA CALLOUT */
+.nda-box{border:1px solid var(--line);border-radius:10px;padding:20px 24px;background:var(--bg2);display:flex;gap:14px;align-items:flex-start;margin-top:32px}
+.nda-icon{font-size:18px;flex-shrink:0;margin-top:2px}
+.nda-body{font-size:13px;color:var(--muted);line-height:1.65}
+.nda-body a{color:var(--navy);text-decoration:none}
+.nda-body a:hover{text-decoration:underline}
+
+/* IMPACT STATS */
+.impact-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-radius:12px;overflow:hidden;margin:32px 0}
+.impact-cell{padding:28px 24px;background:var(--white)}
+.impact-n{font-family:'Figtree',sans-serif;font-weight:700;font-size:clamp(32px,4vw,52px);color:var(--text);line-height:1;margin-bottom:6px;letter-spacing:-.02em}
+.impact-n span{color:var(--accent)}
+.impact-label{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* DESIGN SYSTEM VISUAL */
+.ds-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:28px}
+.ds-card{border:1px solid var(--line);border-radius:10px;padding:20px 20px 16px;background:var(--white)}
+.ds-card-title{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.ds-card-body{font-size:13px;color:var(--mid);line-height:1.65}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:28px;margin-top:24px}
+.timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:28px}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-28px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--white);border:2px solid var(--line)}
+.tl-item.active .tl-dot{border-color:var(--accent);background:var(--accent)}
+.tl-date{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.tl-label{font-size:14px;font-weight:500;color:var(--text);margin-bottom:3px}
+.tl-detail{font-size:13px;color:var(--muted);line-height:1.55}
+
+/* LEARNINGS */
+.lg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:24px 0}
+.lc{padding:20px 22px;background:var(--white);border:1px solid var(--line);border-radius:10px}
+.lcn{font-family:'DM Serif Display',serif;font-size:30px;color:var(--line);margin-bottom:8px;line-height:1}
+.lc p{font-size:13px;color:var(--mid)}
+
+/* CLOSING */
+.closing{background:var(--navy);padding:80px 0}
+.closing-rule{width:48px;height:2px;background:var(--accent);margin:0 auto 28px}
+.closing-quote{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,30px);font-style:italic;color:rgba(255,255,255,.85);text-align:center;max-width:600px;margin:0 auto 16px;line-height:1.4}
+.closing-sub{text-align:center;font-size:13px;color:rgba(255,255,255,.35);margin-bottom:28px}
+.closing-next{text-align:center;margin-top:32px}
+.closing-next a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px}
+.closing-next a:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+
+/* SCROLL OFFSET */
+[id]{scroll-margin-top:108px}
+
+/* NEXT CASE STUDY */
+.next-cs{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
+.next-cs-inner{max-width:var(--wide);margin:0 auto;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.next-cs-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.next-cs-link{font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,32px);color:var(--text);text-decoration:none;display:flex;align-items:center;gap:14px;transition:color .18s}
+.next-cs-link:hover{color:var(--navy)}
+.next-cs-link svg{flex-shrink:0;transition:transform .18s}
+.next-cs-link:hover svg{transform:translateX(5px)}
+
+/* FOOTER */
+footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);font-size:12px;color:var(--muted);max-width:var(--wide);margin:0 auto}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav,.pnav,.container,footer{padding-left:20px;padding-right:20px}
+  .meta-row{flex-direction:column}
+  .mc{border-right:none;border-bottom:1px solid var(--line)}
+  .mc:last-child{border-bottom:none}
+  .area-grid,.ds-grid,.lg{grid-template-columns:1fr}
+  .hero-visual-grid{grid-template-columns:1fr 1fr}
+  h1{font-size:42px}
+  .hero-visual{padding:32px 24px}
+}
+@media(max-width:600px){
+  .impact-row{grid-template-columns:1fr}
+  .hero-visual-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-name">
+    <img src="Logo_Anna.png" alt="Anna Sholomii" style="height:36px;width:36px;border-radius:8px;display:block;flex-shrink:0">
+  </a>
+  <div class="nav-tabs">
+    <a href="index.html" class="tab-btn">Case Studies</a>
+    <a href="index.html?tab=about" class="tab-btn">About Me</a>
+    <a href="index.html?tab=resume" class="tab-btn">Resume</a>
+    <a href="index.html?tab=contact" class="tab-btn btn-outline">Contact</a>
+  </div>
+</nav>
+
+<div class="pnav" id="pnav">
+  <span class="pnav-label">On this page</span>
+  <a href="#overview"    data-s="overview">Overview</a>
+  <a href="#context"     data-s="context">Context</a>
+  <a href="#product"     data-s="product">Product Areas</a>
+  <a href="#impact"      data-s="impact">Impact</a>
+  <a href="#designsystem" data-s="designsystem">Design System</a>
+  <a href="#reflection"  data-s="reflection">Reflection</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="hero" id="overview">
+  <div class="container">
+    <p class="hero-eyebrow">Product Designer &middot; May 2019 – April 2022</p>
+    <h1>The Ambassador<br>Platform</h1>
+    <p class="hero-sub">B2B EdTech SaaS &middot; Acquired by IDP Education &middot; 100+ institutional clients</p>
+    <p class="hero-desc">The only product designer at a B2B EdTech platform - I owned the full design lifecycle across 3 platforms (prospective students widget, ambassadors mobile app and the admin dashboard).</p>
+
+    <div class="meta-row">
+      <div class="mc"><div class="ml">Role</div><div class="mv">Product Designer<br><span style="font-size:11px;color:var(--muted)">Research · Design · Prototype · Usability Testing · Design System · Handoff</span></div></div>
+      <div class="mc"><div class="ml">Duration</div><div class="mv">3 years<br><span style="font-size:11px;color:var(--muted)">May 2019 – April 2022</span></div></div>
+      <div class="mc"><div class="ml">Scope</div><div class="mv">3 product areas<br><span style="font-size:11px;color:var(--muted)">Widget · Mobile App · Dashboard</span></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     CONTEXT
+═══════════════════════════════════════════ -->
+<hr class="d">
+<section id="context">
+  <div class="container">
+    <div class="eyebrow"><span class="n">01</span> Context</div>
+    <h2>Joined as the first designer<br><em>during active growth.</em></h2>
+    <p style="max-width:640px">The Ambassador Platform connects prospective students with current student ambassadors - a peer-to-peer channel universities use to convert enquiries into enrolments. When I joined in May 2019, the company had around 50 institutional clients and no design function. I built it from the ground up. By the time I left in April 2022, it had grown to 100+ institutions.</p>
+    <p style="max-width:640px">Over three years I ran continuous discovery, owned all design output, and established the design system the product runs on.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     PRODUCT AREAS
+═══════════════════════════════════════════ -->
+<hr class="d">
+<section id="product">
+  <div class="container">
+    <div class="eyebrow"><span class="n">02</span> Areas of responsibility</div>
+    <h2>Three platforms.<br><em>One designer.</em></h2>
+    <p style="max-width:640px">I owned end-to-end design across three distinct product areas - each with its own user, context, and success metric.</p>
+
+    <div class="area-grid">
+
+      <!-- 01 Widget -->
+      <div class="area-card">
+        <div class="area-card-n">01</div>
+        <div class="area-card-title">Prospect-facing widget</div>
+        <div class="area-card-desc">The entry point where prospective students initiate conversations with ambassadors - embedded on university websites.</div>
+        <ul class="area-bullets">
+          <li>Redesigned the conversion flow end-to-end</li>
+          <li>Reduced the number of steps to start a conversation</li>
+          <li>Improved trust signals and ambassador selection</li>
+          <li>Made the experience feel personal rather than transactional</li>
+        </ul>
+        <div class="area-stat">Conversion 8–10% → 13–14%</div>
+      </div>
+
+      <!-- 02 Mobile App -->
+      <div class="area-card">
+        <div class="area-card-n">02</div>
+        <div class="area-card-title">Ambassador mobile app</div>
+        <div class="area-card-desc">Used by student ambassadors to manage conversations, post content, and track their own engagement.</div>
+        <ul class="area-bullets">
+          <li>Leaderboard system designed to drive motivation without creating anxiety</li>
+          <li>Content scheduling flows for story-style posts</li>
+          <li>Group chat UX to keep high-volume conversations manageable</li>
+        </ul>
+      </div>
+
+      <!-- 03 Dashboard -->
+      <div class="area-card">
+        <div class="area-card-n">03</div>
+        <div class="area-card-title">Institution admin dashboard</div>
+        <div class="area-card-desc">Gave university teams visibility into what was happening across their ambassador programme. Designed to be legible without training.</div>
+        <ul class="area-bullets">
+          <li>Conversation analytics and content performance</li>
+          <li>Ambassador activity levels and engagement tracking</li>
+          <li>AI-generated topic insights on what prospective students cared about most</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="nda-box">
+      <div class="nda-icon">🔒</div>
+      <div class="nda-body">
+        <strong style="color:var(--text);display:block;margin-bottom:4px">Detailed screens are under NDA.</strong>
+        The product is live and in active use at 100+ institutions. You can see the platform at <a href="https://www.theambassadorplatform.com/platform" target="_blank" rel="noopener">theambassadorplatform.com/platform</a> - I'm happy to walk through the design decisions behind the work I shipped in a conversation.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     IMPACT
+═══════════════════════════════════════════ -->
+<hr class="d">
+<section id="impact">
+  <div class="container">
+    <div class="eyebrow"><span class="n">03</span> Impact</div>
+    <h2>Measurable outcomes<br><em>across three years.</em></h2>
+
+    <div class="impact-row">
+      <div class="impact-cell">
+        <div class="impact-n"><span>13–14%</span></div>
+        <div class="impact-label">Prospect-to-conversation conversion rate (up from 8–10%)</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-n"><span>2×</span></div>
+        <div class="impact-label">Client growth during tenure - 50 institutions to 100+</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-n"><span>−25%</span></div>
+        <div class="impact-label">Sales cycle reduction via self-serve onboarding (40 → 30 days)</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     DESIGN SYSTEM
+═══════════════════════════════════════════ -->
+<hr class="d">
+<section id="designsystem">
+  <div class="container">
+    <div class="eyebrow"><span class="n">04</span> Design system</div>
+    <h2>Built the foundation<br><em>from scratch.</em></h2>
+    <p style="max-width:640px">Coming in as the first designer meant there was no shared visual language, no component library, and no design/dev handoff process. I built all of it - not as an abstract system, but as the practical infrastructure the team needed to ship faster with less ambiguity.</p>
+
+    <div class="ds-grid">
+      <div class="ds-card">
+        <div class="ds-card-title">Component library</div>
+        <div class="ds-card-body">Built in Figma - covering all core UI patterns across widget, mobile app, and admin dashboard. Named, documented, and linked to production states so engineers could reference directly.</div>
+      </div>
+      <div class="ds-card">
+        <div class="ds-card-title">Visual language</div>
+        <div class="ds-card-body">Standardised typography, colour, spacing, and iconography across three surfaces. Aligned the widget's consumer feel with the dashboard's enterprise readability.</div>
+      </div>
+    </div>
+
+    <div class="pq" style="margin-top:40px">"The design system wasn't a project - it was the thing that let everything else move faster."</div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     REFLECTION
+═══════════════════════════════════════════ -->
+<hr class="d">
+<section id="reflection">
+  <div class="container">
+    <div class="eyebrow"><span class="n">05</span> Reflection</div>
+    <h2>What three years<br><em>as the only designer taught me.</em></h2>
+
+    <div class="lg">
+      <div class="lc">
+        <div class="lcn">01</div>
+        <strong style="display:block;margin-bottom:8px;color:var(--text)">Being first means building the process, not just the product</strong>
+        <p>The work wasn't just shipping screens - it was establishing how design fits into the company. That meant writing briefs, facilitating research sessions, running design crits with no other designers in the room, and making the case for why certain decisions needed more time.</p>
+      </div>
+      <div class="lc">
+        <div class="lcn">02</div>
+        <strong style="display:block;margin-bottom:8px;color:var(--text)">Conversion metrics are honest feedback</strong>
+        <p>Tracking widget conversions in Mixpanel made the widget work unusually concrete. Moving from 8–10% to 13–14% is a real signal - not a vanity metric. Working with data that close to the business outcome sharpened my instinct for what actually moves users forward.</p>
+      </div>
+      <div class="lc">
+        <div class="lcn">03</div>
+        <strong style="display:block;margin-bottom:8px;color:var(--text)">Designing for three user types simultaneously requires discipline</strong>
+        <p>Prospect, ambassador, and institution admin are three fundamentally different users with different goals, contexts, and mental models. Keeping those separate - and making sure a design decision for one didn't inadvertently degrade another - was the skill I grew most in this role.</p>
+      </div>
+      <div class="lc">
+        <div class="lcn">04</div>
+        <strong style="display:block;margin-bottom:8px;color:var(--text)">A design system is a trust artefact, not a style guide</strong>
+        <p>The component library mattered not because it enforced visual consistency, but because it gave engineering confidence they were building the right thing. Reducing ambiguity at handoff is a design problem, and the system was my solution to it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     CLOSING
+═══════════════════════════════════════════ -->
+<div class="closing">
+  <div class="container">
+    <div class="closing-rule"></div>
+    <p class="closing-quote">"Three years, three platforms, one designer."</p>
+    <p class="closing-sub">The Ambassador Platform · B2B EdTech SaaS · 2019–2022</p>
+  </div>
+</div>
+
+<div class="next-cs">
+  <div class="next-cs-inner" style="flex-direction:column;align-items:center;text-align:center;gap:16px">
+    <span class="next-cs-label">Next case study</span>
+    <div style="font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,36px);color:var(--text)">Telo</div>
+    <a href="telo-case-study.html" class="btn-dark">View case study →</a>
+  </div>
+</div>
+
+<footer>
+  <span>Anna Sholomii &mdash; Product Designer</span>
+  <a href="index.html" style="color:var(--muted);text-decoration:none">← Back to work</a>
+</footer>
+
+<script>
+// Process nav active state on scroll
+const sections = document.querySelectorAll('[data-s]');
+const navLinks = document.querySelectorAll('.pnav a[data-s]');
+
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector('.pnav a[data-s="' + e.target.id + '"]');
+      if(active) active.classList.add('active');
+    }
+  });
+}, {threshold: 0.25, rootMargin: '-56px 0px -40% 0px'});
+
+document.querySelectorAll('section[id], div[id]').forEach(s => obs.observe(s));
+</script>
+
+<!-- SCROLL TO TOP -->
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<style>
+#scroll-top{
+  position:fixed;bottom:32px;right:32px;z-index:400;
+  width:44px;height:44px;border-radius:50%;
+  background:var(--navy);color:#fff;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(15,31,61,.25);
+  opacity:0;transform:translateY(8px);
+  transition:opacity .22s,transform .22s;
+  pointer-events:none;
+}
+#scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+#scroll-top:hover{opacity:.85}
+</style>
+<script>
+(function(){
+  var btn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>

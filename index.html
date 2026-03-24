@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anna Sholomii - Product Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fff;--bg2:#f7f7f5;--text:#111;--mid:#444;--muted:#888;
+  --line:#e8e8e4;--accent:#EA4520;--green:#1a7a3b;--navy:#0f1f3d;
+  --white:#fff;--wide:1040px
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Figtree',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* ─── NAV ─── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;
+}
+.nav-name{
+  font-family:'Figtree',sans-serif;font-size:15px;font-weight:600;
+  color:var(--text);text-decoration:none;letter-spacing:-.01em;
+  display:flex;align-items:center;gap:10px;
+}
+.nav-name-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
+  display:inline-block;margin-bottom:1px;
+}
+.nav-tabs{display:flex;gap:2px;align-items:center}
+.tab-btn{
+  padding:8px 18px;border-radius:8px;font-size:13.5px;font-weight:500;
+  color:var(--muted);background:none;border:none;cursor:pointer;
+  transition:color .18s,background .18s;font-family:'Figtree',sans-serif;
+  letter-spacing:-.01em;
+}
+.tab-btn:hover{color:var(--text);background:var(--bg2)}
+.tab-btn.active{color:var(--text);background:var(--bg2)}
+.tab-btn.contact-btn{
+  color:var(--navy);border:1.5px solid currentColor;
+  padding:7px 18px;
+}
+.tab-btn.contact-btn:hover,.tab-btn.contact-btn.active{
+  background:var(--navy);color:#fff;border-color:var(--navy);
+}
+
+/* ─── MAIN ─── */
+main{padding-top:64px;min-height:100vh}
+.container{max-width:var(--wide);margin:0 auto;padding:0 48px}
+
+/* ─── PANELS (tab views) ─── */
+.panel{display:none;opacity:0;transform:translateY(8px);transition:opacity .22s,transform .22s}
+.panel.active{display:block}
+.panel.visible{opacity:1;transform:translateY(0)}
+
+/* ════════════════════════════════
+   CASE STUDIES PANEL
+════════════════════════════════ */
+.work-intro{padding:72px 0 52px}
+.work-eyebrow{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:16px;font-weight:500;
+}
+.work-heading{
+  font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,56px);
+  font-weight:400;line-height:1.05;letter-spacing:-.025em;color:var(--text);
+  margin-bottom:14px;
+}
+.work-heading em{color:var(--muted);font-style:italic}
+.work-sub{font-size:16px;color:var(--mid);max-width:520px;line-height:1.7}
+
+/* CARDS GRID */
+.cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-bottom:96px}
+
+.card{
+  border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  background:var(--white);text-decoration:none;display:flex;flex-direction:column;
+  transition:transform .22s cubic-bezier(.25,.46,.45,.94),box-shadow .22s;
+  cursor:pointer;
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.09)}
+.card.locked{pointer-events:none}
+
+/* Thumbnail */
+.card-thumb{
+  aspect-ratio:16/9;overflow:hidden;background:var(--bg2);
+  position:relative;flex-shrink:0;
+}
+.card-thumb img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .35s cubic-bezier(.25,.46,.45,.94);
+}
+.card:hover .card-thumb img{transform:scale(1.04)}
+
+/* Placeholder thumb */
+.card-thumb-placeholder{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f0ede8 0%,#e8e4de 100%);
+  color:var(--muted);font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:500;gap:8px;flex-direction:column;
+}
+.card-thumb-placeholder svg{opacity:.3}
+
+/* Ambassador thumbnail */
+.card-thumb-ambassador{background:#fff;border-bottom:1px solid var(--line)}
+.ambassador-thumb-inner{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  padding:28px 32px;
+}
+.ambassador-thumb-inner svg{width:100%;max-width:260px;height:auto;display:block}
+
+/* Hover overlay */
+.card-overlay{
+  position:absolute;inset:0;
+  background:rgba(15,31,61,0);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .22s;
+}
+.card:hover .card-overlay{background:rgba(15,31,61,.5)}
+.card-overlay-cta{
+  color:#fff;font-size:13px;font-weight:600;letter-spacing:.02em;
+  opacity:0;transition:opacity .18s;display:flex;align-items:center;
+  gap:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(6px);
+  padding:10px 20px;border-radius:8px;border:1px solid rgba(255,255,255,.25);
+}
+.card:hover .card-overlay-cta{opacity:1}
+
+/* Coming soon badge */
+.cs-badge{
+  position:absolute;top:14px;right:14px;
+  background:rgba(255,255,255,.9);backdrop-filter:blur(4px);
+  border:1px solid var(--line);border-radius:20px;
+  font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);padding:5px 12px;
+}
+
+/* Card body */
+.card-body{padding:24px 26px 16px;flex:1}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.card-tag{
+  font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);background:var(--bg2);padding:3px 9px;border-radius:4px;
+}
+.card-tag.hi{color:var(--accent);background:#fdf1ee}
+.card-title{
+  font-size:22px;font-weight:700;color:var(--text);
+  margin-bottom:7px;line-height:1.15;letter-spacing:-.02em;
+}
+.card-desc{font-size:14px;color:var(--mid);line-height:1.65}
+
+/* Card footer */
+.card-foot{
+  padding:14px 26px 20px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;margin-top:auto;
+}
+.card-year{font-size:12px;color:var(--muted)}
+.card-arrow{
+  font-size:13px;font-weight:600;color:var(--navy);
+  display:flex;align-items:center;gap:4px;
+  transition:gap .18s;
+}
+.card:hover .card-arrow{gap:9px}
+.card.locked .card-arrow{color:var(--muted)}
+
+/* ════════════════════════════════
+   ABOUT PANEL
+════════════════════════════════ */
+.about-intro{
+  padding:72px 0 56px;border-bottom:1px solid var(--line);
+}
+.about-intro-label{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:24px;font-weight:500;
+}
+.about-intro-statement{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(32px,5vw,58px);
+  font-weight:400;line-height:1.08;letter-spacing:-.025em;
+  color:var(--text);max-width:820px;
+}
+.about-intro-statement em{color:var(--muted);font-style:italic}
+
+.about-body-wrap{
+  padding:64px 0 0;display:grid;
+  grid-template-columns:300px 1fr;gap:80px;align-items:start;
+}
+.about-photo{
+  width:100%;aspect-ratio:3/4;border-radius:20px;overflow:hidden;
+  background:var(--bg2);position:relative;
+}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.about-links-col{margin-top:20px;display:flex;flex-direction:column;gap:0}
+.about-link{
+  display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;
+  color:var(--mid);text-decoration:none;transition:color .15s;
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.about-link:first-child{border-top:1px solid var(--line)}
+.about-link:hover{color:var(--accent)}
+.about-link svg{flex-shrink:0;opacity:.5}
+
+.about-text-col{padding-top:4px}
+.about-name{
+  font-family:'DM Serif Display',serif;font-size:clamp(28px,3vw,38px);
+  font-weight:400;line-height:1.05;letter-spacing:-.02em;
+  color:var(--text);margin-bottom:4px;
+}
+.about-title{font-size:14px;color:var(--navy);font-weight:500;margin-bottom:32px;letter-spacing:.01em}
+.about-body p{font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:20px}
+.about-body p:last-child{margin-bottom:0}
+.about-body strong{color:var(--text);font-weight:600}
+
+.defines-block{margin-top:56px;padding-top:48px;border-top:1px solid var(--line)}
+.defines-block-header{margin-bottom:28px}
+.defines-block-header h3{font-family:'DM Serif Display',serif;font-size:clamp(28px,3vw,38px);font-weight:400;line-height:1.05;letter-spacing:-.02em;color:var(--text);margin:0 0 8px}
+.defines-subtitle{font-size:15px;color:var(--mid);margin:0;line-height:1.6;max-width:520px}
+.defines-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-bottom:0}
+.defines-card{border-radius:16px;border:1px solid var(--line);background:var(--white);padding:24px 26px;display:flex;flex-direction:column;gap:10px}
+.defines-num{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:#fdf1ee;padding:3px 9px;border-radius:4px;align-self:flex-start}
+.defines-item-title{font-size:16px;font-weight:700;color:var(--text);margin:0;line-height:1.25;letter-spacing:-.01em}
+.defines-item-body{font-size:14px;color:var(--mid);line-height:1.65;margin:0}
+@media(max-width:600px){.defines-grid{grid-template-columns:1fr}}
+.about-gallery{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:180px 180px 180px;gap:8px;margin:64px 0 96px}
+.about-gallery img{width:100%;height:100%;object-fit:cover;display:block;border-radius:8px}
+.about-gallery img:nth-child(3){grid-column:2/4;grid-row:2/4;object-position:center bottom}
+@media(max-width:600px){.about-gallery{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}.about-gallery img{aspect-ratio:4/3;height:auto}.about-gallery img:nth-child(3){grid-column:auto;grid-row:auto}}
+.skills-label{
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:16px;font-weight:600;
+}
+.skills-row{display:flex;flex-wrap:wrap;gap:8px}
+.skill-pill{
+  padding:7px 14px;border:1px solid var(--line);border-radius:20px;
+  font-size:13px;color:var(--mid);transition:border-color .15s,color .15s;
+}
+.skill-pill:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ════════════════════════════════
+   RESUME PANEL
+════════════════════════════════ */
+.resume-wrap{padding:72px 0 96px}
+.resume-header{margin-bottom:40px}
+.resume-heading{
+  font-family:'DM Serif Display',serif;font-size:clamp(32px,4vw,46px);
+  font-weight:400;line-height:1.05;letter-spacing:-.02em;color:var(--text);
+  margin-bottom:10px;
+}
+.resume-heading em{color:var(--muted);font-style:italic}
+.resume-sub{font-size:15px;color:var(--mid);margin-bottom:28px}
+.resume-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.btn-primary{
+  background:var(--navy);color:#fff;padding:11px 24px;border-radius:8px;
+  font-size:13px;font-weight:600;text-decoration:none;
+  display:inline-flex;align-items:center;gap:7px;
+  transition:opacity .15s;font-family:'Figtree',sans-serif;
+}
+.btn-primary:hover{opacity:.85}
+.btn-outline{
+  color:var(--text);font-size:13px;text-decoration:none;
+  display:inline-flex;align-items:center;gap:6px;
+  border:1.5px solid var(--line);padding:10px 22px;border-radius:8px;
+  transition:border-color .15s;font-family:'Figtree',sans-serif;font-weight:500;
+}
+.btn-outline:hover{border-color:var(--text)}
+
+/* Skills strip */
+.resume-skills-strip{
+  display:flex;flex-direction:column;gap:10px;
+  padding:20px 24px;background:var(--bg2);border-radius:10px;
+  border:1px solid var(--line);margin-bottom:40px;
+}
+.resume-skills-group{display:flex;gap:12px;align-items:baseline;font-size:13px}
+.resume-skills-label{
+  font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);flex-shrink:0;width:72px;
+}
+.resume-skills-val{color:var(--mid);line-height:1.5}
+
+/* Resume timeline */
+.resume-section{margin-bottom:48px}
+.resume-section-label{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;margin-bottom:20px;
+  padding-bottom:12px;border-bottom:1px solid var(--line);
+}
+.resume-entry{display:grid;grid-template-columns:180px 1fr;gap:24px;margin-bottom:32px}
+.resume-entry:last-child{margin-bottom:0}
+.resume-date{font-size:12px;color:var(--muted);padding-top:4px;line-height:1.5}
+.resume-role{font-size:15px;font-weight:600;color:var(--text);margin-bottom:2px}
+.resume-company{font-size:13px;color:var(--accent);font-weight:500;margin-bottom:4px}
+.resume-company-note{font-size:12px;color:var(--muted);font-weight:400}
+.resume-company-muted{color:var(--muted) !important}
+.resume-context{font-size:12px;color:var(--muted);margin-bottom:10px;font-style:italic}
+.resume-entry-desc{font-size:13px;color:var(--mid);line-height:1.65}
+.resume-bullets{
+  margin:0;padding-left:16px;display:flex;flex-direction:column;gap:8px;
+}
+.resume-bullets li{font-size:13px;color:var(--mid);line-height:1.7}
+
+/* ════════════════════════════════
+   CONTACT PANEL
+════════════════════════════════ */
+.contact-wrap{padding:72px 0 96px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+
+.contact-left{}
+.contact-eyebrow{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:16px;font-weight:500;
+}
+.contact-heading{
+  font-family:'DM Serif Display',serif;font-size:clamp(32px,4vw,46px);
+  font-weight:400;line-height:1.05;letter-spacing:-.02em;
+  color:var(--text);margin-bottom:16px;
+}
+.contact-heading em{color:var(--muted);font-style:italic}
+.contact-body{font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:36px}
+
+.contact-links{display:flex;flex-direction:column;gap:0}
+.contact-link{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 0;border-bottom:1px solid var(--line);
+  text-decoration:none;color:var(--text);
+  transition:color .15s;
+}
+.contact-link:first-child{border-top:1px solid var(--line)}
+.contact-link:hover{color:var(--navy)}
+.contact-link-icon{
+  width:36px;height:36px;border-radius:8px;background:var(--bg2);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:background .15s;
+}
+.contact-link:hover .contact-link-icon{background:#e8edf5}
+.contact-link-text{}
+.contact-link-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:1px}
+.contact-link-value{font-size:14px;font-weight:500;color:inherit}
+
+/* FORM */
+.contact-form-col{}
+.form-heading{
+  font-size:18px;font-weight:600;color:var(--text);
+  margin-bottom:6px;letter-spacing:-.01em;
+}
+.form-sub{font-size:14px;color:var(--muted);margin-bottom:28px}
+.form-group{margin-bottom:18px}
+.form-label{
+  display:block;font-size:12px;font-weight:600;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:7px;
+}
+.form-input,.form-textarea{
+  width:100%;padding:12px 16px;border:1.5px solid var(--line);
+  border-radius:8px;font-family:'Figtree',sans-serif;font-size:14px;
+  color:var(--text);background:var(--white);
+  transition:border-color .15s,box-shadow .15s;
+  outline:none;
+}
+.form-input:focus,.form-textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(234,69,32,.08);
+}
+.form-textarea{resize:vertical;min-height:120px;line-height:1.6}
+.form-submit{
+  background:var(--navy);color:#fff;padding:13px 28px;
+  border-radius:8px;font-size:14px;font-weight:600;border:none;
+  cursor:pointer;font-family:'Figtree',sans-serif;letter-spacing:-.01em;
+  transition:opacity .15s,transform .1s;width:100%;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.form-submit:hover{opacity:.87}
+.form-submit:active{transform:scale(.99)}
+
+/* Success state */
+.form-success{
+  display:none;padding:28px 24px;background:#edf7f1;
+  border:1px solid #b7dfca;border-radius:12px;text-align:center;
+}
+.form-success.visible{display:block}
+.form-success-icon{font-size:28px;margin-bottom:8px}
+.form-success-title{font-size:16px;font-weight:600;color:#1a7a3b;margin-bottom:4px}
+.form-success-body{font-size:13px;color:#2d6b45}
+
+/* ─── FOOTER ─── */
+.site-footer{
+  border-top:1px solid var(--line);padding:24px 48px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:var(--muted);
+}
+.footer-left{display:flex;align-items:center;gap:6px}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .nav{padding:0 20px}
+  .container{padding:0 20px}
+  .site-footer{padding:20px}
+  .cards-grid{grid-template-columns:1fr}
+  .about-body-wrap{grid-template-columns:1fr;gap:36px}
+  .about-photo{aspect-ratio:1/1;max-width:260px}
+  .contact-wrap{grid-template-columns:1fr;gap:48px}
+  .resume-entry{grid-template-columns:1fr;gap:6px}
+  .resume-skills-group{flex-direction:column;gap:2px}
+  .resume-skills-label{width:auto}
+  .nav-tabs{gap:0}
+  .tab-btn{padding:7px 12px;font-size:13px}
+  .work-intro{padding:48px 0 36px}
+}
+@media(max-width:600px){
+  .nav-name span{display:none}
+  .tab-btn{font-size:12px;padding:7px 10px}
+  .skills-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     NAV
+═══════════════════════════════════ -->
+<nav class="nav">
+  <a href="#" class="nav-name" onclick="switchTab('work');return false">
+    <img src="Logo_Anna.png" alt="Anna Sholomii" style="height:36px;width:36px;border-radius:8px;display:block;flex-shrink:0">
+  </a>
+  <div class="nav-tabs">
+    <button class="tab-btn active" data-tab="work">Case Studies</button>
+    <button class="tab-btn" data-tab="about">About Me</button>
+    <button class="tab-btn" data-tab="resume">Resume</button>
+    <button class="tab-btn contact-btn" data-tab="contact">Contact</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════
+     CASE STUDIES
+═══════════════════════════════════ -->
+<div class="panel active" id="panel-work">
+  <div class="container">
+    <div class="work-intro">
+      <p class="work-eyebrow">Selected Work</p>
+      <h1 class="work-heading">Anna Sholomii<br><em>Senior Product Designer.</em></h1>
+      <p class="work-sub">End-to-end product design - from discovery and research through interaction design and usability testing.</p>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- TELO -->
+      <a class="card" href="telo-case-study.html">
+        <div class="card-thumb">
+          <img src="1. Collapsed state.png" alt="Telo - Slack alert collapsed state" loading="lazy">
+          <div class="card-overlay">
+            <span class="card-overlay-cta">View Case Study →</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="card-tag hi">Product Design</span>
+            <span class="card-tag">B2B · SaaS</span>
+            <span class="card-tag">Slack</span>
+          </div>
+          <div class="card-title">Telo</div>
+          <div class="card-desc">A Slack-native signal intelligence tool that tells early-stage SaaS founders whether a metric drop is real - and what to do about it.</div>
+        </div>
+        <div class="card-foot">
+          <span class="card-year">2026 · Conceptual</span>
+          <span class="card-arrow">Read case study →</span>
+        </div>
+      </a>
+
+      <!-- THE AMBASSADOR PLATFORM -->
+      <a class="card" href="ambassador-case-study.html">
+        <div class="card-thumb card-thumb-ambassador">
+          <div class="ambassador-thumb-inner">
+            <svg viewBox="0 10 200 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="The Ambassador Platform">
+              <g clip-path="url(#tap-clip)">
+                <path d="M84.9246 19.3648C82.0091 19.3648 79.544 20.6185 78.0617 22.6259V21.6426C78.0617 20.3889 77.0463 19.363 75.8165 19.363C74.5867 19.363 73.5713 20.3889 73.5713 21.6426V47.3796C73.5713 48.6537 74.6049 49.6963 75.8546 49.6963C77.1044 49.6963 78.138 48.6537 78.138 47.3796V38.3185C79.9473 40.4148 82.5813 41.3389 85.0081 41.3389C90.109 41.3389 95.0881 37.4815 95.0881 30.3093C95.0881 23.137 89.782 19.363 84.9264 19.363M84.4305 37.1056C81.3042 37.1056 78.1362 34.8 78.1362 30.2278C78.1362 25.6556 81.2625 23.5185 84.3887 23.5185C87.515 23.5185 90.5595 25.7 90.5595 30.2704C90.5595 34.8407 87.5567 37.1056 84.4287 37.1056M58.8065 41.3407C61.7239 41.3407 64.1871 40.087 65.6694 38.0796V39.0611C65.6694 40.3148 66.6848 41.3407 67.9146 41.3407C69.1444 41.3407 70.1598 40.3148 70.1598 39.0611V13.3241C70.1598 12.05 69.1262 11.0074 67.8765 11.0074C66.6267 11.0074 65.5931 12.05 65.5931 13.3241V22.3852C63.7838 20.2889 61.1498 19.3648 58.723 19.3648C53.6221 19.3648 48.6448 23.2222 48.6448 30.3944C48.6448 37.5667 53.9509 41.3407 58.8047 41.3407M59.3006 23.6019C62.4269 23.6019 65.5949 25.9093 65.5949 30.4796C65.5949 35.05 62.4686 37.1889 59.3424 37.1889C56.2161 37.1889 53.1716 35.0074 53.1716 30.437C53.1716 25.8667 56.1744 23.6019 59.3006 23.6019ZM43.6893 10C45.5404 10 46.9809 11.4259 46.9809 13.313C46.9809 15.2 45.5404 16.6259 43.6893 16.6259C41.8383 16.6259 40.4396 15.2 40.4396 13.313C40.4396 11.4259 41.8383 10 43.6893 10ZM43.6893 19.3648C44.9391 19.3648 45.9727 20.4074 45.9727 21.6815L45.9691 39.1C45.9691 40.3481 44.9137 41.3389 43.6893 41.3389C42.465 41.3389 41.4096 40.337 41.406 39.1L41.406 21.6815C41.406 20.4074 42.4396 19.3648 43.6893 19.3648Z" fill="#333F48"/>
+                <path d="M25.268 29.7648C24.6485 31.1574 23.2752 32.1278 21.6767 32.1278C21.0772 32.1278 20.5087 31.9908 20 31.7463C17.0318 35.2796 16.941 40.4963 21.7566 45.0463C24.565 47.7 29.3079 49.6648 36.8338 49.7C36.8338 49.7 39.8747 30.1537 25.2698 29.7667L25.268 29.7648Z" fill="#0086F8"/>
+                <path d="M17.7457 27.8204C17.891 25.737 19.5949 24.0926 21.6767 24.0926C22.1363 24.0926 22.5777 24.1741 22.9882 24.3204C24.6957 21.6574 25.6821 17.5722 22.3161 14.0296C13.6276 5.78147 0.428711 12.7518 0.428711 12.7518C3.47322 23.6518 11.9764 27.2148 17.1499 27.7685L17.7457 27.8204Z" fill="#FF8300"/>
+                <path d="M17.1499 27.7685C14.3742 27.5574 12.4178 27.9056 9.5822 28.9778C0.850136 32.2815 0 42.7426 0 42.7426C10.7738 43.9871 16.0272 38.663 18.0509 35.826C18.3161 34.3334 18.99 32.9426 19.9964 31.7463C18.6594 31.1037 17.7348 29.7185 17.7348 28.1111C17.7348 28.013 17.7402 27.9167 17.7457 27.8222L17.1499 27.7704V27.7685Z" fill="#51C21A"/>
+                <path d="M110.271 10.2944V49.7" stroke="#333F48" stroke-width="3.03" stroke-miterlimit="10"/>
+                <path d="M125.882 13.2204V11.6741H133.032V13.2204H130.367V20.5481H128.547V13.2204H125.882Z" fill="#333F48"/>
+                <path d="M135.991 16.7V20.5481H134.18V11.6741H135.94V15.0667H136.016C136.163 14.6741 136.401 14.3648 136.73 14.1407C137.059 13.9167 137.471 13.8056 137.967 13.8056C138.421 13.8056 138.817 13.9056 139.155 14.1074C139.493 14.3074 139.757 14.5963 139.945 14.9704C140.134 15.3444 140.227 15.7907 140.223 16.3111V20.55H138.412V16.6407C138.416 16.2296 138.314 15.9111 138.109 15.6833C137.904 15.4556 137.617 15.3407 137.248 15.3407C137.001 15.3407 136.785 15.3944 136.596 15.5019C136.407 15.6093 136.26 15.7648 136.154 15.9685C136.049 16.1722 135.993 16.4167 135.991 16.7037V16.7Z" fill="#333F48"/>
+                <path d="M144.627 20.6778C143.955 20.6778 143.377 20.5389 142.894 20.2592C142.411 19.9796 142.038 19.5852 141.778 19.0722C141.517 18.5592 141.388 17.9518 141.388 17.25C141.388 16.5481 141.519 15.9648 141.778 15.4481C142.04 14.9315 142.407 14.5278 142.881 14.2389C143.355 13.95 143.913 13.8055 144.554 13.8055C144.985 13.8055 145.386 13.8759 145.758 14.0148C146.131 14.1555 146.458 14.3648 146.736 14.6444C147.015 14.9241 147.232 15.2759 147.388 15.7C147.544 16.1241 147.622 16.6185 147.622 17.1833V17.6907H142.109V16.5463H145.918C145.918 16.2796 145.862 16.0444 145.747 15.8407C145.635 15.6352 145.477 15.4741 145.277 15.3574C145.077 15.2407 144.845 15.1815 144.581 15.1815C144.318 15.1815 144.064 15.2463 143.853 15.3741C143.642 15.5018 143.477 15.6741 143.357 15.8889C143.239 16.1037 143.177 16.3426 143.173 16.6055V17.6926C143.173 18.0222 143.233 18.3074 143.353 18.5463C143.473 18.7852 143.644 18.9704 143.866 19.1018C144.087 19.2315 144.349 19.2963 144.652 19.2963C144.854 19.2963 145.037 19.2667 145.204 19.2092C145.371 19.1518 145.515 19.0648 145.633 18.95C145.751 18.8352 145.842 18.6926 145.906 18.5259L147.58 18.6389C147.495 19.05 147.322 19.4074 147.059 19.7111C146.797 20.0167 146.46 20.2518 146.047 20.4222C145.635 20.5907 145.159 20.6759 144.621 20.6759L144.627 20.6778Z" fill="#333F48"/>
+                <path d="M127.713 35.1907H125.74L128.745 26.3167H131.117L134.118 35.1907H132.145L129.965 28.3444H129.898L127.713 35.1907ZM127.591 31.7018H132.251V33.1667H127.591V31.7018Z" fill="#333F48"/>
+                <path d="M135.132 35.1907V28.5352H136.857V29.7092H136.934C137.07 29.3185 137.297 29.0111 137.613 28.787C137.931 28.5611 138.311 28.4481 138.752 28.4481C139.193 28.4481 139.58 28.5611 139.895 28.7889C140.209 29.0148 140.42 29.3222 140.523 29.7092H140.59C140.723 29.3277 140.965 29.0222 141.315 28.7926C141.666 28.5629 142.08 28.4481 142.558 28.4481C143.166 28.4481 143.662 28.6444 144.044 29.0389C144.425 29.4333 144.616 29.9907 144.616 30.7129V35.1889H142.808V31.0759C142.808 30.7055 142.712 30.4296 142.52 30.2444C142.327 30.0592 142.085 29.9666 141.797 29.9666C141.468 29.9666 141.212 30.0722 141.026 30.2852C140.841 30.4981 140.75 30.7777 140.75 31.124V35.1889H138.995V31.037C138.995 30.7111 138.905 30.45 138.721 30.2574C138.538 30.0648 138.298 29.9666 138 29.9666C137.798 29.9666 137.619 30.0185 137.459 30.1203C137.299 30.2222 137.172 30.3666 137.079 30.55C136.986 30.7333 136.939 30.9481 136.939 31.1926V35.1889H135.128L135.132 35.1907Z" fill="#333F48"/>
+                <path d="M146.082 35.1907V26.3167H147.893V29.6537H147.947C148.027 29.4741 148.142 29.2926 148.294 29.1055C148.445 28.9185 148.645 28.7629 148.89 28.637C149.135 28.5111 149.441 28.4481 149.806 28.4481C150.282 28.4481 150.721 28.5741 151.123 28.8278C151.524 29.0815 151.847 29.4611 152.087 29.9667C152.329 30.4741 152.449 31.1092 152.449 31.8704C152.449 32.6315 152.332 33.2389 152.098 33.7481C151.864 34.2574 151.548 34.6444 151.146 34.9055C150.745 35.1667 150.296 35.2981 149.8 35.2981C149.45 35.2981 149.15 35.2389 148.905 35.1204C148.659 35.0018 148.46 34.8518 148.303 34.6722C148.147 34.4926 148.029 34.3092 147.946 34.1241H147.866V35.1907H146.08H146.082ZM147.853 31.8629C147.853 32.2592 147.907 32.6037 148.015 32.8981C148.122 33.1926 148.278 33.4222 148.481 33.5852C148.685 33.7481 148.934 33.8296 149.226 33.8296C149.519 33.8296 149.771 33.7463 149.975 33.5796C150.178 33.4129 150.334 33.1833 150.44 32.887C150.545 32.5907 150.599 32.25 150.599 31.8629C150.599 31.4759 150.547 31.1407 150.441 30.8481C150.336 30.5555 150.182 30.3278 149.978 30.1629C149.775 29.9981 149.524 29.9167 149.226 29.9167C148.928 29.9167 148.683 29.9963 148.48 30.1555C148.276 30.3148 148.122 30.5389 148.015 30.8315C147.907 31.1241 147.853 31.4667 147.853 31.8629Z" fill="#333F48"/>
+                <path d="M155.513 35.3167C155.097 35.3167 154.725 35.2426 154.4 35.0926C154.074 34.9444 153.817 34.7222 153.628 34.4296C153.439 34.137 153.344 33.7704 153.344 33.3315C153.344 32.9611 153.411 32.6518 153.544 32.4C153.677 32.1481 153.858 31.9463 154.089 31.7926C154.318 31.6389 154.579 31.5241 154.874 31.4463C155.166 31.3685 155.475 31.313 155.798 31.2815C156.178 31.2407 156.483 31.2037 156.716 31.1667C156.948 31.1315 157.117 31.0759 157.223 31.0037C157.328 30.9315 157.381 30.8241 157.381 30.6833V30.6574C157.381 30.3833 157.297 30.1704 157.128 30.0204C156.959 29.8704 156.721 29.7944 156.412 29.7944C156.087 29.7944 155.827 29.8667 155.635 30.013C155.442 30.1593 155.315 30.3407 155.252 30.5611L153.577 30.4222C153.662 30.0185 153.829 29.6667 154.078 29.3722C154.327 29.0759 154.65 28.8481 155.045 28.687C155.441 28.5259 155.898 28.4463 156.42 28.4463C156.783 28.4463 157.13 28.4889 157.462 28.5759C157.795 28.663 158.091 28.7963 158.351 28.9796C158.61 29.1611 158.814 29.3944 158.965 29.6796C159.115 29.9648 159.19 30.3037 159.19 30.7V35.1889H157.473V34.2667H157.422C157.317 34.4741 157.177 34.6574 157.001 34.8148C156.825 34.9722 156.614 35.0944 156.367 35.1833C156.12 35.2722 155.837 35.3148 155.513 35.3148V35.3167ZM156.033 34.0426C156.3 34.0426 156.534 33.9889 156.738 33.8796C156.941 33.7704 157.101 33.6241 157.217 33.4389C157.333 33.2537 157.391 33.0444 157.391 32.8111V32.1055C157.335 32.1426 157.257 32.1778 157.159 32.2074C157.061 32.237 156.952 32.2648 156.83 32.2889C156.708 32.313 156.587 32.3352 156.465 32.3537C156.343 32.3722 156.233 32.3889 156.134 32.4037C155.922 32.4352 155.737 32.4852 155.577 32.5555C155.419 32.6241 155.295 32.7185 155.206 32.8352C155.119 32.9518 155.074 33.0981 155.074 33.2704C155.074 33.5222 155.163 33.713 155.344 33.8444C155.524 33.9759 155.753 34.0407 156.031 34.0407L156.033 34.0426Z" fill="#333F48"/>
+                <path d="M166.029 30.4333L164.371 30.537C164.342 30.3926 164.282 30.2611 164.187 30.1445C164.093 30.0278 163.971 29.9333 163.82 29.863C163.669 29.7926 163.488 29.7574 163.279 29.7574C162.999 29.7574 162.761 29.8167 162.569 29.9371C162.376 30.0574 162.28 30.2167 162.28 30.4167C162.28 30.5759 162.342 30.7093 162.467 30.8204C162.592 30.9315 162.805 31.0185 163.108 31.0852L164.289 31.3278C164.925 31.4611 165.397 31.6741 165.709 31.9685C166.022 32.263 166.176 32.65 166.176 33.1296C166.176 33.5667 166.051 33.9482 165.8 34.2778C165.55 34.6074 165.206 34.863 164.772 35.0463C164.338 35.2296 163.837 35.3222 163.27 35.3222C162.405 35.3222 161.717 35.1389 161.206 34.7704C160.694 34.4019 160.394 33.9 160.307 33.2648L162.087 33.1704C162.142 33.4389 162.271 33.6426 162.478 33.7833C162.685 33.9241 162.95 33.9926 163.273 33.9926C163.597 33.9926 163.846 33.9296 164.04 33.8037C164.234 33.6778 164.332 33.5148 164.336 33.3167C164.332 33.15 164.263 33.0111 164.127 32.9037C163.991 32.7963 163.782 32.713 163.499 32.6537L162.369 32.4241C161.731 32.2945 161.257 32.0685 160.946 31.7482C160.636 31.4278 160.481 31.0185 160.481 30.5222C160.481 30.0945 160.596 29.7259 160.823 29.4167C161.05 29.1074 161.373 28.8685 161.787 28.7019C162.203 28.5352 162.688 28.45 163.248 28.45C164.073 28.45 164.723 28.6278 165.197 28.9833C165.671 29.3389 165.949 29.8222 166.029 30.4352V30.4333Z" fill="#333F48"/>
+                <path d="M172.754 30.4333L171.095 30.537C171.066 30.3926 171.006 30.2611 170.912 30.1445C170.817 30.0278 170.696 29.9333 170.545 29.863C170.394 29.7926 170.212 29.7574 170.004 29.7574C169.724 29.7574 169.486 29.8167 169.293 29.9371C169.101 30.0574 169.004 30.2167 169.004 30.4167C169.004 30.5759 169.066 30.7093 169.192 30.8204C169.317 30.9315 169.529 31.0185 169.833 31.0852L171.014 31.3278C171.649 31.4611 172.122 31.6741 172.434 31.9685C172.747 32.263 172.901 32.65 172.901 33.1296C172.901 33.5667 172.776 33.9482 172.525 34.2778C172.274 34.6074 171.931 34.863 171.497 35.0463C171.063 35.2296 170.561 35.3222 169.994 35.3222C169.13 35.3222 168.441 35.1389 167.931 34.7704C167.419 34.4019 167.119 33.9 167.032 33.2648L168.812 33.1704C168.866 33.4389 168.995 33.6426 169.202 33.7833C169.41 33.9241 169.675 33.9926 169.998 33.9926C170.321 33.9926 170.57 33.9296 170.765 33.8037C170.959 33.6778 171.057 33.5148 171.061 33.3167C171.057 33.15 170.988 33.0111 170.852 32.9037C170.716 32.7963 170.507 32.713 170.223 32.6537L169.093 32.4241C168.456 32.2945 167.982 32.0685 167.671 31.7482C167.361 31.4278 167.206 31.0185 167.206 30.5222C167.206 30.0945 167.321 29.7259 167.548 29.4167C167.775 29.1074 168.098 28.8685 168.512 28.7019C168.928 28.5352 169.413 28.45 169.973 28.45C170.797 28.45 171.448 28.6278 171.922 28.9833C172.396 29.3389 172.674 29.8222 172.754 30.4352V30.4333Z" fill="#333F48"/>
+                <path d="M175.907 35.3167C175.491 35.3167 175.119 35.2426 174.794 35.0926C174.469 34.9426 174.211 34.7222 174.022 34.4296C173.833 34.137 173.738 33.7704 173.738 33.3315C173.738 32.9611 173.806 32.6518 173.938 32.4C174.071 32.1481 174.252 31.9463 174.483 31.7926C174.712 31.6389 174.974 31.5241 175.268 31.4463C175.56 31.3685 175.869 31.313 176.193 31.2815C176.572 31.2407 176.879 31.2037 177.11 31.1667C177.342 31.1315 177.511 31.0759 177.617 31.0037C177.722 30.9315 177.775 30.8241 177.775 30.6833V30.6574C177.775 30.3833 177.691 30.1704 177.522 30.0204C177.353 29.8704 177.115 29.7944 176.807 29.7944C176.481 29.7944 176.222 29.8667 176.029 30.013C175.836 30.1593 175.709 30.3407 175.646 30.5611L173.971 30.4222C174.056 30.0185 174.223 29.6667 174.472 29.3722C174.721 29.0759 175.044 28.8481 175.439 28.687C175.835 28.5259 176.292 28.4463 176.814 28.4463C177.177 28.4463 177.524 28.4889 177.856 28.5759C178.189 28.663 178.485 28.7963 178.745 28.9796C179.005 29.1611 179.208 29.3944 179.359 29.6796C179.51 29.9648 179.584 30.3037 179.584 30.7V35.1889H177.867V34.2667H177.817C177.711 34.4741 177.571 34.6574 177.395 34.8148C177.219 34.9722 177.008 35.0944 176.761 35.1833C176.514 35.2722 176.231 35.3148 175.907 35.3148V35.3167ZM176.427 34.0426C176.694 34.0426 176.928 33.9889 177.132 33.8796C177.335 33.7704 177.495 33.6241 177.611 33.4389C177.728 33.2537 177.786 33.0444 177.786 32.8111V32.1055C177.729 32.1426 177.651 32.1778 177.553 32.2074C177.455 32.237 177.346 32.2648 177.224 32.2889C177.103 32.313 176.981 32.3352 176.859 32.3537C176.737 32.3722 176.627 32.3889 176.527 32.4037C176.314 32.4352 176.129 32.4852 175.969 32.5555C175.811 32.6241 175.688 32.7185 175.599 32.8352C175.511 32.9518 175.466 33.0981 175.466 33.2704C175.466 33.5222 175.557 33.713 175.737 33.8444C175.916 33.9759 176.145 34.0407 176.423 34.0407L176.427 34.0426Z" fill="#333F48"/>
+                <path d="M183.399 35.3C182.903 35.3 182.454 35.1685 182.053 34.9074C181.651 34.6463 181.333 34.2611 181.101 33.75C180.867 33.2408 180.75 32.6148 180.75 31.8722C180.75 31.1297 180.87 30.4741 181.112 29.9685C181.353 29.463 181.673 29.0815 182.074 28.8297C182.476 28.5778 182.916 28.45 183.395 28.45C183.76 28.45 184.065 28.513 184.311 28.6389C184.556 28.7648 184.754 28.9204 184.906 29.1074C185.057 29.2945 185.173 29.4759 185.253 29.6556H185.308V26.3185H187.115V35.1926H185.33V34.1259H185.253C185.168 34.3111 185.048 34.4945 184.894 34.6741C184.739 34.8556 184.54 35.0037 184.294 35.1222C184.049 35.2408 183.751 35.3 183.399 35.3ZM183.971 33.8297C184.263 33.8297 184.51 33.7482 184.712 33.5852C184.916 33.4222 185.07 33.1926 185.179 32.8982C185.288 32.6037 185.342 32.2574 185.342 31.863C185.342 31.4685 185.288 31.1241 185.181 30.8315C185.074 30.5389 184.917 30.3148 184.714 30.1556C184.51 29.9963 184.262 29.9167 183.971 29.9167C183.68 29.9167 183.422 29.9982 183.219 30.163C183.015 30.3278 182.861 30.5556 182.756 30.8482C182.65 31.1408 182.598 31.4778 182.598 31.863C182.598 32.2482 182.65 32.5926 182.758 32.8871C182.865 33.1815 183.017 33.4148 183.221 33.5797C183.422 33.7463 183.673 33.8297 183.971 33.8297Z" fill="#333F48"/>
+                <path d="M191.546 35.3204C190.886 35.3204 190.316 35.1759 189.835 34.8889C189.355 34.6019 188.985 34.2 188.723 33.6833C188.461 33.1685 188.332 32.5685 188.332 31.8871C188.332 31.2056 188.463 30.5982 188.723 30.0815C188.983 29.5648 189.355 29.1648 189.835 28.8759C190.314 28.5889 190.885 28.4445 191.546 28.4445C192.207 28.4445 192.776 28.5889 193.257 28.8759C193.737 29.163 194.107 29.5648 194.369 30.0815C194.628 30.5963 194.759 31.1982 194.759 31.8871C194.759 32.5759 194.628 33.1685 194.369 33.6833C194.107 34.1982 193.737 34.6 193.257 34.8889C192.777 35.1759 192.207 35.3204 191.546 35.3204ZM191.555 33.8908C191.855 33.8908 192.105 33.8037 192.307 33.6278C192.509 33.4537 192.661 33.2148 192.765 32.9111C192.868 32.6074 192.919 32.263 192.919 31.8759C192.919 31.4889 192.866 31.1445 192.765 30.8408C192.661 30.5371 192.509 30.2982 192.307 30.1222C192.105 29.9463 191.855 29.8574 191.555 29.8574C191.255 29.8574 190.997 29.9463 190.792 30.1222C190.587 30.2982 190.432 30.5389 190.329 30.8408C190.225 31.1445 190.174 31.4889 190.174 31.8759C190.174 32.263 190.227 32.6074 190.329 32.9111C190.43 33.2148 190.587 33.4537 190.792 33.6278C190.997 33.8019 191.252 33.8908 191.555 33.8908Z" fill="#333F48"/>
+                <path d="M195.942 35.1908V28.5352H197.697V29.6963H197.764C197.884 29.2833 198.082 28.9704 198.363 28.7574C198.643 28.5445 198.966 28.4389 199.331 28.4389C199.422 28.4389 199.52 28.4445 199.624 28.4556C199.729 28.4667 199.82 28.4833 199.9 28.5037V30.1426C199.815 30.1167 199.697 30.0926 199.548 30.0741C199.397 30.0537 199.261 30.0445 199.135 30.0445C198.868 30.0445 198.632 30.1037 198.423 30.2204C198.214 30.3371 198.051 30.5 197.931 30.7074C197.811 30.9148 197.749 31.1556 197.749 31.4259V35.1908H195.938H195.942Z" fill="#333F48"/>
+                <path d="M126.212 49.8333V40.9592H129.648C130.307 40.9592 130.87 41.087 131.335 41.3426C131.8 41.5981 132.154 41.9518 132.4 42.4037C132.645 42.8555 132.767 43.3759 132.767 43.9666C132.767 44.5574 132.641 45.0759 132.392 45.5259C132.143 45.9759 131.782 46.3277 131.31 46.5796C130.837 46.8315 130.267 46.9574 129.599 46.9574H127.41V45.4537H129.301C129.655 45.4537 129.947 45.3907 130.178 45.2648C130.409 45.1389 130.581 44.9648 130.696 44.7407C130.81 44.5166 130.868 44.2592 130.868 43.9666C130.868 43.674 130.81 43.4148 130.696 43.1926C130.581 42.9703 130.407 42.8 130.174 42.6777C129.942 42.5555 129.648 42.4944 129.29 42.4944H128.049V49.8352H126.209L126.212 49.8333Z" fill="#333F48"/>
+                <path d="M135.744 40.9592V49.8333H133.933V40.9592H135.744Z" fill="#333F48"/>
+                <path d="M139.05 49.9592C138.634 49.9592 138.262 49.8852 137.936 49.7352C137.611 49.587 137.353 49.3648 137.164 49.0722C136.975 48.7796 136.881 48.4129 136.881 47.9741C136.881 47.6037 136.948 47.2944 137.081 47.0426C137.213 46.7907 137.395 46.5889 137.626 46.4352C137.855 46.2815 138.116 46.1666 138.41 46.0889C138.703 46.0111 139.012 45.9555 139.335 45.9241C139.715 45.8833 140.02 45.8463 140.252 45.8092C140.485 45.7741 140.654 45.7185 140.757 45.6463C140.861 45.5741 140.915 45.4666 140.915 45.3259V45.3C140.915 45.0259 140.832 44.8129 140.663 44.6629C140.494 44.5129 140.256 44.437 139.947 44.437C139.622 44.437 139.362 44.5092 139.17 44.6555C138.977 44.8018 138.85 44.9833 138.787 45.2037L137.112 45.0648C137.197 44.6611 137.364 44.3092 137.613 44.0148C137.862 43.7185 138.185 43.4907 138.579 43.3296C138.975 43.1685 139.433 43.0889 139.955 43.0889C140.318 43.0889 140.665 43.1315 140.999 43.2185C141.331 43.3055 141.628 43.4389 141.887 43.6222C142.147 43.8037 142.351 44.037 142.501 44.3222C142.652 44.6074 142.727 44.9463 142.727 45.3426V49.8315H141.01V48.9092H140.959C140.854 49.1166 140.714 49.3 140.538 49.4574C140.361 49.6148 140.151 49.737 139.904 49.8259C139.657 49.9148 139.373 49.9574 139.05 49.9574V49.9592ZM139.569 48.6852C139.836 48.6852 140.071 48.6315 140.274 48.5222C140.478 48.4148 140.638 48.2666 140.754 48.0815C140.87 47.8963 140.928 47.687 140.928 47.4537V46.7481C140.872 46.7852 140.794 46.8204 140.696 46.85C140.598 46.8796 140.489 46.9074 140.367 46.9315C140.245 46.9555 140.123 46.9778 140.002 46.9963C139.88 47.0148 139.769 47.0315 139.669 47.0463C139.457 47.0778 139.272 47.1278 139.112 47.1981C138.954 47.2666 138.83 47.3611 138.741 47.4778C138.654 47.5944 138.608 47.7407 138.608 47.9129C138.608 48.1648 138.698 48.3555 138.879 48.487C139.059 48.6185 139.288 48.6833 139.566 48.6833L139.569 48.6852Z" fill="#333F48"/>
+                <path d="M147.608 43.1778V44.5648H143.675V43.1778H147.608ZM144.567 41.5833H146.378V47.7889C146.378 47.9593 146.403 48.0907 146.454 48.1852C146.505 48.2796 146.576 48.3444 146.668 48.3815C146.761 48.4185 146.868 48.437 146.99 48.437C147.075 48.437 147.161 48.4296 147.244 48.413C147.33 48.3963 147.395 48.3852 147.44 48.3759L147.726 49.75C147.635 49.7796 147.508 49.813 147.342 49.8519C147.177 49.8907 146.979 49.9148 146.743 49.9241C146.307 49.9407 145.925 49.8815 145.597 49.7463C145.27 49.6111 145.015 49.4 144.834 49.113C144.652 48.8259 144.563 48.4667 144.567 48.0296V41.5815V41.5833Z" fill="#333F48"/>
+                <path d="M152.296 43.1778V44.5648H148.267V43.1778H152.296ZM149.188 49.8333V42.6963C149.188 42.213 149.281 41.813 149.466 41.4963C149.651 41.1778 149.906 40.9408 150.229 40.7815C150.552 40.6222 150.919 40.5426 151.33 40.5426C151.608 40.5426 151.862 40.5648 152.093 40.6074C152.323 40.65 152.496 40.6889 152.609 40.7241L152.285 42.1111C152.214 42.0889 152.127 42.0667 152.024 42.0463C151.92 42.0259 151.815 42.0167 151.708 42.0167C151.441 42.0167 151.255 42.0796 151.15 42.2056C151.045 42.3315 150.992 42.5074 150.992 42.7315V49.8333H149.186H149.188Z" fill="#333F48"/>
+                <path d="M156.122 49.9648C155.46 49.9648 154.892 49.8203 154.41 49.5333C153.931 49.2463 153.56 48.8444 153.299 48.3278C153.037 47.8129 152.908 47.2129 152.908 46.5315C152.908 45.85 153.039 45.2426 153.299 44.7259C153.56 44.2111 153.929 43.8092 154.41 43.5203C154.89 43.2333 155.46 43.0889 156.122 43.0889C156.783 43.0889 157.351 43.2333 157.833 43.5203C158.312 43.8074 158.683 44.2092 158.945 44.7259C159.204 45.2407 159.335 45.8426 159.335 46.5315C159.335 47.2204 159.204 47.8129 158.945 48.3278C158.683 48.8426 158.312 49.2444 157.833 49.5333C157.353 49.8203 156.783 49.9648 156.122 49.9648ZM156.129 48.5333C156.429 48.5333 156.679 48.4463 156.881 48.2704C157.083 48.0963 157.235 47.8574 157.339 47.5537C157.442 47.25 157.493 46.9055 157.493 46.5185C157.493 46.1315 157.44 45.787 157.339 45.4833C157.235 45.1796 157.083 44.9407 156.881 44.7648C156.679 44.5889 156.429 44.5 156.129 44.5C155.829 44.5 155.571 44.5889 155.366 44.7648C155.161 44.9407 155.006 45.1815 154.903 45.4833C154.799 45.787 154.748 46.1315 154.748 46.5185C154.748 46.9055 154.799 47.25 154.903 47.5537C155.006 47.8574 155.161 48.0963 155.366 48.2704C155.571 48.4444 155.826 48.5333 156.129 48.5333Z" fill="#333F48"/>
+                <path d="M160.516 49.8333V43.1778H162.271V44.3389H162.338C162.458 43.9259 162.656 43.613 162.937 43.4C163.217 43.187 163.54 43.0815 163.905 43.0815C163.996 43.0815 164.094 43.087 164.198 43.0981C164.303 43.1093 164.394 43.1259 164.474 43.1463V44.7852C164.389 44.7593 164.271 44.7352 164.122 44.7167C163.971 44.6963 163.835 44.687 163.709 44.687C163.442 44.687 163.206 44.7463 162.997 44.863C162.788 44.9796 162.625 45.1426 162.505 45.35C162.385 45.5574 162.323 45.7981 162.323 46.0685V49.8333H160.512H160.516Z" fill="#333F48"/>
+                <path d="M165.41 49.8334V43.1778H167.135V44.3519H167.212C167.348 43.9611 167.575 43.6537 167.891 43.4296C168.207 43.2056 168.589 43.0908 169.03 43.0908C169.471 43.0908 169.858 43.2037 170.173 43.4315C170.487 43.6593 170.698 43.9648 170.801 44.3519H170.87C171.003 43.9704 171.244 43.6648 171.595 43.4352C171.946 43.2056 172.36 43.0908 172.837 43.0908C173.446 43.0908 173.942 43.2871 174.323 43.6815C174.705 44.0759 174.896 44.6334 174.896 45.3556V49.8315H173.09V45.7185C173.09 45.3482 172.994 45.0722 172.801 44.8871C172.609 44.7019 172.367 44.6093 172.078 44.6093C171.749 44.6093 171.493 44.7148 171.308 44.9278C171.124 45.1408 171.032 45.4204 171.032 45.7667V49.8315H169.277V45.6796C169.277 45.3537 169.186 45.0926 169.003 44.9C168.819 44.7074 168.58 44.6093 168.282 44.6093C168.08 44.6093 167.9 44.6611 167.74 44.763C167.58 44.8648 167.453 45.0093 167.361 45.1926C167.268 45.3759 167.221 45.5908 167.221 45.8352V49.8315H165.41V49.8334Z" fill="#333F48"/>
+              </g>
+              <defs>
+                <clipPath id="tap-clip"><rect width="200" height="40" fill="white" transform="translate(0 10)"/></clipPath>
+              </defs>
+            </svg>
+          </div>
+          <div class="card-overlay">
+            <span class="card-overlay-cta">View Case Study →</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="card-tag hi">Product Design</span>
+            <span class="card-tag">B2B · EdTech</span>
+            <span class="card-tag">Mobile · Web</span>
+          </div>
+          <div class="card-title">The Ambassador Platform</div>
+          <div class="card-desc">First product designer at a B2B EdTech SaaS - owned full-cycle design across four product areas, from widget to admin dashboard. Acquired by IDP Education for £9M.</div>
+        </div>
+        <div class="card-foot">
+          <span class="card-year">2019–2022 · Full-time</span>
+          <span class="card-arrow">Read case study →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     ABOUT
+═══════════════════════════════════ -->
+<div class="panel" id="panel-about">
+  <div class="container">
+
+    <!-- Opening statement -->
+    <div class="about-intro">
+      <p class="about-intro-label">About me</p>
+      <h2 class="about-intro-statement">I design products that make<br>complex things feel <em>obvious.</em></h2>
+    </div>
+
+    <!-- Photo + bio -->
+    <div class="about-body-wrap">
+
+      <div>
+        <div class="about-photo">
+          <img src="IMG_7697.jpg" alt="Anna Sholomii">
+        </div>
+        <div class="about-links-col">
+          <a class="about-link" href="https://linkedin.com/in/anna-sholomii" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="about-link" href="mailto:anna.sholomii@gmail.com">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            anna.sholomii@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="about-text-col">
+        <h2 class="about-name">Anna Sholomii</h2>
+        <p class="about-title">Product Designer · UX Research · Interaction Design</p>
+        <div class="about-body">
+          <p>I'm a product designer who believes the best interfaces start with <strong>understanding people before opening a tool</strong>. I work end-to-end - from exploratory research and problem framing through interaction design, prototyping, and usability testing.</p>
+          <p>My background spans B2B SaaS, EdTech, and 0→1 product work. I joined The Ambassador Platform as their first and only designer, built their design system from scratch, and saw the company acquired by IDP Education for £9M.</p>
+          <p>I'm drawn to ambiguous problems where the solution space isn't obvious - the kind where the right question matters more than the first answer.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="defines-block">
+      <div class="defines-block-header">
+        <h3>What defines me</h3>
+        <p class="defines-subtitle">The things that show up in every project. Not skills. Not tools. The beliefs that shape how I work - regardless of the product, the team, or the timeline.</p>
+      </div>
+      <div class="defines-grid">
+        <div class="defines-card">
+          <span class="defines-num">01</span>
+          <p class="defines-item-title">I treat the brief as the starting point, not the answer.</p>
+          <p class="defines-item-body">When a problem arrives pre-diagnosed - "redesign the dashboard," "improve activation" - my instinct is to reopen it. Not out of resistance, but because the right frame is usually where the real leverage is. I've found that the question you start with determines more about the outcome than the solution you build.</p>
+        </div>
+        <div class="defines-card">
+          <span class="defines-num">02</span>
+          <p class="defines-item-title">Research is a habit, not a phase.</p>
+          <p class="defines-item-body">I don't treat research as a box to tick before design begins. I carry it through the whole project - interviews to frame the problem, synthesis to stay honest with findings, testing to pressure-check decisions. What I'm looking for is the gap between what people say they do and what they actually do. That gap is where the design usually lives.</p>
+        </div>
+        <div class="defines-card">
+          <span class="defines-num">03</span>
+          <p class="defines-item-title">I design for how people actually decide - not how they should.</p>
+          <p class="defines-item-body">Understanding cognitive biases - the ambiguity effect, anchoring, loss aversion - changed the solutions I reach for. I don't design for ideal users in perfect conditions. I design for someone who's distracted, uncertain, and making a call in under 90 seconds. Accounting for that from the start produces better products than adding it as a polish layer at the end.</p>
+        </div>
+        <div class="defines-card">
+          <span class="defines-num">04</span>
+          <p class="defines-item-title">The goal is removing confusion, not adding features.</p>
+          <p class="defines-item-body">The measure of a good interface isn't how much it shows - it's how little the user has to figure out. Every ambiguous label, every unnecessary step, every missing affordance is a small tax on trust. I've learned to be more ruthless about cutting than I am generous about adding. The hardest calls in design are usually about what not to include.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo gallery -->
+    <div class="about-gallery">
+      <img src="About%20me%20section/1.jpeg" alt="">
+      <img src="About%20me%20section/2.jpeg" alt="">
+      <img src="About%20me%20section/3.jpeg" alt="">
+      <img src="About%20me%20section/4.jpeg" alt="">
+      <img src="About%20me%20section/5.jpeg" alt="">
+      <img src="About%20me%20section/6.JPG" alt="">
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     RESUME
+═══════════════════════════════════ -->
+<div class="panel" id="panel-resume">
+  <div class="container">
+    <div class="resume-wrap">
+
+      <div class="resume-header">
+        <h2 class="resume-heading">Senior Product<br><em>Designer.</em></h2>
+        <p class="resume-sub">3 years of end-to-end ownership at a growth-stage EdTech SaaS - from user research and design systems to shipping and measuring impact.</p>
+        <div class="resume-actions">
+          <a href="Resume_Anna_Sholomii.pdf" download class="btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download PDF
+          </a>
+          <a href="https://linkedin.com/in/anna-sholomii" target="_blank" rel="noopener" class="btn-outline">
+            View LinkedIn →
+          </a>
+        </div>
+      </div>
+
+      <!-- Skills strip -->
+      <div class="resume-skills-strip">
+        <div class="resume-skills-group">
+          <span class="resume-skills-label">Tools</span>
+          <span class="resume-skills-val">Figma · Adobe Creative Suite · Mixpanel · Google Analytics · Cursor · Claude Code</span>
+        </div>
+        <div class="resume-skills-group">
+          <span class="resume-skills-label">Skills</span>
+          <span class="resume-skills-val">UX Research · Design Systems · Accessibility · Cross-functional Collaboration</span>
+        </div>
+        <div class="resume-skills-group">
+          <span class="resume-skills-label">Languages</span>
+          <span class="resume-skills-val">English · French · Ukrainian</span>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <p class="resume-section-label">Experience</p>
+
+        <div class="resume-entry">
+          <div class="resume-date">May 2019 - Apr 2022</div>
+          <div>
+            <div class="resume-role">Product Designer</div>
+            <div class="resume-company">The Ambassador Platform <span class="resume-company-note">(Acquired by IDP Education, 2023)</span></div>
+            <div class="resume-context">B2B EdTech SaaS · 100+ universities, colleges and schools · Sole product designer</div>
+            <ul class="resume-bullets">
+              <li>Improved prospective student conversion by ~30% by leading a user-centred redesign of the sign-up flow and widget layout - applied data analysis, user research, and A/B testing to identify pain points, simplify steps, and clarify CTAs in collaboration with engineering.</li>
+              <li>Built the company's design system and component library from scratch - standardising colour contrast, typography, and spacing to improve visual accessibility, reduce engineering ambiguity at handoff, and establish consistent brand identity across all platforms.</li>
+              <li>Cut sales cycle by 25% (40 → 30 days) by redesigning the customer onboarding experience - identifying and removing key usability barriers through research and iteration.</li>
+              <li>Used Mixpanel and Google Analytics to track funnel performance and user behaviour, translating data into design decisions on conversion, retention, and onboarding flows.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-entry">
+          <div class="resume-date">May 2022 - Present</div>
+          <div>
+            <div class="resume-role">Career Break</div>
+            <div class="resume-company resume-company-muted">Maternity leave &amp; relocation to Canada</div>
+            <ul class="resume-bullets">
+              <li>Completed AI Product Design course (idea validation through launch). Active in product design and AI tools workshops.</li>
+              <li>Independently designing and building an app that helps users find rental options based on school ratings in the GTA.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <p class="resume-section-label">Education</p>
+        <div class="resume-entry">
+          <div class="resume-date">2016 - 2018</div>
+          <div>
+            <div class="resume-role">Master of Finance, Banking and Insurance</div>
+            <div class="resume-company">Chernihiv National University of Technology</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     CONTACT
+═══════════════════════════════════ -->
+<div class="panel" id="panel-contact">
+  <div class="container">
+    <div class="contact-wrap">
+
+      <div class="contact-left">
+        <p class="contact-eyebrow">Get in touch</p>
+        <h2 class="contact-heading">Let's work<br><em>together.</em></h2>
+        <p class="contact-body">I'm open to new opportunities - full-time roles, freelance projects, and collaborations. Whether you have a brief or just a question, I'd love to hear from you.</p>
+
+        <div class="contact-links">
+          <a class="contact-link" href="https://linkedin.com/in/anna-sholomii" target="_blank" rel="noopener">
+            <div class="contact-link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--navy)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">LinkedIn</div>
+              <div class="contact-link-value">linkedin.com/in/anna-sholomii</div>
+            </div>
+          </a>
+          <a class="contact-link" href="mailto:anna.sholomii@gmail.com">
+            <div class="contact-link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            </div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-value">anna.sholomii@gmail.com</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-col">
+        <div class="form-heading">Let's get in touch</div>
+        <p class="form-sub">Fill in the form and I'll get back to you within 24 hours.</p>
+
+        <form id="contact-form">
+          <div class="form-group">
+            <label class="form-label" for="fc-name">Your name</label>
+            <input class="form-input" id="fc-name" type="text" placeholder="e.g. Sarah Chen" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fc-email">Email address</label>
+            <input class="form-input" id="fc-email" type="email" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fc-msg">Message</label>
+            <textarea class="form-textarea" id="fc-msg" placeholder="Tell me about the role, project, or just say hello…" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send message
+          </button>
+        </form>
+
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">✓</div>
+          <div class="form-success-title">Message sent!</div>
+          <div class="form-success-body">Thanks for reaching out. I'll be in touch within 24 hours.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer class="site-footer">
+  <div class="footer-left">
+    <span class="nav-name-dot" style="background:var(--accent)"></span>
+    Anna Sholomii · Product Designer · 2026
+  </div>
+  <div>Made with care - no templates used.</div>
+</footer>
+
+<script>
+// ─── TAB SWITCHING ───────────────────────────────────
+const tabs = document.querySelectorAll('.tab-btn');
+const panels = document.querySelectorAll('.panel');
+
+function switchTab(tabId) {
+  // Update buttons
+  tabs.forEach(t => {
+    t.classList.toggle('active', t.dataset.tab === tabId);
+  });
+  // Update panels
+  panels.forEach(p => {
+    const isActive = p.id === 'panel-' + tabId;
+    p.classList.remove('active', 'visible');
+    if (isActive) {
+      p.classList.add('active');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => p.classList.add('visible'));
+      });
+    }
+  });
+  // Scroll to top on tab change
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => switchTab(tab.dataset.tab));
+});
+
+// Activate initial panel with animation
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    document.querySelector('.panel.active')?.classList.add('visible');
+  });
+});
+
+// ─── CONTACT FORM ───────────────────────────────────
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name  = document.getElementById('fc-name').value.trim();
+  const email = document.getElementById('fc-email').value.trim();
+  const msg   = document.getElementById('fc-msg').value.trim();
+  if (!name || !email || !msg) return;
+
+  // Open mailto (works without a backend)
+  const subject = encodeURIComponent('Portfolio inquiry from ' + name);
+  const body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + msg);
+  window.location.href = 'mailto:anna.sholomii@gmail.com?subject=' + subject + '&body=' + body;
+
+  // Show success state
+  this.style.display = 'none';
+  document.getElementById('form-success').classList.add('visible');
+});
+
+// ─── URL HASH ROUTING ───────────────────────────────
+// Supports ?tab=contact etc for direct linking
+const params = new URLSearchParams(window.location.search);
+const initTab = params.get('tab');
+if (initTab && document.getElementById('panel-' + initTab)) {
+  switchTab(initTab);
+}
+</script>
+</body>
+</html>
