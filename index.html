@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anna Sholomii - Product Designer</title>
-<link rel="icon" href="/favicon.ico" />
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -14,7 +15,7 @@
   --white:#fff;--wide:1040px
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Figtree',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:'Figtree',sans-serif;font-size:1.125rem;line-height:1.75;-webkit-font-smoothing:antialiased}
 
 /* ─── NAV ─── */
 .nav{
@@ -25,7 +26,7 @@ body{background:var(--bg);color:var(--text);font-family:'Figtree',sans-serif;fon
   padding:0 48px;
 }
 .nav-name{
-  font-family:'Figtree',sans-serif;font-size:15px;font-weight:600;
+  font-family:'Figtree',sans-serif;font-size:0.9375rem;font-weight:600;
   color:var(--text);text-decoration:none;letter-spacing:-.01em;
   display:flex;align-items:center;gap:10px;
 }
@@ -35,7 +36,7 @@ body{background:var(--bg);color:var(--text);font-family:'Figtree',sans-serif;fon
 }
 .nav-tabs{display:flex;gap:2px;align-items:center}
 .tab-btn{
-  padding:8px 18px;border-radius:8px;font-size:13.5px;font-weight:500;
+  padding:8px 18px;border-radius:8px;font-size:0.8438rem;font-weight:500;
   color:var(--muted);background:none;border:none;cursor:pointer;
   transition:color .18s,background .18s;font-family:'Figtree',sans-serif;
   letter-spacing:-.01em;
@@ -64,16 +65,16 @@ main{padding-top:64px;min-height:100vh}
 ════════════════════════════════ */
 .work-intro{padding:72px 0 52px}
 .work-eyebrow{
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  font-size:0.6875rem;letter-spacing:.14em;text-transform:uppercase;
   color:var(--muted);margin-bottom:16px;font-weight:500;
 }
 .work-heading{
-  font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,56px);
-  font-weight:400;line-height:1.05;letter-spacing:-.025em;color:var(--text);
+  font-family:'Figtree',sans-serif;font-size:clamp(3.375rem,8vw,6.25rem);
+  font-weight:700;line-height:0.95;letter-spacing:-.03em;color:var(--text);
   margin-bottom:14px;
 }
 .work-heading em{color:var(--muted);font-style:italic}
-.work-sub{font-size:16px;color:var(--mid);max-width:520px;line-height:1.7}
+.work-sub{font-size:1.3125rem;color:var(--mid);max-width:520px;line-height:1.65}
 
 /* CARDS GRID */
 .cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-bottom:96px}
@@ -102,7 +103,7 @@ main{padding-top:64px;min-height:100vh}
 .card-thumb-placeholder{
   width:100%;height:100%;display:flex;align-items:center;justify-content:center;
   background:linear-gradient(135deg,#f0ede8 0%,#e8e4de 100%);
-  color:var(--muted);font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted);font-size:0.8125rem;letter-spacing:.06em;text-transform:uppercase;
   font-weight:500;gap:8px;flex-direction:column;
 }
 .card-thumb-placeholder svg{opacity:.3}
@@ -115,6 +116,14 @@ main{padding-top:64px;min-height:100vh}
 }
 .ambassador-thumb-inner svg{width:100%;max-width:260px;height:auto;display:block}
 
+/* Rent by School thumbnail */
+.card-thumb-schoolmap{background:#eef5f0;border-bottom:1px solid var(--line)}
+.schoolmap-thumb-inner{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  padding:28px 32px;
+}
+.schoolmap-thumb-inner svg{width:100%;max-width:280px;height:auto;display:block}
+
 /* Hover overlay */
 .card-overlay{
   position:absolute;inset:0;
@@ -124,7 +133,7 @@ main{padding-top:64px;min-height:100vh}
 }
 .card:hover .card-overlay{background:rgba(15,31,61,.5)}
 .card-overlay-cta{
-  color:#fff;font-size:13px;font-weight:600;letter-spacing:.02em;
+  color:#fff;font-size:0.8125rem;font-weight:600;letter-spacing:.02em;
   opacity:0;transition:opacity .18s;display:flex;align-items:center;
   gap:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(6px);
   padding:10px 20px;border-radius:8px;border:1px solid rgba(255,255,255,.25);
@@ -136,7 +145,7 @@ main{padding-top:64px;min-height:100vh}
   position:absolute;top:14px;right:14px;
   background:rgba(255,255,255,.9);backdrop-filter:blur(4px);
   border:1px solid var(--line);border-radius:20px;
-  font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  font-size:0.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
   color:var(--muted);padding:5px 12px;
 }
 
@@ -144,24 +153,24 @@ main{padding-top:64px;min-height:100vh}
 .card-body{padding:24px 26px 16px;flex:1}
 .card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
 .card-tag{
-  font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  font-size:0.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
   color:var(--muted);background:var(--bg2);padding:3px 9px;border-radius:4px;
 }
 .card-tag.hi{color:var(--accent);background:#fdf1ee}
 .card-title{
-  font-size:22px;font-weight:700;color:var(--text);
-  margin-bottom:7px;line-height:1.15;letter-spacing:-.02em;
+  font-family:'DM Serif Display',serif;font-size:clamp(1.375rem,2.5vw,1.875rem);font-weight:400;color:var(--text);
+  margin-bottom:7px;line-height:1.1;letter-spacing:-.02em;
 }
-.card-desc{font-size:14px;color:var(--mid);line-height:1.65}
+.card-desc{font-size:1.125rem;color:var(--mid);line-height:1.65}
 
 /* Card footer */
 .card-foot{
   padding:14px 26px 20px;border-top:1px solid var(--line);
   display:flex;justify-content:space-between;align-items:center;margin-top:auto;
 }
-.card-year{font-size:12px;color:var(--muted)}
+.card-year{font-size:0.8125rem;color:var(--muted)}
 .card-arrow{
-  font-size:13px;font-weight:600;color:var(--navy);
+  font-size:0.8125rem;font-weight:600;color:var(--navy);
   display:flex;align-items:center;gap:4px;
   transition:gap .18s;
 }
@@ -175,13 +184,13 @@ main{padding-top:64px;min-height:100vh}
   padding:72px 0 56px;border-bottom:1px solid var(--line);
 }
 .about-intro-label{
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  font-size:0.6875rem;letter-spacing:.14em;text-transform:uppercase;
   color:var(--muted);margin-bottom:24px;font-weight:500;
 }
 .about-intro-statement{
   font-family:'DM Serif Display',serif;
-  font-size:clamp(32px,5vw,58px);
-  font-weight:400;line-height:1.08;letter-spacing:-.025em;
+  font-size:clamp(2.125rem,4vw,3.25rem);
+  font-weight:400;line-height:1.05;letter-spacing:-.02em;
   color:var(--text);max-width:820px;
 }
 .about-intro-statement em{color:var(--muted);font-style:italic}
@@ -197,7 +206,7 @@ main{padding-top:64px;min-height:100vh}
 .about-photo img{width:100%;height:100%;object-fit:cover;display:block;object-position:center 70%}
 .about-links-col{margin-top:20px;display:flex;flex-direction:column;gap:0}
 .about-link{
-  display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;
+  display:flex;align-items:center;gap:10px;font-size:0.8125rem;font-weight:500;
   color:var(--mid);text-decoration:none;transition:color .15s;
   padding:12px 0;border-bottom:1px solid var(--line);
 }
@@ -207,37 +216,37 @@ main{padding-top:64px;min-height:100vh}
 
 .about-text-col{padding-top:4px}
 .about-name{
-  font-family:'DM Serif Display',serif;font-size:clamp(28px,3vw,38px);
+  font-family:'DM Serif Display',serif;font-size:clamp(2.125rem,4vw,3.25rem);
   font-weight:400;line-height:1.05;letter-spacing:-.02em;
   color:var(--text);margin-bottom:4px;
 }
-.about-title{font-size:14px;color:var(--navy);font-weight:500;margin-bottom:32px;letter-spacing:.01em}
-.about-body p{font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:20px}
+.about-title{font-size:0.875rem;color:var(--navy);font-weight:500;margin-bottom:32px;letter-spacing:.01em}
+.about-body p{font-size:1.125rem;color:var(--mid);line-height:1.75;margin-bottom:20px}
 .about-body p:last-child{margin-bottom:0}
 .about-body strong{color:var(--text);font-weight:600}
 
 .defines-block{margin-top:56px;padding-top:48px;border-top:1px solid var(--line)}
 .defines-block-header{margin-bottom:28px}
-.defines-block-header h3{font-family:'DM Serif Display',serif;font-size:clamp(28px,3vw,38px);font-weight:400;line-height:1.05;letter-spacing:-.02em;color:var(--text);margin:0 0 8px}
-.defines-subtitle{font-size:15px;color:var(--mid);margin:0;line-height:1.6;max-width:520px}
+.defines-block-header h3{font-family:'DM Serif Display',serif;font-size:clamp(2.125rem,4vw,3.25rem);font-weight:400;line-height:1.05;letter-spacing:-.02em;color:var(--text);margin:0 0 8px}
+.defines-subtitle{font-size:1.3125rem;color:var(--mid);margin:0;line-height:1.65;max-width:520px}
 .defines-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-bottom:0}
 .defines-card{border-radius:16px;border:1px solid var(--line);background:var(--white);padding:24px 26px;display:flex;flex-direction:column;gap:10px}
-.defines-num{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:#fdf1ee;padding:3px 9px;border-radius:4px;align-self:flex-start}
-.defines-item-title{font-size:16px;font-weight:700;color:var(--text);margin:0;line-height:1.25;letter-spacing:-.01em}
-.defines-item-body{font-size:14px;color:var(--mid);line-height:1.65;margin:0}
+.defines-num{font-size:0.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:#fdf1ee;padding:3px 9px;border-radius:4px;align-self:flex-start}
+.defines-item-title{font-size:1.125rem;font-weight:600;color:var(--text);margin:0;line-height:1.25;letter-spacing:-.01em}
+.defines-item-body{font-size:1.125rem;color:var(--mid);line-height:1.75;margin:0}
 @media(max-width:600px){.defines-grid{grid-template-columns:1fr}}
 .about-gallery{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:180px 180px 180px;gap:8px;margin:64px 0 96px}
 .about-gallery img{width:100%;height:100%;object-fit:cover;display:block;border-radius:8px}
 .about-gallery img:nth-child(3){grid-column:2/4;grid-row:2/4;object-position:center 72%}
 @media(max-width:600px){.about-gallery{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}.about-gallery img{aspect-ratio:4/3;height:auto}.about-gallery img:nth-child(3){grid-column:auto;grid-row:auto}}
 .skills-label{
-  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  font-size:0.6875rem;letter-spacing:.12em;text-transform:uppercase;
   color:var(--muted);margin-bottom:16px;font-weight:600;
 }
 .skills-row{display:flex;flex-wrap:wrap;gap:8px}
 .skill-pill{
   padding:7px 14px;border:1px solid var(--line);border-radius:20px;
-  font-size:13px;color:var(--mid);transition:border-color .15s,color .15s;
+  font-size:0.8125rem;color:var(--mid);transition:border-color .15s,color .15s;
 }
 .skill-pill:hover{border-color:var(--accent);color:var(--accent)}
 
@@ -247,22 +256,22 @@ main{padding-top:64px;min-height:100vh}
 .resume-wrap{padding:72px 0 96px}
 .resume-header{margin-bottom:40px}
 .resume-heading{
-  font-family:'DM Serif Display',serif;font-size:clamp(32px,4vw,46px);
+  font-family:'DM Serif Display',serif;font-size:clamp(2.125rem,4vw,3.25rem);
   font-weight:400;line-height:1.05;letter-spacing:-.02em;color:var(--text);
   margin-bottom:10px;
 }
 .resume-heading em{color:var(--muted);font-style:italic}
-.resume-sub{font-size:15px;color:var(--mid);margin-bottom:28px}
+.resume-sub{font-size:1.125rem;color:var(--mid);margin-bottom:28px}
 .resume-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
 .btn-primary{
   background:var(--navy);color:#fff;padding:11px 24px;border-radius:8px;
-  font-size:13px;font-weight:600;text-decoration:none;
+  font-size:0.8125rem;font-weight:600;text-decoration:none;
   display:inline-flex;align-items:center;gap:7px;
   transition:opacity .15s;font-family:'Figtree',sans-serif;
 }
 .btn-primary:hover{opacity:.85}
 .btn-outline{
-  color:var(--text);font-size:13px;text-decoration:none;
+  color:var(--text);font-size:0.8125rem;text-decoration:none;
   display:inline-flex;align-items:center;gap:6px;
   border:1.5px solid var(--line);padding:10px 22px;border-radius:8px;
   transition:border-color .15s;font-family:'Figtree',sans-serif;font-weight:500;
@@ -275,9 +284,9 @@ main{padding-top:64px;min-height:100vh}
   padding:20px 24px;background:var(--bg2);border-radius:10px;
   border:1px solid var(--line);margin-bottom:40px;
 }
-.resume-skills-group{display:flex;gap:12px;align-items:baseline;font-size:13px}
+.resume-skills-group{display:flex;gap:12px;align-items:baseline;font-size:1rem}
 .resume-skills-label{
-  font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  font-size:0.625rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   color:var(--muted);flex-shrink:0;width:72px;
 }
 .resume-skills-val{color:var(--mid);line-height:1.5}
@@ -285,23 +294,23 @@ main{padding-top:64px;min-height:100vh}
 /* Resume timeline */
 .resume-section{margin-bottom:48px}
 .resume-section-label{
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  font-size:0.6875rem;letter-spacing:.14em;text-transform:uppercase;
   color:var(--muted);font-weight:600;margin-bottom:20px;
   padding-bottom:12px;border-bottom:1px solid var(--line);
 }
 .resume-entry{display:grid;grid-template-columns:180px 1fr;gap:24px;margin-bottom:32px}
 .resume-entry:last-child{margin-bottom:0}
-.resume-date{font-size:12px;color:var(--muted);padding-top:4px;line-height:1.5}
-.resume-role{font-size:15px;font-weight:600;color:var(--text);margin-bottom:2px}
-.resume-company{font-size:13px;color:var(--accent);font-weight:500;margin-bottom:4px}
-.resume-company-note{font-size:12px;color:var(--muted);font-weight:400}
+.resume-date{font-size:0.8125rem;color:var(--muted);padding-top:4px;line-height:1.5}
+.resume-role{font-size:1.125rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.resume-company{font-size:0.9375rem;color:var(--accent);font-weight:500;margin-bottom:4px}
+.resume-company-note{font-size:0.875rem;color:var(--muted);font-weight:400}
 .resume-company-muted{color:var(--muted) !important}
-.resume-context{font-size:12px;color:var(--muted);margin-bottom:10px;font-style:italic}
-.resume-entry-desc{font-size:13px;color:var(--mid);line-height:1.65}
+.resume-context{font-size:0.9375rem;color:var(--muted);margin-bottom:10px;font-style:italic}
+.resume-entry-desc{font-size:1.125rem;color:var(--mid);line-height:1.75}
 .resume-bullets{
   margin:0;padding-left:16px;display:flex;flex-direction:column;gap:8px;
 }
-.resume-bullets li{font-size:13px;color:var(--mid);line-height:1.7}
+.resume-bullets li{font-size:1rem;color:var(--mid);line-height:1.75}
 
 /* ════════════════════════════════
    CONTACT PANEL
@@ -310,16 +319,16 @@ main{padding-top:64px;min-height:100vh}
 
 .contact-left{}
 .contact-eyebrow{
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  font-size:0.6875rem;letter-spacing:.14em;text-transform:uppercase;
   color:var(--muted);margin-bottom:16px;font-weight:500;
 }
 .contact-heading{
-  font-family:'DM Serif Display',serif;font-size:clamp(32px,4vw,46px);
+  font-family:'DM Serif Display',serif;font-size:clamp(2.125rem,4vw,3.25rem);
   font-weight:400;line-height:1.05;letter-spacing:-.02em;
   color:var(--text);margin-bottom:16px;
 }
 .contact-heading em{color:var(--muted);font-style:italic}
-.contact-body{font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:36px}
+.contact-body{font-size:1.125rem;color:var(--mid);line-height:1.75;margin-bottom:36px}
 
 .contact-links{display:flex;flex-direction:column;gap:0}
 .contact-link{
@@ -337,24 +346,24 @@ main{padding-top:64px;min-height:100vh}
 }
 .contact-link:hover .contact-link-icon{background:#e8edf5}
 .contact-link-text{}
-.contact-link-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:1px}
-.contact-link-value{font-size:14px;font-weight:500;color:inherit}
+.contact-link-label{font-size:0.6875rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:1px}
+.contact-link-value{font-size:0.875rem;font-weight:500;color:inherit}
 
 /* FORM */
 .contact-form-col{}
 .form-heading{
-  font-size:18px;font-weight:600;color:var(--text);
+  font-size:1.125rem;font-weight:600;color:var(--text);
   margin-bottom:6px;letter-spacing:-.01em;
 }
-.form-sub{font-size:14px;color:var(--muted);margin-bottom:28px}
+.form-sub{font-size:0.875rem;color:var(--muted);margin-bottom:28px}
 .form-group{margin-bottom:18px}
 .form-label{
-  display:block;font-size:12px;font-weight:600;letter-spacing:.07em;
+  display:block;font-size:0.75rem;font-weight:600;letter-spacing:.07em;
   text-transform:uppercase;color:var(--muted);margin-bottom:7px;
 }
 .form-input,.form-textarea{
   width:100%;padding:12px 16px;border:1.5px solid var(--line);
-  border-radius:8px;font-family:'Figtree',sans-serif;font-size:14px;
+  border-radius:8px;font-family:'Figtree',sans-serif;font-size:0.875rem;
   color:var(--text);background:var(--white);
   transition:border-color .15s,box-shadow .15s;
   outline:none;
@@ -366,7 +375,7 @@ main{padding-top:64px;min-height:100vh}
 .form-textarea{resize:vertical;min-height:120px;line-height:1.6}
 .form-submit{
   background:var(--navy);color:#fff;padding:13px 28px;
-  border-radius:8px;font-size:14px;font-weight:600;border:none;
+  border-radius:8px;font-size:0.875rem;font-weight:600;border:none;
   cursor:pointer;font-family:'Figtree',sans-serif;letter-spacing:-.01em;
   transition:opacity .15s,transform .1s;width:100%;
   display:flex;align-items:center;justify-content:center;gap:8px;
@@ -380,15 +389,15 @@ main{padding-top:64px;min-height:100vh}
   border:1px solid #b7dfca;border-radius:12px;text-align:center;
 }
 .form-success.visible{display:block}
-.form-success-icon{font-size:28px;margin-bottom:8px}
-.form-success-title{font-size:16px;font-weight:600;color:#1a7a3b;margin-bottom:4px}
-.form-success-body{font-size:13px;color:#2d6b45}
+.form-success-icon{font-size:1.75rem;margin-bottom:8px}
+.form-success-title{font-size:1rem;font-weight:600;color:#1a7a3b;margin-bottom:4px}
+.form-success-body{font-size:0.8125rem;color:#2d6b45}
 
 /* ─── FOOTER ─── */
 .site-footer{
   border-top:1px solid var(--line);padding:24px 48px;
   display:flex;justify-content:space-between;align-items:center;
-  font-size:12px;color:var(--muted);
+  font-size:0.8125rem;color:var(--muted);
 }
 .footer-left{display:flex;align-items:center;gap:6px}
 
@@ -405,12 +414,12 @@ main{padding-top:64px;min-height:100vh}
   .resume-skills-group{flex-direction:column;gap:2px}
   .resume-skills-label{width:auto}
   .nav-tabs{gap:0}
-  .tab-btn{padding:7px 12px;font-size:13px}
+  .tab-btn{padding:7px 12px;font-size:0.8125rem}
   .work-intro{padding:48px 0 36px}
 }
 @media(max-width:600px){
   .nav-name span{display:none}
-  .tab-btn{font-size:12px;padding:7px 10px}
+  .tab-btn{font-size:0.75rem;padding:7px 10px}
   .skills-grid{grid-template-columns:1fr}
 }
 </style>
@@ -422,7 +431,7 @@ main{padding-top:64px;min-height:100vh}
 ═══════════════════════════════════ -->
 <nav class="nav">
   <a href="#" class="nav-name" onclick="switchTab('work');return false">
-    <img src="Logo_Anna.png" alt="Anna Sholomii" style="height:36px;width:36px;border-radius:8px;display:block;flex-shrink:0">
+    <span style="font-family:'Figtree',sans-serif;font-weight:700;font-size:1.125rem;color:var(--accent);letter-spacing:-.01em;line-height:1">Anna Sholomii</span>
   </a>
   <div class="nav-tabs">
     <button class="tab-btn active" data-tab="work">Case Studies</button>
@@ -441,11 +450,61 @@ main{padding-top:64px;min-height:100vh}
   <div class="container">
     <div class="work-intro">
       <p class="work-eyebrow">Selected Work</p>
-      <h1 class="work-heading">Anna Sholomii<br><em>Senior Product Designer.</em></h1>
+      <h1 class="work-heading">Anna Sholomii<br><em>Product Designer.</em></h1>
       <p class="work-sub">End-to-end product design - from discovery and research through interaction design and usability testing.</p>
     </div>
 
     <div class="cards-grid">
+
+      <!-- RENT BY SCHOOL -->
+      <a class="card" href="schoolmap-case-study.html">
+        <div class="card-thumb card-thumb-schoolmap">
+          <div class="schoolmap-thumb-inner">
+            <svg viewBox="0 0 280 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Rent by School - Toronto">
+              <!-- Map tile lines -->
+              <rect width="280" height="120" fill="#eef5f0"/>
+              <line x1="0" y1="40" x2="280" y2="40" stroke="#d0e4d8" stroke-width="1"/>
+              <line x1="0" y1="80" x2="280" y2="80" stroke="#d0e4d8" stroke-width="1"/>
+              <line x1="70" y1="0" x2="70" y2="120" stroke="#d0e4d8" stroke-width="1"/>
+              <line x1="140" y1="0" x2="140" y2="120" stroke="#d0e4d8" stroke-width="1"/>
+              <line x1="210" y1="0" x2="210" y2="120" stroke="#d0e4d8" stroke-width="1"/>
+              <!-- Catchment polygon -->
+              <polygon points="62,22 118,18 130,68 100,88 52,74" fill="#1a7a3b" fill-opacity="0.12" stroke="#1a7a3b" stroke-width="1.5" stroke-opacity="0.4"/>
+              <!-- School pins -->
+              <circle cx="90" cy="44" r="10" fill="#0f1f3d"/>
+              <text x="90" y="48" text-anchor="middle" font-family="Figtree, sans-serif" font-size="9" font-weight="700" fill="#fff">7.8</text>
+              <circle cx="155" cy="72" r="8" fill="#EA4520"/>
+              <text x="155" y="76" text-anchor="middle" font-family="Figtree, sans-serif" font-size="7.5" font-weight="700" fill="#fff">8.2</text>
+              <circle cx="52" cy="88" r="7" fill="#1a7a3b"/>
+              <text x="52" y="92" text-anchor="middle" font-family="Figtree, sans-serif" font-size="7" font-weight="700" fill="#fff">6.9</text>
+              <!-- Rental markers -->
+              <rect x="108" y="50" width="14" height="10" rx="2" fill="#0f1f3d" fill-opacity="0.75"/>
+              <rect x="76" y="62" width="14" height="10" rx="2" fill="#0f1f3d" fill-opacity="0.75"/>
+              <rect x="92" y="70" width="14" height="10" rx="2" fill="#0f1f3d" fill-opacity="0.75"/>
+              <!-- Label -->
+              <rect x="168" y="32" width="94" height="46" rx="6" fill="#fff" fill-opacity="0.9"/>
+              <text x="180" y="50" font-family="Figtree, sans-serif" font-size="10" font-weight="600" fill="#0f1f3d">Rent by School</text>
+              <text x="180" y="64" font-family="Figtree, sans-serif" font-size="8.5" fill="#888">Toronto · 2025</text>
+            </svg>
+          </div>
+          <div class="card-overlay">
+            <span class="card-overlay-cta">View Case Study →</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="card-tag hi">Product Design</span>
+            <span class="card-tag">Civic Tech</span>
+            <span class="card-tag">Design · Dev · Data</span>
+          </div>
+          <div class="card-title">Rent by School</div>
+          <div class="card-desc">A map-first web app helping newcomer and relocating families in Toronto find rentals based on school catchment zones and Fraser Institute ratings — all in one place.</div>
+        </div>
+        <div class="card-foot">
+          <span class="card-year">2025 · Live</span>
+          <span class="card-arrow">Read case study →</span>
+        </div>
+      </a>
 
       <!-- TELO -->
       <a class="card" href="telo-case-study.html">
@@ -519,13 +578,15 @@ main{padding-top:64px;min-height:100vh}
             <span class="card-tag">Mobile · Web</span>
           </div>
           <div class="card-title">The Ambassador Platform</div>
-          <div class="card-desc">First product designer at a B2B EdTech SaaS - owned full-cycle design across four product areas, from widget to admin dashboard. Acquired by IDP Education for £9M.</div>
+          <div class="card-desc">First product designer at a B2B EdTech SaaS - owned full-cycle design across four product areas, from widget to admin dashboard. Acquired by IDP Education.</div>
         </div>
         <div class="card-foot">
           <span class="card-year">2019–2022 · Full-time</span>
           <span class="card-arrow">Read case study →</span>
         </div>
       </a>
+
+
 
     </div>
   </div>
@@ -568,7 +629,7 @@ main{padding-top:64px;min-height:100vh}
         <p class="about-title">Product Designer · UX Research · Interaction Design</p>
         <div class="about-body">
           <p>I'm a product designer who believes the best interfaces start with <strong>understanding people before opening a tool</strong>. I work end-to-end - from exploratory research and problem framing through interaction design, prototyping, and usability testing.</p>
-          <p>My background spans B2B SaaS, EdTech, and 0→1 product work. I joined The Ambassador Platform as their first and only designer, built their design system from scratch, and saw the company acquired by IDP Education for £9M.</p>
+          <p>My background spans B2B SaaS, EdTech, and 0→1 product work. I joined The Ambassador Platform as their first and only designer, built their design system from scratch, and saw the company acquired by IDP Education.</p>
           <p>I'm drawn to ambiguous problems where the solution space isn't obvious - the kind where the right question matters more than the first answer.</p>
         </div>
 
@@ -579,28 +640,28 @@ main{padding-top:64px;min-height:100vh}
     <div class="defines-block">
       <div class="defines-block-header">
         <h3>What defines me</h3>
-        <p class="defines-subtitle">The things that show up in every project. Not skills. Not tools. The beliefs that shape how I work - regardless of the product, the team, or the timeline.</p>
+        <p class="defines-subtitle">Not skills. Not tools. The beliefs that show up in every project.</p>
       </div>
       <div class="defines-grid">
         <div class="defines-card">
           <span class="defines-num">01</span>
           <p class="defines-item-title">I treat the brief as the starting point, not the answer.</p>
-          <p class="defines-item-body">When a problem arrives pre-diagnosed - "redesign the dashboard," "improve activation" - my instinct is to reopen it. Not out of resistance, but because the right frame is usually where the real leverage is. I've found that the question you start with determines more about the outcome than the solution you build.</p>
+          <p class="defines-item-body">When a problem arrives pre-diagnosed, my instinct is to reopen it. The question you start with determines more about the outcome than the solution you build.</p>
         </div>
         <div class="defines-card">
           <span class="defines-num">02</span>
           <p class="defines-item-title">Research is a habit, not a phase.</p>
-          <p class="defines-item-body">I don't treat research as a box to tick before design begins. I carry it through the whole project - interviews to frame the problem, synthesis to stay honest with findings, testing to pressure-check decisions. What I'm looking for is the gap between what people say they do and what they actually do. That gap is where the design usually lives.</p>
+          <p class="defines-item-body">I carry it through the whole project - not as a box to tick, but to stay honest. What people say they do and what they actually do are rarely the same thing.</p>
         </div>
         <div class="defines-card">
           <span class="defines-num">03</span>
           <p class="defines-item-title">I design for how people actually decide - not how they should.</p>
-          <p class="defines-item-body">Understanding cognitive biases - the ambiguity effect, anchoring, loss aversion - changed the solutions I reach for. I don't design for ideal users in perfect conditions. I design for someone who's distracted, uncertain, and making a call in under 90 seconds. Accounting for that from the start produces better products than adding it as a polish layer at the end.</p>
+          <p class="defines-item-body">I design for someone distracted, uncertain, deciding in under 90 seconds. Accounting for that upfront produces better products than adding it as a polish layer at the end.</p>
         </div>
         <div class="defines-card">
           <span class="defines-num">04</span>
           <p class="defines-item-title">The goal is removing confusion, not adding features.</p>
-          <p class="defines-item-body">The measure of a good interface isn't how much it shows - it's how little the user has to figure out. Every ambiguous label, every unnecessary step, every missing affordance is a small tax on trust. I've learned to be more ruthless about cutting than I am generous about adding. The hardest calls in design are usually about what not to include.</p>
+          <p class="defines-item-body">The measure of a good interface isn't how much it shows - it's how little the user has to figure out. I've learned to be more ruthless about cutting than generous about adding.</p>
         </div>
       </div>
     </div>
@@ -627,7 +688,7 @@ main{padding-top:64px;min-height:100vh}
     <div class="resume-wrap">
 
       <div class="resume-header">
-        <h2 class="resume-heading">Senior Product<br><em>Designer.</em></h2>
+        <h2 class="resume-heading">Product<br><em>Designer.</em></h2>
         <p class="resume-sub">3 years of end-to-end ownership at a growth-stage EdTech SaaS - from user research and design systems to shipping and measuring impact.</p>
         <div class="resume-actions">
           <a href="Resume_Anna_Sholomii.pdf" download class="btn-primary">

@@ -4,30 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Telo - Case Study</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#fff;--bg2:#f7f7f5;--text:#111;--mid:#444;--muted:#888;--line:#e8e8e4;--accent:#EA4520;--green:#1a7a3b;--navy:#0f1f3d;--white:#fff;--wide:1040px}
+:root{--bg:#fff;--bg2:#f7f7f5;--text:#111;--mid:#444;--muted:#888;--line:#e8e8e4;--accent:#EA4520;--green:#1a7a3b;--navy:#0f1f3d;--white:#fff;--wide:1040px;--bg-note:#fafafa}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Figtree',sans-serif;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:'Figtree',sans-serif;font-size:1.125rem;line-height:1.75;-webkit-font-smoothing:antialiased}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px}
-.nav-name{font-family:'Figtree',sans-serif;font-size:15px;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.nav-name{font-family:'Figtree',sans-serif;font-size:0.9375rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
 .nav-name-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block}
 .nav-tabs{display:flex;gap:2px;align-items:center}
-.tab-btn{background:none;border:none;cursor:pointer;font-family:'Figtree',sans-serif;font-size:14px;font-weight:500;color:var(--mid);padding:8px 16px;border-radius:20px;transition:background .15s,color .15s;white-space:nowrap;text-decoration:none;display:inline-block}
+.tab-btn{background:none;border:none;cursor:pointer;font-family:'Figtree',sans-serif;font-size:0.875rem;font-weight:500;color:var(--mid);padding:8px 16px;border-radius:20px;transition:background .15s,color .15s;white-space:nowrap;text-decoration:none;display:inline-block}
 .tab-btn:hover{background:var(--bg2);color:var(--text)}
 .btn-outline{border:1.5px solid var(--line);color:var(--text)}
 .btn-outline:hover{border-color:var(--text)}
 
 /* PROCESS NAV */
-.pnav{position:sticky;top:64px;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 48px;display:flex;gap:4px;align-items:center;height:48px;overflow-x:auto;scrollbar-width:none}
-.pnav::-webkit-scrollbar{display:none}
-.pnav-label{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;margin-right:8px;flex-shrink:0}
-.pnav a{font-size:14px;color:var(--muted);text-decoration:none;padding:4px 14px;border-radius:20px;white-space:nowrap;transition:background .15s,color .15s;flex-shrink:0}
-.pnav a:hover{background:var(--bg2);color:var(--text)}
-.pnav a.active{background:var(--text);color:#fff}
+.pnav{position:fixed;left:clamp(16px,2.5vw,44px);top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:0}
+.pnav-label{font-size:0.625rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:600;white-space:nowrap;margin-bottom:14px}
+.pnav a{font-size:0.8125rem;color:var(--muted);text-decoration:none;padding:5px 0 5px 12px;border-left:2px solid transparent;white-space:nowrap;display:block;transition:color .2s,border-color .2s}
+.pnav a:hover{color:var(--text);border-left-color:var(--line)}
+.pnav a.active{color:var(--text);border-left-color:var(--accent);font-weight:600}
+@media(max-width:1280px){.pnav{display:none}}
 
 /* LAYOUT */
 .container{max-width:var(--wide);margin:0 auto;padding:0 48px}
@@ -35,47 +37,47 @@ section{padding:80px 0}
 hr.d{border:none;border-top:1px solid var(--line)}
 
 /* EYEBROW */
-.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;display:flex;align-items:center;gap:10px}
-.eyebrow .n{font-family:'DM Serif Display',serif;font-size:20px;color:var(--accent);line-height:1}
+.eyebrow{font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.eyebrow .n{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--accent);line-height:1}
 
 /* TYPE */
-h1{font-family:'Figtree',sans-serif;font-size:clamp(56px,9vw,104px);font-weight:700;line-height:.95;letter-spacing:-.03em;margin-bottom:8px}
-h2{font-family:'DM Serif Display',serif;font-size:clamp(30px,4vw,50px);font-weight:400;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px}
+h1{font-family:'Figtree',sans-serif;font-size:clamp(3.375rem,8vw,6.25rem);font-weight:700;line-height:.95;letter-spacing:-.03em;margin-bottom:8px}
+h2{font-family:'DM Serif Display',serif;font-size:clamp(2.125rem,4vw,3.25rem);font-weight:400;line-height:1.05;letter-spacing:-.02em;margin-bottom:20px}
 h2 em{color:var(--muted)}
-h3{font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-p{color:var(--mid);margin-bottom:16px;line-height:1.75}
+h3{font-size:0.875rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+p{font-size:1.125rem;color:var(--mid);margin-bottom:16px;line-height:1.75}
 p:last-child{margin-bottom:0}
 strong{color:var(--text);font-weight:500}
 
 /* HERO */
 .hero{padding:120px 0 80px;border-bottom:1px solid var(--line)}
-.hero-sub{font-size:clamp(16px,2vw,21px);color:var(--mid);margin:16px 0 12px}
-.hero-desc{font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:0;max-width:640px}
+.hero-sub{font-size:1.3125rem;color:var(--mid);margin:16px 0 12px;line-height:1.65}
+.hero-desc{font-size:1.3125rem;color:var(--mid);line-height:1.65;margin-bottom:0;max-width:640px}
 .meta-row{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:32px 0}
 .mc{flex:1;padding:14px 18px;border-right:1px solid var(--line);background:var(--white)}
 .mc:last-child{border-right:none}
-.ml{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;font-weight:600}
-.mv{font-size:13px;color:var(--mid);line-height:1.4}
+.ml{font-size:0.625rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;font-weight:600}
+.mv{font-size:1rem;color:var(--mid);line-height:1.5}
 .cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.btn-dark{background:var(--navy);color:#fff;padding:11px 22px;border-radius:6px;font-size:13px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+.btn-dark{background:var(--navy);color:#fff;padding:11px 22px;border-radius:6px;font-size:0.8125rem;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
 .btn-dark:hover{opacity:.85}
-.btn-ghost{color:var(--navy);font-size:13px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--navy);padding:10px 18px;border-radius:6px}
+.btn-ghost{color:var(--navy);font-size:0.8125rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--navy);padding:10px 18px;border-radius:6px}
 .btn-ghost:hover{background:var(--navy);color:#fff}
 
 /* IMAGES */
 .img-full{width:100%;border-radius:10px;border:1px solid var(--line);display:block;box-shadow:0 4px 24px rgba(0,0,0,.06)}
-.img-caption{font-size:12px;color:var(--muted);margin-top:8px}
+.img-caption{font-size:0.8125rem;color:var(--muted);margin-top:8px}
 
 /* ENLARGE BUTTON */
 .img-wrap{position:relative;cursor:pointer;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06)}
 .img-wrap img{width:100%;display:block}
-.img-enlarge{position:absolute;bottom:14px;right:14px;background:rgba(15,31,61,.82);color:rgba(255,255,255,.8);border:none;padding:6px 14px;border-radius:4px;font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(4px)}
+.img-enlarge{position:absolute;bottom:14px;right:14px;background:rgba(15,31,61,.82);color:rgba(255,255,255,.8);border:none;padding:6px 14px;border-radius:4px;font-size:0.625rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(4px)}
 
 /* PULL QUOTE */
-.pq{font-family:'Figtree',sans-serif;font-size:clamp(15px,1.7vw,18px);font-weight:500;color:var(--text);line-height:1.65;background:var(--bg2);border-left:3px solid var(--accent);padding:18px 22px;border-radius:0 8px 8px 0;margin:28px 0}
+.pq{font-family:'Figtree',sans-serif;font-size:clamp(0.9375rem,1.7vw,1.125rem);font-weight:500;color:var(--text);line-height:1.65;background:var(--bg-note);border-left:3px solid var(--accent);padding:18px 22px;border-radius:0 8px 8px 0;margin:28px 0}
 
 /* FIGMA LINK */
-.figma-link{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:1px solid var(--line);border-radius:8px;font-size:13px;color:var(--mid);text-decoration:none;background:var(--white);transition:border-color .15s}
+.figma-link{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:1px solid var(--line);border-radius:8px;font-size:0.8125rem;color:var(--mid);text-decoration:none;background:var(--white);transition:border-color .15s}
 .figma-link:hover{border-color:var(--accent);color:var(--accent)}
 .figma-link svg{flex-shrink:0}
 
@@ -86,11 +88,11 @@ strong{color:var(--text);font-weight:500}
 .bubble.tr{border-radius:16px 4px 16px 16px}
 .bubble.bl{border-radius:16px 16px 16px 4px}
 .bubble.br{border-radius:16px 16px 4px 16px}
-.bubble-q{font-size:14px;color:var(--text);font-style:italic;line-height:1.7;margin-bottom:14px}
+.bubble-q{font-size:0.875rem;color:var(--text);font-style:italic;line-height:1.7;margin-bottom:14px}
 .bubble-who{display:flex;align-items:center;gap:8px}
-.bubble-av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0}
-.bubble-name{font-size:12px;font-weight:500;color:var(--text)}
-.bubble-src{font-size:11px;color:var(--muted)}
+.bubble-av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.625rem;font-weight:700;color:#fff;flex-shrink:0}
+.bubble-name{font-size:0.75rem;font-weight:500;color:var(--text)}
+.bubble-src{font-size:0.6875rem;color:var(--muted)}
 
 /* SCREENSHOT GRID */
 .ss-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
@@ -102,46 +104,45 @@ strong{color:var(--text);font-weight:500}
 .iter-tab{padding:18px 20px;cursor:pointer;border-right:1px solid var(--line);border-bottom:2px solid transparent}
 .iter-tab:last-child{border-right:none}
 .iter-tab.active{background:var(--white);border-bottom-color:var(--accent)}
-.iter-tab-n{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;font-weight:700}
+.iter-tab-n{font-size:0.6875rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;font-weight:700}
 .iter-tab.active .iter-tab-n{color:var(--accent)}
-.iter-tab-t{font-size:14px;font-weight:600;color:var(--text);line-height:1.35}
+.iter-tab-t{font-size:0.875rem;font-weight:600;color:var(--text);line-height:1.35}
 .iter-panel{display:none;padding:36px}
 .iter-panel.active{display:block}
-.iter-title{font-size:20px;font-weight:600;color:var(--text);margin-bottom:28px;line-height:1.2}
+.iter-title{font-size:1.25rem;font-weight:600;color:var(--text);margin-bottom:28px;line-height:1.2}
 .iter-meta{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;padding-bottom:28px;border-bottom:1px solid var(--line)}
-.iter-meta-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.iter-quote{font-size:15px;color:var(--mid);font-style:italic;line-height:1.6}
-.iter-attr{font-size:14px;font-weight:500;color:var(--text);margin-top:6px}
+.iter-meta-label{font-size:0.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.iter-quote{font-size:0.9375rem;color:var(--mid);font-style:italic;line-height:1.6}
+.iter-attr{font-size:0.875rem;font-weight:500;color:var(--text);margin-top:6px}
 .iter-ba{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.iter-ba-label{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.iter-ba-label{font-size:0.6875rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:7px}
 .iter-ba-label::before{content:'';width:18px;height:2px;border-radius:1px;display:block}
 .iter-ba-label.before{color:var(--accent)}
 .iter-ba-label.before::before{background:var(--accent)}
 .iter-ba-label.after{color:var(--green)}
 .iter-ba-label.after::before{background:var(--green)}
-.iter-change{background:#edf7f1;border-left:3px solid var(--green);padding:12px 14px;font-size:14px;color:#1e3d28;border-radius:0 6px 6px 0;margin-top:10px}
+.iter-change{background:#edf7f1;border-left:3px solid var(--green);padding:12px 14px;font-size:0.875rem;color:#1e3d28;border-radius:0 6px 6px 0;margin-top:10px}
 .iter-change strong{color:var(--green)}
-.iter-voice{font-size:13px;color:var(--muted);font-style:italic;line-height:1.55;margin-top:8px}
+.iter-voice{font-size:0.8125rem;color:var(--muted);font-style:italic;line-height:1.55;margin-top:8px}
 
 /* LEARNINGS */
 .lg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:24px 0}
 .lc{padding:20px 22px;background:var(--white);border:1px solid var(--line);border-radius:10px}
-.lcn{font-family:'DM Serif Display',serif;font-size:30px;color:#c0bdb8;margin-bottom:8px;line-height:1}
-.lc p{font-size:15px;color:var(--mid)}
+.lcn{font-family:'DM Serif Display',serif;font-size:1.875rem;color:#c0bdb8;margin-bottom:8px;line-height:1}
+.lc p{font-size:1.125rem;color:var(--mid)}
 
 /* NEXT STEPS */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
 .step{padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:var(--white)}
-.step-n{font-family:'DM Serif Display',serif;font-size:24px;color:#c0bdb8;line-height:1;margin-bottom:10px}
-.step p{font-size:15px}
-.step p{font-size:15px;color:var(--mid)}
+.step-n{font-family:'DM Serif Display',serif;font-size:1.5rem;color:#c0bdb8;line-height:1;margin-bottom:10px}
+.step p{font-size:1.125rem;color:var(--mid)}
 
 /* LIGHTBOX */
 .lb-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.9);align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
 .lb-overlay.open{display:flex}
 .lb-inner{position:relative;max-width:1100px;width:100%;max-height:90vh}
 .lb-inner img{width:100%;border-radius:10px;display:block;max-height:90vh;object-fit:contain}
-.lb-close{position:absolute;top:-14px;right:-14px;width:32px;height:32px;border-radius:50%;background:#fff;border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.lb-close{position:absolute;top:-14px;right:-14px;width:32px;height:32px;border-radius:50%;background:#fff;border:none;cursor:pointer;font-size:1.125rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 
 /* SCROLL OFFSET for sticky nav */
 [id]{scroll-margin-top:108px}
@@ -149,24 +150,24 @@ strong{color:var(--text);font-weight:500}
 /* NEXT CASE STUDY */
 .next-cs{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
 .next-cs-inner{max-width:var(--wide);margin:0 auto;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.next-cs-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.next-cs-link{font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,32px);color:var(--text);text-decoration:none;display:flex;align-items:center;gap:14px;transition:color .18s}
+.next-cs-label{font-size:0.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.next-cs-link{font-family:'DM Serif Display',serif;font-size:clamp(1.375rem,3vw,2rem);color:var(--text);text-decoration:none;display:flex;align-items:center;gap:14px;transition:color .18s}
 .next-cs-link:hover{color:var(--navy)}
 .next-cs-link svg{flex-shrink:0;transition:transform .18s}
 .next-cs-link:hover svg{transform:translateX(5px)}
 
 /* FOOTER */
-footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);font-size:12px;color:var(--muted);max-width:var(--wide);margin:0 auto}
+footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);font-size:0.8125rem;color:var(--muted);max-width:var(--wide);margin:0 auto}
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  nav,.pnav,.container,footer{padding-left:20px;padding-right:20px}
+  nav,.container,footer{padding-left:20px;padding-right:20px}
   .meta-row{flex-direction:column}
   .mc{border-right:none;border-bottom:1px solid var(--line)}
   .mc:last-child{border-bottom:none}
   .bubbles,.ss-grid,.ss-grid.three,.iter-meta,.iter-ba,.lg,.steps{grid-template-columns:1fr}
   .iter-tabs{grid-template-columns:1fr 1fr}
-  h1{font-size:52px}
+  h1{font-size:3.25rem}
 }
 @media(max-width:480px){
   .iter-tabs{grid-template-columns:1fr}
@@ -183,11 +184,11 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <div id="lb-pair" style="display:none;width:100%">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
         <div>
-          <div style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-bottom:10px">Before</div>
+          <div style="font-size:0.625rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-bottom:10px">Before</div>
           <img id="lb-img-before" src="" alt="" style="width:100%;border-radius:8px;display:block;max-height:75vh;object-fit:contain">
         </div>
         <div>
-          <div style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--green);margin-bottom:10px">After</div>
+          <div style="font-size:0.625rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--green);margin-bottom:10px">After</div>
           <img id="lb-img-after" src="" alt="" style="width:100%;border-radius:8px;display:block;max-height:75vh;object-fit:contain">
         </div>
       </div>
@@ -198,7 +199,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 
 <nav>
   <a href="index.html" class="nav-name">
-    <img src="Logo_Anna.png" alt="Anna Sholomii" style="height:36px;width:36px;border-radius:8px;display:block;flex-shrink:0">
+    <span style="font-family:'Figtree',sans-serif;font-weight:700;font-size:1.125rem;color:var(--accent);letter-spacing:-.01em;line-height:1">Anna Sholomii</span>
   </a>
   <div class="nav-tabs">
     <a href="index.html" class="tab-btn">Case Studies</a>
@@ -231,7 +232,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <p class="hero-desc">A Slack-native alert that tells founders whether a metric drop is real, where it's happening, and what to do - before standup.</p>
 
     <div class="meta-row">
-      <div class="mc"><div class="ml">Role</div><div class="mv">Solo product designer<br><span style="font-size:11px;color:var(--muted)">Research · Design · Usability Testing</span></div></div>
+      <div class="mc"><div class="ml">Role</div><div class="mv">Solo product designer<br><span style="font-size:0.6875rem;color:var(--muted)">Research · Design · Usability Testing</span></div></div>
       <div class="mc"><div class="ml">Tools</div><div class="mv">Figma · Slack Block Kit</div></div>
       <div class="mc"><div class="ml">Research</div><div class="mv">Community scan · Questionnaire · 1:1 interviews</div></div>
       <div class="mc"><div class="ml">Status</div><div class="mv">Conceptual · In progress · 2026</div></div>
@@ -293,22 +294,22 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
         <div class="lc">
           <div class="lcn">1</div>
           <p><strong>Founders juggle insights from many sources</strong> - creating cognitive overload that makes it hard to know what actually matters.</p>
-          <span style="display:inline-block;margin-top:12px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--green);background:#e8f4ee;padding:4px 10px;border-radius:4px;border:1px solid #b8ddc8">Validated</span>
+          <span style="display:inline-block;margin-top:12px;font-size:0.6875rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--green);background:#e8f4ee;padding:4px 10px;border-radius:4px;border:1px solid #b8ddc8">Validated</span>
         </div>
         <div class="lc">
           <div class="lcn">2</div>
           <p><strong>A major source of that load is interpretation uncertainty</strong> - is this drop meaningful or just noise?</p>
-          <span style="display:inline-block;margin-top:12px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--green);background:#e8f4ee;padding:4px 10px;border-radius:4px;border:1px solid #b8ddc8">Strongly validated</span>
+          <span style="display:inline-block;margin-top:12px;font-size:0.6875rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--green);background:#e8f4ee;padding:4px 10px;border-radius:4px;border:1px solid #b8ddc8">Strongly validated</span>
         </div>
         <div class="lc">
           <div class="lcn">3</div>
           <p><strong>Founders look for external benchmarks</strong> to compensate for small sample sizes and lack of confidence in early data.</p>
-          <span style="display:inline-block;margin-top:12px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--bg2);padding:4px 10px;border-radius:4px;border:1px solid var(--line)">Not validated</span>
+          <span style="display:inline-block;margin-top:12px;font-size:0.6875rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--bg2);padding:4px 10px;border-radius:4px;border:1px solid var(--line)">Not validated</span>
         </div>
         <div class="lc">
           <div class="lcn">4</div>
           <p><strong>Founders spend significant time analysing product behaviour</strong> - inefficiently and at a mental cost.</p>
-          <span style="display:inline-block;margin-top:12px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#b07d00;background:#fef8e6;padding:4px 10px;border-radius:4px;border:1px solid #f0d48a">Partially validated</span>
+          <span style="display:inline-block;margin-top:12px;font-size:0.6875rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#b07d00;background:#fef8e6;padding:4px 10px;border-radius:4px;border:1px solid #f0d48a">Partially validated</span>
         </div>
       </div>
     </div>
@@ -317,11 +318,11 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <!-- ── 02.1 COMMUNITY SCAN ── -->
     <div style="margin-top:56px">
       <div class="eyebrow"><span class="n">2.1</span> Community scan</div>
-      <h2 style="font-size:clamp(24px,3vw,38px)">Lightweight scan<br><em>of public communities.</em></h2>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.375rem)">Lightweight scan<br><em>of public communities.</em></h2>
             <p style="max-width:600px">To check whether the pain was real before investing in structured research, I observed Reddit, LinkedIn, and founder Slack groups - reading threads and posting on targeted topics across 6+ communities.</p>
 
-      <div class="finding-box" style="margin-top:28px;padding:18px 22px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;background:var(--bg2);max-width:720px">
-        <p style="margin:0;font-size:clamp(15px,1.7vw,18px);line-height:1.65;color:var(--text)"><span style="color:var(--accent);font-weight:700;margin-right:6px">→</span><strong>Finding.</strong> The pain was real and consistent across communities. Enough signal to go deeper.</p>
+      <div class="finding-box" style="margin-top:28px;padding:18px 22px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;background:var(--bg-note);max-width:720px">
+        <p style="margin:0;font-size:clamp(0.9375rem,1.7vw,1.125rem);line-height:1.65;color:var(--text)"><span style="color:var(--accent);font-weight:700;margin-right:6px">→</span><strong>Finding.</strong> The pain was real and consistent across communities. Enough signal to go deeper.</p>
       </div>
     </div>
 
@@ -329,11 +330,11 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <!-- ── 02.2 QUESTIONNAIRE ── -->
     <div style="margin-top:64px">
       <div class="eyebrow"><span class="n">2.2</span> Targeted questions to founder communities</div>
-      <h2 style="font-size:clamp(24px,3vw,38px)">Targeted questions<br><em>to founder communities.</em></h2>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.375rem)">Targeted questions<br><em>to founder communities.</em></h2>
       <p style="max-width:600px">I wanted to confirm whether the problem was missing data or missing interpretation - and whether founders felt the gap acutely enough to change behaviour. I posted targeted questions directly to Reddit founder communities and captured the responses.</p>
 
-      <div class="finding-box" style="margin-top:28px;padding:18px 22px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;background:var(--bg2);max-width:720px">
-        <p style="margin:0;font-size:clamp(15px,1.7vw,18px);line-height:1.65;color:var(--text)"><span style="color:var(--accent);font-weight:700;margin-right:6px">→</span><strong>Finding.</strong> The problem wasn't missing data - it was missing interpretation. Worth a deeper conversation.</p>
+      <div class="finding-box" style="margin-top:28px;padding:18px 22px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;background:var(--bg-note);max-width:720px">
+        <p style="margin:0;font-size:clamp(0.9375rem,1.7vw,1.125rem);line-height:1.65;color:var(--text)"><span style="color:var(--accent);font-weight:700;margin-right:6px">→</span><strong>Finding.</strong> The problem wasn't missing data - it was missing interpretation. Worth a deeper conversation.</p>
       </div>
     </div>
 
@@ -341,67 +342,67 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <!-- ── 02.3 1:1 INTERVIEWS ── -->
     <div style="margin-top:64px">
       <div class="eyebrow"><span class="n">2.3</span> 1:1 interviews</div>
-      <h2 style="font-size:clamp(24px,3vw,38px)">Deeper conversations<br><em>with a screener.</em></h2>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.375rem)">Deeper conversations<br><em>with a screener.</em></h2>
             <p style="max-width:600px">To go beyond surface patterns, I ran in-depth interviews with founders, using a screener to focus on the real decision-making process when a metric changes.</p>
 
       <div style="margin-top:40px">
-        <div style="font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text);margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--line);vertical-align:top">What founders actually said</div>
+        <div style="font-size:0.8125rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text);margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--line);vertical-align:top">What founders actually said</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
           <div style="padding:22px 24px;background:var(--white);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;gap:16px">
-            <p style="font-size:14px;font-style:italic;color:var(--text);line-height:1.7;margin:0">"...dashboards crammed with data yet fail to provide clear insights... go unnoticed."</p>
+            <p style="font-size:0.875rem;font-style:italic;color:var(--text);line-height:1.7;margin:0">"...dashboards crammed with data yet fail to provide clear insights... go unnoticed."</p>
             <div style="display:flex;align-items:center;gap:10px;margin-top:auto">
-              <div style="width:30px;height:30px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0">S</div>
-              <div><div style="font-size:12px;font-weight:500;color:var(--text)">SaaS founder · Reddit r/startups</div><span style="font-size:10px;font-weight:700;letter-spacing:.05em;background:#fde8e2;color:var(--accent);padding:2px 8px;border-radius:3px;text-transform:uppercase">2.1 Community scan</span></div>
+              <div style="width:30px;height:30px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;color:#fff;flex-shrink:0">S</div>
+              <div><div style="font-size:0.75rem;font-weight:500;color:var(--text)">SaaS founder · Reddit r/startups</div><span style="font-size:0.625rem;font-weight:700;letter-spacing:.05em;background:#fde8e2;color:var(--accent);padding:2px 8px;border-radius:3px;text-transform:uppercase">2.1 Community scan</span></div>
             </div>
           </div>
           <div style="padding:22px 24px;background:var(--white);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;gap:16px">
-            <p style="font-size:14px;font-style:italic;color:var(--text);line-height:1.7;margin:0">"Metrics exist. Dashboards exist. But when it's time to answer investor or growth questions, decisions still feel uncomfortable."</p>
+            <p style="font-size:0.875rem;font-style:italic;color:var(--text);line-height:1.7;margin:0">"Metrics exist. Dashboards exist. But when it's time to answer investor or growth questions, decisions still feel uncomfortable."</p>
             <div style="display:flex;align-items:center;gap:10px;margin-top:auto">
-              <div style="width:30px;height:30px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0">F</div>
-              <div><div style="font-size:12px;font-weight:500;color:var(--text)">Early-stage founder · Reddit r/founder</div><span style="font-size:10px;font-weight:700;letter-spacing:.05em;background:#fde8e2;color:var(--accent);padding:2px 8px;border-radius:3px;text-transform:uppercase">2.1 Community scan</span></div>
+              <div style="width:30px;height:30px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;color:#fff;flex-shrink:0">F</div>
+              <div><div style="font-size:0.75rem;font-weight:500;color:var(--text)">Early-stage founder · Reddit r/founder</div><span style="font-size:0.625rem;font-weight:700;letter-spacing:.05em;background:#fde8e2;color:var(--accent);padding:2px 8px;border-radius:3px;text-transform:uppercase">2.1 Community scan</span></div>
             </div>
           </div>
           <div style="padding:22px 24px;background:var(--white);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;gap:16px">
-            <p style="font-size:14px;font-style:italic;color:var(--text);line-height:1.7;margin:0">"Every week I'd see users sign up, poke around, then disappear, and I couldn't tell if that was normal or a real problem."</p>
+            <p style="font-size:0.875rem;font-style:italic;color:var(--text);line-height:1.7;margin:0">"Every week I'd see users sign up, poke around, then disappear, and I couldn't tell if that was normal or a real problem."</p>
             <div style="display:flex;align-items:center;gap:10px;margin-top:auto">
-              <div style="width:30px;height:30px;border-radius:50%;background:#5b7fa6;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0">E</div>
-              <div><div style="font-size:12px;font-weight:500;color:var(--text)">Early-stage founder · Reddit screener</div><span style="font-size:10px;font-weight:700;letter-spacing:.05em;background:#e8edf8;color:var(--navy);padding:2px 8px;border-radius:3px;text-transform:uppercase">2.2 Screener</span></div>
+              <div style="width:30px;height:30px;border-radius:50%;background:#5b7fa6;display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;color:#fff;flex-shrink:0">E</div>
+              <div><div style="font-size:0.75rem;font-weight:500;color:var(--text)">Early-stage founder · Reddit screener</div><span style="font-size:0.625rem;font-weight:700;letter-spacing:.05em;background:#e8edf8;color:var(--navy);padding:2px 8px;border-radius:3px;text-transform:uppercase">2.2 Screener</span></div>
             </div>
           </div>
           <div style="padding:22px 24px;background:var(--white);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;gap:16px">
-            <p style="font-size:14px;font-style:italic;color:var(--text);line-height:1.7;margin:0">"These tools are not easy to get what you need for a beginner."</p>
+            <p style="font-size:0.875rem;font-style:italic;color:var(--text);line-height:1.7;margin:0">"These tools are not easy to get what you need for a beginner."</p>
             <div style="display:flex;align-items:center;gap:10px;margin-top:auto">
-              <div style="width:30px;height:30px;border-radius:50%;background:#5b7fa6;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0">A</div>
-              <div><div style="font-size:12px;font-weight:500;color:var(--text)">Founder · Slack community</div><span style="font-size:10px;font-weight:700;letter-spacing:.05em;background:#e8edf8;color:var(--navy);padding:2px 8px;border-radius:3px;text-transform:uppercase">2.2 Screener</span></div>
+              <div style="width:30px;height:30px;border-radius:50%;background:#5b7fa6;display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;color:#fff;flex-shrink:0">A</div>
+              <div><div style="font-size:0.75rem;font-weight:500;color:var(--text)">Founder · Slack community</div><span style="font-size:0.625rem;font-weight:700;letter-spacing:.05em;background:#e8edf8;color:var(--navy);padding:2px 8px;border-radius:3px;text-transform:uppercase">2.2 Screener</span></div>
             </div>
           </div>
           <div style="padding:22px 24px;background:var(--white);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;gap:16px">
-            <p style="font-size:14px;font-style:italic;color:var(--text);line-height:1.7;margin:0">"It's frustrating... sometimes something gets wrong with our product, but we won't reach that immediately."</p>
+            <p style="font-size:0.875rem;font-style:italic;color:var(--text);line-height:1.7;margin:0">"It's frustrating... sometimes something gets wrong with our product, but we won't reach that immediately."</p>
             <div style="display:flex;align-items:center;gap:10px;margin-top:auto">
-              <div style="width:30px;height:30px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0">J</div>
-              <div><div style="font-size:12px;font-weight:500;color:var(--text)">SaaS founder · 1:1 interview</div><span style="font-size:10px;font-weight:700;letter-spacing:.05em;background:#e8f4ee;color:var(--green);padding:2px 8px;border-radius:3px;text-transform:uppercase">2.3 Interview</span></div>
+              <div style="width:30px;height:30px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;color:#fff;flex-shrink:0">J</div>
+              <div><div style="font-size:0.75rem;font-weight:500;color:var(--text)">SaaS founder · 1:1 interview</div><span style="font-size:0.625rem;font-weight:700;letter-spacing:.05em;background:#e8f4ee;color:var(--green);padding:2px 8px;border-radius:3px;text-transform:uppercase">2.3 Interview</span></div>
             </div>
           </div>
           <div style="padding:22px 24px;background:var(--white);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;gap:16px">
-            <p style="font-size:14px;font-style:italic;color:var(--text);line-height:1.7;margin:0">"Different clients, different analytics tools... Amplitude, Mixpanel, embedded... it gets complicated to keep track of everything."</p>
+            <p style="font-size:0.875rem;font-style:italic;color:var(--text);line-height:1.7;margin:0">"Different clients, different analytics tools... Amplitude, Mixpanel, embedded... it gets complicated to keep track of everything."</p>
             <div style="display:flex;align-items:center;gap:10px;margin-top:auto">
-              <div style="width:30px;height:30px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0">M</div>
-              <div><div style="font-size:12px;font-weight:500;color:var(--text)">Early-stage founder · 1:1 interview</div><span style="font-size:10px;font-weight:700;letter-spacing:.05em;background:#e8f4ee;color:var(--green);padding:2px 8px;border-radius:3px;text-transform:uppercase">2.3 Interview</span></div>
+              <div style="width:30px;height:30px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;color:#fff;flex-shrink:0">M</div>
+              <div><div style="font-size:0.75rem;font-weight:500;color:var(--text)">Early-stage founder · 1:1 interview</div><span style="font-size:0.625rem;font-weight:700;letter-spacing:.05em;background:#e8f4ee;color:var(--green);padding:2px 8px;border-radius:3px;text-transform:uppercase">2.3 Interview</span></div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="finding-box" style="margin-top:28px;padding:18px 22px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;background:var(--bg2);max-width:720px">
-        <p style="margin:0;font-size:clamp(15px,1.7vw,18px);line-height:1.65;color:var(--text)"><span style="color:var(--accent);font-weight:700;margin-right:6px">→</span><strong>Finding.</strong> Founders don't struggle to collect data - they struggle to act on it. The gap is between signal and decision.</p>
+      <div class="finding-box" style="margin-top:28px;padding:18px 22px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;background:var(--bg-note);max-width:720px">
+        <p style="margin:0;font-size:clamp(0.9375rem,1.7vw,1.125rem);line-height:1.65;color:var(--text)"><span style="color:var(--accent);font-weight:700;margin-right:6px">→</span><strong>Finding.</strong> Founders don't struggle to collect data - they struggle to act on it. The gap is between signal and decision.</p>
       </div>
     </div>
 
 
     <!-- ── RESEARCH OUTCOME ── -->
     <div style="margin-top:56px;padding:28px 32px;border:1px solid var(--line);border-radius:12px;background:var(--white)">
-      <div class="eyebrow" style="margin-bottom:12px"><span class="n" style="font-size:14px">→</span> Research outcome</div>
-      <p style="font-size:15px;color:var(--text);margin-bottom:20px">Gathered all insights and structured them using an <span style="text-decoration:underline;text-underline-offset:3px">affinity diagram</span> - clustering patterns, identifying interpretive gaps, and translating the findings into <span style="text-decoration:underline;text-underline-offset:3px">Jobs to be Done</span>.</p>
+      <div class="eyebrow" style="margin-bottom:12px"><span class="n" style="font-size:0.875rem">→</span> Research outcome</div>
+      <p style="font-size:0.9375rem;color:var(--text);margin-bottom:20px">Gathered all insights and structured them using an <span style="text-decoration:underline;text-underline-offset:3px">affinity diagram</span> - clustering patterns, identifying interpretive gaps, and translating the findings into <span style="text-decoration:underline;text-underline-offset:3px">Jobs to be Done</span>.</p>
       <a href="https://www.figma.com/board/VBOc83OU1BjedmIyCPb9VV/" target="_blank" class="figma-link">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.5" fill="#F24E1E"/><rect x="9" y="2" width="5" height="5" rx="1.5" fill="#FF7262"/><rect x="2" y="9" width="5" height="5" rx="1.5" fill="#0ACF83"/><circle cx="11.5" cy="11.5" r="2.5" fill="#1ABCFE"/></svg>
         View affinity diagram in Figma →
@@ -426,32 +427,32 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <!-- ── 03.1 OPPORTUNITY SOLUTION TREE ── -->
     <div style="margin-top:56px">
       <div class="eyebrow"><span class="n">3.1</span> Opportunity solution tree</div>
-      <h2 style="font-size:clamp(24px,3vw,38px)">Mapping the<br><em>solution space.</em></h2>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.375rem)">Mapping the<br><em>solution space.</em></h2>
       <p style="max-width:600px">I built an opportunity solution tree to connect the research findings to potential solutions - defining what Telo needed to address without jumping to features too early.</p>
 
       <div style="margin-top:32px;border:1px solid var(--line);border-radius:12px;overflow:hidden">
         <div style="padding:16px 24px;background:var(--bg2);border-bottom:1px solid var(--line);vertical-align:top">
-          <span style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)"><span style="color:var(--accent);margin-right:6px">→</span>The outcome of the Opportunity Solution Tree</span>
+          <span style="font-size:0.625rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)"><span style="color:var(--accent);margin-right:6px">→</span>The outcome of the Opportunity Solution Tree</span>
         </div>
         <div style="padding:28px">
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px">
             <div style="padding:20px;border:1px solid var(--line);border-radius:10px;background:var(--white)">
-              <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;margin-bottom:8px">Opportunity 1</div>
-              <div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">Signal clarity</div>
-              <p style="font-size:15px;color:var(--mid);margin:0;line-height:1.6">Founders can't tell if a metric drop is real or noise - they need a verdict before they can act.</p>
+              <div style="font-size:0.6875rem;font-weight:700;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;margin-bottom:8px">Opportunity 1</div>
+              <div style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:8px">Signal clarity</div>
+              <p style="font-size:0.9375rem;color:var(--mid);margin:0;line-height:1.6">Founders can't tell if a metric drop is real or noise - they need a verdict before they can act.</p>
             </div>
             <div style="padding:20px;border:1px solid var(--line);border-radius:10px;background:var(--white)">
-              <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;margin-bottom:8px">Opportunity 2</div>
-              <div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">Contextual triage</div>
-              <p style="font-size:15px;color:var(--mid);margin:0;line-height:1.6">Once something is flagged, the founder needs to know where it's happening - which segment, which account - without opening five tabs.</p>
+              <div style="font-size:0.6875rem;font-weight:700;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;margin-bottom:8px">Opportunity 2</div>
+              <div style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:8px">Contextual triage</div>
+              <p style="font-size:0.9375rem;color:var(--mid);margin:0;line-height:1.6">Once something is flagged, the founder needs to know where it's happening - which segment, which account - without opening five tabs.</p>
             </div>
             <div style="padding:20px;border:1px solid var(--line);border-radius:10px;background:var(--white)">
-              <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;margin-bottom:8px">Opportunity 3</div>
-              <div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">Suggested action</div>
-              <p style="font-size:15px;color:var(--mid);margin:0;line-height:1.6">The gap between identifying a problem and knowing what to do about it. Closing that gap is where the most time is lost.</p>
+              <div style="font-size:0.6875rem;font-weight:700;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;margin-bottom:8px">Opportunity 3</div>
+              <div style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:8px">Suggested action</div>
+              <p style="font-size:0.9375rem;color:var(--mid);margin:0;line-height:1.6">The gap between identifying a problem and knowing what to do about it. Closing that gap is where the most time is lost.</p>
             </div>
           </div>
-          <p style="font-size:15px;color:var(--mid);margin-bottom:20px">These three opportunities became the design brief - each one mapped directly to a feature in the final alert card.</p>
+          <p style="font-size:0.9375rem;color:var(--mid);margin-bottom:20px">These three opportunities became the design brief - each one mapped directly to a feature in the final alert card.</p>
           <a href="https://www.figma.com/board/EOrcqsBV9bE8ewq5L76TVD/" target="_blank" class="figma-link">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.5" fill="#F24E1E"/><rect x="9" y="2" width="5" height="5" rx="1.5" fill="#FF7262"/><rect x="2" y="9" width="5" height="5" rx="1.5" fill="#0ACF83"/><circle cx="11.5" cy="11.5" r="2.5" fill="#1ABCFE"/></svg>
             View opportunity solution tree in Figma →
@@ -464,25 +465,25 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <!-- ── 03.2 COMPETITOR ANALYSIS ── -->
     <div style="margin-top:64px">
       <div class="eyebrow"><span class="n">3.2</span> Competitor analysis</div>
-      <h2 style="font-size:clamp(24px,3vw,38px)">What's already covered.<br><em>What isn't.</em></h2>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.375rem)">What's already covered.<br><em>What isn't.</em></h2>
       <p style="max-width:600px">I mapped 9 tools across 5 dimensions to understand what existing analytics products already solve - and where the white space is. Decision support and data confidence scored lowest across every tool.</p>
 
-      <div style="margin-top:24px;overflow-x:auto;border-radius:12px;border:1px solid var(--line)"><table style="width:100%;border-collapse:collapse"><thead><tr style="background:var(--bg2)"><th style="padding:12px 14px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--line);vertical-align:top">Tool</th><th style="padding:12px 14px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:top">Signal vs noise<br><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:11px">Do they filter alerts?</span></th><th style="padding:12px 14px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:top">Context &amp; benchmarks<br><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:11px">Historical comparisons?</span></th><th style="padding:12px 14px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:top">Decision support<br><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:11px">Suggest actions?</span></th><th style="padding:12px 14px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:top">Data confidence<br><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:11px">Flag sample issues?</span></th><th style="padding:12px 14px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:top">What early-stage founders miss<br><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:11px;color:var(--muted)">The gap</span></th></tr></thead><tbody><tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:13px">Amplitude</td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#1a7a3b;font-weight:600">&#9679; Strong</span><br><span style="color:var(--mid);font-size:12px">Anomaly detection + smart alerts. Filters well.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#1a7a3b;font-weight:600">&#9679; Strong</span><br><span style="color:var(--mid);font-size:12px">Rich historical views, trend overlays.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:12px">No action templates or next-step guidance.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Sample size warnings exist but not prominent.</span></td><td style="padding:12px 14px;font-size:12px;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Complex UI. No "what now?" answer. Built for analysts.</td></tr>
-<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:13px">Mixpanel</td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Alerts exist but require manual setup per metric.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#1a7a3b;font-weight:600">&#9679; Strong</span><br><span style="color:var(--mid);font-size:12px">Cohort comparison, retention curves.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:12px">Surfaces the what, not the why or next step.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:12px">No confidence scoring on data reliability.</span></td><td style="padding:12px 14px;font-size:12px;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Still needs an analyst to interpret. Action gap wide open.</td></tr>
-<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:13px">Pendo</td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Usage-focused alerts. Metric alerts less developed.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Some benchmarks for in-app behaviour.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">NPS + guidance flows - not metric decisions.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:12px">No data quality signalling.</span></td><td style="padding:12px 14px;font-size:12px;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Product-usage framing - not a metric triage tool for founders.</td></tr>
-<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:13px">Heap</td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Auto-capture helps but alert logic is basic.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Retroactive analysis possible, not surfaced proactively.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:12px">No suggestion layer.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Session-level data quality, not metric-level.</span></td><td style="padding:12px 14px;font-size:12px;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Powerful retroactively - useless if you don't know what to look for.</td></tr>
-<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:13px">Google Analytics</td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Custom alerts available but noisy without tuning.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#1a7a3b;font-weight:600">&#9679; Strong</span><br><span style="color:var(--mid);font-size:12px">YoY, MoM comparisons built in.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:12px">Shows the data. Says nothing about what to do.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:12px">No sample confidence for small datasets.</span></td><td style="padding:12px 14px;font-size:12px;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Traffic-first. Not built for SaaS metrics or founder triage.</td></tr>
-<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:13px">PostHog</td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Alert rules exist but require engineering setup.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Trend views built in; no benchmarking.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:12px">Developer-focused - no guidance layer.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Flags some statistical significance.</span></td><td style="padding:12px 14px;font-size:12px;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Self-hosted power tool. Founders still do all the interpretation.</td></tr>
-<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:13px">Databox</td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#1a7a3b;font-weight:600">&#9679; Strong</span><br><span style="color:var(--mid);font-size:12px">Goal tracking + alerts on KPI movement.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Goal vs actual. No deep historical benchmarks.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:12px">Shows variance. Doesn't explain or guide.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:12px">No data quality layer.</span></td><td style="padding:12px 14px;font-size:12px;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Scoreboard, not a triage tool. Good at "off target" - silent on why.</td></tr>
-<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:13px">ChartMogul</td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">MRR movement alerts. Limited scope.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#1a7a3b;font-weight:600">&#9679; Strong</span><br><span style="color:var(--mid);font-size:12px">Best-in-class for subscription benchmarks.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:12px">Revenue-first - no decision support.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Some segment-level reliability signals.</span></td><td style="padding:12px 14px;font-size:12px;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Great for revenue. Narrow - nothing about product or activation.</td></tr>
-<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:13px">Klipfolio</td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Threshold alerts on dashboards.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:12px">Custom date range comparisons only.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:12px">Dashboard only - no guidance layer at all.</span></td><td style="padding:12px 14px;font-size:13px;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:12px">No quality or confidence signals.</span></td><td style="padding:12px 14px;font-size:12px;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">A display layer. No intelligence. The founder still does all the thinking.</td></tr></tbody></table><div style="padding:12px 16px;background:var(--bg2);border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div style="display:flex;gap:16px;font-size:11px;color:var(--mid)"><span><span style="color:#1a7a3b">&#9679;</span> Strong coverage</span><span><span style="color:#b07d00">&#9679;</span> Partial coverage</span><span style="color:var(--muted)">&#9675; Not covered</span></div><span style="font-size:11px;color:var(--muted)">9 tools · 5 dimensions · Based on public product docs + hands-on review</span></div></div>
+      <div style="margin-top:24px;overflow-x:auto;border-radius:12px;border:1px solid var(--line)"><table style="width:100%;border-collapse:collapse"><thead><tr style="background:var(--bg2)"><th style="padding:12px 14px;text-align:left;font-size:0.625rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--line);vertical-align:top">Tool</th><th style="padding:12px 14px;text-align:left;font-size:0.625rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:top">Signal vs noise<br><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:0.6875rem">Do they filter alerts?</span></th><th style="padding:12px 14px;text-align:left;font-size:0.625rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:top">Context &amp; benchmarks<br><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:0.6875rem">Historical comparisons?</span></th><th style="padding:12px 14px;text-align:left;font-size:0.625rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:top">Decision support<br><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:0.6875rem">Suggest actions?</span></th><th style="padding:12px 14px;text-align:left;font-size:0.625rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:top">Data confidence<br><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:0.6875rem">Flag sample issues?</span></th><th style="padding:12px 14px;text-align:left;font-size:0.625rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:top">What early-stage founders miss<br><span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:0.6875rem;color:var(--muted)">The gap</span></th></tr></thead><tbody><tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:0.8125rem">Amplitude</td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#1a7a3b;font-weight:600">&#9679; Strong</span><br><span style="color:var(--mid);font-size:0.75rem">Anomaly detection + smart alerts. Filters well.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#1a7a3b;font-weight:600">&#9679; Strong</span><br><span style="color:var(--mid);font-size:0.75rem">Rich historical views, trend overlays.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:0.75rem">No action templates or next-step guidance.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Sample size warnings exist but not prominent.</span></td><td style="padding:12px 14px;font-size:0.75rem;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Complex UI. No "what now?" answer. Built for analysts.</td></tr>
+<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:0.8125rem">Mixpanel</td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Alerts exist but require manual setup per metric.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#1a7a3b;font-weight:600">&#9679; Strong</span><br><span style="color:var(--mid);font-size:0.75rem">Cohort comparison, retention curves.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:0.75rem">Surfaces the what, not the why or next step.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:0.75rem">No confidence scoring on data reliability.</span></td><td style="padding:12px 14px;font-size:0.75rem;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Still needs an analyst to interpret. Action gap wide open.</td></tr>
+<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:0.8125rem">Pendo</td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Usage-focused alerts. Metric alerts less developed.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Some benchmarks for in-app behaviour.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">NPS + guidance flows - not metric decisions.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:0.75rem">No data quality signalling.</span></td><td style="padding:12px 14px;font-size:0.75rem;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Product-usage framing - not a metric triage tool for founders.</td></tr>
+<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:0.8125rem">Heap</td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Auto-capture helps but alert logic is basic.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Retroactive analysis possible, not surfaced proactively.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:0.75rem">No suggestion layer.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Session-level data quality, not metric-level.</span></td><td style="padding:12px 14px;font-size:0.75rem;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Powerful retroactively - useless if you don't know what to look for.</td></tr>
+<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:0.8125rem">Google Analytics</td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Custom alerts available but noisy without tuning.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#1a7a3b;font-weight:600">&#9679; Strong</span><br><span style="color:var(--mid);font-size:0.75rem">YoY, MoM comparisons built in.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:0.75rem">Shows the data. Says nothing about what to do.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:0.75rem">No sample confidence for small datasets.</span></td><td style="padding:12px 14px;font-size:0.75rem;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Traffic-first. Not built for SaaS metrics or founder triage.</td></tr>
+<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:0.8125rem">PostHog</td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Alert rules exist but require engineering setup.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Trend views built in; no benchmarking.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:0.75rem">Developer-focused - no guidance layer.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Flags some statistical significance.</span></td><td style="padding:12px 14px;font-size:0.75rem;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Self-hosted power tool. Founders still do all the interpretation.</td></tr>
+<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:0.8125rem">Databox</td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#1a7a3b;font-weight:600">&#9679; Strong</span><br><span style="color:var(--mid);font-size:0.75rem">Goal tracking + alerts on KPI movement.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Goal vs actual. No deep historical benchmarks.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:0.75rem">Shows variance. Doesn't explain or guide.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:0.75rem">No data quality layer.</span></td><td style="padding:12px 14px;font-size:0.75rem;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Scoreboard, not a triage tool. Good at "off target" - silent on why.</td></tr>
+<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:0.8125rem">ChartMogul</td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">MRR movement alerts. Limited scope.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#1a7a3b;font-weight:600">&#9679; Strong</span><br><span style="color:var(--mid);font-size:0.75rem">Best-in-class for subscription benchmarks.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:0.75rem">Revenue-first - no decision support.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Some segment-level reliability signals.</span></td><td style="padding:12px 14px;font-size:0.75rem;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">Great for revenue. Narrow - nothing about product or activation.</td></tr>
+<tr style="border-top:1px solid var(--line)"><td style="padding:12px 14px;font-weight:600;color:var(--text);white-space:nowrap;vertical-align:top;font-size:0.8125rem">Klipfolio</td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Threshold alerts on dashboards.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:#b07d00;font-weight:600">&#9679; Partial</span><br><span style="color:var(--mid);font-size:0.75rem">Custom date range comparisons only.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:0.75rem">Dashboard only - no guidance layer at all.</span></td><td style="padding:12px 14px;font-size:0.8125rem;line-height:1.5;border-left:1px solid var(--line);vertical-align:top"><span style="color:var(--muted)">&#9675; None</span><br><span style="color:var(--mid);font-size:0.75rem">No quality or confidence signals.</span></td><td style="padding:12px 14px;font-size:0.75rem;line-height:1.5;border-left:1px solid var(--line);color:var(--mid);vertical-align:top">A display layer. No intelligence. The founder still does all the thinking.</td></tr></tbody></table><div style="padding:12px 16px;background:var(--bg2);border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div style="display:flex;gap:16px;font-size:0.6875rem;color:var(--mid)"><span><span style="color:#1a7a3b">&#9679;</span> Strong coverage</span><span><span style="color:#b07d00">&#9679;</span> Partial coverage</span><span style="color:var(--muted)">&#9675; Not covered</span></div><span style="font-size:0.6875rem;color:var(--muted)">9 tools · 5 dimensions · Based on public product docs + hands-on review</span></div></div>
 
       <div style="margin-top:24px;border:1px solid var(--line);border-radius:12px;overflow:hidden">
         <div style="padding:16px 24px;background:var(--bg2);border-bottom:1px solid var(--line);vertical-align:top">
-          <span style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)"><span style="color:var(--accent);margin-right:6px">→</span>The outcome of the Competitors analysis</span>
+          <span style="font-size:0.625rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)"><span style="color:var(--accent);margin-right:6px">→</span>The outcome of the Competitors analysis</span>
         </div>
         <div style="padding:24px 28px">
-          <p style="font-size:14px;color:var(--mid);margin-bottom:20px">Decision support and data confidence were the least covered dimensions across all 9 tools - confirming the white space Telo is designed to fill.</p>
+          <p style="font-size:0.875rem;color:var(--mid);margin-bottom:20px">Decision support and data confidence were the least covered dimensions across all 9 tools - confirming the white space Telo is designed to fill.</p>
           <a href="https://www.figma.com/board/whyNIWiCaNVUjp6F6tkVQV/" target="_blank" class="figma-link">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.5" fill="#F24E1E"/><rect x="9" y="2" width="5" height="5" rx="1.5" fill="#FF7262"/><rect x="2" y="9" width="5" height="5" rx="1.5" fill="#0ACF83"/><circle cx="11.5" cy="11.5" r="2.5" fill="#1ABCFE"/></svg>
             View full competitor analysis in Figma →
@@ -495,46 +496,46 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <!-- ── 03.3 IMPACT-EFFORT MATRIX ── -->
     <div style="margin-top:64px">
       <div class="eyebrow"><span class="n">3.3</span> Impact–effort matrix</div>
-      <h2 style="font-size:clamp(24px,3vw,38px)">MVP, V1, V2.<br><em>What ships when.</em></h2>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.375rem)">MVP, V1, V2.<br><em>What ships when.</em></h2>
       <p style="max-width:600px">I prioritised the feature set across three releases using an impact–effort matrix. The MVP owns the alert-to-action loop entirely. V1 extends the intelligence layer. V2 introduces multi-account intelligence.</p>
 
 
       <div style="margin-top:32px;border:1px solid var(--line);border-radius:12px;overflow:hidden">
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr">
           <div style="padding:24px;border-right:1px solid var(--line)">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px"><span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;padding:5px 12px;border-radius:5px">MVP</span><span style="font-size:12px;color:var(--muted)">High impact · Low effort</span></div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px"><span style="background:var(--accent);color:#fff;font-size:0.6875rem;font-weight:700;letter-spacing:.06em;padding:5px 12px;border-radius:5px">MVP</span><span style="font-size:0.75rem;color:var(--muted)">High impact · Low effort</span></div>
             <div style="display:flex;flex-direction:column;gap:8px">
-              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 7px 7px 0;font-size:13px;color:var(--mid)">Alert severity signal (green / orange / red)</div>
-              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 7px 7px 0;font-size:13px;color:var(--mid)">Confidence score + data point count</div>
-              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 7px 7px 0;font-size:13px;color:var(--mid)">Probable causes ranked by likelihood</div>
-              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 7px 7px 0;font-size:13px;color:var(--mid)">Suggested actions + @mention</div>
-              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 7px 7px 0;font-size:13px;color:var(--mid)">30-day baseline comparison</div>
+              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 7px 7px 0;font-size:0.8125rem;color:var(--mid)">Alert severity signal (green / orange / red)</div>
+              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 7px 7px 0;font-size:0.8125rem;color:var(--mid)">Confidence score + data point count</div>
+              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 7px 7px 0;font-size:0.8125rem;color:var(--mid)">Probable causes ranked by likelihood</div>
+              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 7px 7px 0;font-size:0.8125rem;color:var(--mid)">Suggested actions + @mention</div>
+              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 7px 7px 0;font-size:0.8125rem;color:var(--mid)">30-day baseline comparison</div>
             </div>
           </div>
           <div style="padding:24px;border-right:1px solid var(--line)">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px"><span style="border:1.5px solid var(--line);color:var(--mid);font-size:11px;font-weight:700;letter-spacing:.06em;padding:4px 12px;border-radius:5px">V1</span><span style="font-size:12px;color:var(--muted)">High impact · Medium effort</span></div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px"><span style="border:1.5px solid var(--line);color:var(--mid);font-size:0.6875rem;font-weight:700;letter-spacing:.06em;padding:4px 12px;border-radius:5px">V1</span><span style="font-size:0.75rem;color:var(--muted)">High impact · Medium effort</span></div>
             <div style="display:flex;flex-direction:column;gap:8px">
-              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-radius:7px;font-size:13px;color:var(--mid)">Multi-account view - which clients are affected</div>
-              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-radius:7px;font-size:13px;color:var(--mid)">Alert digest - daily summary across all accounts</div>
-              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-radius:7px;font-size:13px;color:var(--mid)">Personalised alert thresholds per metric</div>
+              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-radius:7px;font-size:0.8125rem;color:var(--mid)">Multi-account view - which clients are affected</div>
+              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-radius:7px;font-size:0.8125rem;color:var(--mid)">Alert digest - daily summary across all accounts</div>
+              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-radius:7px;font-size:0.8125rem;color:var(--mid)">Personalised alert thresholds per metric</div>
             </div>
           </div>
           <div style="padding:24px">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px"><span style="border:1.5px solid var(--line);color:var(--mid);font-size:11px;font-weight:700;letter-spacing:.06em;padding:4px 12px;border-radius:5px">V2</span><span style="font-size:12px;color:var(--muted)">High impact · High effort</span></div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px"><span style="border:1.5px solid var(--line);color:var(--mid);font-size:0.6875rem;font-weight:700;letter-spacing:.06em;padding:4px 12px;border-radius:5px">V2</span><span style="font-size:0.75rem;color:var(--muted)">High impact · High effort</span></div>
             <div style="display:flex;flex-direction:column;gap:8px">
-              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-radius:7px;font-size:13px;color:var(--mid)">Cross-account pattern detection - outlier vs trend</div>
-              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-radius:7px;font-size:13px;color:var(--mid)">Industry benchmarks - how does this compare to peers</div>
-              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-radius:7px;font-size:13px;color:var(--mid)">Predictive signals - flag before the drop happens</div>
+              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-radius:7px;font-size:0.8125rem;color:var(--mid)">Cross-account pattern detection - outlier vs trend</div>
+              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-radius:7px;font-size:0.8125rem;color:var(--mid)">Industry benchmarks - how does this compare to peers</div>
+              <div style="padding:10px 12px;background:var(--white);border:1px solid var(--line);border-radius:7px;font-size:0.8125rem;color:var(--mid)">Predictive signals - flag before the drop happens</div>
             </div>
           </div>
         </div>
       </div>
       <div style="margin-top:32px;border:1px solid var(--line);border-radius:12px;overflow:hidden">
         <div style="padding:16px 24px;background:var(--bg2);border-bottom:1px solid var(--line);vertical-align:top">
-          <span style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)"><span style="color:var(--accent);margin-right:6px">→</span>The outcome of the Impact-Effort Matrix</span>
+          <span style="font-size:0.625rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)"><span style="color:var(--accent);margin-right:6px">→</span>The outcome of the Impact-Effort Matrix</span>
         </div>
         <div style="padding:24px 28px">
-          <p style="font-size:14px;color:var(--mid);margin-bottom:20px">Three releases. One clear constraint: the MVP had to close the alert-to-action loop entirely on its own - nothing deferred to V1 that the founder would need in the first 2 minutes. Everything else was sequenced by <span style="text-decoration:underline;text-underline-offset:3px">what added value without adding complexity</span>.</p>
+          <p style="font-size:0.875rem;color:var(--mid);margin-bottom:20px">Three releases. One clear constraint: the MVP had to close the alert-to-action loop entirely on its own - nothing deferred to V1 that the founder would need in the first 2 minutes. Everything else was sequenced by <span style="text-decoration:underline;text-underline-offset:3px">what added value without adding complexity</span>.</p>
           <a href="https://www.figma.com/board/LTivvJ5eBrAjvIxgZE3fqm/" target="_blank" class="figma-link">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.5" fill="#F24E1E"/><rect x="9" y="2" width="5" height="5" rx="1.5" fill="#FF7262"/><rect x="2" y="9" width="5" height="5" rx="1.5" fill="#0ACF83"/><circle cx="11.5" cy="11.5" r="2.5" fill="#1ABCFE"/></svg>
             View impact-effort matrix in Figma →
@@ -563,7 +564,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     </div>
 
     <div style="margin-top:56px">
-      <h2 style="font-size:clamp(24px,3vw,38px)">Her morning,<br><em>mapped.</em></h2>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.375rem)">Her morning,<br><em>mapped.</em></h2>
       <p style="max-width:600px">Five steps. Five moments where she gets stuck. Each became a design constraint - addressed in the order they happen during her morning, not in the order that felt logical on a whiteboard.</p>
 
       <div class="img-wrap" style="margin-top:24px" onclick="openLb('Customer Journey Map .png')">
@@ -591,7 +592,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <!-- ── 05.1 SKETCHES ── -->
     <div style="margin-top:56px">
       <div class="eyebrow"><span class="n">5.1</span> Sketches</div>
-      <h2 style="font-size:clamp(24px,3vw,38px)">Sketches.</h2>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.375rem)">Sketches.</h2>
       <p style="max-width:600px">Eight variations exploring how a Slack-native alert could be structured - what to show upfront, what to hide, how much context is enough before action. The progressive disclosure pattern emerged here, not from pixels.</p>
 
       <div class="img-wrap" style="margin-top:24px" onclick="openLb('Sketches.png')">
@@ -605,7 +606,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <!-- ── 05.2 SLACK BLOCK KIT DESIGNS ── -->
     <div style="margin-top:64px">
       <div class="eyebrow"><span class="n">5.2</span> Slack Block Kit designs</div>
-      <h2 style="font-size:clamp(24px,3vw,38px)">Built on real<br><em>Slack components.</em></h2>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.375rem)">Built on real<br><em>Slack components.</em></h2>
       <p style="max-width:600px">Rather than wireframes, I used real Slack Block Kit components from the start. Usability testing happened on the actual medium - not a simulation. The same components tested became the shipped output.</p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px">
@@ -673,8 +674,8 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
           </div>
           <div>
             <div class="iter-meta-label">Principle</div>
-            <div style="display:inline-block;font-size:11px;font-weight:600;color:var(--navy);background:#e8edf8;border:1px solid #c0cce8;padding:3px 10px;border-radius:4px;margin-bottom:8px">Ambiguity effect</div>
-            <p style="font-size:14px;color:var(--mid)">People avoid acting on information they can't evaluate.</p>
+            <div style="display:inline-block;font-size:0.6875rem;font-weight:600;color:var(--navy);background:#e8edf8;border:1px solid #c0cce8;padding:3px 10px;border-radius:4px;margin-bottom:8px">Ambiguity effect</div>
+            <p style="font-size:0.875rem;color:var(--mid)">People avoid acting on information they can't evaluate.</p>
           </div>
         </div>
         <div class="iter-ba">
@@ -708,8 +709,8 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
           </div>
           <div>
             <div class="iter-meta-label">Principle</div>
-            <div style="display:inline-block;font-size:11px;font-weight:600;color:var(--navy);background:#e8edf8;border:1px solid #c0cce8;padding:3px 10px;border-radius:4px;margin-bottom:8px">Hick's Law</div>
-            <p style="font-size:14px;color:var(--mid)">Equal-weight options delay decisions.</p>
+            <div style="display:inline-block;font-size:0.6875rem;font-weight:600;color:var(--navy);background:#e8edf8;border:1px solid #c0cce8;padding:3px 10px;border-radius:4px;margin-bottom:8px">Hick's Law</div>
+            <p style="font-size:0.875rem;color:var(--mid)">Equal-weight options delay decisions.</p>
           </div>
         </div>
         <div class="iter-ba">
@@ -743,8 +744,8 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
           </div>
           <div>
             <div class="iter-meta-label">Principle</div>
-            <div style="display:inline-block;font-size:11px;font-weight:600;color:var(--navy);background:#e8edf8;border:1px solid #c0cce8;padding:3px 10px;border-radius:4px;margin-bottom:8px">Visibility of system status</div>
-            <p style="font-size:14px;color:var(--mid)">Users need to know what happens before they commit.</p>
+            <div style="display:inline-block;font-size:0.6875rem;font-weight:600;color:var(--navy);background:#e8edf8;border:1px solid #c0cce8;padding:3px 10px;border-radius:4px;margin-bottom:8px">Visibility of system status</div>
+            <p style="font-size:0.875rem;color:var(--mid)">Users need to know what happens before they commit.</p>
           </div>
         </div>
         <div class="iter-ba">
@@ -778,8 +779,8 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
           </div>
           <div>
             <div class="iter-meta-label">Principle</div>
-            <div style="display:inline-block;font-size:11px;font-weight:600;color:var(--navy);background:#e8edf8;border:1px solid #c0cce8;padding:3px 10px;border-radius:4px;margin-bottom:8px">User control + feedback</div>
-            <p style="font-size:14px;color:var(--mid)">Systems that respond to correction feel collaborative, not authoritative.</p>
+            <div style="display:inline-block;font-size:0.6875rem;font-weight:600;color:var(--navy);background:#e8edf8;border:1px solid #c0cce8;padding:3px 10px;border-radius:4px;margin-bottom:8px">User control + feedback</div>
+            <p style="font-size:0.875rem;color:var(--mid)">Systems that respond to correction feel collaborative, not authoritative.</p>
           </div>
         </div>
         <div class="iter-ba">
@@ -826,7 +827,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 
     <div id="proto-flow" style="margin-top:40px;border-top:1px solid var(--line);padding-top:40px">
       <h3 style="margin-bottom:6px">Full prototype flow</h3>
-      <p style="font-size:14px;color:var(--mid);margin-bottom:20px">Collapsed state → expanded → @mention → message sent. 12 screens.</p>
+      <p style="font-size:0.875rem;color:var(--mid);margin-bottom:20px">Collapsed state → expanded → @mention → message sent. 12 screens.</p>
       <video id="proto-video" playsinline muted loop poster="1. Collapsed state.png" style="width:100%;border-radius:10px;border:1px solid var(--line);display:block;background:#000;box-shadow:0 4px 24px rgba(0,0,0,.06)">
         <source src="Telo_interactive_prototype_clip.mov" type="video/quicktime">
         <source src="telo-prototype.mp4" type="video/mp4">
@@ -860,7 +861,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <!-- ── 08.2 NEXT STEPS ── -->
     <div style="margin-top:64px">
       <div class="eyebrow" style="margin-bottom:20px"><span class="n">8.2</span> What V1 would add</div>
-      <h2 style="font-size:clamp(24px,3vw,38px)">What v1 would<br><em>add.</em></h2>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.375rem)">What v1 would<br><em>add.</em></h2>
       <p style="max-width:600px;margin-bottom:24px">The MVP owns the alert-to-action loop for a single account. V1 extends the intelligence layer - but needs more rounds of testing first.</p>
 
       <div class="steps">
@@ -878,17 +879,17 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 ═══════════════════════════════════════════ -->
 <div style="background:var(--navy);padding:120px 48px 64px">
   <div style="max-width:860px;margin:0 auto">
-    <div style="font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,36px);font-weight:400;font-style:italic;color:#fff;line-height:1.2;margin-bottom:48px">"The product doesn't make Sophie an analyst. It makes the analyst unnecessary."</div>
+    <div style="font-family:'DM Serif Display',serif;font-size:clamp(1.25rem,3vw,2.25rem);font-weight:400;font-style:italic;color:#fff;line-height:1.2;margin-bottom:48px">"The product doesn't make Sophie an analyst. It makes the analyst unnecessary."</div>
     <div style="width:48px;height:2px;background:var(--accent);border-radius:1px;margin-bottom:48px"></div>
-    <p style="color:rgba(255,255,255,.35);font-size:13px;margin:0;line-height:1.7">Signal intelligence for early-stage SaaS founders.<br>A conceptual project - research, design, and prototype.</p>
+    <p style="color:rgba(255,255,255,.35);font-size:0.8125rem;margin:0;line-height:1.7">Signal intelligence for early-stage SaaS founders.<br>A conceptual project - research, design, and prototype.</p>
   </div>
 </div>
 
 <div class="next-cs">
   <div class="next-cs-inner" style="flex-direction:column;align-items:center;text-align:center;gap:16px">
     <span class="next-cs-label">Next case study</span>
-    <div style="font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,36px);color:var(--text)">The Ambassador Platform</div>
-    <a href="ambassador-case-study.html" class="btn-dark">View case study →</a>
+    <div style="font-family:'DM Serif Display',serif;font-size:clamp(1.375rem,3vw,2.25rem);color:var(--text)">Rent by School</div>
+    <a href="schoolmap-case-study.html" class="btn-dark">View case study →</a>
   </div>
 </div>
 
