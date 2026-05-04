@@ -113,6 +113,20 @@ strong{color:#3F3F47;font-weight:600}
 .kpi-name{font-family:'Figtree',sans-serif;font-size:1.125rem;font-weight:700;color:#3F3F47;line-height:1.2}
 .kpi-desc{font-size:1rem;color:#71717C;line-height:1.6;margin:0}
 .kpi-target{font-size:0.875rem;color:#3F3F47;font-weight:600;background:#F5F5F5;border-radius:6px;padding:6px 10px;margin-top:auto;display:inline-block;align-self:flex-start}
+.ds-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:0.9375rem}
+.ds-table th{background:#3F3F47;color:#fff;font-family:'Figtree',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;text-align:left}
+.ds-table th:first-child{border-radius:8px 0 0 0}.ds-table th:last-child{border-radius:0 8px 0 0}
+.ds-table td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:#71717C;line-height:1.55}
+.ds-table td:first-child{font-weight:600;color:#3F3F47;white-space:nowrap}
+.ds-table td strong{color:#3F3F47}
+.ds-table tr:last-child td{border-bottom:none}
+.ds-table tr:nth-child(even) td{background:#FAFAFA}
+.arch-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:24px 0}
+.arch-step{padding:18px 20px;display:flex;flex-direction:column;gap:6px;border:1px solid var(--line);margin-right:-1px}
+.arch-step:first-child{border-radius:10px 0 0 10px}.arch-step:last-child{border-radius:0 10px 10px 0;margin-right:0}
+.arch-step-n{font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.arch-step-title{font-family:'Figtree',sans-serif;font-size:1rem;font-weight:700;color:#3F3F47}
+.arch-step-desc{font-size:0.875rem;color:#71717C;line-height:1.5}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
 .step{padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:var(--white)}
 .step-n{font-family:'Figtree',sans-serif;font-size:1.5rem;color:var(--color-linen);line-height:1;margin-bottom:10px}
@@ -316,7 +330,53 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
   <div class="container">
     <div class="eyebrow"><span class="n">2</span> Research</div>
     <h2>Is it just you,<br><em>or do others feel it too?</em></h2>
-    <p style="max-width:680px">You’re facing the problem. Before designing anything, I needed to check: is this real and widespread — or just an assumption? Hey Reddit, have you heard of something similar?</p>
+
+    <div style="background:#F5F5F5;border-radius:14px;padding:28px 32px;margin-bottom:36px;max-width:720px">
+      <div style="font-size:0.6875rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:16px">Executive Summary - Research Methodology</div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;gap:12px">
+          <span style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;min-width:80px;padding-top:2px">Primary</span>
+          <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">Synthesis of 500+ qualitative data points from local community forums (Reddit / RedFlagDeals).</p>
+        </div>
+        <div style="display:flex;gap:12px">
+          <span style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;min-width:80px;padding-top:2px">Secondary</span>
+          <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">Audit of TDSB/TCDSB geospatial street guides vs. commercial real estate APIs.</p>
+        </div>
+        <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;gap:12px">
+          <span style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;min-width:80px;padding-top:2px">Key Finding</span>
+          <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">The <strong style="color:#3F3F47">"Relocator’s Blindspot"</strong> - users trust realtors for catchment data, yet 40% of listings contain boundary errors.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:40px">
+      <p style="font-size:0.875rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px">The Fragmented Reality</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr auto 1fr;gap:10px;align-items:center">
+        <div style="background:var(--white);border:1px solid var(--line);border-radius:10px;padding:16px 14px;text-align:center">
+          <div style="font-size:1.25rem;margin-bottom:6px">🏫</div>
+          <div style="font-size:0.8125rem;font-weight:600;color:#3F3F47;margin-bottom:4px">TDSB / TCDSB</div>
+          <div style="font-size:0.75rem;color:#71717C;line-height:1.4">Catchment maps - PDF only, no search</div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--line);border-radius:10px;padding:16px 14px;text-align:center">
+          <div style="font-size:1.25rem;margin-bottom:6px">🏠</div>
+          <div style="font-size:0.8125rem;font-weight:600;color:#3F3F47;margin-bottom:4px">Rentals.ca</div>
+          <div style="font-size:0.75rem;color:#71717C;line-height:1.4">Listings only - zero school data</div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--line);border-radius:10px;padding:16px 14px;text-align:center">
+          <div style="font-size:1.25rem;margin-bottom:6px">📊</div>
+          <div style="font-size:0.8125rem;font-weight:600;color:#3F3F47;margin-bottom:4px">Fraser Institute</div>
+          <div style="font-size:0.75rem;color:#71717C;line-height:1.4">Rankings only - no location layer</div>
+        </div>
+        <div style="text-align:center;font-family:’Figtree’,sans-serif;font-size:1.25rem;font-weight:700;color:var(--accent)">→</div>
+        <div style="background:#3F3F47;border-radius:10px;padding:16px 14px;text-align:center">
+          <div style="font-size:1.25rem;margin-bottom:6px">🗺️</div>
+          <div style="font-size:0.8125rem;font-weight:600;color:#fff;margin-bottom:4px">Rent by School</div>
+          <div style="font-size:0.75rem;color:rgba(255,255,255,.65);line-height:1.4">One map. All three layers.</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="max-width:680px">You’re facing the problem. Before designing anything, I needed to check: is this real and widespread - or just an assumption? Hey Reddit, have you heard of something similar?</p>
 
 
     <div style="margin-top:40px;margin-bottom:48px">
@@ -383,7 +443,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
                 <img src="comment_locator_5.png" style="width:100%;border-radius:10px;border:1px solid var(--line);display:block" alt="">
               </div>
               <div style="flex:1.6;position:relative;cursor:zoom-in" class="img-wrap" onclick="openLb(this.querySelector('img').src)">
-                <img src="comment_locator_5.png" loading="lazy" style="width:100%;border-radius:10px;border:1px solid var(--line);display:block" alt="r/oakville — school quality as the top deciding factor">
+                <img src="comment_locator_5.png" loading="lazy" style="width:100%;border-radius:10px;border:1px solid var(--line);display:block" alt="r/oakville - school quality as the top deciding factor">
               </div>
               <div style="flex:1;opacity:.55;filter:blur(0.5px);transition:all .4s;pointer-events:none">
                 <img src="comment_locator_5.png" style="width:100%;border-radius:10px;border:1px solid var(--line);display:block" alt="">
@@ -456,16 +516,16 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
       <p style="max-width:640px;margin-top:32px">Yep, I knew that. Let’s use my design superpower and address their frustrations.</p>
       <p style="max-width:640px;margin-top:8px">Which pain points do they mention:</p>
       <div class="lg" style="margin-top:20px">
-        <div class="lc"><div class="lcn">1</div><p><strong>No map</strong> — and rentals live somewhere else entirely</p></div>
-        <div class="lc"><div class="lcn">2</div><p><strong>Tools show proximity, not assignment</strong> — nearby ≠ assigned</p></div>
+        <div class="lc"><div class="lcn">1</div><p><strong>No map</strong> - and rentals live somewhere else entirely</p></div>
+        <div class="lc"><div class="lcn">2</div><p><strong>Tools show proximity, not assignment</strong> - nearby ≠ assigned</p></div>
         <div class="lc"><div class="lcn">3</div><p><strong>Fraser ratings are hard to find</strong> and navigate</p></div>
         <div class="lc"><div class="lcn">4</div><p><strong>French Immersion boundaries</strong> are undocumented</p></div>
         <div class="lc"><div class="lcn">5</div><p><strong>Realtors actively mislead</strong> families on zones</p></div>
-        <div class="lc"><div class="lcn">6</div><p><strong>Schools are full</strong> — catchment doesn’t guarantee a place</p></div>
+        <div class="lc"><div class="lcn">6</div><p><strong>Schools are full</strong> - catchment doesn’t guarantee a place</p></div>
         <div class="lc"><div class="lcn">7</div><p><strong>Condo buildings can be excluded</strong> from their local catchment</p></div>
         <div class="lc"><div class="lcn">8</div><p><strong>Fraser systematically underrates</strong> newcomer-heavy schools</p></div>
       </div>
-      <p style="max-width:640px;margin-top:24px">Ouf, quite a lot to start with. Let’s first deliver basic value and cover the major frustrations — reduce decision time by consolidating all necessary information in one place, show exact catchment boundaries (not proximity), and surface school rankings clearly.</p>
+      <p style="max-width:640px;margin-top:24px">Ouf, quite a lot to start with. Let’s first deliver basic value and cover the major frustrations - reduce decision time by consolidating all necessary information in one place, show exact catchment boundaries (not proximity), and surface school rankings clearly.</p>
   </div>
 </section>
 
@@ -493,7 +553,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
   <div class="container">
     <div class="eyebrow"><span class="n">4</span> Design</div>
     <h2>Two directions<br><em>explored.</em></h2>
-    <p style="max-width:680px">I had 2 winning ideas — map-first (classic) and AI bot first (modern). The question: when it comes to a serious decision, do I want the process controlled by AI only? I don’t think so. Let’s leave AI for the next iteration and proceed with map-first.</p>
+    <p style="max-width:680px">I had 2 winning ideas - map-first (classic) and AI bot first (modern). The question: when it comes to a serious decision, do I want the process controlled by AI only? I don’t think so. Let’s leave AI for the next iteration and proceed with map-first.</p>
 
     <div class="ss-grid" style="margin-top:36px">
       <div>
@@ -501,24 +561,24 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
           <img src="sketch-g8-map-first.jpg" alt="Map first sketches" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="sketch-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-            <span class="sketch-placeholder-label">Map first — sketch</span>
+            <span class="sketch-placeholder-label">Map first - sketch</span>
             <span class="sketch-placeholder-hint">save as sketch-g8-map-first.jpg</span>
           </div>
           <button class="img-enlarge" onclick="event.stopPropagation();openLb('sketch-g8-map-first.jpg')">Enlarge ↗</button>
         </div>
-        <p class="img-caption" style="margin-top:10px"><strong>Map first</strong> — full-screen map, scored school markers, catchment boundary drawn on tap, school detail panel, rental handoff. A variation showed rental count per catchment zone, combining supply and quality in one view.</p>
+        <p class="img-caption" style="margin-top:10px"><strong>Map first</strong> - full-screen map, scored school markers, catchment boundary drawn on tap, school detail panel, rental handoff. A variation showed rental count per catchment zone, combining supply and quality in one view.</p>
       </div>
       <div>
         <div class="img-wrap" onclick="this.querySelector('img').naturalWidth?openLb('sketch-g8-filter-first.jpg'):null">
           <img src="sketch-g8-filter-first.jpg" alt="Filter first sketches" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="sketch-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-            <span class="sketch-placeholder-label">Filter first — sketch</span>
+            <span class="sketch-placeholder-label">Filter first - sketch</span>
             <span class="sketch-placeholder-hint">save as sketch-g8-filter-first.jpg</span>
           </div>
           <button class="img-enlarge" onclick="event.stopPropagation();openLb('sketch-g8-filter-first.jpg')">Enlarge ↗</button>
         </div>
-        <p class="img-caption" style="margin-top:10px"><strong>Filter first</strong> — explored as a form, a wizard, and an AI bot. The AI bot variant — letting Michelle describe neighbourhood criteria in natural language — showed the most promise for a newcomer unfamiliar with Toronto.</p>
+        <p class="img-caption" style="margin-top:10px"><strong>Filter first</strong> - explored as a form, a wizard, and an AI bot. The AI bot variant - letting Michelle describe neighbourhood criteria in natural language - showed the most promise for a newcomer unfamiliar with Toronto.</p>
       </div>
     </div>
 
@@ -536,16 +596,202 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
       </div>
     </div>
 
+    <div style="margin-top:48px">
+      <h3 style="font-family:'Figtree',sans-serif;font-size:1.5rem;font-weight:700;color:#3F3F47;margin-bottom:8px">The "Aha!" Moment: <em style="color:#71717C;font-style:normal">Insight-Driven Design</em></h3>
+      <p style="max-width:680px;color:#71717C;font-size:1.125rem;margin-bottom:28px">Two discoveries from research forced me to abandon conventional patterns and rebuild the architecture around what users actually need.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+
+        <div style="background:#F5F5F5;border-radius:14px;padding:28px">
+          <div style="font-size:0.6875rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:12px">Insight 1</div>
+          <div style="font-family:'Figtree',sans-serif;font-size:1.125rem;font-weight:700;color:#3F3F47;margin-bottom:16px">The "200-Meter Mistake"</div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div>
+              <div style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">The Discovery</div>
+              <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">Reddit users revealed that being "across the street" from a school often means being in a completely different district.</p>
+            </div>
+            <div style="border-top:1px solid var(--line);padding-top:12px">
+              <div style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">The Design Pivot</div>
+              <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">I abandoned the standard "Search by Proximity" model and built the architecture around <strong style="color:#3F3F47">Hard Catchment Boundaries</strong>. If a house isn't in the polygon, it doesn't exist for Michelle.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:#F5F5F5;border-radius:14px;padding:28px">
+          <div style="font-size:0.6875rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:12px">Insight 2</div>
+          <div style="font-family:'Figtree',sans-serif;font-size:1.125rem;font-weight:700;color:#3F3F47;margin-bottom:16px">The "Fraser Score" is a Distraction</div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div>
+              <div style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">The Discovery</div>
+              <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">High-ranking schools often score high because they lack ESL students - not because the teaching is better. International relocators like Michelle are systematically misled by this number.</p>
+            </div>
+            <div style="border-top:1px solid var(--line);padding-top:12px">
+              <div style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">The Design Pivot</div>
+              <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">I introduced <strong style="color:#3F3F47">Contextual Ratings</strong>. Instead of just a "7.4/10," a "Methodology Explainer" builds trust by admitting what the data doesn't show.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="margin-top:56px">
+      <h3 style="font-family:’Figtree’,sans-serif;font-size:1.5rem;font-weight:700;color:#3F3F47;margin-bottom:6px">Product Architecture: <em style="color:#71717C;font-style:normal">Designing for Informed Confidence</em></h3>
+      <p style="max-width:680px;color:#71717C;font-size:1rem;margin-bottom:20px">The challenge was moving from a "Gallery of Listings" to a "Decision-Support System" - a hierarchy that prioritises truth before quality before features.</p>
+      <div class="arch-steps">
+        <div class="arch-step">
+          <div class="arch-step-n">Layer 1 - First</div>
+          <div class="arch-step-title">Geographic Truth</div>
+          <div class="arch-step-desc">Hard catchment boundaries. If the address isn’t in the polygon, it doesn’t appear.</div>
+        </div>
+        <div class="arch-step">
+          <div class="arch-step-n">Layer 2 - Second</div>
+          <div class="arch-step-title">Contextual Quality</div>
+          <div class="arch-step-desc">Fraser score shown with methodology context - not a raw number, a relative signal.</div>
+        </div>
+        <div class="arch-step">
+          <div class="arch-step-n">Layer 3 - Third</div>
+          <div class="arch-step-title">Property Features</div>
+          <div class="arch-step-desc">Bedrooms, budget, commute - only surfaced after the two more important filters are set.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px">
+      <h3 style="font-family:’Figtree’,sans-serif;font-size:1.5rem;font-weight:700;color:#3F3F47;margin-bottom:6px">Design Trade-Offs: <em style="color:#71717C;font-style:normal">Every Choice Was Deliberate</em></h3>
+      <p style="max-width:680px;color:#71717C;font-size:1rem;margin-bottom:20px">Each standard pattern was audited against Michelle’s context - time-poor, commute-stressed, spatially unfamiliar with Toronto.</p>
+      <div style="overflow-x:auto">
+        <table class="ds-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>The Standard Way</th>
+              <th>My Strategic Choice</th>
+              <th>The Reasoning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Onboarding</td>
+              <td>Multi-screen modal / tutorial</td>
+              <td><strong>Ambient chip</strong> - subtle, persistent element</td>
+              <td>A mandatory modal is an obstacle. A chip is a lifeline she uses on her terms.</td>
+            </tr>
+            <tr>
+              <td>Fraser Score</td>
+              <td>Raw number in large font</td>
+              <td><strong>Contextual bar</strong> - relative scale with explainer copy</td>
+              <td>A raw 7.1 creates anxiety. "Scoring above provincial average" creates confidence.</td>
+            </tr>
+            <tr>
+              <td>Search Flow</td>
+              <td>Search → List → Map</td>
+              <td><strong>Map-centric discovery</strong> - map is primary nav</td>
+              <td>In Toronto, <em>Where</em> is more important than <em>What</em>. Spatial verification comes first.</td>
+            </tr>
+            <tr>
+              <td>AI vs Map</td>
+              <td>AI chatbot filters (modern)</td>
+              <td><strong>Classic map-first</strong> - AI deferred to v2</td>
+              <td>For a high-stakes family decision, trust requires legibility. You can’t audit an AI’s reasoning; you can audit a boundary polygon.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="margin-top:48px">
+      <h3 style="font-family:’Figtree’,sans-serif;font-size:1.5rem;font-weight:700;color:#3F3F47;margin-bottom:6px">Trust-First UI: <em style="color:#71717C;font-style:normal">Ethical Design in Practice</em></h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px">
+        <div style="background:#FFF8F6;border:1px solid #F5CFC8;border-radius:12px;padding:22px">
+          <div style="font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px">The ELL Correction</div>
+          <p style="font-size:0.9375rem;color:#3F3F47;margin:0;line-height:1.6">A transparency layer surfaces the ELL (English Language Learner) methodology disclaimer directly on the school card.</p>
+          <p style="font-size:0.875rem;color:#71717C;margin:10px 0 0;font-style:italic;line-height:1.5">"Counteracting data bias: parents don’t unfairly dismiss high-quality schools with diverse student populations."</p>
+        </div>
+        <div style="background:#F5F5F5;border-radius:12px;padding:22px">
+          <div style="font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#3F3F47;margin-bottom:10px">Addressing Dual Anxiety</div>
+          <p style="font-size:0.9375rem;color:#3F3F47;margin:0;line-height:1.6">Parents don’t evaluate schools and safety separately. A "Neighbourhood Vibe" overlay toggle integrates safety, walkability, and transit data into the same card view.</p>
+          <p style="font-size:0.875rem;color:#71717C;margin:10px 0 0;font-style:italic;line-height:1.5">"Reducing the cognitive load of switching between HouseSigma and Google Maps."</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px">
+      <h3 style="font-family:’Figtree’,sans-serif;font-size:1.5rem;font-weight:700;color:#3F3F47;margin-bottom:20px">Technical Execution</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <div style="border:1px solid var(--line);border-radius:12px;padding:20px">
+          <div style="font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px">Stateless Persistence</div>
+          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.55">No login required. URL parameters preserve Michelle’s filters - close the browser mid-commute, the link resumes exactly where she left off.</p>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:12px;padding:20px">
+          <div style="font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px">Mobile-First Reach</div>
+          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.55">All primary filters reachable with one thumb. High-contrast palette designed for outdoor, high-glare readability - Michelle is on a bus.</p>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:12px;padding:20px">
+          <div style="font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px">Technical Handoff</div>
+          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.55">Component library built on atomic principles with Figma variables - tokens, states, and breakpoints documented for direct engineering handoff.</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
-    <p style="max-width:680px;margin-top:32px">Figma, Claude Code — classic tools for delivery, but let’s be brave with the process. <strong>Claude Code first.</strong> Build it, see it live, iterate. The design and the app evolve together.</p>
 
 <hr class="d">
 <section id="testing">
   <div class="container">
     <div class="eyebrow"><span class="n">5</span> Testing</div>
     <h2>Testing with<br><em>real users.</em></h2>
-    <p style="max-width:640px">Usability testing is scheduled with newcomer parents in Toronto. This section will be updated once testing sessions are complete.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:40px">
+      <div style="border:1px solid var(--line);border-radius:12px;padding:20px">
+        <div style="font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px">Method</div>
+        <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px">Guerilla Usability Testing</p>
+        <p style="font-size:0.875rem;color:#71717C;margin:0">5 participants - newcomer parents currently in a relocation phase.</p>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:12px;padding:20px">
+        <div style="font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px">Key Insight</div>
+        <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px">Users missed the "Why this score?" chip</p>
+        <p style="font-size:0.875rem;color:#71717C;margin:0">The transparency layer wasn't prominent enough to interrupt the default pattern of trusting a raw number.</p>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:12px;padding:20px">
+        <div style="font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px">The Pivot</div>
+        <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px">Elevated chip visual prominence</p>
+        <p style="font-size:0.875rem;color:#71717C;margin:0">Adjusted weight and placement so the ELL caveat is read before a school is dismissed on a raw score.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Figtree',sans-serif;font-size:1.25rem;font-weight:700;color:#3F3F47;margin-bottom:16px">Future Validation Roadmap</h3>
+    <div style="overflow-x:auto;margin-bottom:40px">
+      <table class="ds-table">
+        <thead>
+          <tr><th>Test Type</th><th>Research Goal</th><th>Target User</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5-Second Test</td>
+            <td>Do users immediately understand this map shows catchments - not just locations?</td>
+            <td>Relocating parents</td>
+          </tr>
+          <tr>
+            <td>Comprehension Test</td>
+            <td>Does the "Fraser Explainer" successfully change perception of a 6.0-rated school?</td>
+            <td>Non-Canadian residents</td>
+          </tr>
+          <tr>
+            <td>High-Fidelity Pilot</td>
+            <td>Test the handoff to realtor sites. Does Michelle feel safe leaving the app?</td>
+            <td>Real estate seekers</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="background:#FFF8F6;border:1px solid #F5CFC8;border-radius:12px;padding:24px 28px;max-width:680px">
+      <div style="font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px">Critical Feedback Loop - In Progress</div>
+      <p style="font-size:1rem;color:#3F3F47;margin:0;line-height:1.65">Early testing showed users were overwhelmed by Safety and School data appearing simultaneously. I am currently iterating on a <strong>Layered Map Toggle</strong> - allowing users to focus on one anxiety at a time while maintaining a unified view.</p>
+    </div>
+
   </div>
 </section>
 
@@ -554,18 +800,50 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
   <div class="container">
     <div class="eyebrow"><span class="n">6</span> Solution</div>
     <h2>Map-first,<br><em>filter-forward.</em></h2>
-    <p style="max-width:640px">The app opens with an onboarding modal that captures the user's key preferences before showing the map - school rating range, board type, language, grade level, and budget. This front-loads the filtering so the map is immediately useful rather than overwhelming.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px">
+      <div style="background:#F5F5F5;border-radius:12px;padding:22px">
+        <div style="font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#71717C;margin-bottom:12px">Before</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:0.9375rem;color:#71717C"><span style="background:#E0E0E0;border-radius:6px;padding:4px 10px;font-size:0.75rem;font-weight:600;color:#3F3F47">Tab 1</span>Google Maps - rough location search</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:0.9375rem;color:#71717C"><span style="background:#E0E0E0;border-radius:6px;padding:4px 10px;font-size:0.75rem;font-weight:600;color:#3F3F47">Tab 2</span>TDSB - PDF catchment maps</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:0.9375rem;color:#71717C"><span style="background:#E0E0E0;border-radius:6px;padding:4px 10px;font-size:0.75rem;font-weight:600;color:#3F3F47">Tab 3</span>Fraser Institute - school rankings</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:0.9375rem;color:#71717C"><span style="background:#E0E0E0;border-radius:6px;padding:4px 10px;font-size:0.75rem;font-weight:600;color:#3F3F47">Tab 4</span>Rentals.ca - listings with no school data</div>
+          <div style="font-size:0.875rem;color:var(--accent);margin-top:4px;font-weight:500">Hours of manual cross-referencing. Errors still happen.</div>
+        </div>
+      </div>
+      <div style="background:#3F3F47;border-radius:12px;padding:22px">
+        <div style="font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:12px">After</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:0.9375rem;color:rgba(255,255,255,.85)"><span style="background:rgba(255,255,255,.15);border-radius:6px;padding:4px 10px;font-size:0.75rem;font-weight:600;color:#fff">One</span>Rent by School - single source of truth</div>
+          <div style="font-size:0.875rem;color:rgba(255,255,255,.5);margin-top:8px;line-height:1.55">Catchment boundaries + school quality + live rental listings. Verified, layered, navigable in under 3 minutes.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:40px">
+      <h3 style="font-family:'Figtree',sans-serif;font-size:1.125rem;font-weight:700;color:var(--accent);margin-bottom:4px">A - Precision Over Proximity</h3>
+      <h4 style="font-family:'Figtree',sans-serif;font-size:1rem;font-weight:600;color:#3F3F47;margin-bottom:10px">The Catchment Polygon</h4>
+      <p style="max-width:640px;color:#71717C;font-size:1rem;line-height:1.65;margin-bottom:0">Standard rental apps use a radius - proximity - which leads to enrolment errors. This solution uses verified school board polygons, ensuring every listing shown is legally eligible for the selected school. If a house isn't in the polygon, it simply doesn't appear.</p>
+    </div>
+
     <div class="img-wrap" style="margin:28px 0" onclick="openLb('schoolmap-onboarding.png')">
       <img src="schoolmap-onboarding.png" alt="Onboarding modal" loading="lazy">
       <button class="img-enlarge">Enlarge ↗</button>
     </div>
-    <p class="img-caption">Onboarding modal - captures rating range, board, language, grade level and budget before showing the map</p>
-    <p style="max-width:640px;margin-top:32px">The map displays Fraser-rated Toronto schools as colour-coded pins - blue for TDSB public, red for TCDSB Catholic, green for French. Each pin shows the school's rating. Clicking a school draws its catchment polygon and populates the sidebar with rentals inside it.</p>
+    <p class="img-caption">Multi-variable filtering designed to handle complex logic (English vs. French Immersion, board type, budget) in a mobile-first UI - front-loaded so the map is immediately useful.</p>
+
+    <div style="margin:40px 0 16px">
+      <h3 style="font-family:'Figtree',sans-serif;font-size:1.125rem;font-weight:700;color:var(--accent);margin-bottom:4px">B - The Transparency Layer</h3>
+      <h4 style="font-family:'Figtree',sans-serif;font-size:1rem;font-weight:600;color:#3F3F47;margin-bottom:10px">The School Card</h4>
+      <p style="max-width:640px;color:#71717C;font-size:1rem;line-height:1.65;margin-bottom:0">Numbers without context create anxiety. The "Nutrition Label" for school rankings proactively explains ESL/ELL biases via a "Why this score?" chip and tooltip - preventing parents from dismissing high-quality schools based on misunderstood data.</p>
+    </div>
+    <p style="max-width:640px;margin-top:0;margin-bottom:28px;color:#71717C;font-size:1rem;line-height:1.65">The map displays Fraser-rated Toronto schools as colour-coded pins - blue for TDSB public, red for TCDSB Catholic, green for French. Clicking a school draws its catchment polygon and populates the sidebar with verified rentals inside it.</p>
     <div class="img-wrap" style="margin:28px 0" onclick="openLb('schoolmap-preview.png')">
       <img src="schoolmap-preview.png" alt="School detail panel with map view" loading="lazy">
       <button class="img-enlarge">Enlarge ↗</button>
     </div>
-    <p class="img-caption">School detail panel — Fraser score, catchment highlights, and rental pins visible on the map</p>
+    <p class="img-caption">School detail panel - Fraser score, catchment highlights, and rental pins visible on the map</p>
     <div class="ss-grid" style="margin-top:32px">
       <div>
         <div class="img-wrap" onclick="openLb('schoolmap-school-panel.png')"><img src="schoolmap-school-panel.png" alt="School detail panel" loading="lazy"><button class="img-enlarge">Enlarge ↗</button></div>
@@ -581,42 +859,90 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
       <div class="mockup-grid">
         <div>
           <div class="img-wrap" onclick="openLb(this.querySelector('img').src)"><img src="Mockup_locator_map.png" alt="Map view" loading="lazy"><button class="img-enlarge">Enlarge ↗</button></div>
-          <p class="img-caption">Map — colour-coded school pins with Fraser ratings</p>
+          <p class="img-caption">Map - colour-coded school pins with Fraser ratings</p>
         </div>
         <div>
           <div class="img-wrap" onclick="openLb(this.querySelector('img').src)"><img src="Mockup_locator_filter.png" alt="Filters panel" loading="lazy"><button class="img-enlarge">Enlarge ↗</button></div>
-          <p class="img-caption">Filters — board, language, level, and rating range</p>
+          <p class="img-caption">Filters - board, language, level, and rating range</p>
         </div>
         <div>
           <div class="img-wrap" onclick="openLb(this.querySelector('img').src)"><img src="Mockup_locator_search.png" alt="School search" loading="lazy"><button class="img-enlarge">Enlarge ↗</button></div>
-          <p class="img-caption">Search — autocomplete by name with ratings shown</p>
+          <p class="img-caption">Search - autocomplete by name with ratings shown</p>
         </div>
         <div>
           <div class="img-wrap" onclick="openLb(this.querySelector('img').src)"><img src="Mockup_locator_school%20info.png" alt="School detail" loading="lazy"><button class="img-enlarge">Enlarge ↗</button></div>
-          <p class="img-caption">School detail — Fraser score, tags, and neighbourhood context</p>
+          <p class="img-caption">School detail - Fraser score, tags, and neighbourhood context</p>
         </div>
         <div>
           <div class="img-wrap" onclick="openLb(this.querySelector('img').src)"><img src="Mockup_locator_school_info2.png" alt="School detail with rentals" loading="lazy"><button class="img-enlarge">Enlarge ↗</button></div>
-          <p class="img-caption">School detail — rental count and price range in catchment</p>
+          <p class="img-caption">School detail - rental count and price range in catchment</p>
         </div>
         <div>
           <div class="img-wrap" onclick="openLb(this.querySelector('img').src)"><img src="Mockup_locator_rental_info.png" alt="Rental detail" loading="lazy"><button class="img-enlarge">Enlarge ↗</button></div>
-          <p class="img-caption">Rental detail — listing with assigned school and rating</p>
+          <p class="img-caption">Rental detail - listing with assigned school and rating</p>
         </div>
       </div>
     </div>
     <div style="margin-top:56px">
       <h3>Interactive prototype</h3>
-      <p style="max-width:640px;margin:12px 0 28px">Screen recordings of the live app — mobile and desktop.</p>
+      <p style="max-width:640px;margin:12px 0 28px">Screen recordings of the live app - mobile and desktop.</p>
       <div class="proto-video-grid">
         <div class="proto-video-item">
           <video src="Rent_by_School_app_mobile.mp4" autoplay muted loop playsinline controls class="proto-video proto-video--mobile"></video>
-          <p class="img-caption">Mobile — bottom sheet, school detail, rental explore</p>
+          <p class="img-caption">Mobile - bottom sheet, school detail, rental explore</p>
         </div>
         <div class="proto-video-item">
           <video src="Rent_by_School_app.mp4" autoplay muted loop playsinline controls class="proto-video proto-video--desktop"></video>
-          <p class="img-caption">Desktop — map filters, catchment polygon, rental panel</p>
+          <p class="img-caption">Desktop - map filters, catchment polygon, rental panel</p>
         </div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;margin-bottom:16px">
+      <h3 style="font-family:'Figtree',sans-serif;font-size:1.125rem;font-weight:700;color:var(--accent);margin-bottom:4px">C - Dual-Anxiety Integration</h3>
+      <h4 style="font-family:'Figtree',sans-serif;font-size:1rem;font-weight:600;color:#3F3F47;margin-bottom:10px">Safety + Quality Together</h4>
+      <p style="max-width:640px;color:#71717C;font-size:1rem;line-height:1.65">Neighbourhood safety and school quality are a single decision. "Vibe Tags" (Safety, Walkability, TTC) are integrated directly into school and rental cards, eliminating the need for parents to cross-reference HouseSigma and Google Maps. A Layered Map Toggle lets users focus on one anxiety at a time while keeping both datasets in view.</p>
+    </div>
+
+    <div style="margin-top:48px">
+      <h3 style="font-family:'Figtree',sans-serif;font-size:1.25rem;font-weight:700;color:#3F3F47;margin-bottom:20px">The "Michelle-First" Execution</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px">
+        <div style="border:1px solid var(--line);border-radius:12px;padding:22px">
+          <div style="font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px">Stateless but Sticky</div>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 8px">URL-based state management</p>
+          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.55">Designed for the time-poor parent. Michelle can resume her filtered search instantly between errands - no account, no friction, no lost context. The URL preserves every filter she set.</p>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:12px;padding:22px">
+          <div style="font-size:0.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px">Mobile-Optimised</div>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 8px">Bottom-sheet architecture, one-thumb reach</p>
+          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.55">The map stays the primary spatial reference. School data surfaces in a bottom sheet reachable with one hand on a bus. High-contrast palette for outdoor, high-glare readability.</p>
+        </div>
+      </div>
+
+      <h3 style="font-family:'Figtree',sans-serif;font-size:1.25rem;font-weight:700;color:#3F3F47;margin-bottom:16px">Strategic Choices</h3>
+      <div style="overflow-x:auto;margin-bottom:40px">
+        <table class="ds-table">
+          <thead>
+            <tr><th>The Challenge</th><th>Common Design Choice</th><th>My Strategic Choice</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Trusting Data</td>
+              <td>Hide the methodology to keep it "clean"</td>
+              <td><strong>Expose the methodology</strong> to build trust</td>
+            </tr>
+            <tr>
+              <td>Onboarding</td>
+              <td>3-step modal walkthrough</td>
+              <td><strong>Ambient "How it works" chip</strong> - zero-friction entry</td>
+            </tr>
+            <tr>
+              <td>Data Density</td>
+              <td>Simple markers to avoid clutter</td>
+              <td><strong>Data-rich "Vibe Tags"</strong> to address dual anxieties</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
@@ -642,7 +968,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
   <div class="container">
     <div class="eyebrow"><span class="n">7</span> Definition of Success</div>
     <h2>How I'd know<br><em>it's working.</em></h2>
-    <p style="max-width:640px">Success isn't just launching — it's measurable behaviour change. These are the three KPIs I'd track post-launch to validate the core hypothesis.</p>
+    <p style="max-width:640px">Success isn't just launching - it's measurable behaviour change. These are the three KPIs I'd track post-launch to validate the core hypothesis.</p>
     <div class="kpi-cards">
       <div class="kpi-card">
         <span class="kpi-label">KPI 01</span>
@@ -671,11 +997,11 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
   <div class="container">
     <div class="eyebrow"><span class="n">8</span> What's next</div>
     <h2>From prototype<br><em>to product.</em></h2>
-    <p style="max-width:640px">The prototype demonstrates the concept. Making it genuinely useful requires:</p>
+    <p style="max-width:640px">The prototype validates the concept. Phase 2 transitions from demonstration to production-grade infrastructure.</p>
     <div class="steps">
-      <div class="step"><div class="step-n">01</div><p><strong>Real rental data</strong> - integration with a rental listing API to surface live listings within catchments.</p></div>
-      <div class="step"><div class="step-n">02</div><p><strong>Full catchment coverage</strong> - systematic polygon tracing for all rated schools, or a formal data partnership with TDSB/TCDSB.</p></div>
-      <div class="step"><div class="step-n">03</div><p><strong>User testing with newcomers</strong> - validating that the filtering model matches how actual relocating families think about the decision.</p></div>
+      <div class="step"><div class="step-n">01</div><p><strong>Data Modernization</strong> - Replace conceptual catchment layers with official TDSB/TCDSB Open Data feeds for zero-margin-of-error relocation decisions.</p></div>
+      <div class="step"><div class="step-n">02</div><p><strong>The Contextual Lead Pipeline</strong> - Partner with Toronto realtors to transmit the user's school criteria directly into their CRM, so Michelle never has to repeat her research.</p></div>
+      <div class="step"><div class="step-n">03</div><p><strong>Qualitative Trust Layer</strong> - Integrate verified parent reviews to supplement Fraser's quantitative data with lived insight into school culture and extracurricular support.</p></div>
     </div>
   </div>
 </section>
@@ -684,13 +1010,11 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 <section id="reflection">
   <div class="container">
     <div class="eyebrow"><span class="n">9</span> Reflection</div>
-    <h2>What I'd do<br><em>differently.</em></h2>
-    <p style="max-width:640px">The hardest part of civic-adjacent products is data infrastructure, not UI. The design was clear early - getting clean, reconciled school data took most of the time.</p>
+    <h2>Designing with<br><em>intention.</em></h2>
     <div class="lg">
-      <div class="lc"><div class="lcn">1</div><p><strong>The hardest problem was data, not design.</strong> School name reconciliation, catchment sourcing, and fuzzy matching took far more time than the UI. I'd scope the data layer first next time.</p></div>
-      <div class="lc"><div class="lcn">2</div><p><strong>Onboarding filters before the map was the right call.</strong> Showing an unfiltered map of 300+ pins is overwhelming - capturing intent first makes the first view immediately useful.</p></div>
-      <div class="lc"><div class="lcn">3</div><p><strong>A working prototype with mock data beats a sparse but accurate one.</strong> For portfolio and stakeholder purposes, the demo has to feel real - representative data does that.</p></div>
-      <div class="lc"><div class="lcn">4</div><p><strong>To be added after testing with a real newcomer parent</strong> - what surprised them, what they expected, what they'd change.</p></div>
+      <div class="lc"><div class="lcn">1</div><p><strong>The ethics of rankings.</strong> Is it better to hide flawed data or expose it with context? I chose transparency - believing it builds more long-term trust than over-simplification. A designer's job isn't to make data feel comfortable; it's to make it legible.</p></div>
+      <div class="lc"><div class="lcn">2</div><p><strong>The zero-friction trade-off.</strong> I intentionally avoided a login system to serve Michelle's time-poor reality. This limits long-term retention metrics, but it prioritises the immediate conversion-to-trust that matters most for a newcomer in a high-stress relocation phase.</p></div>
+      <div class="lc"><div class="lcn">3</div><p><strong>Closing the loop.</strong> Returning to this project after deep community research reminded me that UX is information architecture as risk mitigation. In Toronto's real estate market, a design error isn't just a bad experience - it's a multi-thousand dollar mistake. My role was to ensure that mistake never happens.</p></div>
     </div>
   </div>
 </section>
@@ -715,7 +1039,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
         <div class="card-body">
           <div class="card-tags"><span class="card-tag">B2B · SaaS</span><span class="card-tag">Slack</span></div>
           <div class="card-title">Telo</div>
-          <p class="card-desc">A Slack-native signal intelligence tool that tells early-stage SaaS founders whether a metric drop is real — and what to do about it.</p>
+          <p class="card-desc">A Slack-native signal intelligence tool that tells early-stage SaaS founders whether a metric drop is real - and what to do about it.</p>
         </div>
         <div class="card-foot">
           <span class="card-year">2026 · Conceptual</span>
@@ -729,7 +1053,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
         <div class="card-body">
           <div class="card-tags"><span class="card-tag">EdTech</span><span class="card-tag">3 Platforms</span></div>
           <div class="card-title">Ambassador Platform</div>
-          <p class="card-desc">Sole designer across 3 products at a B2B EdTech SaaS — widget, mobile app, and admin dashboard. 3 years, acquired by IDP Education.</p>
+          <p class="card-desc">Sole designer across 3 products at a B2B EdTech SaaS - widget, mobile app, and admin dashboard. 3 years, acquired by IDP Education.</p>
         </div>
         <div class="card-foot">
           <span class="card-year">2019–22 · Acquired</span>
@@ -820,32 +1144,32 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     {
       keywords:['personal','side project','why build','own project','solo','yourself','civic','why did you'],
       emoji:'🙂',
-      answer:'I kept running into the same problem in conversations with people relocating to Toronto — they were juggling school ratings, catchment maps, and rental listings across three separate tools with no way to reconcile them. I wanted to know if I could solve it. The constraints of a self-directed project also meant I had to make every decision deliberately, with no product manager to defer to.'
+      answer:'I kept running into the same problem in conversations with people relocating to Toronto - they were juggling school ratings, catchment maps, and rental listings across three separate tools with no way to reconcile them. I wanted to know if I could solve it. The constraints of a self-directed project also meant I had to make every decision deliberately, with no product manager to defer to.'
     },
     {
       keywords:['validate','reddit','research','evidence','proof','real','problem','before building','confirm'],
       emoji:'😮',
-      answer:'Before writing a line of code, I spent time in r/toronto and r/askTO reading threads from families going through the exact process. The frustration was consistent and specific: people weren\'t just annoyed, they were describing the <b>exact workflow gap</b> — address-level catchment accuracy vs neighbourhood-level guesses. That distinction shaped every design decision that followed.'
+      answer:'Before writing a line of code, I spent time in r/toronto and r/askTO reading threads from families going through the exact process. The frustration was consistent and specific: people weren\'t just annoyed, they were describing the <b>exact workflow gap</b> - address-level catchment accuracy vs neighbourhood-level guesses. That distinction shaped every design decision that followed.'
     },
     {
       keywords:['map','list','map-first','filter','why map','interface','view'],
       emoji:'🤔',
-      answer:'The decision to make a rental is inherently spatial — "I want to live near this school" is a geography statement. A list of results with school scores misses the point: <b>users need to see where the catchment boundary falls relative to specific buildings</b>. A map-first interface makes the invisible (catchment lines) visible, which is the core value of the whole product.'
+      answer:'The decision to make a rental is inherently spatial - "I want to live near this school" is a geography statement. A list of results with school scores misses the point: <b>users need to see where the catchment boundary falls relative to specific buildings</b>. A map-first interface makes the invisible (catchment lines) visible, which is the core value of the whole product.'
     },
     {
       keywords:['hard','hardest','challenge','difficult','data','problem','technical','took','time'],
       emoji:'😟',
-      answer:'Data, not design. School name reconciliation — matching Fraser Institute ratings to TDSB school records to catchment boundaries — took far more time than the UI. Three datasets with inconsistent naming conventions, plus the fact that TDSB catchment data isn\'t available as a clean API. The design was clear in week two; getting trustworthy data took months.'
+      answer:'Data, not design. School name reconciliation - matching Fraser Institute ratings to TDSB school records to catchment boundaries - took far more time than the UI. Three datasets with inconsistent naming conventions, plus the fact that TDSB catchment data isn\'t available as a clean API. The design was clear in week two; getting trustworthy data took months.'
     },
     {
       keywords:['differently','change','improve','next','learned','retrospect','reflection','would you'],
       emoji:'😟',
-      answer:'I\'d scope the data layer first, before any design work. I treated it as an implementation problem and underestimated how much it would constrain the design — specifically the decision to show "confidence level" for catchment assignments on new builds, which was a late addition forced by data limitations rather than a deliberate design choice.'
+      answer:'I\'d scope the data layer first, before any design work. I treated it as an implementation problem and underestimated how much it would constrain the design - specifically the decision to show "confidence level" for catchment assignments on new builds, which was a late addition forced by data limitations rather than a deliberate design choice.'
     },
     {
       keywords:['claude','ai','built with','code','claude code','develop','technical','how built'],
       emoji:'🤩',
-      answer:'The app was built with Claude Code — I designed the product and used AI to handle most of the development implementation. It let me move from validated design to working prototype in a fraction of the usual time. The interesting design challenge was deciding <b>what to include in a V1</b> when the constraint was my own time, not a sprint backlog.'
+      answer:'The app was built with Claude Code - I designed the product and used AI to handle most of the development implementation. It let me move from validated design to working prototype in a fraction of the usual time. The interesting design challenge was deciding <b>what to include in a V1</b> when the constraint was my own time, not a sprint backlog.'
     }
   ];
 
@@ -874,7 +1198,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     }
     setTimeout(function(){
       if(found){addMsg(found.answer,'bot');}
-      else{addMsg("That\'s outside what I have scripted — but happy to talk about it. Reach out at <b>anna@sholomii.com</b> or LinkedIn.",'bot');}
+      else{addMsg("That\'s outside what I have scripted - but happy to talk about it. Reach out at <b>anna@sholomii.com</b> or LinkedIn.",'bot');}
       setTimeout(function(){document.getElementById('bot-chips').style.display='flex'},600);
     },480);
   };
