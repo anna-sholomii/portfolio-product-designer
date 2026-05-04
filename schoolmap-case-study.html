@@ -63,7 +63,7 @@ strong{color:#3F3F47;font-weight:600}
 .btn-ghost{color:#D43E25;font-size:0.8125rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;border:1.5px solid #D43E25;padding:10px 18px;border-radius:6px}
 .title-vec-wrap{position:relative;display:inline-block}
 .title-vec{position:absolute;top:-18px;left:-28px;width:110px;opacity:.1;pointer-events:none;z-index:0;mix-blend-mode:multiply}
-.title-vec-wrap h1{position:relative;z-index:1;white-space:nowrap}
+.title-vec-wrap h1{position:relative;z-index:1}
 .hero-highlight{color:var(--accent);font-style:normal}
 .btn-ghost:hover{background:#D43E25;color:#fff}
 .img-wrap{position:relative;cursor:pointer;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06)}
@@ -107,6 +107,12 @@ strong{color:#3F3F47;font-weight:600}
 .lc{padding:20px 22px;background:var(--white);border:1px solid var(--line);border-radius:10px}
 .lcn{font-family:'Figtree',sans-serif;font-size:1.875rem;color:var(--color-linen);margin-bottom:8px;line-height:1}
 .lc p{font-size:1.125rem;color:#71717C}
+.kpi-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
+.kpi-card{padding:24px;background:var(--white);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;gap:10px}
+.kpi-label{font-size:0.6875rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.kpi-name{font-family:'Figtree',sans-serif;font-size:1.125rem;font-weight:700;color:#3F3F47;line-height:1.2}
+.kpi-desc{font-size:1rem;color:#71717C;line-height:1.6;margin:0}
+.kpi-target{font-size:0.875rem;color:#3F3F47;font-weight:600;background:#F5F5F5;border-radius:6px;padding:6px 10px;margin-top:auto;display:inline-block;align-self:flex-start}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
 .step{padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:var(--white)}
 .step-n{font-family:'Figtree',sans-serif;font-size:1.5rem;color:var(--color-linen);line-height:1;margin-bottom:10px}
@@ -159,7 +165,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
   .meta-row{flex-direction:column}
   .mc{border-right:none;border-bottom:1px solid var(--line)}
   .mc:last-child{border-bottom:none}
-  .ss-grid,.cards-2,.lg,.steps{grid-template-columns:1fr}
+  .ss-grid,.cards-2,.lg,.steps,.kpi-cards{grid-template-columns:1fr}
   .mockup-grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .tr-row{grid-template-columns:1fr;gap:6px}
   .process-flow{flex-direction:column}
@@ -231,7 +237,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
   <div class="container">
     <div class="title-vec-wrap">
       <img src="Vector_as_in_logo.svg" class="title-vec" aria-hidden="true">
-      <h1><span style="color:#3F3F47">Rent by School: Optimizing the </span><span style="color:#71717C">residential search ecosystem</span></h1>
+      <h1><span style="color:#3F3F47">Rent by School:</span><br><span style="color:#71717C">Optimizing the residential search ecosystem</span></h1>
     </div>
     <p class="hero-sub">In Toronto's competitive market, school boundaries dictate property value. I designed a data-driven platform that merges Toronto's real estate and education data, turning a weeks-long research process into a confident, 3-minute search.</p>
     <div class="hero-stats">
@@ -632,9 +638,38 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 </section>
 
 <hr class="d">
+<section id="success">
+  <div class="container">
+    <div class="eyebrow"><span class="n">7</span> Definition of Success</div>
+    <h2>How I'd know<br><em>it's working.</em></h2>
+    <p style="max-width:640px">Success isn't just launching — it's measurable behaviour change. These are the three KPIs I'd track post-launch to validate the core hypothesis.</p>
+    <div class="kpi-cards">
+      <div class="kpi-card">
+        <span class="kpi-label">KPI 01</span>
+        <div class="kpi-name">Task Completion Rate</div>
+        <p class="kpi-desc">Can a user find a school and its rental catchment without dropping off? Measures whether the core flow is intuitive enough to complete unprompted.</p>
+        <span class="kpi-target">Target: school found in &lt; 2 min</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">KPI 02</span>
+        <div class="kpi-name">Search-to-Application Conversion</div>
+        <p class="kpi-desc">Of users who find a rental listing, how many click through to apply? Tracks whether the platform generates genuine rental intent, not just exploration.</p>
+        <span class="kpi-target">Target: &gt; industry benchmark CTR</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">KPI 03</span>
+        <div class="kpi-name">Filter Engagement</div>
+        <p class="kpi-desc">Are users interacting with the school-quality and catchment filters, or ignoring them? High engagement signals the decision-engine is adding real value over a plain map.</p>
+        <span class="kpi-target">Target: &gt; 60% sessions use filters</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="d">
 <section id="next">
   <div class="container">
-    <div class="eyebrow"><span class="n">7</span> What's next</div>
+    <div class="eyebrow"><span class="n">8</span> What's next</div>
     <h2>From prototype<br><em>to product.</em></h2>
     <p style="max-width:640px">The prototype demonstrates the concept. Making it genuinely useful requires:</p>
     <div class="steps">
@@ -648,7 +683,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 <hr class="d">
 <section id="reflection">
   <div class="container">
-    <div class="eyebrow"><span class="n">8</span> Reflection</div>
+    <div class="eyebrow"><span class="n">9</span> Reflection</div>
     <h2>What I'd do<br><em>differently.</em></h2>
     <p style="max-width:640px">The hardest part of civic-adjacent products is data infrastructure, not UI. The design was clear early - getting clean, reconciled school data took most of the time.</p>
     <div class="lg">
