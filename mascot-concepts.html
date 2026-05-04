@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mascot Concepts — Anna Sholomii</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --coral:#E8644A;--ink:#1A1A18;--stone:#888780;
+  --linen:#EDEAE3;--cream:#FAF7F2;--sage:#4A6741;
+  --lavender:#C5C0D4;--sand:#D4C5B0;
+}
+body{background:var(--cream);color:var(--ink);font-family:'Figtree',sans-serif;padding:48px;min-height:100vh}
+h1{font-size:2rem;font-weight:700;letter-spacing:-.03em;margin-bottom:8px}
+.sub{color:var(--stone);font-size:1.125rem;margin-bottom:48px}
+
+/* ─── CHARACTER ─── */
+.mascot{display:inline-flex;flex-direction:column;align-items:center;gap:0;user-select:none}
+.mascot-face{font-size:56px;line-height:1;display:block}
+.mascot-body{
+  width:52px;height:36px;
+  background:#4A6741;
+  border-radius:14px 14px 10px 10px;
+  margin-top:-4px;
+  position:relative;
+}
+/* collar notch */
+.mascot-body::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:0;height:0;
+  border-left:9px solid transparent;
+  border-right:9px solid transparent;
+  border-top:10px solid var(--cream);
+}
+
+/* ─── EXPRESSIONS ROW ─── */
+.expr-section{margin-bottom:56px}
+.expr-section h2{font-size:0.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:24px}
+.expr-row{display:flex;gap:16px;flex-wrap:wrap}
+.expr-card{
+  background:#fff;border:1px solid var(--linen);border-radius:16px;
+  padding:28px 20px 20px;
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+  width:120px;
+}
+.expr-label{font-size:0.75rem;font-weight:600;color:var(--stone);text-align:center}
+
+/* ─── NOTE ─── */
+.note{background:var(--linen);border-radius:12px;padding:14px 18px;font-size:0.8125rem;color:var(--stone);line-height:1.6;margin-bottom:48px;max-width:560px}
+.note b{color:var(--ink)}
+
+/* ─── DEMO ─── */
+.demo{background:#fff;border:1px solid var(--linen);border-radius:20px;padding:40px;margin-bottom:32px}
+.demo-label{font-size:0.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:24px}
+.demo-section{border:1px solid var(--linen);border-radius:14px;padding:28px;background:var(--cream)}
+.demo-section h4{font-size:1.5rem;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+.demo-section p{color:var(--stone);font-size:1rem;line-height:1.7}
+.mascot-bubble{display:flex;align-items:flex-end;gap:16px;margin-bottom:20px}
+.bubble{
+  background:#fff;border:1px solid var(--linen);
+  border-radius:16px 16px 16px 4px;
+  padding:14px 18px;font-size:0.875rem;color:var(--ink);line-height:1.6;
+  max-width:340px;box-shadow:0 2px 12px rgba(0,0,0,.05)
+}
+.bubble b{color:var(--coral)}
+
+/* ─── TOGGLES ─── */
+.toggle-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.tog{padding:8px 18px;border-radius:8px;border:1.5px solid var(--linen);background:none;color:var(--ink);font-family:'Figtree',sans-serif;font-size:0.8125rem;font-weight:600;cursor:pointer;transition:all .15s}
+.tog.active{background:#4A6741;color:#fff;border-color:#4A6741}
+
+/* ─── ANIMATIONS ─── */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.float{animation:float 4s ease-in-out infinite}
+</style>
+</head>
+<body>
+
+<h1>Mascot — Emoji Face</h1>
+<p class="sub">Emoji as the face, simple body below. One character, six moods.</p>
+
+<div class="note">
+  <b>How it renders:</b> On Apple devices (Mac, iPhone, iPad) these show as the familiar rounded emoji style. On other platforms the emoji look slightly different — but the expressions are always clear. If you want pixel-perfect consistency across all devices, we can export your actual Memoji stickers from your iPhone and use those as images instead.
+</div>
+
+<!-- EXPRESSIONS -->
+<div class="expr-section">
+  <h2>Expressions</h2>
+  <div class="expr-row">
+
+    <div class="expr-card">
+      <div class="float">
+        <div class="mascot">
+          <span class="mascot-face">🙂</span>
+          <div class="mascot-body"></div>
+        </div>
+      </div>
+      <span class="expr-label">Talking</span>
+    </div>
+
+    <div class="expr-card">
+      <div class="float" style="animation-delay:.5s">
+        <div class="mascot">
+          <span class="mascot-face">🤔</span>
+          <div class="mascot-body"></div>
+        </div>
+      </div>
+      <span class="expr-label">Thinking</span>
+    </div>
+
+    <div class="expr-card">
+      <div class="float" style="animation-delay:1s">
+        <div class="mascot">
+          <span class="mascot-face">😮</span>
+          <div class="mascot-body"></div>
+        </div>
+      </div>
+      <span class="expr-label">Discovery</span>
+    </div>
+
+    <div class="expr-card">
+      <div class="float" style="animation-delay:.3s">
+        <div class="mascot">
+          <span class="mascot-face">😟</span>
+          <div class="mascot-body"></div>
+        </div>
+      </div>
+      <span class="expr-label">Problem found</span>
+    </div>
+
+    <div class="expr-card">
+      <div class="float" style="animation-delay:.8s">
+        <div class="mascot">
+          <span class="mascot-face">🤩</span>
+          <div class="mascot-body"></div>
+        </div>
+      </div>
+      <span class="expr-label">Nailed it</span>
+    </div>
+
+    <div class="expr-card">
+      <div class="float" style="animation-delay:1.3s">
+        <div class="mascot">
+          <span class="mascot-face">🤷‍♀️</span>
+          <div class="mascot-body"></div>
+        </div>
+      </div>
+      <span class="expr-label">Not sure yet</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- IN-CONTEXT DEMO -->
+<div class="demo">
+  <p class="demo-label">How it appears in a case study section</p>
+
+  <div class="toggle-row">
+    <button class="tog active" onclick="setExpr('talking',this)">🙂 Talking</button>
+    <button class="tog" onclick="setExpr('thinking',this)">🤔 Thinking</button>
+    <button class="tog" onclick="setExpr('discovery',this)">😮 Discovery</button>
+    <button class="tog" onclick="setExpr('problem',this)">😟 Problem</button>
+    <button class="tog" onclick="setExpr('excited',this)">🤩 Nailed it</button>
+  </div>
+
+  <div class="demo-section">
+    <div class="mascot-bubble">
+      <div id="dm-face" class="float" style="flex-shrink:0">
+        <div class="mascot">
+          <span id="dm-emoji" class="mascot-face">🙂</span>
+          <div class="mascot-body"></div>
+        </div>
+      </div>
+      <div id="dm-bubble" class="bubble">
+        Before I get into the data — here's what actually kicked this off. <b>A parent on a forum</b>, cross-referencing three tools just to find one flat.
+      </div>
+    </div>
+    <h4>The Research</h4>
+    <p>Evidence-first. Before designing anything, I went looking for proof the problem was real — not just an assumption worth acting on.</p>
+  </div>
+</div>
+
+<p style="color:var(--stone);font-size:0.875rem;text-align:center">Like this direction? I'll drop her into the case studies — each section gets the matching expression.</p>
+
+<script>
+const data = {
+  talking:   { emoji:'🙂',   bubble:'Before I get into the data — here\'s what actually kicked this off. <b>A parent on a forum</b>, cross-referencing three tools just to find one flat.' },
+  thinking:  { emoji:'🤔',   bubble:'Hmm. The data shows people drop off here — but I wasn\'t sure <b>why</b>. So I went back to the interviews.' },
+  discovery: { emoji:'😮',   bubble:'<b>There it is.</b> Every single user mentioned the same friction point — they just described it differently.' },
+  problem:   { emoji:'😟',   bubble:'Three tools, zero coordination. No wonder families were exhausted before they even started looking.' },
+  excited:   { emoji:'🤩',   bubble:'And it worked. <b>Task completion up 40%.</b> The friction was gone — users barely noticed the change.' }
+};
+
+function setExpr(name, btn) {
+  document.getElementById('dm-emoji').textContent = data[name].emoji;
+  document.getElementById('dm-bubble').innerHTML = data[name].bubble;
+  document.querySelectorAll('.tog').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

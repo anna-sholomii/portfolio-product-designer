@@ -4,34 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Ambassador Platform - Anna Sholomii</title>
-<link rel="icon" type="image/png" href="/favicon.png?v=3" />
-<link rel="shortcut icon" type="image/png" href="/favicon.png?v=3" />
-<link rel="apple-touch-icon" href="/favicon.png?v=3" />
-<link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/Logo_upd.png?v=2" />
+<link rel="apple-touch-icon" href="/Logo_upd.png?v=2" />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#fff;--bg2:#f7f7f5;--text:#111;--mid:#444;--muted:#888;--line:#e8e8e4;--accent:#EA4520;--green:#1a7a3b;--navy:#0f1f3d;--white:#fff;--wide:1040px;--bg-note:#fafafa}
+:root{
+  --color-coral:#E8644A;--color-coral-dark:#C44A32;--color-coral-tint:#FADBD4;
+  --color-ink:#1A1A18;--color-stone:#888780;--color-linen:#EDEAE3;
+  --color-cream:#FAF7F2;--color-white:#FFFFFF;
+  --color-sage:#B5C4B1;--color-sand:#D4C5B0;--color-lavender:#C5C0D4;
+  --green:#1a7a3b;--wide:1040px;--bg-note:var(--color-cream);
+  --bg:var(--color-white);--bg2:var(--color-cream);--text:var(--color-ink);
+  --mid:var(--color-stone);--muted:var(--color-stone);--line:var(--color-linen);
+  --accent:var(--color-coral);--navy:var(--color-ink);--white:var(--color-white);
+}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Figtree',sans-serif;font-size:1.125rem;line-height:1.75;-webkit-font-smoothing:antialiased}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px}
-.nav-name{font-family:'Figtree',sans-serif;font-size:0.9375rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
-.nav-name-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block}
+nav.nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(255,255,255,.12);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.3);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px}
+.nav-name{font-family:'Figtree',sans-serif;font-size:0.9375rem;font-weight:600;color:var(--color-ink);text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
 .nav-tabs{display:flex;gap:2px;align-items:center}
-.tab-btn{background:none;border:none;cursor:pointer;font-family:'Figtree',sans-serif;font-size:0.875rem;font-weight:500;color:var(--mid);padding:8px 16px;border-radius:20px;transition:background .15s,color .15s;white-space:nowrap;text-decoration:none;display:inline-block}
-.tab-btn:hover{background:var(--bg2);color:var(--text)}
-.btn-outline{border:1.5px solid var(--line);color:var(--text)}
-.btn-outline:hover{border-color:var(--text)}
-.btn-dark{background:var(--navy);color:#fff;padding:11px 22px;border-radius:6px;font-size:0.8125rem;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
-.btn-dark:hover{opacity:.88}
+.tab-btn{background:none;border:none;cursor:pointer;font-family:'Figtree',sans-serif;font-size:0.8438rem;font-weight:500;color:var(--color-ink);padding:8px 18px;border-radius:8px;transition:color .18s,background .18s;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center;letter-spacing:-.01em}
+.tab-btn:hover{background:rgba(255,255,255,.35);color:var(--color-ink)}
+.tab-btn.contact-btn{border:1.5px solid rgba(26,26,24,.4);padding:7px 18px}
+.tab-btn.contact-btn:hover{background:var(--color-ink);color:#fff;border-color:var(--color-ink)}
 
 /* PROCESS NAV */
 .pnav{position:fixed;left:clamp(16px,2.5vw,44px);top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:0}
 .pnav-label{font-size:0.625rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:600;white-space:nowrap;margin-bottom:14px}
-.pnav a{font-size:0.8125rem;color:var(--muted);text-decoration:none;padding:5px 0 5px 12px;border-left:2px solid transparent;white-space:nowrap;display:block;transition:color .2s,border-color .2s}
-.pnav a:hover{color:var(--text);border-left-color:var(--line)}
-.pnav a.active{color:var(--text);border-left-color:var(--accent);font-weight:600}
+.pnav a{font-size:0.8125rem;color:var(--muted);text-decoration:none;padding:5px 0 5px 14px;white-space:nowrap;display:block;transition:color .2s;position:relative}
+.pnav a:hover{color:var(--text)}
+.pnav a.active{color:var(--color-coral-dark);font-weight:600}
+.pnav a.active::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:4px;height:22px;border-radius:3px;background-color:var(--color-coral);background-image:repeating-linear-gradient(-52deg,transparent,transparent 1.5px,#EFEAE2 1.5px,#EFEAE2 3px)}
 @media(max-width:1280px){.pnav{display:none}}
 
 /* LAYOUT */
@@ -41,27 +47,36 @@ hr.d{border:none;border-top:1px solid var(--line)}
 
 /* EYEBROW */
 .eyebrow{font-size:0.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;display:flex;align-items:center;gap:10px}
-.eyebrow .n{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--accent);line-height:1}
+.eyebrow .n{font-family:'Figtree',sans-serif;font-size:1.25rem;font-weight:600;color:var(--accent);line-height:1}
 
 /* TYPE */
-h1{font-family:'Figtree',sans-serif;font-size:clamp(3.375rem,8vw,6.25rem);font-weight:700;line-height:.95;letter-spacing:-.03em;margin-bottom:8px}
-h2{font-family:'DM Serif Display',serif;font-size:clamp(2.125rem,4vw,3.25rem);font-weight:400;line-height:1.05;letter-spacing:-.02em;margin-bottom:20px}
-h2 em{color:var(--muted)}
-h3{font-size:0.8125rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-p{font-size:1.125rem;color:var(--mid);margin-bottom:16px;line-height:1.75}
+h1{font-family:'Figtree',sans-serif;font-size:clamp(2.5rem,5.5vw,4.5rem);font-weight:700;line-height:.95;letter-spacing:-.03em;margin-bottom:8px}
+h2{font-family:'Figtree',sans-serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:400;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px;color:#71717C}
+h2 em{color:#3F3F47;font-weight:700;font-style:normal}
+h3{font-size:0.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+p{font-size:1.125rem;color:#71717C;margin-bottom:16px;line-height:1.75}
 p:last-child{margin-bottom:0}
-strong{color:var(--text);font-weight:500}
+strong{color:#3F3F47;font-weight:600}
+.cs-q{font-size:clamp(1.25rem,2.5vw,1.625rem);color:var(--accent);font-weight:600;line-height:1.3;margin:28px 0 8px;letter-spacing:-.01em}
 
 /* HERO */
 .hero{padding:120px 0 80px;border-bottom:1px solid var(--line)}
 .hero-eyebrow{font-size:0.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
-.hero-sub{font-size:1.3125rem;color:var(--mid);margin:16px 0 12px;line-height:1.65}
-.hero-desc{font-size:1.3125rem;color:var(--mid);line-height:1.65;margin-bottom:0;max-width:640px}
+.hero-sub{font-size:1.125rem;color:#71717C;margin:16px 0 12px;line-height:1.75;max-width:640px}
+.hero-desc{font-size:1.125rem;color:#71717C;line-height:1.75;margin-bottom:0;max-width:640px}
 .meta-row{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:32px 0}
+.title-vec-wrap{position:relative;display:inline-block}
+.title-vec{position:absolute;top:-18px;left:-28px;width:110px;opacity:.1;pointer-events:none;z-index:0;mix-blend-mode:multiply}
+.title-vec-wrap h1{position:relative;z-index:1;white-space:nowrap}
+.hero-highlight{color:var(--accent);font-style:normal}
 .mc{flex:1;padding:14px 18px;border-right:1px solid var(--line);background:var(--white)}
 .mc:last-child{border-right:none}
-.ml{font-size:0.625rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;font-weight:600}
-.mv{font-size:1rem;color:var(--mid);line-height:1.5}
+.ml{font-size:0.625rem;letter-spacing:.1em;text-transform:uppercase;color:#71717C;margin-bottom:3px;font-weight:600}
+.mv{font-size:1rem;color:#3F3F47;line-height:1.5}
+.btn-dark{background:#D43E25;color:#fff;padding:11px 22px;border-radius:6px;font-size:0.8125rem;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+.btn-dark:hover{opacity:.85}
+.btn-ghost{color:#D43E25;font-size:0.8125rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;border:1.5px solid #D43E25;padding:10px 18px;border-radius:6px}
+.btn-ghost:hover{background:#D43E25;color:#fff}
 
 /* HERO VISUAL */
 .hero-visual{margin-top:48px;background:var(--navy);border-radius:14px;padding:52px 48px;position:relative;overflow:hidden}
@@ -69,21 +84,43 @@ strong{color:var(--text);font-weight:500}
 .hero-visual-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.07);border-radius:8px;overflow:hidden}
 .hv-cell{padding:20px 22px;background:rgba(15,31,61,.6)}
 .hv-label{font-size:0.625rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:6px;font-weight:600}
-.hv-value{font-family:'DM Serif Display',serif;font-size:1.75rem;color:#fff;line-height:1}
+.hv-value{font-family:'Figtree',sans-serif;font-size:1.75rem;color:#fff;line-height:1}
 .hv-sub{font-size:0.6875rem;color:rgba(255,255,255,.4);margin-top:4px}
 
 /* PULL QUOTE */
-.pq{font-family:'Figtree',sans-serif;font-weight:500;font-size:clamp(0.9375rem,2vw,1.125rem);color:var(--text);line-height:1.6;background:var(--bg-note);border-left:3px solid var(--accent);padding:18px 22px;border-radius:0 8px 8px 0;margin:28px 0}
+.pq{
+  position:relative;overflow:hidden;
+  background:var(--bg2);border:none;border-left:none;
+  border-radius:16px;padding:24px 28px;margin:28px 0;
+  opacity:0;transform:translateY(20px);
+  transition:opacity .55s cubic-bezier(.25,.46,.45,.94),transform .55s cubic-bezier(.25,.46,.45,.94);
+}
+.pq.pq-in{opacity:1;transform:translateY(0)}
+.pq::before{
+  content:'C';
+  position:absolute;top:-16px;left:18px;
+  font-size:5.5rem;line-height:1;font-weight:700;
+  color:rgba(26,26,24,.07);pointer-events:none;
+  font-family:'Figtree',sans-serif;
+}
+.callout-box{
+  position:relative;overflow:hidden;
+  background:var(--bg2);border:none;border-left:none;
+  border-radius:16px;padding:24px 28px;margin:28px 0;
+  opacity:0;transform:translateY(20px);
+  transition:opacity .55s cubic-bezier(.25,.46,.45,.94),transform .55s cubic-bezier(.25,.46,.45,.94);
+}
+.callout-box.pq-in{opacity:1;transform:translateY(0)}
 
 /* PRODUCT AREA CARDS */
 .area-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
 .area-card{border:1px solid var(--line);border-radius:12px;padding:28px 28px 24px;background:var(--white);position:relative}
-.area-card-n{font-family:'DM Serif Display',serif;font-size:2.25rem;color:var(--line);line-height:1;margin-bottom:12px}
+.area-card-n{font-family:'Figtree',sans-serif;font-size:2.25rem;color:var(--line);line-height:1;margin-bottom:12px}
 .area-card-title{font-size:0.9375rem;font-weight:600;color:var(--text);margin-bottom:8px}
-.area-card-desc{font-size:0.8125rem;color:var(--mid);line-height:1.7;margin-bottom:0}
-.area-stat{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:6px 12px;border-radius:20px;background:#edf7f1;font-size:0.75rem;font-weight:600;color:var(--green)}
+.area-card-desc{font-size:0.8125rem;color:#71717C;line-height:1.7;margin-bottom:0}
+.area-stat{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:6px 12px;border-radius:20px;background:var(--color-cream);font-size:0.75rem;font-weight:600;color:var(--color-ink)}
 .area-bullets{margin-top:16px;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
-.area-bullets li{font-size:0.8125rem;color:var(--mid);line-height:1.6;padding-left:16px;position:relative}
+.area-bullets li{font-size:0.8125rem;color:#71717C;line-height:1.6;padding-left:16px;position:relative}
 .area-bullets li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
 .area-stat::before{content:'↑';font-size:0.6875rem}
 
@@ -105,7 +142,7 @@ strong{color:var(--text);font-weight:500}
 .ds-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:28px}
 .ds-card{border:1px solid var(--line);border-radius:10px;padding:20px 20px 16px;background:var(--white)}
 .ds-card-title{font-size:0.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-.ds-card-body{font-size:0.8125rem;color:var(--mid);line-height:1.65}
+.ds-card-body{font-size:0.8125rem;color:#71717C;line-height:1.65}
 
 /* TIMELINE */
 .timeline{position:relative;padding-left:28px;margin-top:24px}
@@ -121,13 +158,13 @@ strong{color:var(--text);font-weight:500}
 /* LEARNINGS */
 .lg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:24px 0}
 .lc{padding:20px 22px;background:var(--white);border:1px solid var(--line);border-radius:10px}
-.lcn{font-family:'DM Serif Display',serif;font-size:1.875rem;color:var(--line);margin-bottom:8px;line-height:1}
-.lc p{font-size:1.125rem;color:var(--mid)}
+.lcn{font-family:'Figtree',sans-serif;font-size:1.875rem;color:var(--line);margin-bottom:8px;line-height:1}
+.lc p{font-size:1.125rem;color:#71717C}
 
 /* CLOSING */
 .closing{background:var(--navy);padding:80px 0}
 .closing-rule{width:48px;height:2px;background:var(--accent);margin:0 auto 28px}
-.closing-quote{font-family:'DM Serif Display',serif;font-size:clamp(1.25rem,3vw,1.875rem);font-style:italic;color:rgba(255,255,255,.85);text-align:center;max-width:600px;margin:0 auto 16px;line-height:1.4}
+.closing-quote{font-family:'Figtree',sans-serif;font-size:clamp(1.25rem,3vw,1.875rem);font-style:italic;color:rgba(255,255,255,.85);text-align:center;max-width:600px;margin:0 auto 16px;line-height:1.4}
 .closing-sub{text-align:center;font-size:0.8125rem;color:rgba(255,255,255,.35);margin-bottom:28px}
 .closing-next{text-align:center;margin-top:32px}
 .closing-next a{font-size:0.8125rem;color:rgba(255,255,255,.5);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px}
@@ -137,13 +174,28 @@ strong{color:var(--text);font-weight:500}
 [id]{scroll-margin-top:108px}
 
 /* NEXT CASE STUDY */
-.next-cs{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
-.next-cs-inner{max-width:var(--wide);margin:0 auto;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.next-cs-label{font-size:0.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.next-cs-link{font-family:'DM Serif Display',serif;font-size:clamp(1.375rem,3vw,2rem);color:var(--text);text-decoration:none;display:flex;align-items:center;gap:14px;transition:color .18s}
-.next-cs-link:hover{color:var(--navy)}
-.next-cs-link svg{flex-shrink:0;transition:transform .18s}
-.next-cs-link:hover svg{transform:translateX(5px)}
+.next-cs{background:var(--bg2);padding:56px 0}
+.next-cs-inner{max-width:var(--wide);margin:0 auto;padding:0 48px}
+.next-cs-label{font-size:0.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;display:block;margin-bottom:20px}
+.next-cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--white);text-decoration:none;display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.25,.46,.45,.94),box-shadow .3s,border-color .3s;cursor:pointer;position:relative}
+.card:hover{transform:translateY(-8px);box-shadow:0 24px 64px rgba(0,0,0,.13);border-color:transparent}
+.card-thumb{aspect-ratio:16/9;overflow:hidden;background:var(--bg2);position:relative;flex-shrink:0}
+.card-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .5s cubic-bezier(.25,.46,.45,.94)}
+.card:hover .card-thumb img{transform:scale(1.07)}
+.card-overlay{position:absolute;inset:0;background:rgba(26,26,24,0);display:flex;align-items:center;justify-content:center;transition:background .22s}
+.card:hover .card-overlay{background:rgba(26,26,24,.5)}
+.card-overlay-cta{color:#fff;font-size:0.8125rem;font-weight:600;letter-spacing:.02em;opacity:0;transform:translateY(8px);transition:opacity .22s,transform .22s cubic-bezier(.25,.46,.45,.94);display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(6px);padding:10px 20px;border-radius:8px;border:1px solid rgba(255,255,255,.25)}
+.card:hover .card-overlay-cta{opacity:1;transform:translateY(0)}
+.card-body{padding:20px 22px 12px;flex:1}
+.card-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.card-tag{font-size:0.6875rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text);background:var(--line);padding:3px 8px;border-radius:4px}
+.card-title{font-family:'Figtree',sans-serif;font-size:clamp(1.375rem,2.5vw,1.75rem);font-weight:700;color:var(--text);letter-spacing:-.02em;line-height:1.1;margin-bottom:8px}
+.card-desc{font-size:0.9375rem;color:var(--muted);line-height:1.6;margin:0}
+.card-foot{padding:12px 22px 18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+.card-year{font-size:0.8125rem;color:var(--muted)}
+.card-arrow{font-size:0.8125rem;font-weight:600;color:var(--text);display:flex;align-items:center;gap:4px;transition:gap .15s}
+.card:hover .card-arrow{gap:8px}
 
 /* FOOTER */
 footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);font-size:0.8125rem;color:var(--muted);max-width:var(--wide);margin:0 auto}
@@ -167,15 +219,16 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 </head>
 <body>
 
-<nav>
+<nav class="nav">
   <a href="index.html" class="nav-name">
-    <span style="font-family:'Figtree',sans-serif;font-weight:700;font-size:1.125rem;color:var(--accent);letter-spacing:-.01em;line-height:1">Anna Sholomii</span>
+    <img src="/Logo_upd.png?v=2" alt="AS" width="36" height="36" style="display:block;flex-shrink:0;border-radius:6px">
+    <span style="font-family:'Figtree',sans-serif;font-weight:700;font-size:1.125rem;color:var(--color-ink);letter-spacing:-.01em;line-height:1">Anna Sholomii</span>
   </a>
   <div class="nav-tabs">
-    <a href="index.html" class="tab-btn">Case Studies</a>
-    <a href="index.html?tab=about" class="tab-btn">About Me</a>
-    <a href="index.html?tab=resume" class="tab-btn">Resume</a>
-    <a href="index.html?tab=contact" class="tab-btn btn-outline">Contact</a>
+    <a href="work.html" class="tab-btn">Case Studies</a>
+    <a href="about.html" class="tab-btn">About Me</a>
+    <a href="resume.html" class="tab-btn">Resume</a>
+    <a href="contact.html" class="tab-btn contact-btn">Contact</a>
   </div>
 </nav>
 
@@ -196,14 +249,18 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 <section class="hero" id="overview">
   <div class="container">
     <p class="hero-eyebrow">Product Designer &middot; May 2019 – April 2022</p>
-    <h1>The Ambassador<br>Platform</h1>
+    <div class="title-vec-wrap">
+      <img src="Vector_as_in_logo.svg" class="title-vec" aria-hidden="true">
+      <h1><span style="color:#3F3F47">The Ambassador </span><span style="color:#71717C">Platform</span></h1>
+    </div>
     <p class="hero-sub">B2B EdTech SaaS &middot; Acquired by IDP Education &middot; 100+ institutional clients</p>
     <p class="hero-desc">The only product designer at a B2B EdTech platform - I owned the full design lifecycle across 3 platforms (prospective students widget, ambassadors mobile app and the admin dashboard).</p>
 
     <div class="meta-row">
-      <div class="mc"><div class="ml">Role</div><div class="mv">Product Designer<br><span style="font-size:0.6875rem;color:var(--muted)">Research · Design · Prototype · Usability Testing · Design System · Handoff</span></div></div>
-      <div class="mc"><div class="ml">Duration</div><div class="mv">3 years<br><span style="font-size:0.6875rem;color:var(--muted)">May 2019 – April 2022</span></div></div>
-      <div class="mc"><div class="ml">Scope</div><div class="mv">3 product areas<br><span style="font-size:0.6875rem;color:var(--muted)">Widget · Mobile App · Dashboard</span></div></div>
+      <div class="mc"><div class="ml">Role</div><div class="mv">Product Designer<br><span style="font-size:0.6875rem;color:#71717C">Research · Design · Prototype · Usability Testing · Design System · Handoff</span></div></div>
+      <div class="mc"><div class="ml">Tools</div><div class="mv">Figma</div></div>
+      <div class="mc"><div class="ml">Duration</div><div class="mv">3 years<br><span style="font-size:0.6875rem;color:#71717C">May 2019 – April 2022</span></div></div>
+      <div class="mc"><div class="ml">Status</div><div class="mv">Shipped<br><span style="font-size:0.6875rem;color:#71717C">Acquired by IDP Education</span></div></div>
     </div>
   </div>
 </section>
@@ -387,10 +444,40 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 </div>
 
 <div class="next-cs">
-  <div class="next-cs-inner" style="flex-direction:column;align-items:center;text-align:center;gap:16px">
-    <span class="next-cs-label">Next case study</span>
-    <div style="font-family:'DM Serif Display',serif;font-size:clamp(1.375rem,3vw,2.25rem);color:var(--text)">Telo</div>
-    <a href="telo-case-study.html" class="btn-dark">View case study →</a>
+  <div class="next-cs-inner">
+    <span class="next-cs-label">More case studies</span>
+    <div class="next-cs-grid">
+      <a href="telo-case-study.html" class="card" data-cs="telo">
+        <div class="card-thumb">
+          <img src="1. Collapsed state.png" alt="Telo" loading="lazy">
+          <div class="card-overlay"><div class="card-overlay-cta"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View case study</div></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags"><span class="card-tag">B2B · SaaS</span><span class="card-tag">Slack</span></div>
+          <div class="card-title">Telo</div>
+          <p class="card-desc">Slack-native alerting for SaaS metrics — when your numbers move, you know first.</p>
+        </div>
+        <div class="card-foot">
+          <span class="card-year">2026 · Conceptual</span>
+          <span class="card-arrow">Read case study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+      <a href="schoolmap-case-study.html" class="card" data-cs="schoolmap">
+        <div class="card-thumb">
+          <img src="schoolmap-preview.png" alt="Rent by School" loading="lazy">
+          <div class="card-overlay"><div class="card-overlay-cta"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View case study</div></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags"><span class="card-tag">Civic Tech</span><span class="card-tag">Design · Dev · Data</span></div>
+          <div class="card-title">Rent by School</div>
+          <p class="card-desc">Map-first rental search for Toronto families — find a home by the school catchment that matters most.</p>
+        </div>
+        <div class="card-foot">
+          <span class="card-year">2026 · Live</span>
+          <span class="card-arrow">Read case study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -417,6 +504,148 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('section[id], div[id]').forEach(s => obs.observe(s));
 </script>
 
+<!-- ─── ASK ANNA BOT ─── -->
+<style>
+#anna-bot{position:fixed;bottom:96px;right:32px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.bot-trigger{width:52px;height:52px;border-radius:50%;background:#4A6741;border:none;cursor:pointer;overflow:hidden;box-shadow:0 4px 20px rgba(74,103,65,.4);transition:transform .2s,box-shadow .2s;position:relative;flex-shrink:0;padding:0}
+.bot-trigger img{width:52px;height:52px;object-fit:cover;object-position:50% 12%;display:block}
+.bot-trigger:hover{transform:scale(1.06);box-shadow:0 6px 28px rgba(74,103,65,.4)}
+.bot-trigger-emoji{font-size:26px;line-height:1;pointer-events:none}
+.bot-ping{position:absolute;top:2px;right:2px;width:10px;height:10px;border-radius:50%;background:#E8644A;border:2px solid #fff}
+.bot-ping::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:#E8644A;opacity:.5;animation:ping 1.8s ease-out infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.5}100%{transform:scale(2.2);opacity:0}}
+.bot-tooltip{background:var(--navy);color:#fff;font-family:'Figtree',sans-serif;font-size:0.8125rem;font-weight:500;padding:9px 14px;border-radius:10px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.18);position:relative;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none}
+.bot-tooltip::after{content:'';position:absolute;right:18px;bottom:-6px;width:10px;height:10px;background:var(--navy);clip-path:polygon(0 0,100% 0,50% 100%)}
+.bot-tooltip.show{opacity:1;transform:translateY(-2px);pointer-events:auto;cursor:pointer}
+.bot-panel{width:320px;background:#fff;border:1px solid var(--color-linen);border-radius:18px;box-shadow:0 8px 48px rgba(0,0,0,.12);display:flex;flex-direction:column;overflow:hidden;transform:translateY(12px) scale(.97);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-height:520px}
+.bot-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
+.bot-head{display:flex;align-items:center;gap:10px;padding:16px 18px;border-bottom:1px solid var(--color-linen);background:var(--color-cream)}
+.bot-head img{width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:50% 12%;flex-shrink:0}
+.bot-head-text{flex:1}
+.bot-head-name{font-size:0.9375rem;font-weight:700;color:var(--color-ink);letter-spacing:-.01em}
+.bot-head-sub{font-size:0.75rem;color:var(--color-stone);margin-top:1px}
+.bot-close{background:none;border:none;cursor:pointer;color:var(--color-stone);font-size:1.25rem;line-height:1;padding:4px;border-radius:6px;transition:background .15s}
+.bot-close:hover{background:var(--color-linen);color:var(--color-ink)}
+.bot-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:100px;max-height:260px}
+.bot-msg{background:var(--color-cream);border:1px solid var(--color-linen);border-radius:12px 12px 12px 4px;padding:10px 13px;font-size:0.8125rem;line-height:1.6;color:var(--color-ink);animation:msgIn .2s ease}
+.bot-msg b{color:#4A6741}
+.bot-user-msg{background:#4A6741;color:#fff;border-radius:12px 12px 4px 12px;padding:10px 13px;font-size:0.8125rem;line-height:1.6;align-self:flex-end;border:none}
+@keyframes msgIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.bot-chips{padding:0 16px 12px;display:flex;flex-direction:column;gap:6px}
+.bot-chip{background:none;border:1px solid var(--color-linen);border-radius:8px;padding:8px 12px;font-family:'Figtree',sans-serif;font-size:0.8125rem;font-weight:500;color:var(--color-ink);cursor:pointer;text-align:left;transition:background .15s,border-color .15s;line-height:1.3}
+.bot-chip:hover{background:var(--color-cream);border-color:var(--color-sand)}
+.bot-input-row{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--color-linen);background:var(--color-cream)}
+.bot-input{flex:1;border:1px solid var(--color-linen);border-radius:8px;padding:8px 12px;font-family:'Figtree',sans-serif;font-size:0.8125rem;color:var(--color-ink);background:#fff;outline:none;transition:border-color .15s}
+.bot-input:focus{border-color:#4A6741}
+.bot-send{background:#4A6741;color:#fff;border:none;border-radius:8px;width:34px;height:34px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity .15s}
+.bot-send:hover{opacity:.85}
+</style>
+
+<div id="anna-bot">
+  <div class="bot-panel" id="bot-panel">
+    <div class="bot-head">
+      <img src="/anna-avatar.jpeg?v=1" alt="Anna">
+      <div class="bot-head-text">
+        <div class="bot-head-name">Ask Anna</div>
+        <div class="bot-head-sub">About the Ambassador Platform</div>
+      </div>
+      <button class="bot-close" onclick="closeBot()">×</button>
+    </div>
+    <div class="bot-messages" id="bot-messages">
+      <div class="bot-msg">Hi! I can answer questions about my design decisions on this project. Pick one below or type your own.</div>
+    </div>
+    <div class="bot-chips" id="bot-chips">
+      <button class="bot-chip" onclick="ask('How did you improve the widget conversion rate?')">How did you improve the widget conversion rate?</button>
+      <button class="bot-chip" onclick="ask('How did you manage three products as one designer?')">How did you manage three products as one designer?</button>
+      <button class="bot-chip" onclick="ask('Why build a design system as the first thing?')">Why build a design system as the first thing?</button>
+      <button class="bot-chip" onclick="ask('What would you do differently?')">What would you do differently?</button>
+    </div>
+    <div class="bot-input-row">
+      <input class="bot-input" id="bot-input" placeholder="Ask anything about the process…" onkeydown="if(event.key==='Enter')sendMsg()"/>
+      <button class="bot-send" onclick="sendMsg()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="bot-trigger" id="bot-trigger" onclick="toggleBot()" aria-label="Ask Anna">
+    <img src="/anna-avatar.jpeg?v=1" alt="Anna">
+    <span class="bot-ping" id="bot-ping"></span>
+  </button>
+</div>
+
+<script>
+(function(){
+  var qa=[
+    {
+      keywords:['convert','conversion','widget','8%','13%','rate','improve','prospect','increase'],
+      emoji:'😮',
+      answer:'The original widget had too many friction points before a prospect could start a conversation. I reduced the number of steps, improved how ambassadors were presented (photo, course, country — not just a name), and added clearer trust signals. Moving from 8–10% to 13–14% came from removing doubt at the exact moment someone decides whether to engage.'
+    },
+    {
+      keywords:['three','3','multiple','products','solo','only','one designer','manage','alone','product areas'],
+      emoji:'🤔',
+      answer:'Three separate users — prospect, ambassador, institution admin — with different goals and contexts. The key discipline was keeping them conceptually separate even when resources weren\'t. Each product area had its own success metric, which made prioritisation clearer. The design system was what made it survivable: <b>shared components meant a decision made once could propagate across all three</b> without rework.'
+    },
+    {
+      keywords:['design system','component','system','foundation','first','library','built'],
+      emoji:'🙂',
+      answer:'There was no shared visual language when I joined — every screen was a one-off. The system wasn\'t a design project, it was an infrastructure decision. I built it because without it, every feature would take 3× longer and diverge visually. <b>The component library gave engineering confidence at handoff</b> — they could reference production states directly and stop second-guessing what "the right thing" looked like.'
+    },
+    {
+      keywords:['enterprise','consumer','balance','widget','dashboard','different surfaces','tone','feel'],
+      emoji:'🤔',
+      answer:'The widget needed to feel warm and personal — it\'s a student asking a real person a question. The admin dashboard needed to feel legible and trustworthy — it\'s a procurement buyer justifying spend. Same design system, very different tone. I handled it through typography weight and colour application rather than separate component sets, so the system stayed maintainable.'
+    },
+    {
+      keywords:['different','retrospect','change','improve','next','learned','would you','reflection'],
+      emoji:'😟',
+      answer:'I\'d push harder for dedicated user research time earlier in my tenure. In the first year I was reacting to a backlog rather than shaping it. The insights I got from interviews in year two — about what ambassadors actually needed from the app — would have changed several decisions I made in year one.'
+    }
+  ];
+
+  var open=false;
+  setTimeout(function(){
+    if(!open&&!sessionStorage.getItem('bot-seen-amb')){
+    }
+  },3500);
+
+  window.toggleBot=function(){open?closeBot():openBot()};
+  window.openBot=function(){
+    open=true;
+    document.getElementById('bot-panel').classList.add('open');
+    document.getElementById('bot-ping').style.display='none';
+    sessionStorage.setItem('bot-seen-amb','1');
+    setTimeout(function(){document.getElementById('bot-input').focus()},300);
+  };
+  window.closeBot=function(){open=false;document.getElementById('bot-panel').classList.remove('open')};
+
+  window.ask=function(q){
+    addMsg(q,'user');
+    document.getElementById('bot-chips').style.display='none';
+    var found=null,ql=q.toLowerCase();
+    for(var i=0;i<qa.length;i++){
+      if(qa[i].keywords.some(function(k){return ql.indexOf(k)!==-1})){found=qa[i];break}
+    }
+    setTimeout(function(){
+      if(found){addMsg(found.answer,'bot');}
+      else{addMsg("That\'s outside what I have scripted — but happy to talk about it. Reach out at <b>anna@sholomii.com</b> or LinkedIn.",'bot');}
+      setTimeout(function(){document.getElementById('bot-chips').style.display='flex'},600);
+    },480);
+  };
+
+  window.sendMsg=function(){
+    var inp=document.getElementById('bot-input'),val=inp.value.trim();
+    if(!val)return;inp.value='';ask(val);
+  };
+
+  function addMsg(text,from){
+    var msgs=document.getElementById('bot-messages'),div=document.createElement('div');
+    div.className=from==='user'?'bot-user-msg':'bot-msg';
+    div.innerHTML=text;msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
+  }
+})();
+</script>
+
 <!-- SCROLL TO TOP -->
 <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
@@ -441,6 +670,14 @@ document.querySelectorAll('section[id], div[id]').forEach(s => obs.observe(s));
   window.addEventListener('scroll', function(){
     btn.classList.toggle('visible', window.scrollY > 400);
   }, {passive:true});
+})();
+
+// Animate .pq on scroll
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('pq-in'); obs.unobserve(e.target); }});
+  },{threshold:0.15});
+  document.querySelectorAll('.pq').forEach(function(el){ obs.observe(el); });
 })();
 </script>
 </body>
