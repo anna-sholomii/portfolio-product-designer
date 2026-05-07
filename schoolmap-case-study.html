@@ -100,6 +100,16 @@ strong{color:#3F3F47;font-weight:600}
 .ss-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
 .cards-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
 .mockup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+.phone-fan{display:flex;align-items:flex-end;justify-content:center;padding:40px 0 8px;overflow:visible}
+.ph{border-radius:28px;overflow:hidden;border:1px solid rgba(0,0,0,.09);box-shadow:0 20px 56px rgba(0,0,0,.13);cursor:pointer;flex-shrink:0;transition:transform .2s,z-index 0s;position:relative}
+.ph:hover{transform:translateY(-12px) scale(1.04) !important;z-index:20 !important}
+.ph img{display:block;width:100%}
+.ph-a{width:128px;transform:translateY(52px);z-index:1;margin-right:-18px;opacity:.8}
+.ph-b{width:158px;transform:translateY(26px);z-index:2;margin-right:-18px;opacity:.9}
+.ph-c{width:192px;transform:translateY(0);z-index:5}
+.ph-d{width:192px;transform:translateY(0);z-index:5;margin-left:-18px}
+.ph-e{width:158px;transform:translateY(26px);z-index:2;margin-left:-18px;opacity:.9}
+.ph-f{width:128px;transform:translateY(52px);z-index:1;margin-left:-18px;opacity:.8}
 .info-card{padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:var(--white)}
 .info-card-label{font-size:0.6875rem;font-weight:700;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
 .info-card p{font-size:1.125rem;color:#71717C;margin:0;line-height:1.75}
@@ -181,6 +191,12 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
   .mc:last-child{border-bottom:none}
   .ss-grid,.cards-2,.lg,.steps,.kpi-cards{grid-template-columns:1fr}
   .mockup-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .phone-fan{gap:0;padding:24px 0 8px}
+  .ph-a,.ph-f{display:none}
+  .ph-b{width:130px;transform:translateY(20px);margin-right:-12px;margin-left:0}
+  .ph-c{width:160px}
+  .ph-d{width:160px;margin-left:-12px}
+  .ph-e{width:130px;transform:translateY(20px);margin-left:-12px}
   .tr-row{grid-template-columns:1fr;gap:6px}
   .process-flow{flex-direction:column}
   .ps{border-right:none;border-bottom:1px solid var(--line)}
@@ -364,32 +380,6 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
       </div>
     </div>
 
-    <div style="margin-bottom:40px">
-      <p style="font-size:0.875rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px">The Fragmented Reality</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr auto 1fr;gap:10px;align-items:center">
-        <div style="background:var(--white);border:1px solid var(--line);border-radius:10px;padding:16px 14px;text-align:center">
-          <div style="font-size:1.25rem;margin-bottom:6px">🏫</div>
-          <div style="font-size:0.8125rem;font-weight:600;color:#3F3F47;margin-bottom:4px">TDSB / TCDSB</div>
-          <div style="font-size:0.75rem;color:#71717C;line-height:1.4">Catchment maps - PDF only, no search</div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--line);border-radius:10px;padding:16px 14px;text-align:center">
-          <div style="font-size:1.25rem;margin-bottom:6px">🏠</div>
-          <div style="font-size:0.8125rem;font-weight:600;color:#3F3F47;margin-bottom:4px">Rentals.ca</div>
-          <div style="font-size:0.75rem;color:#71717C;line-height:1.4">Listings only - zero school data</div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--line);border-radius:10px;padding:16px 14px;text-align:center">
-          <div style="font-size:1.25rem;margin-bottom:6px">📊</div>
-          <div style="font-size:0.8125rem;font-weight:600;color:#3F3F47;margin-bottom:4px">Fraser Institute</div>
-          <div style="font-size:0.75rem;color:#71717C;line-height:1.4">Rankings only - no location layer</div>
-        </div>
-        <div style="text-align:center;font-family:’Figtree’,sans-serif;font-size:1.25rem;font-weight:700;color:var(--accent)">→</div>
-        <div style="background:#3F3F47;border-radius:10px;padding:16px 14px;text-align:center">
-          <div style="font-size:1.25rem;margin-bottom:6px">🗺️</div>
-          <div style="font-size:0.8125rem;font-weight:600;color:#fff;margin-bottom:4px">Rent by School</div>
-          <div style="font-size:0.75rem;color:rgba(255,255,255,.65);line-height:1.4">One map. All three layers.</div>
-        </div>
-      </div>
-    </div>
 
     <p style="max-width:680px">You’re facing the problem. Before designing anything, I needed to check: is this real and widespread - or just an assumption? Hey Reddit, have you heard of something similar?</p>
 
@@ -530,15 +520,47 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 
       <p style="max-width:640px;margin-top:32px">Yep, I knew that. Let’s use my design superpower and address their frustrations.</p>
       <p style="max-width:640px;margin-top:8px">Which pain points do they mention:</p>
-      <div class="lg" style="margin-top:20px">
-        <div class="lc"><div class="lcn">1</div><p><strong>No map</strong> - and rentals live somewhere else entirely</p></div>
-        <div class="lc"><div class="lcn">2</div><p><strong>Tools show proximity, not assignment</strong> - nearby ≠ assigned</p></div>
-        <div class="lc"><div class="lcn">3</div><p><strong>Fraser ratings are hard to find</strong> and navigate</p></div>
-        <div class="lc"><div class="lcn">4</div><p><strong>French Immersion boundaries</strong> are undocumented</p></div>
-        <div class="lc"><div class="lcn">5</div><p><strong>Realtors actively mislead</strong> families on zones</p></div>
-        <div class="lc"><div class="lcn">6</div><p><strong>Schools are full</strong> - catchment doesn’t guarantee a place</p></div>
-        <div class="lc"><div class="lcn">7</div><p><strong>Condo buildings can be excluded</strong> from their local catchment</p></div>
-        <div class="lc"><div class="lcn">8</div><p><strong>Fraser systematically underrates</strong> newcomer-heavy schools</p></div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px">
+        <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
+          <div style="font-size:0.625rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">01</div>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">No map</p>
+          <p style="font-size:0.8125rem;color:#71717C;margin:0;line-height:1.4">Rentals live on a different platform entirely</p>
+        </div>
+        <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
+          <div style="font-size:0.625rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">02</div>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Proximity ≠ assigned</p>
+          <p style="font-size:0.8125rem;color:#71717C;margin:0;line-height:1.4">Tools show "nearby" schools, not your actual catchment</p>
+        </div>
+        <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
+          <div style="font-size:0.625rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">03</div>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Ratings buried</p>
+          <p style="font-size:0.8125rem;color:#71717C;margin:0;line-height:1.4">Fraser scores are hard to find and navigate</p>
+        </div>
+        <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
+          <div style="font-size:0.625rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">04</div>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">FI undocumented</p>
+          <p style="font-size:0.8125rem;color:#71717C;margin:0;line-height:1.4">French Immersion boundaries aren’t publicly mapped</p>
+        </div>
+        <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
+          <div style="font-size:0.625rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">05</div>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Realtors mislead</p>
+          <p style="font-size:0.8125rem;color:#71717C;margin:0;line-height:1.4">Agents actively give wrong catchment information</p>
+        </div>
+        <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
+          <div style="font-size:0.625rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">06</div>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Catchment ≠ spot</p>
+          <p style="font-size:0.8125rem;color:#71717C;margin:0;line-height:1.4">Schools are full - being inside doesn’t guarantee a place</p>
+        </div>
+        <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
+          <div style="font-size:0.625rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">07</div>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Condos excluded</p>
+          <p style="font-size:0.8125rem;color:#71717C;margin:0;line-height:1.4">Some condo buildings are carved out of their local catchment</p>
+        </div>
+        <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
+          <div style="font-size:0.625rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">08</div>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Ratings biased</p>
+          <p style="font-size:0.8125rem;color:#71717C;margin:0;line-height:1.4">Fraser systematically underrates newcomer-heavy schools</p>
+        </div>
       </div>
       <p style="max-width:640px;margin-top:24px">Ouf, quite a lot to start with. Let’s first deliver basic value and cover the major frustrations - reduce decision time by consolidating all necessary information in one place, show exact catchment boundaries (not proximity), and surface school rankings clearly.</p>
   </div>
@@ -570,8 +592,24 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 
     <p style="max-width:640px">The primary user isn't someone who already knows Toronto's neighbourhoods. It's a parent who has never lived here - arriving from another country or another city - who needs to make a high-stakes housing decision quickly, without local knowledge to fall back on.</p>
     <div class="cards-2" style="margin-top:32px">
-      <div class="info-card"><div class="info-card-label">Who they are</div><p>Newcomer families, international transfer employees, domestic relocators. Often renting before buying. School-age children already enrolled or about to be.</p></div>
-      <div class="info-card"><div class="info-card-label">What they need</div><p>A fast, trustworthy signal about school quality. A way to see which neighbourhoods are within reach. Confidence that a rental is actually inside the right catchment.</p></div>
+      <div class="info-card">
+        <div class="info-card-label">Who they are</div>
+        <ul style="margin:0;padding-left:18px;list-style:none;display:flex;flex-direction:column;gap:6px">
+          <li style="display:flex;gap:8px;align-items:baseline"><span style="color:var(--accent);font-weight:700;flex-shrink:0">-</span><span style="font-size:1rem;color:#71717C;line-height:1.5">Newcomer &amp; relocating families</span></li>
+          <li style="display:flex;gap:8px;align-items:baseline"><span style="color:var(--accent);font-weight:700;flex-shrink:0">-</span><span style="font-size:1rem;color:#71717C;line-height:1.5">International transfer employees</span></li>
+          <li style="display:flex;gap:8px;align-items:baseline"><span style="color:var(--accent);font-weight:700;flex-shrink:0">-</span><span style="font-size:1rem;color:#71717C;line-height:1.5">Often renting before buying</span></li>
+          <li style="display:flex;gap:8px;align-items:baseline"><span style="color:var(--accent);font-weight:700;flex-shrink:0">-</span><span style="font-size:1rem;color:#71717C;line-height:1.5">School-age child already enrolled or incoming</span></li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">What they need</div>
+        <ul style="margin:0;padding-left:18px;list-style:none;display:flex;flex-direction:column;gap:6px">
+          <li style="display:flex;gap:8px;align-items:baseline"><span style="color:var(--accent);font-weight:700;flex-shrink:0">-</span><span style="font-size:1rem;color:#71717C;line-height:1.5">A fast, trustworthy school quality signal</span></li>
+          <li style="display:flex;gap:8px;align-items:baseline"><span style="color:var(--accent);font-weight:700;flex-shrink:0">-</span><span style="font-size:1rem;color:#71717C;line-height:1.5">Neighbourhoods within their rental budget</span></li>
+          <li style="display:flex;gap:8px;align-items:baseline"><span style="color:var(--accent);font-weight:700;flex-shrink:0">-</span><span style="font-size:1rem;color:#71717C;line-height:1.5">Confirmed catchment - not just proximity</span></li>
+          <li style="display:flex;gap:8px;align-items:baseline"><span style="color:var(--accent);font-weight:700;flex-shrink:0">-</span><span style="font-size:1rem;color:#71717C;line-height:1.5">Confidence before signing the lease</span></li>
+        </ul>
+      </div>
     </div>
     <p style="max-width:640px;margin-top:8px">They are not education researchers. They don't need nuance - they need a starting point good enough to shortlist neighbourhoods and begin viewings.</p>
 
@@ -945,32 +983,27 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     </div>
     <div style="margin-top:48px">
       <h3>Mobile screens</h3>
-      <div class="mockup-grid">
-        <div>
-          <div class="img-wrap" onclick="openLb(this.querySelector('img').src)"><img src="Mockup_locator_map.png" alt="Map view" loading="lazy"><button class="img-enlarge">Enlarge ↗</button></div>
-          <p class="img-caption">Map - colour-coded school pins with Fraser ratings</p>
+      <div class="phone-fan">
+        <div class="ph ph-a" onclick="openLb('Mockup_locator_rental_info.png')" title="Rental detail">
+          <img src="Mockup_locator_rental_info.png" alt="Rental detail" loading="lazy">
         </div>
-        <div>
-          <div class="img-wrap" onclick="openLb(this.querySelector('img').src)"><img src="Mockup_locator_filter.png" alt="Filters panel" loading="lazy"><button class="img-enlarge">Enlarge ↗</button></div>
-          <p class="img-caption">Filters - board, language, level, and rating range</p>
+        <div class="ph ph-b" onclick="openLb('Mockup_locator_filter.png')" title="Filters">
+          <img src="Mockup_locator_filter.png" alt="Filters panel" loading="lazy">
         </div>
-        <div>
-          <div class="img-wrap" onclick="openLb(this.querySelector('img').src)"><img src="Mockup_locator_search.png" alt="School search" loading="lazy"><button class="img-enlarge">Enlarge ↗</button></div>
-          <p class="img-caption">Search - autocomplete by name with ratings shown</p>
+        <div class="ph ph-c" onclick="openLb('Mockup_locator_map.png')" title="Map view">
+          <img src="Mockup_locator_map.png" alt="Map view" loading="lazy">
         </div>
-        <div>
-          <div class="img-wrap" onclick="openLb(this.querySelector('img').src)"><img src="Mockup_locator_school%20info.png" alt="School detail" loading="lazy"><button class="img-enlarge">Enlarge ↗</button></div>
-          <p class="img-caption">School detail - Fraser score, tags, and neighbourhood context</p>
+        <div class="ph ph-d" onclick="openLb('Mockup_locator_search.png')" title="Search">
+          <img src="Mockup_locator_search.png" alt="School search" loading="lazy">
         </div>
-        <div>
-          <div class="img-wrap" onclick="openLb(this.querySelector('img').src)"><img src="Mockup_locator_school_info2.png" alt="School detail with rentals" loading="lazy"><button class="img-enlarge">Enlarge ↗</button></div>
-          <p class="img-caption">School detail - rental count and price range in catchment</p>
+        <div class="ph ph-e" onclick="openLb('Mockup_locator_school_info2.png')" title="School detail">
+          <img src="Mockup_locator_school_info2.png" alt="School detail with rentals" loading="lazy">
         </div>
-        <div>
-          <div class="img-wrap" onclick="openLb(this.querySelector('img').src)"><img src="Mockup_locator_rental_info.png" alt="Rental detail" loading="lazy"><button class="img-enlarge">Enlarge ↗</button></div>
-          <p class="img-caption">Rental detail - listing with assigned school and rating</p>
+        <div class="ph ph-f" onclick="openLb('Mockup_locator_school%20info.png')" title="School info">
+          <img src="Mockup_locator_school%20info.png" alt="School info" loading="lazy">
         </div>
       </div>
+      <p class="img-caption" style="text-align:center;margin-top:16px">Tap any screen to enlarge - Map, Search, Filters, School detail, Rental info</p>
     </div>
     <div style="margin-top:56px">
       <h3>Interactive prototype</h3>
