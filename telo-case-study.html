@@ -1056,8 +1056,8 @@ function switchIter(n) {
 .bot-trigger:hover{transform:scale(1.06);box-shadow:0 6px 28px rgba(74,103,65,.4)}
 .bot-trigger-emoji{font-size:26px;line-height:1;pointer-events:none}
 /* ping dot */
-.bot-ping{position:absolute;top:2px;right:2px;width:10px;height:10px;border-radius:50%;background:#E8644A;border:2px solid #fff}
-.bot-ping::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:#E8644A;opacity:.5;animation:ping 1.8s ease-out infinite}
+
+
 @keyframes ping{0%{transform:scale(1);opacity:.5}100%{transform:scale(2.2);opacity:0}}
 
 /* tooltip */
@@ -1129,7 +1129,7 @@ function switchIter(n) {
   <!-- trigger -->
   <button class="bot-trigger" id="bot-trigger" onclick="toggleBot()" aria-label="Ask Anna">
     <img src="/anna-avatar.jpeg?v=1" alt="Anna">
-    <span class="bot-ping" id="bot-ping"></span>
+    
   </button>
 </div>
 
@@ -1179,7 +1179,6 @@ function switchIter(n) {
   window.openBot = function(){
     open = true;
     document.getElementById('bot-panel').classList.add('open');
-    document.getElementById('bot-ping').style.display = 'none';
     sessionStorage.setItem('bot-seen','1');
     setTimeout(function(){ document.getElementById('bot-input').focus(); }, 300);
   };

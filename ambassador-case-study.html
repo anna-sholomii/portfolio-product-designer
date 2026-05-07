@@ -511,8 +511,8 @@ document.querySelectorAll('section[id], div[id]').forEach(s => obs.observe(s));
 .bot-trigger img{width:52px;height:52px;object-fit:cover;object-position:50% 12%;display:block}
 .bot-trigger:hover{transform:scale(1.06);box-shadow:0 6px 28px rgba(74,103,65,.4)}
 .bot-trigger-emoji{font-size:26px;line-height:1;pointer-events:none}
-.bot-ping{position:absolute;top:2px;right:2px;width:10px;height:10px;border-radius:50%;background:#E8644A;border:2px solid #fff}
-.bot-ping::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:#E8644A;opacity:.5;animation:ping 1.8s ease-out infinite}
+
+
 @keyframes ping{0%{transform:scale(1);opacity:.5}100%{transform:scale(2.2);opacity:0}}
 .bot-tooltip{background:var(--navy);color:#fff;font-family:'Figtree',sans-serif;font-size:0.8125rem;font-weight:500;padding:9px 14px;border-radius:10px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.18);position:relative;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none}
 .bot-tooltip::after{content:'';position:absolute;right:18px;bottom:-6px;width:10px;height:10px;background:var(--navy);clip-path:polygon(0 0,100% 0,50% 100%)}
@@ -569,7 +569,7 @@ document.querySelectorAll('section[id], div[id]').forEach(s => obs.observe(s));
   </div>
   <button class="bot-trigger" id="bot-trigger" onclick="toggleBot()" aria-label="Ask Anna">
     <img src="/anna-avatar.jpeg?v=1" alt="Anna">
-    <span class="bot-ping" id="bot-ping"></span>
+    
   </button>
 </div>
 
@@ -613,7 +613,6 @@ document.querySelectorAll('section[id], div[id]').forEach(s => obs.observe(s));
   window.openBot=function(){
     open=true;
     document.getElementById('bot-panel').classList.add('open');
-    document.getElementById('bot-ping').style.display='none';
     sessionStorage.setItem('bot-seen-amb','1');
     setTimeout(function(){document.getElementById('bot-input').focus()},300);
   };
