@@ -193,12 +193,9 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 .prob-layout{display:grid;grid-template-columns:2fr 3fr;gap:40px;margin:36px 0 44px;align-items:start}
 .prob-imagine{display:flex;align-items:center;justify-content:center}
 .prob-imagine img{width:100%;height:auto;display:block}
-.prob-cards{display:flex;flex-direction:column;gap:16px;margin-bottom:40px}
-.prob-card{background:#F5F5F5;border-radius:16px;padding:20px 24px;display:flex;align-items:flex-start;gap:20px}
-.prob-icon{width:64px;height:64px;min-width:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.75rem;line-height:1}
-.prob-card:nth-child(1) .prob-icon{background:#D8EAF7}
-.prob-card:nth-child(2) .prob-icon{background:#FFE8D4}
-.prob-card:nth-child(3) .prob-icon{background:#D9F0E4}
+.prob-cards{display:flex;flex-direction:column;gap:12px;margin-bottom:40px}
+.prob-card{background:transparent;border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:24px}
+.prob-card-img{width:130px;min-width:130px;height:130px;object-fit:contain;mix-blend-mode:multiply}
 .prob-card-body{flex:1}
 .prob-card-body p{margin-bottom:0}
 .prob-card-body p+p{margin-top:4px}
@@ -292,7 +289,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 
     <div class="prob-cards">
       <div class="prob-card">
-        <div class="prob-icon" aria-hidden="true">🗺️</div>
+        <img src="prob-card-1.png" class="prob-card-img" aria-hidden="true" alt="">
         <div class="prob-card-body">
           <p><strong>District school boards websites</strong> show catchment areas</p>
           <p class="prob-but">but...</p>
@@ -300,7 +297,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
         </div>
       </div>
       <div class="prob-card">
-        <div class="prob-icon" aria-hidden="true">🏠</div>
+        <img src="prob-card-2.png" class="prob-card-img" aria-hidden="true" alt="">
         <div class="prob-card-body">
           <p><strong>Rental websites</strong> show lots of rental options</p>
           <p class="prob-but">but...</p>
@@ -308,7 +305,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
         </div>
       </div>
       <div class="prob-card">
-        <div class="prob-icon" aria-hidden="true">🏅</div>
+        <img src="prob-card-3.png" class="prob-card-img" aria-hidden="true" alt="">
         <div class="prob-card-body">
           <p><strong>The Fraser Institute</strong> ranks schools, so you know the best ones exist</p>
           <p class="prob-but">but...</p>
