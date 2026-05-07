@@ -100,15 +100,19 @@ strong{color:#3F3F47;font-weight:600}
 .ss-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
 .cards-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
 .mockup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
-.iphone-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:8px 0 80px;align-items:start}
-.iphone-wrap{cursor:pointer;transition:transform .2s}
-.iphone-wrap:hover{transform:translateY(-10px)}
-.iphone-wrap:nth-child(even){margin-top:60px}
 .iphone-frame{background:#1C1C1E;border-radius:44px;padding:10px;box-shadow:0 0 0 1.5px #3a3a3c inset,0 28px 64px rgba(0,0,0,.22),0 0 0 8px #2c2c2e}
-.iphone-notch{width:88px;height:26px;background:#000;border-radius:20px;margin:4px auto 6px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center}
-.iphone-notch::after{content:'';width:10px;height:10px;background:#1a1a1a;border-radius:50%;border:2px solid #333}
+.iphone-notch{width:88px;height:26px;background:#000;border-radius:20px;margin:4px auto 6px;position:relative;z-index:2}
 .iphone-screen{border-radius:34px;overflow:hidden}
 .iphone-screen img{width:100%;display:block}
+.iphone-scatter{position:relative;height:560px;margin:20px -48px 0;overflow:hidden}
+.isc-phone{position:absolute;cursor:pointer;transition:transform .2s}
+.isc-phone:hover{transform:scale(1.05) translateY(-10px) !important;z-index:20 !important}
+.isc-p1{width:148px;left:1%;top:90px;z-index:1;opacity:.8}
+.isc-p2{width:184px;left:13%;top:18px;z-index:2}
+.isc-p3{width:226px;left:50%;transform:translateX(-50%);top:0;z-index:5}
+.isc-p4{width:184px;right:13%;top:52px;z-index:2}
+.isc-p5{width:148px;right:1%;top:24px;z-index:1;opacity:.8}
+.isc-p6{width:168px;left:50%;margin-left:-240px;top:270px;z-index:3}
 .info-card{padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:var(--white)}
 .info-card-label{font-size:0.6875rem;font-weight:700;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
 .info-card p{font-size:1.125rem;color:#71717C;margin:0;line-height:1.75}
@@ -190,8 +194,9 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
   .mc:last-child{border-bottom:none}
   .ss-grid,.cards-2,.lg,.steps,.kpi-cards{grid-template-columns:1fr}
   .mockup-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-  .iphone-grid{grid-template-columns:repeat(2,1fr);gap:16px;padding-bottom:40px}
-  .iphone-wrap:nth-child(even){margin-top:36px}
+  .iphone-scatter{height:auto;margin:20px 0 0;overflow:visible;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .isc-phone{position:static;width:auto !important;opacity:1 !important;transform:none !important}
+  .isc-phone:nth-child(even){margin-top:36px}
   .tr-row{grid-template-columns:1fr;gap:6px}
   .process-flow{flex-direction:column}
   .ps{border-right:none;border-bottom:1px solid var(--line)}
@@ -978,48 +983,24 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     </div>
     <div style="margin-top:48px">
       <h3>Mobile screens</h3>
-      <div class="iphone-grid">
-        <div class="iphone-wrap" onclick="openLb('Mockup_locator_map.png')">
-          <div class="iphone-frame">
-            <div class="iphone-notch"></div>
-            <div class="iphone-screen"><img src="Mockup_locator_map.png" alt="Map view" loading="lazy"></div>
-          </div>
-          <p class="img-caption" style="text-align:center;margin-top:10px">Map</p>
+      <div class="iphone-scatter">
+        <div class="isc-phone isc-p1" onclick="openLb('Mockup_locator_rental_info.png')">
+          <div class="iphone-frame"><div class="iphone-notch"></div><div class="iphone-screen"><img src="Mockup_locator_rental_info.png" alt="Rental detail" loading="lazy"></div></div>
         </div>
-        <div class="iphone-wrap" onclick="openLb('Mockup_locator_filter.png')">
-          <div class="iphone-frame">
-            <div class="iphone-notch"></div>
-            <div class="iphone-screen"><img src="Mockup_locator_filter.png" alt="Filters" loading="lazy"></div>
-          </div>
-          <p class="img-caption" style="text-align:center;margin-top:10px">Filters</p>
+        <div class="isc-phone isc-p2" onclick="openLb('Mockup_locator_filter.png')">
+          <div class="iphone-frame"><div class="iphone-notch"></div><div class="iphone-screen"><img src="Mockup_locator_filter.png" alt="Filters" loading="lazy"></div></div>
         </div>
-        <div class="iphone-wrap" onclick="openLb('Mockup_locator_search.png')">
-          <div class="iphone-frame">
-            <div class="iphone-notch"></div>
-            <div class="iphone-screen"><img src="Mockup_locator_search.png" alt="Search" loading="lazy"></div>
-          </div>
-          <p class="img-caption" style="text-align:center;margin-top:10px">Search</p>
+        <div class="isc-phone isc-p3" onclick="openLb('Mockup_locator_map.png')">
+          <div class="iphone-frame"><div class="iphone-notch"></div><div class="iphone-screen"><img src="Mockup_locator_map.png" alt="Map view" loading="lazy"></div></div>
         </div>
-        <div class="iphone-wrap" onclick="openLb('Mockup_locator_school%20info.png')">
-          <div class="iphone-frame">
-            <div class="iphone-notch"></div>
-            <div class="iphone-screen"><img src="Mockup_locator_school%20info.png" alt="School detail" loading="lazy"></div>
-          </div>
-          <p class="img-caption" style="text-align:center;margin-top:10px">School detail</p>
+        <div class="isc-phone isc-p4" onclick="openLb('Mockup_locator_search.png')">
+          <div class="iphone-frame"><div class="iphone-notch"></div><div class="iphone-screen"><img src="Mockup_locator_search.png" alt="Search" loading="lazy"></div></div>
         </div>
-        <div class="iphone-wrap" onclick="openLb('Mockup_locator_school_info2.png')">
-          <div class="iphone-frame">
-            <div class="iphone-notch"></div>
-            <div class="iphone-screen"><img src="Mockup_locator_school_info2.png" alt="School detail 2" loading="lazy"></div>
-          </div>
-          <p class="img-caption" style="text-align:center;margin-top:10px">School + rentals</p>
+        <div class="isc-phone isc-p5" onclick="openLb('Mockup_locator_school_info2.png')">
+          <div class="iphone-frame"><div class="iphone-notch"></div><div class="iphone-screen"><img src="Mockup_locator_school_info2.png" alt="School detail" loading="lazy"></div></div>
         </div>
-        <div class="iphone-wrap" onclick="openLb('Mockup_locator_rental_info.png')">
-          <div class="iphone-frame">
-            <div class="iphone-notch"></div>
-            <div class="iphone-screen"><img src="Mockup_locator_rental_info.png" alt="Rental detail" loading="lazy"></div>
-          </div>
-          <p class="img-caption" style="text-align:center;margin-top:10px">Rental detail</p>
+        <div class="isc-phone isc-p6" onclick="openLb('Mockup_locator_school%20info.png')">
+          <div class="iphone-frame"><div class="iphone-notch"></div><div class="iphone-screen"><img src="Mockup_locator_school%20info.png" alt="School info" loading="lazy"></div></div>
         </div>
       </div>
     </div>
