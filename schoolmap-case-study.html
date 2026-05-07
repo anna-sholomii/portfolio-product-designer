@@ -100,10 +100,9 @@ strong{color:#3F3F47;font-weight:600}
 .ss-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
 .cards-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
 .mockup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
-.iphone-frame{background:#1e1e1e;border-radius:52px;padding:10px;box-shadow:0 0 0 1px #555 inset,0 0 0 9px #2a2a2a,0 0 0 10.5px #444,0 32px 72px rgba(0,0,0,.28)}
-.iphone-island{width:96px;height:30px;background:#000;border-radius:20px;margin:8px auto 8px;position:relative;z-index:2}
-.iphone-island::before{content:'';position:absolute;right:-28px;top:50%;transform:translateY(-50%);width:11px;height:11px;background:#000;border-radius:50%}
-.iphone-screen{border-radius:40px;overflow:hidden}
+.iphone-frame{background:#1a1a1a;border-radius:46px;padding:5px;box-shadow:0 0 0 1px rgba(255,255,255,.13) inset,0 24px 56px rgba(0,0,0,.25)}
+.iphone-screen{border-radius:41px;overflow:hidden;position:relative}
+.iphone-island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:86px;height:27px;background:#000;border-radius:18px;z-index:2;pointer-events:none}
 .iphone-screen img{width:100%;display:block}
 /* intro summary block */
 .cs-intro{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:48px 0;background:var(--bg)}
@@ -1062,22 +1061,22 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
       <h3>Mobile screens</h3>
       <div class="iphone-scatter">
         <div class="isc-phone isc-p1" onclick="openLb('Mockup_locator_rental_info.png')">
-          <div class="iphone-frame"><div class="iphone-island"></div><div class="iphone-screen"><img src="Mockup_locator_rental_info.png" alt="Rental detail" loading="lazy"></div></div>
+          <div class="iphone-frame"><div class="iphone-screen"><div class="iphone-island"></div><img src="Mockup_locator_rental_info.png" alt="Rental detail" loading="lazy"></div></div>
         </div>
         <div class="isc-phone isc-p2" onclick="openLb('Mockup_locator_filter.png')">
-          <div class="iphone-frame"><div class="iphone-island"></div><div class="iphone-screen"><img src="Mockup_locator_filter.png" alt="Filters" loading="lazy"></div></div>
+          <div class="iphone-frame"><div class="iphone-screen"><div class="iphone-island"></div><img src="Mockup_locator_filter.png" alt="Filters" loading="lazy"></div></div>
         </div>
         <div class="isc-phone isc-p3" onclick="openLb('Mockup_locator_map.png')">
-          <div class="iphone-frame"><div class="iphone-island"></div><div class="iphone-screen"><img src="Mockup_locator_map.png" alt="Map view" loading="lazy"></div></div>
+          <div class="iphone-frame"><div class="iphone-screen"><div class="iphone-island"></div><img src="Mockup_locator_map.png" alt="Map view" loading="lazy"></div></div>
         </div>
         <div class="isc-phone isc-p4" onclick="openLb('Mockup_locator_search.png')">
-          <div class="iphone-frame"><div class="iphone-island"></div><div class="iphone-screen"><img src="Mockup_locator_search.png" alt="Search" loading="lazy"></div></div>
+          <div class="iphone-frame"><div class="iphone-screen"><div class="iphone-island"></div><img src="Mockup_locator_search.png" alt="Search" loading="lazy"></div></div>
         </div>
         <div class="isc-phone isc-p5" onclick="openLb('Mockup_locator_school_info2.png')">
-          <div class="iphone-frame"><div class="iphone-island"></div><div class="iphone-screen"><img src="Mockup_locator_school_info2.png" alt="School detail" loading="lazy"></div></div>
+          <div class="iphone-frame"><div class="iphone-screen"><div class="iphone-island"></div><img src="Mockup_locator_school_info2.png" alt="School detail" loading="lazy"></div></div>
         </div>
         <div class="isc-phone isc-p6" onclick="openLb('Mockup_locator_school%20info.png')">
-          <div class="iphone-frame"><div class="iphone-island"></div><div class="iphone-screen"><img src="Mockup_locator_school%20info.png" alt="School info" loading="lazy"></div></div>
+          <div class="iphone-frame"><div class="iphone-screen"><div class="iphone-island"></div><img src="Mockup_locator_school%20info.png" alt="School info" loading="lazy"></div></div>
         </div>
       </div>
     </div>
