@@ -68,7 +68,7 @@ main{padding-top:64px;min-height:100vh;animation:pageFadeIn .22s ease both}
   margin-bottom:24px;
 }
 .work-heading em{color:var(--color-coral);font-style:italic}
-.work-sub{font-size:17px;font-weight:400;color:#555555;line-height:1.75}
+.work-sub{font-size:1.0625rem;font-weight:400;color:var(--color-stone);line-height:1.75}
 
 /* ════════════════════════════════
    INDEX — EDITORIAL SECTIONS
@@ -258,7 +258,7 @@ main{padding-top:64px;min-height:100vh;animation:pageFadeIn .22s ease both}
   font-family:'Figtree',sans-serif;font-size:clamp(2.5rem,5.5vw,4.5rem);
   font-weight:700;line-height:0.95;letter-spacing:-.03em;color:var(--color-ink);margin-bottom:10px;
 }
-.resume-heading em{color:var(--color-stone);font-style:italic}
+.resume-heading em{color:var(--color-coral);font-style:italic}
 .resume-sub{font-size:1.125rem;color:var(--color-stone);margin-bottom:28px}
 .resume-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
 .btn-primary{
@@ -308,7 +308,7 @@ main{padding-top:64px;min-height:100vh;animation:pageFadeIn .22s ease both}
   font-family:'Figtree',sans-serif;font-size:clamp(2.5rem,5.5vw,4.5rem);
   font-weight:700;line-height:0.95;letter-spacing:-.03em;color:var(--color-ink);margin-bottom:16px;
 }
-.contact-heading em{color:var(--color-stone);font-style:italic}
+.contact-heading em{color:var(--color-coral);font-style:italic}
 .contact-body{font-size:1.125rem;color:var(--color-stone);line-height:1.75;margin-bottom:36px}
 .contact-links{display:flex;flex-direction:column;gap:0}
 .contact-link{
@@ -388,8 +388,8 @@ main.home-main{
 }
 .home-statement{
   font-family:'Figtree',sans-serif;
-  font-size:clamp(2.125rem,4.7vw,3.85rem);
-  font-weight:700;line-height:0.95;letter-spacing:-.035em;
+  font-size:clamp(2.5rem,5.5vw,4.5rem);
+  font-weight:700;line-height:0.95;letter-spacing:-.03em;
   color:var(--color-ink);margin:0;
 }
 .home-statement em{color:var(--color-coral);font-style:italic}
@@ -780,14 +780,15 @@ main.home-main{
 @media(max-width:900px){
   main.home-main{ height:auto;overflow:auto; }
   .home-hero{ padding:24px 20px 16px; }
-  .home-grid{ grid-template-columns:1fr;gap:1px;padding:0 20px 32px; }
+  .home-grid{ grid-template-columns:1fr;gap:12px;padding:0 20px 32px; }
   .home-card{ min-height:240px; }
   .home-card-preview{ bottom:110px; }
 }
 @media(max-width:600px){
-  .home-greeting,.home-statement{ font-size:clamp(1.75rem,8vw,2.5rem); }
-  .home-card--work{ min-height:440px; }
-  .home-card--anna{ min-height:auto; }
+  .home-statement{ font-size:clamp(1.75rem,8vw,2.5rem); }
+  .home-card--work{ min-height:460px; }
+  .home-card--anna{ min-height:460px; }
+  .hcp-nav{ display:none; }
 }
 
 /* ─── ABOUT CS GRID ─── */
