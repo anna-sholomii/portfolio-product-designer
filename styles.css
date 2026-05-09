@@ -17,6 +17,16 @@ body{background:var(--color-white);color:var(--color-ink);font-family:'Figtree',
   display:flex;align-items:center;justify-content:space-between;
   padding:0 48px;
 }
+.nav-hamburger{
+  display:none;flex-direction:column;justify-content:space-between;
+  width:28px;height:20px;background:none;border:none;
+  cursor:pointer;padding:0;flex-shrink:0;
+}
+.nav-hamburger span{
+  display:block;height:2px;width:100%;
+  background:var(--color-ink);border-radius:2px;
+  transition:transform .2s,opacity .2s;
+}
 .nav-name{
   font-family:'Figtree',sans-serif;font-size:0.9375rem;font-weight:600;
   color:var(--color-ink);text-decoration:none;letter-spacing:-.01em;
@@ -770,13 +780,23 @@ main.home-main{
 @media(max-width:900px){
   main.home-main{ height:auto;overflow:auto; }
   .home-hero{ padding:24px 20px 16px; }
-  .home-grid{ grid-template-columns:1fr;gap:1px; }
+  .home-grid{ grid-template-columns:1fr;gap:1px;padding:0 20px 32px; }
   .home-card{ min-height:240px; }
   .home-card-preview{ bottom:110px; }
 }
 @media(max-width:600px){
   .home-greeting,.home-statement{ font-size:clamp(1.75rem,8vw,2.5rem); }
+  .home-card--work{ min-height:440px; }
+  .home-card--anna{ min-height:auto; }
 }
+
+/* ─── ABOUT CS GRID ─── */
+.about-cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:800px){.about-cs-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.about-cs-grid{grid-template-columns:1fr}}
+
+/* ─── BOTTOM NAV ─── */
+.bottom-nav{display:none}
 
 /* ─── RESPONSIVE ─── */
 @media(max-width:900px){
@@ -793,6 +813,68 @@ main.home-main{
   .work-intro{padding:48px 0 36px}
 }
 @media(max-width:600px){
+  /* ── Top nav: logo only ── */
+  .nav-hamburger{display:none!important}
   .nav-name span{display:none}
-  .tab-btn{font-size:0.75rem;padding:7px 10px}
+  .nav-tabs{display:none!important}
+
+  /* ── Bottom tab bar ── */
+  .bottom-nav{
+    display:flex;
+    position:fixed;bottom:0;left:0;right:0;z-index:400;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    border-top:1px solid var(--color-linen);
+    height:48px;
+    padding-bottom:env(safe-area-inset-bottom);
+    justify-content:space-around;align-items:center;
+    transition:transform .3s cubic-bezier(.4,0,.2,1);
+  }
+  .bottom-nav.nav-hidden{
+    transform:translateY(calc(100% + env(safe-area-inset-bottom)));
+  }
+  .bottom-nav-item{
+    display:flex;align-items:center;justify-content:center;
+    text-decoration:none;
+    color:var(--color-stone);
+    font-size:0.8125rem;font-family:'Figtree',sans-serif;font-weight:600;
+    letter-spacing:.01em;padding:6px 20px;
+    -webkit-tap-highlight-color:transparent;
+    transition:color .15s;
+  }
+  .bottom-nav-item.active{color:var(--color-coral)}
+  .bottom-nav-item svg{display:none}
+
+  /* ── Content padding for bottom nav ── */
+  main{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
+  .site-footer{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
+
+  /* ── Hide bot widget ── */
+  #anna-bot{display:none!important}
+
+  /* ── Kill hover animations (touch devices don't hover) ── */
+  .card:hover{transform:none!important;box-shadow:none!important;border-color:var(--color-linen)!important}
+  .card:hover .card-thumb img{transform:none!important}
+  .card:hover .card-overlay{background:transparent!important}
+  .card:hover .card-overlay-cta{opacity:0!important}
+  .card:hover::before{opacity:0!important}
+  .card:hover .card-arrow{gap:4px!important}
+  .card:hover .home-card-cta{background:var(--color-ink)!important}
+  .about-gallery img:hover{transform:none!important;box-shadow:0 2px 8px rgba(0,0,0,.08)!important}
+  .hcp-slide.pos-front:hover{transform:translateX(0) scale(1)!important;box-shadow:0 10px 36px rgba(0,0,0,.14)!important}
+  .hcp-slide.pos-front:hover .hcp-slide-img img{transform:none!important}
+  .hcp-slide.pos-front:hover .hcp-img-overlay{background:transparent!important}
+  .hcp-slide.pos-front:hover .hcp-glass-btn{opacity:0!important}
+  .home-card--anna:hover .hcp-anna-bio{opacity:1!important;transform:none!important}
+  .home-card--anna:hover .hcp-anna-glass-overlay{background:transparent!important}
+  .home-card--anna:hover .hcp-anna-glass-btn{opacity:0!important}
+
+  /* ── Kill heavy continuous animations ── */
+  .hcp-float-chip{animation:none!important;transform:none!important}
+  .anna-marquee-track{animation-play-state:paused!important}
+  .hcp-anna-sat{display:none!important}
+  .hcp-anna-arrows{display:none!important}
+  .hcp-anna-sat-1 .hcp-anna-sat-inner,
+  .hcp-anna-sat-2 .hcp-anna-sat-inner,
+  .hcp-anna-sat-3 .hcp-anna-sat-inner{animation:none!important}
 }

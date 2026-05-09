@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Portfolio static server",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "3002", "--directory", "/Users/anya/Desktop/Claude /Telo/.claude/worktrees/zealous-northcutt-521575"],
+      "port": 3002,
+      "autoPort": false
+    },
+    {
+      "name": "Locator",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["-c", "cd '/Users/anya/Desktop/Claude /Locator' && npm run dev -- --port 5173"],
+      "port": 5173
+    }
+  ]
+}

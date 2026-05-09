@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3)",
+      "Bash(python3 -c ':*)",
+      "Bash(npm --version)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "WebFetch(domain:rent-by-school-gta.vercel.app)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(xargs ls *)",
+      "Read(//Users/anya/Desktop/Claude /Locator/**)",
+      "Bash(npm run *)",
+      "Bash(python3 -m http.server 3002)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3002/Mockup_locator_map.png)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:3002/Mockup_locator_school%20info.png\")",
+      "WebFetch(domain:www.benshih.design)"
+    ]
+  }
+}

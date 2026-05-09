@@ -16,7 +16,7 @@
     <img src="/Logo_upd.png?v=2" alt="AS" width="36" height="36" style="display:block;flex-shrink:0;border-radius:6px">
     <span style="font-family:'Figtree',sans-serif;font-weight:700;font-size:1.125rem;color:var(--color-ink);letter-spacing:-.01em;line-height:1">Anna Sholomii</span>
   </a>
-  <div class="nav-tabs">
+  <div class="nav-tabs" id="nav-tabs">
     <a href="work.html" class="tab-btn active">Case Studies</a>
     <a href="about.html" class="tab-btn">About Me</a>
     <a href="resume.html" class="tab-btn">Resume</a>
@@ -236,5 +236,23 @@
   }
 })();
 </script>
-</body>
+<nav class="bottom-nav" aria-label="Site navigation">
+  <a href="index.html" class="bottom-nav-item">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="work.html" class="bottom-nav-item active">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+    <span>Work</span>
+  </a>
+  <a href="about.html" class="bottom-nav-item">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    <span>About</span>
+  </a>
+  <a href="contact.html" class="bottom-nav-item">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <span>Contact</span>
+  </a>
+</nav>
+<script>(function(){var l=0,n=document.querySelector(".bottom-nav");if(!n)return;window.addEventListener("scroll",function(){var y=window.scrollY;if(y>l+4)n.classList.add("nav-hidden");else if(y<l-4)n.classList.remove("nav-hidden");l=y},{passive:true})})();</script></body>
 </html>

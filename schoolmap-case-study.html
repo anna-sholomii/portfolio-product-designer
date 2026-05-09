@@ -228,7 +228,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 }
 /* mobile bottom nav */
 .bottom-nav{display:none}
-@media(max-width:600px){nav{padding:0 20px}.nav-name span{display:none}.nav-tabs{display:none!important}.hero{padding:80px 0 40px}.bottom-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:400;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--line);height:56px;padding-bottom:env(safe-area-inset-bottom);justify-content:space-around;align-items:center}.bottom-nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:#888780;font-size:0.625rem;font-family:'Figtree',sans-serif;font-weight:600;letter-spacing:.01em;padding:6px 14px;-webkit-tap-highlight-color:transparent;transition:color .15s}.bottom-nav-item.active{color:#E8644A}.bottom-nav-item svg{width:21px;height:21px;flex-shrink:0}footer{padding-bottom:calc(64px + env(safe-area-inset-bottom))}#anna-bot{display:none!important}div[style*="grid-template-columns"]{grid-template-columns:1fr!important}}
+@media(max-width:600px){nav{padding:0 20px}.nav-name span{display:none}.nav-tabs{display:none!important}.hero{padding:80px 0 40px}.bottom-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:400;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--line);height:48px;padding-bottom:env(safe-area-inset-bottom);justify-content:space-around;align-items:center;transition:transform .3s cubic-bezier(.4,0,.2,1)}.bottom-nav.nav-hidden{transform:translateY(calc(100% + env(safe-area-inset-bottom)))}.bottom-nav-item{display:flex;align-items:center;justify-content:center;text-decoration:none;color:#888780;font-size:0.8125rem;font-family:'Figtree',sans-serif;font-weight:600;letter-spacing:.01em;padding:6px 20px;-webkit-tap-highlight-color:transparent;transition:color .15s}.bottom-nav-item.active{color:#E8644A}.bottom-nav-item svg{display:none}footer{padding-bottom:calc(56px + env(safe-area-inset-bottom))}#anna-bot{display:none!important}div[style*="grid-template-columns"]{grid-template-columns:1fr!important}}
 .prob-layout{display:grid;grid-template-columns:2fr 3fr;gap:40px;margin:36px 0 44px;align-items:start}
 .prob-imagine{display:flex;align-items:center;justify-content:center}
 .prob-imagine img{width:100%;height:auto;display:block}
@@ -1520,5 +1520,5 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
     <span>Contact</span>
   </a>
 </nav>
-</body>
+<script>(function(){var l=0,n=document.querySelector(".bottom-nav");if(!n)return;window.addEventListener("scroll",function(){var y=window.scrollY;if(y>l+4)n.classList.add("nav-hidden");else if(y<l-4)n.classList.remove("nav-hidden");l=y},{passive:true})})();</script></body>
 </html>
