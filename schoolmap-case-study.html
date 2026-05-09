@@ -204,11 +204,13 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 #scroll-top{position:fixed;bottom:32px;right:32px;z-index:400;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(15,31,61,.25);opacity:0;transform:translateY(8px);transition:opacity .22s,transform .22s;pointer-events:none}
 #scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
 @media(max-width:900px){
-  nav,.container,footer{padding-left:20px;padding-right:20px}
+  nav,.container,footer,.next-cs-inner{padding-left:20px;padding-right:20px}
   .meta-row{flex-direction:column}
   .mc{border-right:none;border-bottom:1px solid var(--line)}
   .mc:last-child{border-bottom:none}
-  .ss-grid,.cards-2,.lg,.steps,.kpi-cards{grid-template-columns:1fr}
+  .ss-grid,.cards-2,.lg,.steps,.kpi-cards,.arch-steps,.next-cs-grid{grid-template-columns:1fr}
+  .arch-step{border-radius:10px;margin-right:0;margin-bottom:-1px}
+  .arch-step:first-child{border-radius:10px 10px 0 0}.arch-step:last-child{border-radius:0 0 10px 10px;margin-bottom:0}
   .mockup-grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .iphone-scatter{height:auto;margin:20px 0 0;overflow:visible;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
   .isc-phone{position:static;width:auto !important;opacity:1 !important;transform:none !important}
@@ -218,10 +220,15 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
   .ps{border-right:none;border-bottom:1px solid var(--line)}
   .ps:last-child{border-top:none}
   h1{font-size:3.25rem}
+  section{padding:56px 0}
 }
 @media(max-width:480px){
   .mockup-grid{grid-template-columns:1fr 1fr}
+  section{padding:40px 0}
 }
+/* mobile bottom nav */
+.bottom-nav{display:none}
+@media(max-width:600px){nav{padding:0 20px}.nav-name span{display:none}.nav-tabs{display:none!important}.hero{padding:80px 0 40px}.bottom-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:400;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--line);height:56px;padding-bottom:env(safe-area-inset-bottom);justify-content:space-around;align-items:center}.bottom-nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:#888780;font-size:0.625rem;font-family:'Figtree',sans-serif;font-weight:600;letter-spacing:.01em;padding:6px 14px;-webkit-tap-highlight-color:transparent;transition:color .15s}.bottom-nav-item.active{color:#E8644A}.bottom-nav-item svg{width:21px;height:21px;flex-shrink:0}footer{padding-bottom:calc(64px + env(safe-area-inset-bottom))}#anna-bot{display:none!important}div[style*="grid-template-columns"]{grid-template-columns:1fr!important}}
 .prob-layout{display:grid;grid-template-columns:2fr 3fr;gap:40px;margin:36px 0 44px;align-items:start}
 .prob-imagine{display:flex;align-items:center;justify-content:center}
 .prob-imagine img{width:100%;height:auto;display:block}
@@ -260,7 +267,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <img src="/Logo_upd.png?v=2" alt="AS" width="36" height="36" style="display:block;flex-shrink:0;border-radius:6px">
     <span style="font-family:'Figtree',sans-serif;font-weight:700;font-size:1.125rem;color:var(--color-ink);letter-spacing:-.01em;line-height:1">Anna Sholomii</span>
   </a>
-  <div class="nav-tabs">
+  <div class="nav-tabs" id="nav-tabs">
     <a href="work.html" class="tab-btn">Case Studies</a>
     <a href="about.html" class="tab-btn">About Me</a>
     <a href="resume.html" class="tab-btn">Resume</a>
@@ -1495,5 +1502,23 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
 })();
 </script>
 </script>
+<nav class="bottom-nav" aria-label="Site navigation">
+  <a href="index.html" class="bottom-nav-item">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="work.html" class="bottom-nav-item active">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+    <span>Work</span>
+  </a>
+  <a href="about.html" class="bottom-nav-item">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    <span>About</span>
+  </a>
+  <a href="contact.html" class="bottom-nav-item">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <span>Contact</span>
+  </a>
+</nav>
 </body>
 </html>
