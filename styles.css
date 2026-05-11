@@ -444,7 +444,7 @@ flex-shrink:0;overflow:hidden;
   align-items:flex-start;
 }
 .home-card--anna .anna-marquee-img{
-width:145px;height:150px;
+  height:100%;width:auto;
 }
 .anna-intro{
   margin:12px 0 0;flex-shrink:0;padding:0 32px;
