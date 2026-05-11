@@ -181,7 +181,7 @@
 </div>
 <script>
 (function(){
-  var qa=[{k:["years","how long","experience","senior","level","junior"],a:"Around 5 years in product design, with 3 of those as the <b>sole designer at Ambassador Platform</b> — which accelerated things quickly. I've owned discovery, design, and system-building across multiple product surfaces simultaneously."},{k:["strongest","best at","skill","speciali","good at","area"],a:"The handoff between research and design — taking messy interview data and turning it into a clear problem definition and a testable solution. Also strong at <b>design systems</b>: I built Ambassador's component library from scratch and maintained it across three platforms for three years."},{k:["in-house","agency","freelance","company","type of","consultancy"],a:"In-house, both times. Ambassador Platform and Telo. I prefer it — being embedded means I'm close to engineering, close to data, and part of decisions that happen before and after the design work."},{k:["freelance","contract","consulting","independent","available for"],a:"Open to conversations, yes — especially for product design on B2B SaaS products in the 0→1 or growth phase. Best way to start: <b>contact page</b> or anna@sholomii.com."}];
+  var qa=[{k:["years","how long","experience","senior","level","junior"],a:"Around 5 years in product design, with 3 of those as the <b>sole designer at Ambassador Platform</b> - which accelerated things quickly. I've owned discovery, design, and system-building across multiple product surfaces simultaneously."},{k:["strongest","best at","skill","speciali","good at","area"],a:"The handoff between research and design - taking messy interview data and turning it into a clear problem definition and a testable solution. Also strong at <b>design systems</b>: I built Ambassador's component library from scratch and maintained it across three platforms for three years."},{k:["in-house","agency","freelance","company","type of","consultancy"],a:"In-house, both times. Ambassador Platform and Telo. I prefer it - being embedded means I'm close to engineering, close to data, and part of decisions that happen before and after the design work."},{k:["freelance","contract","consulting","independent","available for"],a:"Open to conversations, yes - especially for product design on B2B SaaS products in the 0→1 or growth phase. Best way to start: <b>contact page</b> or anna@sholomii.com."}];
   var open=false;
   setTimeout(function(){
     if(!open&&!sessionStorage.getItem('bot-seen-resume')){
@@ -203,7 +203,7 @@
       if(qa[i].k.some(function(k){return ql.indexOf(k)!==-1})){found=qa[i];break}
     }
     setTimeout(function(){
-      addMsg(found?found.a:'That\'s outside what I have scripted — but happy to talk. Reach out at <b>anna@sholomii.com</b> or LinkedIn.','bot');
+      addMsg(found?found.a:'That\'s outside what I have scripted - but happy to talk. Reach out at <b>anna@sholomii.com</b> or LinkedIn.','bot');
       setTimeout(function(){document.getElementById('bot-chips').style.display='flex'},600);
     },480);
   };

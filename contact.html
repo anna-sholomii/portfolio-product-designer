@@ -195,7 +195,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 </div>
 <script>
 (function(){
-  var qa=[{k:["best way","reach","contact","email","linkedin","how to"],a:"The form on this page goes directly to my inbox. Or email me at <b>anna@sholomii.com</b>. LinkedIn works too if you'd rather connect there first."},{k:["quickly","respond","response time","reply","how fast","when"],a:"Usually within 24–48 hours on weekdays. If I haven't replied in 3 days, feel free to follow up — things occasionally land in spam."},{k:["open","opportunity","hire","available","looking","role","work"],a:"Yes — actively. I'm looking for a <b>product design role</b> in a B2B SaaS team, ideally one where research shapes product direction. Happy to chat about full-time or contract work."},{k:["looking for","want","type of role","ideal","next","prefer","dream"],a:"A product design role on a small-to-mid B2B SaaS team — somewhere I can own the full design process, work closely with engineering, and have real influence on what gets built. Remote-first or Toronto-based both work."}];
+  var qa=[{k:["best way","reach","contact","email","linkedin","how to"],a:"The form on this page goes directly to my inbox. Or email me at <b>anna@sholomii.com</b>. LinkedIn works too if you'd rather connect there first."},{k:["quickly","respond","response time","reply","how fast","when"],a:"Usually within 24–48 hours on weekdays. If I haven't replied in 3 days, feel free to follow up - things occasionally land in spam."},{k:["open","opportunity","hire","available","looking","role","work"],a:"Yes - actively. I'm looking for a <b>product design role</b> in a B2B SaaS team, ideally one where research shapes product direction. Happy to chat about full-time or contract work."},{k:["looking for","want","type of role","ideal","next","prefer","dream"],a:"A product design role on a small-to-mid B2B SaaS team - somewhere I can own the full design process, work closely with engineering, and have real influence on what gets built. Remote-first or Toronto-based both work."}];
   var open=false;
   setTimeout(function(){
     if(!open&&!sessionStorage.getItem('bot-seen-contact')){
@@ -217,7 +217,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       if(qa[i].k.some(function(k){return ql.indexOf(k)!==-1})){found=qa[i];break}
     }
     setTimeout(function(){
-      addMsg(found?found.a:'That\'s outside what I have scripted — but happy to talk. Reach out at <b>anna@sholomii.com</b> or LinkedIn.','bot');
+      addMsg(found?found.a:'That\'s outside what I have scripted - but happy to talk. Reach out at <b>anna@sholomii.com</b> or LinkedIn.','bot');
       setTimeout(function(){document.getElementById('bot-chips').style.display='flex'},600);
     },480);
   };

@@ -39,7 +39,7 @@
         <div class="hcp-deck">
           <div class="hcp-deck-cards">
 
-          <!-- slides — all rendered, position classes control depth -->
+          <!-- slides - all rendered, position classes control depth -->
           <div class="hcp-slide pos-mid" data-href="telo-case-study.html">
             <div class="hcp-slide-img">
               <img src="/1. Collapsed state.png" alt="Telo">
@@ -51,7 +51,7 @@
                 <span class="hcp-slide-tag hcp-slide-tag--muted">2026</span>
               </div>
               <h3 class="hcp-slide-title">Telo</h3>
-              <p class="hcp-slide-desc">Async video messaging for distributed B2B teams — from research to shipped product.</p>
+              <p class="hcp-slide-desc">Async video messaging for distributed B2B teams - from research to shipped product.</p>
             </div>
           </div>
 
@@ -81,7 +81,7 @@
                 <span class="hcp-slide-tag hcp-slide-tag--muted">2019–22</span>
               </div>
               <h3 class="hcp-slide-title">The Ambassador Platform</h3>
-              <p class="hcp-slide-desc">Three years, three platforms, one designer — EdTech at scale.</p>
+              <p class="hcp-slide-desc">Three years, three platforms, one designer - EdTech at scale.</p>
             </div>
           </div>
 
@@ -217,7 +217,7 @@
 </div>
 <script>
 (function(){
-  var qa=[{k:["start","first","which case","begin","recommend"],a:"Start with <b>Telo</b> — it's the most recent and shows the full process from research through solution. If civic tech interests you, <b>Rent by School</b> is worth a look. <b>Ambassador</b> shows the most scale: three years, three platforms, one designer."},{k:["kind of work","take on","what do you do","type of work","speciali"],a:"Product design end-to-end — discovery, research, interaction design, visual design, and sometimes front-end code. I work most often on B2B SaaS, though I've also done civic tech and EdTech. I care most about the point where a real problem becomes a real solution."},{k:["hire","available","open to","job","role","opportunity","work with"],a:"Yes — I'm actively looking for my next role. Product designer, ideally in a B2B SaaS team that cares about research and moves thoughtfully. The <b>contact page</b> is the best starting point, or anna@sholomii.com."},{k:["approach","process","how do you","method","design process","philosophy"],a:"Evidence-first. I start with real user behaviour — interviews, usage data, or existing research — before any solutions. Then I design, test, and iterate close to engineering. I keep process lean and decisions traceable back to something a real person said or did."}];
+  var qa=[{k:["start","first","which case","begin","recommend"],a:"Start with <b>Telo</b> - it's the most recent and shows the full process from research through solution. If civic tech interests you, <b>Rent by School</b> is worth a look. <b>Ambassador</b> shows the most scale: three years, three platforms, one designer."},{k:["kind of work","take on","what do you do","type of work","speciali"],a:"Product design end-to-end - discovery, research, interaction design, visual design, and sometimes front-end code. I work most often on B2B SaaS, though I've also done civic tech and EdTech. I care most about the point where a real problem becomes a real solution."},{k:["hire","available","open to","job","role","opportunity","work with"],a:"Yes - I'm actively looking for my next role. Product designer, ideally in a B2B SaaS team that cares about research and moves thoughtfully. The <b>contact page</b> is the best starting point, or anna@sholomii.com."},{k:["approach","process","how do you","method","design process","philosophy"],a:"Evidence-first. I start with real user behaviour - interviews, usage data, or existing research - before any solutions. Then I design, test, and iterate close to engineering. I keep process lean and decisions traceable back to something a real person said or did."}];
   var open=false;
   setTimeout(function(){
     if(!open&&!sessionStorage.getItem('bot-seen-index')){
@@ -239,7 +239,7 @@
       if(qa[i].k.some(function(k){return ql.indexOf(k)!==-1})){found=qa[i];break}
     }
     setTimeout(function(){
-      addMsg(found?found.a:'That\'s outside what I have scripted — but happy to talk. Reach out at <b>anna@sholomii.com</b> or LinkedIn.','bot');
+      addMsg(found?found.a:'That\'s outside what I have scripted - but happy to talk. Reach out at <b>anna@sholomii.com</b> or LinkedIn.','bot');
       setTimeout(function(){document.getElementById('bot-chips').style.display='flex'},600);
     },480);
   };
@@ -259,7 +259,7 @@
 (function(){
   var el = document.getElementById('anna-tw');
   if(!el) return;
-  var text = 'Hi there. I design products from 0 to 1 — research, interaction design, and a bit of code to tie it all together.';
+  var text = 'Hi there. I design products from 0 to 1 - research, interaction design, and a bit of code to tie it all together.';
   var i = 0;
   function type(){ if(i < text.length){ el.textContent += text[i++]; setTimeout(type, 38); } }
   setTimeout(type, 600);
