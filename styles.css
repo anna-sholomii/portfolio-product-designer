@@ -67,7 +67,7 @@ main{padding-top:64px;min-height:100vh;animation:pageFadeIn .22s ease both}
   font-weight:700;line-height:0.95;letter-spacing:-.03em;color:var(--color-ink);
   margin-bottom:24px;
 }
-.work-heading em{color:var(--color-coral);font-style:italic}
+.work-heading em{color:#71717C;font-style:normal}
 .work-sub{font-size:1.0625rem;font-weight:400;color:var(--color-stone);line-height:1.75}
 
 /* ════════════════════════════════
@@ -192,7 +192,7 @@ main{padding-top:64px;min-height:100vh;animation:pageFadeIn .22s ease both}
   font-weight:700;line-height:0.95;letter-spacing:-.03em;
   color:var(--color-ink);margin-bottom:2px;
 }
-.about-name em{color:var(--color-stone);font-style:italic}
+.about-name em{color:#71717C;font-style:normal}
 .about-approach{font-size:1.125rem;color:var(--color-stone);font-weight:400;margin:0 0 22px;letter-spacing:.01em}
 .about-title{font-size:1.125rem;color:var(--color-stone);font-weight:400;margin-bottom:24px;letter-spacing:.01em}
 
@@ -258,7 +258,7 @@ main{padding-top:64px;min-height:100vh;animation:pageFadeIn .22s ease both}
   font-family:'Figtree',sans-serif;font-size:clamp(2.5rem,5.5vw,4.5rem);
   font-weight:700;line-height:0.95;letter-spacing:-.03em;color:var(--color-ink);margin-bottom:10px;
 }
-.resume-heading em{color:var(--color-coral);font-style:italic}
+.resume-heading em{color:#71717C;font-style:normal}
 .resume-sub{font-size:1.125rem;color:var(--color-stone);margin-bottom:28px}
 .resume-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
 .btn-primary{
