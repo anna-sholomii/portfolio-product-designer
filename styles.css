@@ -437,7 +437,7 @@ font-size:clamp(2.125rem,4.7vw,3.85rem);
   padding:0;
 }
 .home-card--anna .anna-marquee-wrap{
-  position:absolute;top:0;left:0;right:0;bottom:136px;
+  position:absolute;top:0;left:0;right:0;bottom:154px;
   overflow:hidden;
 }
 .home-card--anna .anna-marquee-track{
