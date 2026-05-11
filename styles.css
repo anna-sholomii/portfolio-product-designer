@@ -434,10 +434,10 @@ font-size:clamp(2.125rem,4.7vw,3.85rem);
 .home-card--anna  {
   background:#EFF4EE;
   padding:0;
-  justify-content:flex-start;
 }
 .home-card--anna .anna-marquee-wrap{
-  flex:1;min-height:0;overflow:hidden;
+  position:absolute;top:0;left:0;right:0;bottom:136px;
+  overflow:hidden;
 }
 .home-card--anna .anna-marquee-track{
   align-items:flex-start;height:100%;
