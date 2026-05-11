@@ -104,7 +104,7 @@ main{padding-top:64px;min-height:100vh;animation:pageFadeIn .22s ease both}
   .idx-cs-tags{display:none}
 }
 
-.cards-grid{display:grid;grid-template-columns:1fr;gap:20px;padding-bottom:96px}
+.cards-grid{display:grid;grid-template-columns:1fr;gap:40px;padding-bottom:96px}
 .card--featured{grid-column:1/-1}
 .card.card--featured{flex-direction:row}
 .card--featured .card-thumb{width:44%;aspect-ratio:auto;min-height:240px;flex-shrink:0}
