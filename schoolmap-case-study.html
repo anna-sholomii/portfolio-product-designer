@@ -1060,8 +1060,8 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
       <p style="max-width:640px;color:#71717C;font-size:1rem;line-height:1.65;margin-bottom:0">Numbers without context create anxiety. The "Nutrition Label" for school rankings proactively explains ESL/ELL biases via a "Why this score?" chip and tooltip - preventing parents from dismissing high-quality schools based on misunderstood data.</p>
     </div>
     <p style="max-width:640px;margin-top:0;margin-bottom:28px;color:#71717C;font-size:1rem;line-height:1.65">The map displays Fraser-rated Toronto schools as colour-coded pins - blue for TDSB public, red for TCDSB Catholic, green for French. Clicking a school draws its catchment polygon and populates the sidebar with verified rentals inside it.</p>
-    <div class="img-wrap" style="margin:28px 0" onclick="openLb('schoolmap-preview.png')">
-      <img src="schoolmap-preview.png" alt="School detail panel with map view" loading="lazy">
+    <div class="img-wrap" style="margin:28px 0" onclick="openLb('Rent-by-school-preview.png')">
+      <img src="Rent-by-school-preview.png" alt="School detail panel with map view" loading="lazy">
       <button class="img-enlarge">Enlarge ↗</button>
     </div>
     <p class="img-caption">School detail panel - Fraser score, catchment highlights, and rental pins visible on the map</p>
@@ -1363,7 +1363,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 .bot-panel{width:320px;background:#fff;border:1px solid #EDEAE3;border-radius:18px;box-shadow:0 8px 48px rgba(0,0,0,.12);display:flex;flex-direction:column;overflow:hidden;transform:translateY(12px) scale(.97);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-height:520px}
 .bot-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
 .bot-head{display:flex;align-items:center;gap:10px;padding:16px 18px;border-bottom:1px solid #EDEAE3;background:#FAF7F2}
-.bot-head img{width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:50% 12%;flex-shrink:0}
+.bot-head img{width:36px;height:36px;object-fit:contain;flex-shrink:0}
 .bot-head-text{flex:1}
 .bot-head-name{font-size:0.9375rem;font-weight:700;color:#1A1A18;letter-spacing:-.01em}
 .bot-head-sub{font-size:0.75rem;color:#888780;margin-top:1px}
@@ -1387,7 +1387,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 <div id="anna-bot">
   <div class="bot-panel" id="bot-panel">
     <div class="bot-head">
-      <img src="/anna-avatar.jpeg?v=1" alt="Anna">
+      <img src="/anna-avatar-cutout.png" alt="Anna">
       <div class="bot-head-text">
         <div class="bot-head-name">Ask Anna</div>
         <div class="bot-head-sub">About Rent by School</div>
@@ -1411,7 +1411,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     </div>
   </div>
   <button class="bot-trigger" id="bot-trigger" onclick="toggleBot()" aria-label="Ask Anna">
-    <img src="/anna-avatar.jpeg?v=1" alt="Anna">
+    <img src="/anna-avatar-cutout.png" alt="Anna">
     
   </button>
 </div>

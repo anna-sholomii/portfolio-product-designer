@@ -388,9 +388,9 @@ main.home-main{
 }
 .home-statement{
   font-family:'Figtree',sans-serif;
-  font-size:clamp(2.5rem,5.5vw,4.5rem);
-  font-weight:700;line-height:0.95;letter-spacing:-.03em;
-  color:var(--color-ink);margin:0;
+font-size:clamp(2.125rem,4.7vw,3.85rem);
+  font-weight:700;line-height:0.95;letter-spacing:-.035em;
+  color:var(--color-ink);margin:0;max-width:14ch;
 }
 .home-statement em{color:var(--color-coral);font-style:italic}
 .home-hero-role{
@@ -437,16 +437,15 @@ main.home-main{
   justify-content:flex-start;
 }
 .home-card--anna .anna-marquee-wrap{
-  flex:1;min-height:0;overflow:hidden;
+flex-shrink:0;overflow:hidden;
   margin-top:28px;
 }
 .home-card--anna .anna-marquee-track{
-  align-items:flex-start;height:100%;
+  align-items:flex-start;
 }
 .home-card--anna .anna-marquee-img{
-  width:145px;height:100%;
+width:145px;height:150px;
 }
-.home-card--anna .anna-flex-spacer{ flex:0; }
 .anna-intro{
   margin:12px 0 0;flex-shrink:0;padding:0 32px;
 }
@@ -469,7 +468,7 @@ main.home-main{
 .anna-card-label .home-card-num{ display:block; }
 .anna-card-label .home-card-title{ margin:2px 0 2px; }
 .anna-card-label .home-card-desc{ margin:0; }
-.anna-card-btns{ display:flex;flex-direction:row;gap:8px;flex-shrink:0;padding:0 32px 24px; }
+.anna-card-btns{ display:flex;flex-direction:row;gap:8px;flex-shrink:0;padding:0 32px 12px; }
 .home-card--principles{ background:#EDEAE3; }
 
 /* Preview area — sits above the content block */

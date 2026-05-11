@@ -1114,7 +1114,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
       </a>
       <a href="schoolmap-case-study.html" class="card" data-cs="schoolmap">
         <div class="card-thumb">
-          <img src="schoolmap-preview.png" alt="Rent by School" loading="lazy">
+          <img src="Rent-by-school-preview.png" alt="Rent by School" loading="lazy">
           <div class="card-overlay"><div class="card-overlay-cta"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View case study</div></div>
         </div>
         <div class="card-body">
@@ -1225,7 +1225,7 @@ function switchIter(n) {
 .bot-panel{width:320px;background:#fff;border:1px solid var(--color-linen);border-radius:18px;box-shadow:0 8px 48px rgba(0,0,0,.12);display:flex;flex-direction:column;overflow:hidden;transform:translateY(12px) scale(.97);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-height:520px}
 .bot-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
 .bot-head{display:flex;align-items:center;gap:10px;padding:16px 18px;border-bottom:1px solid var(--color-linen);background:var(--color-cream)}
-.bot-head img{width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:50% 12%;flex-shrink:0}
+.bot-head img{width:36px;height:36px;object-fit:contain;flex-shrink:0}
 .bot-head-text{flex:1}
 .bot-head-name{font-size:0.9375rem;font-weight:700;color:var(--color-ink);letter-spacing:-.01em}
 .bot-head-sub{font-size:0.75rem;color:var(--color-stone);margin-top:1px}
@@ -1258,7 +1258,7 @@ function switchIter(n) {
   <!-- panel -->
   <div class="bot-panel" id="bot-panel">
     <div class="bot-head">
-      <img src="/anna-avatar.jpeg?v=1" alt="Anna">
+      <img src="/anna-avatar-cutout.png" alt="Anna">
       <div class="bot-head-text">
         <div class="bot-head-name">Ask Anna</div>
         <div class="bot-head-sub">About the Telo case study</div>
@@ -1284,7 +1284,7 @@ function switchIter(n) {
 
   <!-- trigger -->
   <button class="bot-trigger" id="bot-trigger" onclick="toggleBot()" aria-label="Ask Anna">
-    <img src="/anna-avatar.jpeg?v=1" alt="Anna">
+    <img src="/anna-avatar-cutout.png" alt="Anna">
     
   </button>
 </div>
