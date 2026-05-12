@@ -252,11 +252,11 @@ main{padding-top:64px;min-height:100vh;animation:pageFadeIn .22s ease both}
 .defines-block-header{margin-bottom:28px}
 .defines-block-header h2{font-family:'Figtree',sans-serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:var(--color-ink);margin:0 0 8px}
 .defines-subtitle{font-size:1.3125rem;color:var(--color-stone);margin:0;line-height:1.65;max-width:520px}
-.defines-list{display:flex;flex-direction:column}
-.defines-item{padding:28px 0;border-bottom:1px solid var(--color-linen);display:flex;flex-direction:column;gap:10px}
-.defines-item:first-child{border-top:1px solid var(--color-linen)}
-.defines-item-title{font-size:1.375rem;font-weight:600;color:var(--color-ink);margin:0;line-height:1.25;letter-spacing:-.015em}
-.defines-item-body{font-size:1.0625rem;color:var(--color-stone);line-height:1.7;margin:0}
+.defines-list{display:flex;flex-direction:column;gap:16px}
+.defines-item{border-radius:16px;border:1px solid var(--color-linen);background:var(--color-white);padding:24px 26px;display:flex;flex-direction:column;gap:10px}
+.defines-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-bottom:4px}
+.defines-item-title{font-size:1.25rem;font-weight:600;color:var(--color-ink);margin:0;line-height:1.25;letter-spacing:-.01em}
+.defines-item-body{font-size:1.125rem;color:var(--color-stone);line-height:1.75;margin:0}
 
 /* ════════════════════════════════
    RESUME
