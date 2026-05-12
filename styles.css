@@ -801,6 +801,9 @@ font-size:clamp(2.125rem,4.7vw,3.85rem);
   .hcp-nav{ display:none; }
 }
 
+/* ─── ABOUT CS DECK ─── */
+.about-hcp-deck{max-width:560px}
+
 /* ─── ABOUT CS SCROLL ─── */
 .about-cs-scroll{overflow:hidden;margin:0 -40px}
 .about-cs-track{
