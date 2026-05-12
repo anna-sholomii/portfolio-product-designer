@@ -360,21 +360,8 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <h2>Information exists,<br><em>but nothing connects it</em></h2>
 
     <div style="background:#F5F5F5;border-radius:14px;padding:28px 32px;margin-bottom:36px;max-width:720px">
-      <div style="font-size:0.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:16px">Executive Summary - Problem</div>
-      <div style="display:flex;flex-direction:column;gap:14px">
-        <div style="display:flex;gap:12px">
-          <span style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;min-width:90px;padding-top:2px">Context</span>
-          <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">Toronto families relocating for schools face a fragmented research ecosystem spanning 3+ platforms with no unified view.</p>
-        </div>
-        <div style="display:flex;gap:12px">
-          <span style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;min-width:90px;padding-top:2px">Core Issue</span>
-          <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">No single tool connects school quality, catchment boundaries, and rental availability in one place.</p>
-        </div>
-        <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;gap:12px">
-          <span style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;min-width:90px;padding-top:2px">User Cost</span>
-          <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">A weeks-long manual process with a documented <strong style="color:#3F3F47">40% error rate</strong> in realtor-provided catchment data.</p>
-        </div>
-      </div>
+      <div style="font-size:0.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:12px">How did I discover this problem?</div>
+      <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.7">I ran into this myself - looking for a rental that worked for my family while also landing in the right school catchment for my child. The information was out there, spread across multiple platforms - but I spent several days finding out what rentals would suit us (and that was even before contacting the real estate agent).</p>
     </div>
 
     <div class="prob-layout">
@@ -429,28 +416,9 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 <section id="research">
   <div class="container">
     <div class="eyebrow"><span class="n">2</span> Research</div>
-    <h2>Is it just you,<br><em>or do others feel it too?</em></h2>
+    <h2>Is it just me,<br><em>or do others feel it too?</em></h2>
 
-    <div style="background:#F5F5F5;border-radius:14px;padding:28px 32px;margin-bottom:36px;max-width:720px">
-      <div style="font-size:0.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:16px">Executive Summary - Research Methodology</div>
-      <div style="display:flex;flex-direction:column;gap:14px">
-        <div style="display:flex;gap:12px">
-          <span style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;min-width:80px;padding-top:2px">Primary</span>
-          <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">Synthesis of 500+ qualitative data points from local community forums (Reddit / RedFlagDeals).</p>
-        </div>
-        <div style="display:flex;gap:12px">
-          <span style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;min-width:80px;padding-top:2px">Secondary</span>
-          <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">Audit of TDSB/TCDSB geospatial street guides vs. commercial real estate APIs.</p>
-        </div>
-        <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;gap:12px">
-          <span style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;min-width:80px;padding-top:2px">Key Finding</span>
-          <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">The <strong style="color:#3F3F47">"Relocator’s Blindspot"</strong> - users trust realtors for catchment data, yet 40% of listings contain boundary errors.</p>
-        </div>
-      </div>
-    </div>
-
-
-    <p style="max-width:680px">You’re facing the problem. Before designing anything, I needed to check: is this real and widespread - or just an assumption? Hey Reddit, have you heard of something similar?</p>
+    <p style="max-width:680px">After I realised the problem and before diving into the design, I needed to check: is this a real and widespread problem that other parents in Toronto face - or just my own experience?<br><br>Hey Reddit, have you heard of something similar?</p>
 
 
     <div style="margin-top:40px;margin-bottom:48px">
@@ -587,51 +555,46 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
       })();
     </script>
 
-      <p style="max-width:640px;margin-top:32px">Yep, I knew that. Let’s use my design superpower and address their frustrations.</p>
+      <p style="max-width:640px;margin-top:32px">The problem seemed real. I continued my research with 1:1 interviews - friends with school-aged children in Toronto and parents from my kid’s daycare group (12 conversations total). 90% of them had faced or were actively dealing with the same problem.</p>
       <p style="max-width:640px;margin-top:8px">Which pain points do they mention:</p>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px">
         <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
           <div style="font-size:0.75rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">01</div>
-          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">No map</p>
-          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">Rentals live on a different platform entirely</p>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Jumping between the websites</p>
+          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">Rentals and the school catchment info live on a different platforms</p>
         </div>
         <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
           <div style="font-size:0.75rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">02</div>
           <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Proximity ≠ assigned</p>
-          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">Tools show "nearby" schools, not your actual catchment</p>
+          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">Rental websites show "nearby" schools, not your actual catchment area schools</p>
         </div>
         <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
           <div style="font-size:0.75rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">03</div>
-          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Ratings buried</p>
-          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">Fraser scores are hard to find and navigate</p>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">French options are separated</p>
+          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">French Immersion boundaries are listed separately from the regular schools</p>
         </div>
         <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
           <div style="font-size:0.75rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">04</div>
-          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">FI undocumented</p>
-          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">French Immersion boundaries aren’t publicly mapped</p>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Realtors mislead</p>
+          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">Agents sometimes give wrong catchment information</p>
         </div>
         <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
           <div style="font-size:0.75rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">05</div>
-          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Realtors mislead</p>
-          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">Agents actively give wrong catchment information</p>
+          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Catchment ≠ spot</p>
+          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">Schools are full — being inside doesn’t guarantee a place</p>
         </div>
         <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
           <div style="font-size:0.75rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">06</div>
-          <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Catchment ≠ spot</p>
-          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">Schools are full - being inside doesn’t guarantee a place</p>
-        </div>
-        <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
-          <div style="font-size:0.75rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">07</div>
           <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Condos excluded</p>
           <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">Some condo buildings are carved out of their local catchment</p>
         </div>
         <div style="padding:16px 18px;background:var(--white);border:1px solid var(--line);border-radius:10px">
-          <div style="font-size:0.75rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">08</div>
+          <div style="font-size:0.75rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px">07</div>
           <p style="font-size:0.9375rem;color:#3F3F47;font-weight:600;margin:0 0 4px;line-height:1.3">Ratings biased</p>
-          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">Fraser systematically underrates newcomer-heavy schools</p>
+          <p style="font-size:0.875rem;color:#71717C;margin:0;line-height:1.4">Fraser underrates newcomer-heavy schools when assessing the academic performance</p>
         </div>
       </div>
-      <p style="max-width:640px;margin-top:24px">Ouf, quite a lot to start with. Let’s first deliver basic value and cover the major frustrations - reduce decision time by consolidating all necessary information in one place, show exact catchment boundaries (not proximity), and surface school rankings clearly.</p>
+      <p style="max-width:640px;margin-top:24px">Many points to cover. I decided to divide this to MVP and the following iteration. Let’s first deliver basic value and cover the major frustrations - reduce decision time by consolidating all necessary information in one place, show exact catchment boundaries (not proximity), and surface school rankings clearly (to reduce cognitive bias on the parents).</p>
   </div>
 </section>
 
@@ -658,8 +621,6 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
         </div>
       </div>
     </div>
-
-    <p style="max-width:640px">The primary user isn't someone who already knows Toronto's neighbourhoods. It's a parent who has never lived here - arriving from another country or another city - who needs to make a high-stakes housing decision quickly, without local knowledge to fall back on.</p>
     <div class="cards-2" style="margin-top:32px">
       <div class="info-card">
         <div class="info-card-label">Who they are</div>
@@ -674,13 +635,13 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
         <div class="info-card-label">What they need</div>
         <ul style="margin:0;padding-left:18px;list-style:none;display:flex;flex-direction:column;gap:6px">
           <li style="display:flex;gap:8px;align-items:baseline"><span style="color:var(--accent);font-weight:700;flex-shrink:0">-</span><span style="font-size:1rem;color:#71717C;line-height:1.5">A fast, trustworthy school quality signal</span></li>
+          <li style="display:flex;gap:8px;align-items:baseline"><span style="color:var(--accent);font-weight:700;flex-shrink:0">-</span><span style="font-size:1rem;color:#71717C;line-height:1.5">Confirmed catchment areas</span></li>
           <li style="display:flex;gap:8px;align-items:baseline"><span style="color:var(--accent);font-weight:700;flex-shrink:0">-</span><span style="font-size:1rem;color:#71717C;line-height:1.5">Neighbourhoods within their rental budget</span></li>
-          <li style="display:flex;gap:8px;align-items:baseline"><span style="color:var(--accent);font-weight:700;flex-shrink:0">-</span><span style="font-size:1rem;color:#71717C;line-height:1.5">Confirmed catchment - not just proximity</span></li>
           <li style="display:flex;gap:8px;align-items:baseline"><span style="color:var(--accent);font-weight:700;flex-shrink:0">-</span><span style="font-size:1rem;color:#71717C;line-height:1.5">Confidence before signing the lease</span></li>
         </ul>
       </div>
     </div>
-    <p style="max-width:640px;margin-top:8px">They are not education researchers. They don't need nuance - they need a starting point good enough to shortlist neighbourhoods and begin viewings.</p>
+    <p style="max-width:640px;margin-top:8px">With that in mind I created the main user persona to consider while making the design decisions. Here she is</p>
 
     <div class="img-wrap" style="margin-top:32px" onclick="openLb('User persona_Rent_by_School.jpg')">
       <img src="User persona_Rent_by_School.jpg" alt="User Persona - Rent by School" loading="lazy" style="width:100%;display:block">
@@ -695,25 +656,8 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     <div class="eyebrow"><span class="n">4</span> Design</div>
     <h2>Two directions<br><em>explored.</em></h2>
 
-    <div style="background:#F5F5F5;border-radius:14px;padding:28px 32px;margin-bottom:36px;max-width:720px">
-      <div style="font-size:0.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:16px">Executive Summary - Design</div>
-      <div style="display:flex;flex-direction:column;gap:14px">
-        <div style="display:flex;gap:12px">
-          <span style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;min-width:90px;padding-top:2px">Framework</span>
-          <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">Map-first, trust-first architecture - geographic truth before quality signals before property features.</p>
-        </div>
-        <div style="display:flex;gap:12px">
-          <span style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;min-width:90px;padding-top:2px">Key Pivots</span>
-          <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6">Hard catchment boundaries over proximity radius. Contextual ratings over raw scores. Classic map over AI bot - trust requires legibility.</p>
-        </div>
-        <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;gap:12px">
-          <span style="font-size:0.75rem;font-weight:600;color:#3F3F47;text-transform:uppercase;letter-spacing:.08em;min-width:90px;padding-top:2px">Execution</span>
-          <p style="font-size:1rem;color:#71717C;margin:0;line-height:1.6"><strong style="color:#3F3F47">Solo designer-builder</strong> using Claude Code + Figma. Design and working prototype evolved simultaneously.</p>
-        </div>
-      </div>
-    </div>
-
-    <p style="max-width:680px">I had 2 winning ideas - map-first (classic) and AI bot first (modern). The question: when it comes to a serious decision, do I want the process controlled by AI only? I don’t think so. Let’s leave AI for the next iteration and proceed with map-first.</p>
+    <h3 style="margin:32px 0 12px">Sketches</h3>
+    <p style="max-width:680px">I quickly sketched the ideas of the possible solutions with 2 major concepts — map-first (classic) and AI bot first (modern).</p>
 
     <div class="ss-grid" style="margin-top:36px">
       <div>
@@ -742,6 +686,8 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
       </div>
     </div>
 
+    <p style="max-width:680px;margin-top:32px">After a quick chat with several parents I heard that they lean towards "controlling the filter options by themselves" more than having the ready-to-use design decisions by AI, making my choice — start with a familiar map-first approach.</p>
+
     <div style="margin-top:36px;padding:24px 28px;background:var(--bg2);border-radius:12px;border:1px solid var(--line)">
       <h3 style="margin-bottom:16px">Two concepts taken forward</h3>
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px">
@@ -751,8 +697,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
       <h3 style="margin-bottom:12px">Open questions at this stage</h3>
       <div style="display:flex;flex-direction:column;gap:8px">
         <div style="font-size:1.125rem;color:#71717C;line-height:1.65"><span style="color:var(--accent);font-weight:700;margin-right:8px">·</span>Neighbourhood safety context not yet integrated</div>
-        <div style="font-size:1.125rem;color:#71717C;line-height:1.65"><span style="color:var(--accent);font-weight:700;margin-right:8px">·</span>Rating explainer has no defined home</div>
-        <div style="font-size:1.125rem;color:#71717C;line-height:1.65"><span style="color:var(--accent);font-weight:700;margin-right:8px">·</span>School detail panel needs rethinking for portrait mobile</div>
+        <div style="font-size:1.125rem;color:#71717C;line-height:1.65"><span style="color:var(--accent);font-weight:700;margin-right:8px">·</span>Fraser ratings are controversial — how do we show them without them becoming the only decision driver?</div>
       </div>
     </div>
 
