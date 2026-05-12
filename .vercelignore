@@ -1,0 +1,10 @@
+# Source video files — not used on site, never serve
+*.mov
+
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Source files not needed on the web
+*.sketch
+*.fig
