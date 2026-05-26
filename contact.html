@@ -132,9 +132,10 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
 <style>
 #anna-bot{position:fixed;bottom:96px;right:32px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-.bot-trigger{width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;overflow:hidden;box-shadow:0 4px 20px rgba(74,103,65,.4);transition:transform .2s,box-shadow .2s;position:relative;flex-shrink:0;padding:0;background:#4A6741}
-.bot-trigger:hover{transform:scale(1.06)}
-.bot-trigger img{width:52px;height:52px;object-fit:cover;object-position:50% 12%;display:block}
+.bot-trigger{width:60px;height:70px;border:none;cursor:pointer;box-shadow:none;transition:transform .2s;position:relative;flex-shrink:0;padding:0;background:transparent;display:flex;align-items:center;justify-content:center;overflow:visible}
+.bot-trigger:hover{transform:scale(1.06);transform-origin:center bottom}
+.bot-trigger img{width:60px;height:66px;object-fit:contain;object-position:center top;display:block;flex-shrink:0}
+.bot-head img{object-fit:contain;object-position:center top}
 
 
 }
@@ -167,7 +168,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 <div id="anna-bot">
   <div class="bot-panel" id="bot-panel">
     <div class="bot-head">
-      <img src="/anna-avatar-cutout.webp" alt="Anna">
+      <img src="/anna-avatar-cutout.webp?v=4" alt="Anna">
       <div class="bot-head-text">
         <div class="bot-head-name">Ask Anna</div>
         <div class="bot-head-sub">Getting in touch</div>
@@ -189,7 +190,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     </div>
   </div>
   <button class="bot-trigger" onclick="toggleBot()" aria-label="Ask Anna">
-    <img src="/anna-avatar-cutout.webp" alt="Anna">
+    <img src="/anna-avatar-cutout.webp?v=4" alt="Anna">
     
   </button>
 </div>

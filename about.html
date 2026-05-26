@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="/Logo_upd.webp?v=2" />
 <link rel="apple-touch-icon" href="/Logo_upd.webp?v=2" />
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
 
@@ -56,7 +56,7 @@
     </section>
 
     <!-- ─── PRINCIPLES OF MY WORK ─── -->
-    <section class="about-section">
+    <section class="about-section about-section--principles">
       <div class="about-section-head">
         <span class="idx-label">The principles of my work</span>
       </div>
@@ -208,12 +208,10 @@
 #anna-bot{position:fixed;bottom:96px;right:20px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .bot-trigger-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer}
 .bot-ask-label{font-family:'Figtree',sans-serif;font-size:0.75rem;font-weight:600;color:#2F2F2C;letter-spacing:-.01em;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);padding:3px 11px;border-radius:20px;box-shadow:0 2px 8px rgba(0,0,0,.09);white-space:nowrap}
-.bot-trigger{width:72px;height:72px;border:none;cursor:pointer;box-shadow:none;transition:transform .2s;position:relative;flex-shrink:0;padding:0;background:transparent}
-.bot-trigger:hover{transform:scale(1.06)}
-.bot-trigger img{width:72px;height:72px;object-fit:contain;display:block}
-
-
-}
+.bot-trigger{width:80px;height:92px;border:none;cursor:pointer;box-shadow:none;transition:transform .2s;position:relative;flex-shrink:0;padding:0;background:transparent;display:flex;align-items:center;justify-content:center;overflow:visible}
+.bot-trigger:hover{transform:scale(1.06);transform-origin:center bottom}
+.bot-trigger img{width:80px;height:88px;object-fit:contain;object-position:center top;display:block;flex-shrink:0}
+.bot-head img{object-fit:contain;object-position:center top}
 .bot-tooltip{background:#1A1A18;color:#fff;font-family:'Figtree',sans-serif;font-size:0.875rem;font-weight:500;padding:9px 14px;border-radius:10px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.18);position:relative;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none}
 .bot-tooltip::after{content:'';position:absolute;right:18px;bottom:-6px;width:10px;height:10px;background:#1A1A18;clip-path:polygon(0 0,100% 0,50% 100%)}
 .bot-tooltip.show{opacity:1;transform:translateY(-2px);pointer-events:auto;cursor:pointer}
@@ -243,7 +241,7 @@
 <div id="anna-bot">
   <div class="bot-panel" id="bot-panel">
     <div class="bot-head">
-      <img src="/anna-avatar-cutout.webp" alt="Anna">
+      <img src="/anna-avatar-cutout.webp?v=4" alt="Anna">
       <div class="bot-head-text">
         <div class="bot-head-name">Ask Anna</div>
         <div class="bot-head-sub">About Anna</div>
@@ -266,7 +264,7 @@
   </div>
   <div class="bot-trigger-wrap" onclick="toggleBot()">
     <button class="bot-trigger" aria-label="Ask Anna" style="pointer-events:none">
-      <img src="/anna-avatar-cutout.webp" alt="Anna">
+      <img src="/anna-avatar-cutout.webp?v=4" alt="Anna">
       
     </button>
     <span class="bot-ask-label">Ask Anna</span>

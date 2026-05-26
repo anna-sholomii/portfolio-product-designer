@@ -712,23 +712,23 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
       <p style="max-width:680px;margin-top:0 0 20px"><strong>2nd design iteration with Claude Code (current version).</strong></p>
 
       <div style="font-size:0.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:28px 0 12px">🖥 Desktop</div>
-      <div style="position:relative;margin-bottom:12px">
-        <div class="img-wrap" style="margin:0;cursor:pointer" onclick="openLb(‘Rent-by-school-preview.webp’)"><img src="Rent-by-school-preview.webp" alt="School detail panel with map view" loading="lazy" style="width:100%;display:block"></div>
-        <button style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto" onclick="openLb(‘Rent-by-school-preview.webp’)">Enlarge ↗</button>
+      <div style="position:relative;margin-bottom:12px;border-radius:12px;border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.06);cursor:pointer" onclick="openLb(‘Rent-by-school-preview.webp’)">
+        <img src="Rent-by-school-preview.webp" alt="School detail panel with map view" loading="lazy" style="width:100%;display:block;border-radius:12px;pointer-events:none">
+        <button data-lb="Rent-by-school-preview.webp" style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto">Enlarge ↗</button>
       </div>
       <p class="img-caption">School detail panel - Fraser score, catchment highlights, and rental pins visible on the map</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
         <div>
-          <div style="position:relative">
-            <div class="img-wrap" style="margin:0;cursor:pointer" onclick="openLb(‘Mockup_locator_rental_listings.webp’)"><img src="Mockup_locator_rental_listings.webp" alt="School catchment panel with rental listings" loading="lazy" style="width:100%;display:block"></div>
-            <button style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto" onclick="openLb(‘Mockup_locator_rental_listings.webp’)">Enlarge ↗</button>
+          <div style="position:relative;border-radius:12px;border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.06);cursor:pointer" onclick="openLb(‘Mockup_locator_rental_listings.webp’)">
+            <img src="Mockup_locator_rental_listings.webp" alt="School catchment panel with rental listings" loading="lazy" style="width:100%;display:block;border-radius:12px;pointer-events:none">
+            <button data-lb="Mockup_locator_rental_listings.webp" style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto">Enlarge ↗</button>
           </div>
           <p class="img-caption">School catchment panel - rentals listed in sidebar with distance and price</p>
         </div>
         <div>
-          <div style="position:relative">
-            <div class="img-wrap" style="margin:0;cursor:pointer" onclick="openLb(‘Mockup_locator_rental.webp’)"><img src="Mockup_locator_rental.webp" alt="Rental detail with assigned school" loading="lazy" style="width:100%;display:block"></div>
-            <button style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto" onclick="openLb(‘Mockup_locator_rental.webp’)">Enlarge ↗</button>
+          <div style="position:relative;border-radius:12px;border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.06);cursor:pointer" onclick="openLb(‘Mockup_locator_rental.webp’)">
+            <img src="Mockup_locator_rental.webp" alt="Rental detail with assigned school" loading="lazy" style="width:100%;display:block;border-radius:12px;pointer-events:none">
+            <button data-lb="Mockup_locator_rental.webp" style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto">Enlarge ↗</button>
           </div>
           <p class="img-caption">Rental detail - listing with assigned school, Fraser rating, and catchment pin</p>
         </div>
@@ -737,44 +737,44 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
       <div style="font-size:0.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:36px 0 12px">📱 Mobile</div>
       <div class="mockup-grid">
         <div>
-          <div style="position:relative">
-            <div class="img-wrap" style="margin:0;cursor:pointer" onclick="openLb(‘Mockup_locator_map.webp’)"><img src="Mockup_locator_map.webp" alt="Map view" loading="lazy" style="width:100%;display:block"></div>
-            <button style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto" onclick="openLb(‘Mockup_locator_map.webp’)">Enlarge ↗</button>
+          <div style="position:relative;border-radius:12px;border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.06);cursor:pointer" onclick="openLb(‘Mockup_locator_map.webp’)">
+            <img src="Mockup_locator_map.webp" alt="Map view" loading="lazy" style="width:100%;display:block;border-radius:12px;pointer-events:none">
+            <button data-lb="Mockup_locator_map.webp" style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto">Enlarge ↗</button>
           </div>
           <p class="img-caption">Map - colour-coded school pins with Fraser ratings</p>
         </div>
         <div>
-          <div style="position:relative">
-            <div class="img-wrap" style="margin:0;cursor:pointer" onclick="openLb(‘Mockup_locator_filter.webp’)"><img src="Mockup_locator_filter.webp" alt="Filters panel" loading="lazy" style="width:100%;display:block"></div>
-            <button style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto" onclick="openLb(‘Mockup_locator_filter.webp’)">Enlarge ↗</button>
+          <div style="position:relative;border-radius:12px;border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.06);cursor:pointer" onclick="openLb(‘Mockup_locator_filter.webp’)">
+            <img src="Mockup_locator_filter.webp" alt="Filters panel" loading="lazy" style="width:100%;display:block;border-radius:12px;pointer-events:none">
+            <button data-lb="Mockup_locator_filter.webp" style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto">Enlarge ↗</button>
           </div>
           <p class="img-caption">Filters - board, language, level, and rating range</p>
         </div>
         <div>
-          <div style="position:relative">
-            <div class="img-wrap" style="margin:0;cursor:pointer" onclick="openLb(‘Mockup_locator_search.webp’)"><img src="Mockup_locator_search.webp" alt="School search" loading="lazy" style="width:100%;display:block"></div>
-            <button style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto" onclick="openLb(‘Mockup_locator_search.webp’)">Enlarge ↗</button>
+          <div style="position:relative;border-radius:12px;border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.06);cursor:pointer" onclick="openLb(‘Mockup_locator_search.webp’)">
+            <img src="Mockup_locator_search.webp" alt="School search" loading="lazy" style="width:100%;display:block;border-radius:12px;pointer-events:none">
+            <button data-lb="Mockup_locator_search.webp" style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto">Enlarge ↗</button>
           </div>
           <p class="img-caption">Search - autocomplete by name with ratings shown</p>
         </div>
         <div>
-          <div style="position:relative">
-            <div class="img-wrap" style="margin:0;cursor:pointer" onclick="openLb(‘Mockup_locator_school%20info.webp’)"><img src="Mockup_locator_school%20info.webp" alt="School detail" loading="lazy" style="width:100%;display:block"></div>
-            <button style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto" onclick="openLb(‘Mockup_locator_school%20info.webp’)">Enlarge ↗</button>
+          <div style="position:relative;border-radius:12px;border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.06);cursor:pointer" onclick="openLb(‘Mockup_locator_school%20info.webp’)">
+            <img src="Mockup_locator_school%20info.webp" alt="School detail" loading="lazy" style="width:100%;display:block;border-radius:12px;pointer-events:none">
+            <button data-lb="Mockup_locator_school%20info.webp" style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto">Enlarge ↗</button>
           </div>
           <p class="img-caption">School detail - Fraser score, tags, and neighbourhood context</p>
         </div>
         <div>
-          <div style="position:relative">
-            <div class="img-wrap" style="margin:0;cursor:pointer" onclick="openLb(‘Mockup_locator_school_info2.webp’)"><img src="Mockup_locator_school_info2.webp" alt="School detail with rentals" loading="lazy" style="width:100%;display:block"></div>
-            <button style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto" onclick="openLb(‘Mockup_locator_school_info2.webp’)">Enlarge ↗</button>
+          <div style="position:relative;border-radius:12px;border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.06);cursor:pointer" onclick="openLb(‘Mockup_locator_school_info2.webp’)">
+            <img src="Mockup_locator_school_info2.webp" alt="School detail with rentals" loading="lazy" style="width:100%;display:block;border-radius:12px;pointer-events:none">
+            <button data-lb="Mockup_locator_school_info2.webp" style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto">Enlarge ↗</button>
           </div>
           <p class="img-caption">School detail - rental count and price range in catchment</p>
         </div>
         <div>
-          <div style="position:relative">
-            <div class="img-wrap" style="margin:0;cursor:pointer" onclick="openLb(‘Mockup_locator_rental_info.webp’)"><img src="Mockup_locator_rental_info.webp" alt="Rental detail" loading="lazy" style="width:100%;display:block"></div>
-            <button style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto" onclick="openLb(‘Mockup_locator_rental_info.webp’)">Enlarge ↗</button>
+          <div style="position:relative;border-radius:12px;border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.06);cursor:pointer" onclick="openLb(‘Mockup_locator_rental_info.webp’)">
+            <img src="Mockup_locator_rental_info.webp" alt="Rental detail" loading="lazy" style="width:100%;display:block;border-radius:12px;pointer-events:none">
+            <button data-lb="Mockup_locator_rental_info.webp" style="position:absolute;bottom:14px;right:14px;z-index:9998;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:#3F3F47;border:1px solid rgba(0,0,0,.13);padding:6px 14px;border-radius:4px;font-size:0.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;pointer-events:auto">Enlarge ↗</button>
           </div>
           <p class="img-caption">Rental detail - listing with assigned school and rating</p>
         </div>
@@ -1229,6 +1229,8 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 const secs=document.querySelectorAll('section[id]'),pills=document.querySelectorAll('.pnav a[data-s]');
 new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){pills.forEach(p=>p.classList.remove('active'));const a=document.querySelector('.pnav a[data-s="'+e.target.id+'"]');if(a)a.classList.add('active')}})},{rootMargin:'-25% 0px -65% 0px'}).observe&&secs.forEach(s=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){pills.forEach(p=>p.classList.remove('active'));const a=document.querySelector('.pnav a[data-s="'+e.target.id+'"]');if(a)a.classList.add('active')}})},{rootMargin:'-25% 0px -65% 0px'}).observe(s));
 function openLb(src){document.getElementById('lb-img').src=src;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden'}
+window.openLb=openLb;
+document.addEventListener('click',function(e){var btn=e.target.closest('[data-lb]');if(btn){e.stopPropagation();openLb(btn.getAttribute('data-lb'));}});
 var tdIdx=0;function tdGo(dir){var track=document.getElementById('td-track');if(!track)return;var cards=track.getElementsByClassName('td-card');var prev=document.getElementById('td-prev');var next=document.getElementById('td-next');var count=document.getElementById('td-count');var n=cards.length;var newIdx=tdIdx+dir;if(newIdx<0||newIdx>=n)return;cards[tdIdx].style.display='none';tdIdx=newIdx;cards[tdIdx].style.display='block';count.textContent=(tdIdx+1)+' / '+n;prev.style.opacity=tdIdx===0?'0.35':'1';prev.style.pointerEvents=tdIdx===0?'none':'auto';next.style.opacity=tdIdx===n-1?'0.35':'1';next.style.pointerEvents=tdIdx===n-1?'none':'auto';}
 function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow=''}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
