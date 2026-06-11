@@ -450,14 +450,16 @@ font-size:clamp(2.125rem,4.7vw,3.85rem);
   padding:0;
 }
 .home-card--anna .anna-marquee-wrap{
-  position:absolute;top:28px;left:0;right:0;bottom:154px;
+  position:absolute;top:28px;left:24px;right:24px;bottom:154px;
   overflow:hidden;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,black 24px,black calc(100% - 24px),transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0,black 24px,black calc(100% - 24px),transparent 100%);
 }
 .home-card--anna .anna-marquee-track{
-  align-items:flex-start;height:100%;
+  align-items:flex-start;height:100%;gap:8px;
 }
 .home-card--anna .anna-marquee-img{
-  height:100%;width:auto;
+  height:100%;width:auto;border-radius:8px;flex-shrink:0;
 }
 .home-card--anna .anna-flex-spacer{ flex:0; }
 .anna-intro{
