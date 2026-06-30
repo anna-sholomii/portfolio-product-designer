@@ -8,3 +8,7 @@
 # Source files not needed on the web
 *.sketch
 *.fig
+
+# NDA source - never deploy even if present locally
+_private/
+encrypted/
