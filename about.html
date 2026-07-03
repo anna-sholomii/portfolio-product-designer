@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="/Logo_upd.webp?v=2" />
 <link rel="apple-touch-icon" href="/Logo_upd.webp?v=2" />
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=81">
+<link rel="stylesheet" href="styles.css?v=86">
 </head>
 <body>
 
@@ -353,7 +353,7 @@ hr.d{border:none;border-top:1px solid var(--color-linen);margin:0}
 </div>
 <script>
 (function(){
-  var qa=[{k:["background","experience","history","years","started","career"],a:"My first product role was at <b>Ambassador Platform</b> - joining as the first designer when the company had ~50 clients, leaving three years later with 100+. Since then: B2B SaaS and civic tech."},{k:["tool","figma","software","use","stack","design tool"],a:"Figma for everything design-related - components, prototypes, dev handoff. Maze and UserTesting for research. Mixpanel for usage data. And increasingly <b>Claude Code</b> for building side projects end-to-end, like Rent by School."},{k:["looking for","next","role","job","want","seek","open to"],a:"A product design role in a B2B SaaS team - ideally somewhere that takes research seriously and where design has real influence over product decisions. I want to be close to the problem, not just the output."},{k:["care","most about","value","important","matter","priority","drives","motivated"],a:"The moment where research stops being abstract and becomes a specific design decision. When a quote from an interview directly changes the way something works - that's when the job feels most worth doing. I care about that traceability."}];
+  var qa=[{k:["background","experience","history","years","started","career"],a:"My first product role was at <b>Ambassador Platform</b> - joining as the first designer when the company had ~50 clients, leaving three years later with 100+."},{k:["tool","figma","software","use","stack","design tool"],a:"Figma for everything design-related - components, prototypes, dev handoff. Maze and UserTesting for research. Mixpanel for usage data. And increasingly <b>Claude Code</b> for building side projects end-to-end, like Rent by School."},{k:["looking for","next","role","job","want","seek","open to"],a:"A product design role in a B2B SaaS team - ideally somewhere that takes research seriously and where design has real influence over product decisions. I want to be close to the problem, not just the output."},{k:["care","most about","value","important","matter","priority","drives","motivated"],a:"The moment where research stops being abstract and becomes a specific design decision. When a quote from an interview directly changes the way something works - that's when the job feels most worth doing. I care about that traceability."}];
   var open=false;
   setTimeout(function(){
     if(!open&&!sessionStorage.getItem('bot-seen-about')){
@@ -375,7 +375,7 @@ hr.d{border:none;border-top:1px solid var(--color-linen);margin:0}
       if(qa[i].k.some(function(k){return ql.indexOf(k)!==-1})){found=qa[i];break}
     }
     setTimeout(function(){
-      addMsg(found?found.a:'That\'s outside what I have scripted - but happy to talk. Reach out at <b>anna@sholomii.com</b> or LinkedIn.','bot');
+      addMsg(found?found.a:'That\'s outside what I have scripted - but happy to talk. Reach out at <b>anna.sholomii@gmail.com</b> or LinkedIn.','bot');
       setTimeout(function(){document.getElementById('bot-chips').style.display='flex'},600);
     },480);
   };

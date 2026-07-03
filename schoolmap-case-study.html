@@ -352,7 +352,6 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
   </div>
 </section>
 
-<hr class="d">
 <section id="problem">
   <div class="container">
     <div class="eyebrow"><span class="n">1</span> Problem</div>
@@ -1091,8 +1090,10 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 <!-- ─── ASK ANNA BOT ─── -->
 <style>
 #anna-bot{position:fixed;bottom:96px;right:32px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-.bot-trigger{width:60px;height:70px;border:none;cursor:pointer;box-shadow:none;transition:transform .2s;position:relative;flex-shrink:0;padding:0;background:transparent;display:flex;align-items:center;justify-content:center;overflow:visible}
-.bot-trigger img{width:60px;height:66px;object-fit:contain;object-position:center top;display:block;flex-shrink:0}
+.bot-trigger-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer}
+.bot-ask-label{font-family:'Figtree',sans-serif;font-size:0.75rem;font-weight:600;color:var(--color-ink,#2F2F2C);letter-spacing:-.01em;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:3px 11px;border-radius:20px;box-shadow:0 2px 8px rgba(0,0,0,.09);white-space:nowrap}
+.bot-trigger{width:80px;height:92px;border:none;cursor:pointer;box-shadow:none;transition:transform .2s;position:relative;flex-shrink:0;padding:0;background:transparent;display:flex;align-items:center;justify-content:center;overflow:visible}
+.bot-trigger img{width:80px;height:88px;object-fit:contain;object-position:center top;display:block;flex-shrink:0}
 .bot-head img{object-fit:contain;object-position:center top}
 .bot-trigger:hover{transform:scale(1.06);transform-origin:center bottom}
 .bot-trigger-emoji{font-size:26px;line-height:1;pointer-events:none}
@@ -1152,10 +1153,12 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
       </button>
     </div>
   </div>
-  <button class="bot-trigger" id="bot-trigger" onclick="toggleBot()" aria-label="Ask Anna">
-    <img src="/anna-avatar-cutout.webp?v=4" alt="Anna">
-    
-  </button>
+  <div class="bot-trigger-wrap" onclick="toggleBot()">
+    <button class="bot-trigger" id="bot-trigger" aria-label="Ask Anna" style="pointer-events:none">
+      <img src="/anna-avatar-cutout.webp?v=4" alt="Anna">
+    </button>
+    <span class="bot-ask-label">Ask Anna</span>
+  </div>
 </div>
 
 <script>
@@ -1179,7 +1182,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     {
       keywords:['hard','hardest','challenge','difficult','data','problem','technical','took','time'],
       emoji:'😟',
-      answer:'Data, not design. School name reconciliation - matching Fraser Institute ratings to TDSB school records to catchment boundaries - took far more time than the UI. Three datasets with inconsistent naming conventions, plus the fact that TDSB catchment data isn\'t available as a clean API. The design was clear in week two; getting trustworthy data took months.'
+      answer:'The UI wasn\'t the hard part - it\'s the data. What you see in the prototype is mocked: school ratings, catchment boundaries, and listings all need to come from partners who actually hold that information. I built enough placeholder data to test the workflow, and I\'m planning to reach out to get real sources lined up. Until then, the case study is really about the interaction model, not the dataset behind it.'
     },
     {
       keywords:['differently','change','improve','next','learned','retrospect','reflection','would you'],
@@ -1217,7 +1220,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
     }
     setTimeout(function(){
       if(found){addMsg(found.answer,'bot');}
-      else{addMsg("That\'s outside what I have scripted - but happy to talk about it. Reach out at <b>anna@sholomii.com</b> or LinkedIn.",'bot');}
+      else{addMsg("That\'s outside what I have scripted - but happy to talk about it. Reach out at <b>anna.sholomii@gmail.com</b> or LinkedIn.",'bot');}
       setTimeout(function(){document.getElementById('bot-chips').style.display='flex'},600);
     },480);
   };

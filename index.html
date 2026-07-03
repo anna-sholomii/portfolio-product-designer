@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="/Logo_upd.webp?v=2" />
 <link rel="apple-touch-icon" href="/Logo_upd.webp?v=2" />
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=84">
+<link rel="stylesheet" href="styles.css?v=86">
 </head>
 <body>
 
@@ -248,7 +248,7 @@
 </div>
 <script>
 (function(){
-  var qa=[{k:["start","first","which case","begin","recommend"],a:"Start with <b>Telo</b> - it's the most recent and shows the full process from research through solution. If civic tech interests you, <b>Rent by School</b> is worth a look. <b>Ambassador</b> shows the most scale: three years, three platforms, one designer."},{k:["kind of work","take on","what do you do","type of work","speciali"],a:"Product design end-to-end - discovery, research, interaction design, visual design, and sometimes front-end code. I work most often on B2B SaaS, though I've also done civic tech and EdTech. I care most about the point where a real problem becomes a real solution."},{k:["hire","available","open to","job","role","opportunity","work with"],a:"Yes - I'm actively looking for my next role. Product designer, ideally in a B2B SaaS team that cares about research and moves thoughtfully. The <b>contact page</b> is the best starting point, or anna@sholomii.com."},{k:["approach","process","how do you","method","design process","philosophy"],a:"Evidence-first. I start with real user behaviour - interviews, usage data, or existing research - before any solutions. Then I design, test, and iterate close to engineering. I keep process lean and decisions traceable back to something a real person said or did."}];
+  var qa=[{k:["start","first","which case","begin","recommend"],a:"Start with <b>Rent by School</b> - civic tech I took from research through a working prototype, solo. <b>Telo</b> is a strong next read if B2B SaaS interests you: full process from discovery through solution. <b>The Ambassador Platform</b> is my longest shipped work - sole designer on a self-serve onboarding wizard that replaced manual setup calls and cut the sales cycle from 40 to 30 days."},{k:["kind of work","take on","what do you do","type of work","speciali"],a:"Product design end-to-end - discovery, research, interaction design, visual design, and sometimes front-end code. I work most often on B2B SaaS, though I've also done civic tech and EdTech. I care most about the point where a real problem becomes a real solution."},{k:["hire","available","open to","job","role","opportunity","work with"],a:"Yes - I'm actively looking for my next role. Product designer, ideally in a B2B SaaS team that cares about research and moves thoughtfully. The <b>contact page</b> is the best starting point, or anna.sholomii@gmail.com."},{k:["approach","process","how do you","method","design process","philosophy"],a:"Evidence-first. I start with real user behaviour - interviews, usage data, or existing research - before any solutions. Then I design, test, and iterate close to engineering. I keep process lean and decisions traceable back to something a real person said or did."}];
   var open=false;
   setTimeout(function(){
     if(!open&&!sessionStorage.getItem('bot-seen-index')){
@@ -270,7 +270,7 @@
       if(qa[i].k.some(function(k){return ql.indexOf(k)!==-1})){found=qa[i];break}
     }
     setTimeout(function(){
-      addMsg(found?found.a:'That\'s outside what I have scripted - but happy to talk. Reach out at <b>anna@sholomii.com</b> or LinkedIn.','bot');
+      addMsg(found?found.a:'That\'s outside what I have scripted - but happy to talk. Reach out at <b>anna.sholomii@gmail.com</b> or LinkedIn.','bot');
       setTimeout(function(){document.getElementById('bot-chips').style.display='flex'},600);
     },480);
   };

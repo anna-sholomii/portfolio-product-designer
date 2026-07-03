@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="/Logo_upd.webp?v=2" />
 <link rel="apple-touch-icon" href="/Logo_upd.webp?v=2" />
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=70">
+<link rel="stylesheet" href="styles.css?v=86">
 </head>
 <body>
 
@@ -95,9 +95,11 @@
 
 <style>
 #anna-bot{position:fixed;bottom:96px;right:32px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-.bot-trigger{width:60px;height:70px;border:none;cursor:pointer;box-shadow:none;transition:transform .2s;position:relative;flex-shrink:0;padding:0;background:transparent;display:flex;align-items:center;justify-content:center;overflow:visible}
+.bot-trigger-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer}
+.bot-ask-label{font-family:'Figtree',sans-serif;font-size:0.75rem;font-weight:600;color:var(--color-ink,#2F2F2C);letter-spacing:-.01em;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:3px 11px;border-radius:20px;box-shadow:0 2px 8px rgba(0,0,0,.09);white-space:nowrap}
+.bot-trigger{width:80px;height:92px;border:none;cursor:pointer;box-shadow:none;transition:transform .2s;position:relative;flex-shrink:0;padding:0;background:transparent;display:flex;align-items:center;justify-content:center;overflow:visible}
 .bot-trigger:hover{transform:scale(1.06);transform-origin:center bottom}
-.bot-trigger img{width:60px;height:66px;object-fit:contain;object-position:center top;display:block;flex-shrink:0}
+.bot-trigger img{width:80px;height:88px;object-fit:contain;object-position:center top;display:block;flex-shrink:0}
 .bot-head img{object-fit:contain;object-position:center top}
 .bot-tooltip{background:#1A1A18;color:#fff;font-family:'Figtree',sans-serif;font-size:0.875rem;font-weight:500;padding:9px 14px;border-radius:10px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.18);position:relative;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none}
 .bot-tooltip::after{content:'';position:absolute;right:18px;bottom:-6px;width:10px;height:10px;background:#1A1A18;clip-path:polygon(0 0,100% 0,50% 100%)}
@@ -149,14 +151,16 @@
       <button class="bot-send" onclick="sendMsg()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
     </div>
   </div>
-  <button class="bot-trigger" onclick="toggleBot()" aria-label="Ask Anna">
-    <img src="/anna-avatar-cutout.webp?v=4" alt="Anna">
-    
-  </button>
+  <div class="bot-trigger-wrap" onclick="toggleBot()">
+    <button class="bot-trigger" aria-label="Ask Anna" style="pointer-events:none">
+      <img src="/anna-avatar-cutout.webp?v=4" alt="Anna">
+    </button>
+    <span class="bot-ask-label">Ask Anna</span>
+  </div>
 </div>
 <script>
 (function(){
-  var qa=[{k:["start","first","which case","begin","recommend"],a:"Start with <b>Telo</b> - it's the most recent and shows the full process from research through solution. If civic tech interests you, <b>Rent by School</b> is worth a look. <b>Ambassador</b> shows the most scale: three years, three platforms, one designer."},{k:["kind of work","take on","what do you do","type of work","speciali"],a:"Product design end-to-end - discovery, research, interaction design, visual design, and sometimes front-end code. I work most often on B2B SaaS, though I've also done civic tech and EdTech. I care most about the point where a real problem becomes a real solution."},{k:["hire","available","open to","job","role","opportunity","work with"],a:"Yes - I'm actively looking for my next role. Product designer, ideally in a B2B SaaS team that cares about research and moves thoughtfully. The <b>contact page</b> is the best starting point, or anna@sholomii.com."},{k:["approach","process","how do you","method","design process","philosophy"],a:"Evidence-first. I start with real user behaviour - interviews, usage data, or existing research - before any solutions. Then I design, test, and iterate close to engineering. I keep process lean and decisions traceable back to something a real person said or did."}];
+  var qa=[{k:["start","first","which case","begin","recommend"],a:"Start with <b>Rent by School</b> - civic tech I took from research through a working prototype, solo. <b>Telo</b> is a strong next read if B2B SaaS interests you: full process from discovery through solution. <b>The Ambassador Platform</b> is my longest shipped work - sole designer on a self-serve onboarding wizard that replaced manual setup calls and cut the sales cycle from 40 to 30 days."},{k:["kind of work","take on","what do you do","type of work","speciali"],a:"Product design end-to-end - discovery, research, interaction design, visual design, and sometimes front-end code. I work most often on B2B SaaS, though I've also done civic tech and EdTech. I care most about the point where a real problem becomes a real solution."},{k:["hire","available","open to","job","role","opportunity","work with"],a:"Yes - I'm actively looking for my next role. Product designer, ideally in a B2B SaaS team that cares about research and moves thoughtfully. The <b>contact page</b> is the best starting point, or anna.sholomii@gmail.com."},{k:["approach","process","how do you","method","design process","philosophy"],a:"Evidence-first. I start with real user behaviour - interviews, usage data, or existing research - before any solutions. Then I design, test, and iterate close to engineering. I keep process lean and decisions traceable back to something a real person said or did."}];
   var open=false;
   setTimeout(function(){
     if(!open&&!sessionStorage.getItem('bot-seen-work')){
@@ -178,7 +182,7 @@
       if(qa[i].k.some(function(k){return ql.indexOf(k)!==-1})){found=qa[i];break}
     }
     setTimeout(function(){
-      addMsg(found?found.a:'That\'s outside what I have scripted - but happy to talk. Reach out at <b>anna@sholomii.com</b> or LinkedIn.','bot');
+      addMsg(found?found.a:'That\'s outside what I have scripted - but happy to talk. Reach out at <b>anna.sholomii@gmail.com</b> or LinkedIn.','bot');
       setTimeout(function(){document.getElementById('bot-chips').style.display='flex'},600);
     },480);
   };
@@ -223,7 +227,7 @@
       status:'Conceptual',
       tags:['Civic Tech','Research','Mapping','0→1'],
       desc:'A platform that helps Toronto families find rentals within their chosen school\'s catchment area faster.',
-      img:'<img src="/Rent-by-school-preview.webp?v=2" alt="Rent by School" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">'
+      img:'<img src="/Rent-by-school-preview.webp?v=2" alt="Rent by School" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block">'
     },
     {
       href:'telo-case-study.html',
@@ -232,7 +236,7 @@
       status:'Conceptual',
       tags:['B2B SaaS','Research','0→1','AI-assisted'],
       desc:'A Slack-native alert that tells SaaS founders whether a metric drop is real and what to do next, reducing decision-making time.',
-      img:'<img src="/Iteration%204%20-%20After%20-%20Give%20the%20ability%20to%20leave%20feedback%20with%20the%20comment.webp" alt="Telo" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">'
+      img:'<img src="/Iteration%204%20-%20After%20-%20Give%20the%20ability%20to%20leave%20feedback%20with%20the%20comment.webp" alt="Telo" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block">'
     },
     {
       href:'ambassador-case-study.html',

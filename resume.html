@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="/Logo_upd.webp?v=2" />
 <link rel="apple-touch-icon" href="/Logo_upd.webp?v=2" />
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=72">
+<link rel="stylesheet" href="styles.css?v=86">
 </head>
 <body class="resume-page">
 
@@ -117,9 +117,11 @@
 
 <style>
 #anna-bot{position:fixed;bottom:96px;right:32px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-.bot-trigger{width:60px;height:70px;border:none;cursor:pointer;box-shadow:none;transition:transform .2s;position:relative;flex-shrink:0;padding:0;background:transparent;display:flex;align-items:center;justify-content:center;overflow:visible}
+.bot-trigger-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer}
+.bot-ask-label{font-family:'Figtree',sans-serif;font-size:0.75rem;font-weight:600;color:var(--color-ink,#2F2F2C);letter-spacing:-.01em;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:3px 11px;border-radius:20px;box-shadow:0 2px 8px rgba(0,0,0,.09);white-space:nowrap}
+.bot-trigger{width:80px;height:92px;border:none;cursor:pointer;box-shadow:none;transition:transform .2s;position:relative;flex-shrink:0;padding:0;background:transparent;display:flex;align-items:center;justify-content:center;overflow:visible}
 .bot-trigger:hover{transform:scale(1.06);transform-origin:center bottom}
-.bot-trigger img{width:60px;height:66px;object-fit:contain;object-position:center top;display:block;flex-shrink:0}
+.bot-trigger img{width:80px;height:88px;object-fit:contain;object-position:center top;display:block;flex-shrink:0}
 .bot-head img{object-fit:contain;object-position:center top}
 .bot-panel{width:320px;background:#fff;border:1px solid #EDEAE3;border-radius:18px;box-shadow:0 8px 48px rgba(0,0,0,.12);display:flex;flex-direction:column;overflow:hidden;transform:translateY(12px) scale(.97);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-height:520px}
 .bot-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
@@ -168,13 +170,16 @@
       <button class="bot-send" onclick="sendMsg()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
     </div>
   </div>
-  <button class="bot-trigger" onclick="toggleBot()" aria-label="Ask Anna">
-    <img src="/anna-avatar-cutout.webp?v=4" alt="Anna">
-  </button>
+  <div class="bot-trigger-wrap" onclick="toggleBot()">
+    <button class="bot-trigger" aria-label="Ask Anna" style="pointer-events:none">
+      <img src="/anna-avatar-cutout.webp?v=4" alt="Anna">
+    </button>
+    <span class="bot-ask-label">Ask Anna</span>
+  </div>
 </div>
 <script>
 (function(){
-  var qa=[{k:["years","how long","experience","senior","level","junior"],a:"Around 5 years in product design, with 3 of those as the <b>sole designer at Ambassador Platform</b> - which accelerated things quickly. I've owned discovery, design, and system-building across multiple product surfaces simultaneously."},{k:["strongest","best at","skill","speciali","good at","area"],a:"The handoff between research and design - taking messy interview data and turning it into a clear problem definition and a testable solution. Also strong at <b>design systems</b>: I built Ambassador's component library from scratch and maintained it across three platforms for three years."},{k:["in-house","agency","freelance","company","type of","consultancy"],a:"In-house, both times. Ambassador Platform and Telo. I prefer it - being embedded means I'm close to engineering, close to data, and part of decisions that happen before and after the design work."},{k:["freelance","contract","consulting","independent","available for"],a:"Open to conversations, yes - especially for product design on B2B SaaS products in the 0→1 or growth phase. Best way to start: <b>contact page</b> or anna@sholomii.com."}];
+  var qa=[{k:["years","how long","experience","senior","level","junior"],a:"Around 5 years in product design, with 3 of those as the <b>sole designer at Ambassador Platform</b> - which accelerated things quickly. I've owned discovery, design, and system-building across multiple product surfaces simultaneously."},{k:["strongest","best at","skill","speciali","good at","area"],a:"The handoff between research and design - taking messy interview data and turning it into a clear problem definition and a testable solution. Also strong at <b>design systems</b>: I built Ambassador's component library from scratch and maintained it across three platforms for three years."},{k:["in-house","agency","freelance","company","type of","consultancy"],a:"In-house, both times. Ambassador Platform and Telo. I prefer it - being embedded means I'm close to engineering, close to data, and part of decisions that happen before and after the design work."},{k:["freelance","contract","consulting","independent","available for"],a:"Open to conversations, yes - especially for product design on B2B SaaS products in the 0→1 or growth phase. Best way to start: <b>contact page</b> or anna.sholomii@gmail.com."}];
   var open=false;
   window.toggleBot=function(){open?closeBot():openBot()};
   window.openBot=function(){
@@ -192,7 +197,7 @@
       if(qa[i].k.some(function(k){return ql.indexOf(k)!==-1})){found=qa[i];break}
     }
     setTimeout(function(){
-      addMsg(found?found.a:'That\'s outside what I have scripted - but happy to talk. Reach out at <b>anna@sholomii.com</b> or LinkedIn.','bot');
+      addMsg(found?found.a:'That\'s outside what I have scripted - but happy to talk. Reach out at <b>anna.sholomii@gmail.com</b> or LinkedIn.','bot');
       setTimeout(function(){document.getElementById('bot-chips').style.display='flex'},600);
     },480);
   };

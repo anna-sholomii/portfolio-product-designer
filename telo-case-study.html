@@ -383,7 +383,6 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 <!-- ═══════════════════════════════════════════
      01 - THE PROBLEM
 ═══════════════════════════════════════════ -->
-<hr class="d">
 <section id="problem">
   <div class="container">
     <div class="eyebrow"><span class="n">1</span> The problem</div>
@@ -1390,8 +1389,10 @@ var tdIdx=0;function tdGo(dir){var track=document.getElementById('td-track');if(
 #anna-bot{position:fixed;bottom:96px;right:32px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 
 /* trigger button */
-.bot-trigger{width:60px;height:70px;border:none;cursor:pointer;box-shadow:none;transition:transform .2s;position:relative;flex-shrink:0;padding:0;background:transparent;display:flex;align-items:center;justify-content:center;overflow:visible}
-.bot-trigger img{width:60px;height:66px;object-fit:contain;object-position:center top;display:block;flex-shrink:0}
+.bot-trigger-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer}
+.bot-ask-label{font-family:'Figtree',sans-serif;font-size:0.75rem;font-weight:600;color:var(--color-ink,#2F2F2C);letter-spacing:-.01em;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:3px 11px;border-radius:20px;box-shadow:0 2px 8px rgba(0,0,0,.09);white-space:nowrap}
+.bot-trigger{width:80px;height:92px;border:none;cursor:pointer;box-shadow:none;transition:transform .2s;position:relative;flex-shrink:0;padding:0;background:transparent;display:flex;align-items:center;justify-content:center;overflow:visible}
+.bot-trigger img{width:80px;height:88px;object-fit:contain;object-position:center top;display:block;flex-shrink:0}
 .bot-head img{object-fit:contain;object-position:center top}
 .bot-trigger:hover{transform:scale(1.06);transform-origin:center bottom}
 .bot-trigger-emoji{font-size:26px;line-height:1;pointer-events:none}
@@ -1467,10 +1468,12 @@ var tdIdx=0;function tdGo(dir){var track=document.getElementById('td-track');if(
   </div>
 
   <!-- trigger -->
-  <button class="bot-trigger" id="bot-trigger" onclick="toggleBot()" aria-label="Ask Anna">
-    <img src="/anna-avatar-cutout.webp?v=4" alt="Anna">
-    
-  </button>
+  <div class="bot-trigger-wrap" onclick="toggleBot()">
+    <button class="bot-trigger" id="bot-trigger" aria-label="Ask Anna" style="pointer-events:none">
+      <img src="/anna-avatar-cutout.webp?v=4" alt="Anna">
+    </button>
+    <span class="bot-ask-label">Ask Anna</span>
+  </div>
 </div>
 
 <script>
@@ -1543,7 +1546,7 @@ var tdIdx=0;function tdGo(dir){var track=document.getElementById('td-track');if(
         document.getElementById('bot-trigger-emoji').textContent = found.emoji;
         addMsg(found.answer, 'bot');
       } else {
-        addMsg("That's outside what I have scripted - but I'd love to talk about it. Reach out at <b>anna@sholomii.com</b> or on LinkedIn.", 'bot');
+        addMsg("That's outside what I have scripted - but I'd love to talk about it. Reach out at <b>anna.sholomii@gmail.com</b> or on LinkedIn.", 'bot');
       }
       // restore chips with "ask another" feel after a delay
       setTimeout(function(){

@@ -1449,6 +1449,8 @@ main.home-main{
   background:#F5F5F5;
 }
 .cs-idx-panel-img img{
+  width:100%;height:100%;object-fit:contain;object-position:center;
+  display:block;
   transition:transform .4s ease;
 }
 .cs-idx-panel:hover .cs-idx-panel-img img{
