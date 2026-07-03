@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="/Logo_upd.webp?v=2" />
 <link rel="apple-touch-icon" href="/Logo_upd.webp?v=2" />
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=50">
 </head>
 <body>
 
@@ -26,104 +26,77 @@
 
 <main>
   <div class="container">
-    <div class="work-intro">
-      <h1 class="work-heading">Recent Work</h1>
-    </div>
+    <div class="cs-idx-wrap">
 
-    <div class="cards-grid">
+      <div style="padding-top:72px;margin-bottom:36px">
+        <div class="story-eyebrow"><span class="story-dot story-dot--pulse"></span>Case studies</div>
+      </div>
 
-      <div style="margin-bottom:-16px"><span class="idx-label">Case studies</span></div>
+      <div class="cs-idx-layout">
 
-      <!-- Rent by School - featured full-width -->
-      <a class="card card--featured" href="schoolmap-case-study.html">
-        <div class="card-thumb">
-          <img src="/Rent-by-school-preview.webp" alt="Rent by School app screenshot" style="object-position:center top">
-          <div class="card-overlay">
-            <span class="card-overlay-cta">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              View case study
-            </span>
-          </div>
-          <span class="cs-badge">Civic Tech</span>
-        </div>
-        <div class="card-right">
-          <div class="card-body">
-            <div class="card-tags">
-              <span class="card-tag">Research</span>
-              <span class="card-tag">Mapping</span>
-              <span class="card-tag">0→1</span>
+        <!-- Left: typographic list -->
+        <div class="cs-idx-list" id="cs-idx-list">
+
+          <button class="cs-idx-row is-active" data-idx="0" onmouseenter="csSetActive(0)" onclick="csOpen(0)" type="button">
+            <div class="cs-idx-row-head">
+              <span class="cs-idx-num">01</span>
+              <span class="cs-idx-title">Rent by School</span>
+              <span class="cs-idx-year">2026</span>
             </div>
-            <h2 class="card-title">Rent by School</h2>
-            <p class="card-desc">Designed from scratch - a platform that helps Toronto families find rentals within their chosen school's catchment area faster.</p>
-          </div>
-          <div class="card-foot">
-            <span class="card-year">2026</span>
-            <span class="card-arrow">Read more <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Telo -->
-      <a class="card card--featured" href="telo-case-study.html">
-        <div class="card-thumb">
-          <img src="/1. Collapsed state.webp" alt="Telo product screenshot" style="object-position:center top">
-          <div class="card-overlay">
-            <span class="card-overlay-cta">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              View case study
-            </span>
-          </div>
-          <span class="cs-badge">B2B SaaS</span>
-        </div>
-        <div class="card-right">
-          <div class="card-body">
-            <div class="card-tags">
-              <span class="card-tag">Research</span>
-              <span class="card-tag">0→1</span>
-              <span class="card-tag">AI-assisted</span>
+            <p class="cs-idx-desc">A platform that helps Toronto families find rentals within their chosen school's catchment area faster.</p>
+            <div class="cs-idx-tags">
+              <span class="cs-idx-tag">Civic Tech</span>
+              <span class="cs-idx-tag">Research</span>
+              <span class="cs-idx-tag">Mapping</span>
+              <span class="cs-idx-tag">0→1</span>
             </div>
-            <h2 class="card-title">Telo</h2>
-            <p class="card-desc">Designed from scratch - a Slack-native alert that tells SaaS founders whether a metric drop is real and what to do next, reducing decision-making time.</p>
-          </div>
-          <div class="card-foot">
-            <span class="card-year">2026</span>
-            <span class="card-arrow">Read more <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-          </div>
-        </div>
-      </a>
+          </button>
 
-      <div style="margin:24px 0 -16px"><span class="idx-label">Experience</span></div>
-
-      <!-- Ambassador -->
-      <a class="card card--featured" href="ambassador-case-study.html">
-        <div class="card-thumb card-thumb-ambassador">
-          <div class="ambassador-thumb-inner">
-            <img src="/The%20Ambassador%20Platform%20logo.svg" alt="The Ambassador Platform" style="max-width:260px;width:100%;height:auto;display:block">
-          </div>
-          <div class="card-overlay">
-            <span class="card-overlay-cta">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              View experience
-            </span>
-          </div>
-          <span class="cs-badge">Experience highlight</span>
-        </div>
-        <div class="card-right">
-          <div class="card-body">
-            <div class="card-tags">
-              <span class="card-tag">EdTech</span>
-              <span class="card-tag">3 Platforms</span>
-              <span class="card-tag">3 Years</span>
+          <button class="cs-idx-row" data-idx="1" onmouseenter="csSetActive(1)" onclick="csOpen(1)" type="button">
+            <div class="cs-idx-row-head">
+              <span class="cs-idx-num">02</span>
+              <span class="cs-idx-title">Telo</span>
+              <span class="cs-idx-year">2026</span>
             </div>
-            <h2 class="card-title">The Ambassador Platform</h2>
-            <p class="card-desc">Owned the full design lifecycle of the platform that helps prospective students choose the right institution, lifting conversion from 8% to 14%.</p>
-          </div>
-          <div class="card-foot">
-            <span class="card-year">2019–22</span>
-            <span class="card-arrow">Read more <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-          </div>
+            <p class="cs-idx-desc">A Slack-native alert that tells SaaS founders whether a metric drop is real and what to do next, reducing decision-making time.</p>
+            <div class="cs-idx-tags">
+              <span class="cs-idx-tag">B2B SaaS</span>
+              <span class="cs-idx-tag">Research</span>
+              <span class="cs-idx-tag">0→1</span>
+              <span class="cs-idx-tag">AI-assisted</span>
+            </div>
+          </button>
+
+          <button class="cs-idx-row" data-idx="2" onmouseenter="csSetActive(2)" onclick="csOpen(2)" type="button">
+            <div class="cs-idx-row-head">
+              <span class="cs-idx-num">03</span>
+              <span class="cs-idx-title">The Ambassador Platform</span>
+              <span class="cs-idx-year">2019–22</span>
+            </div>
+            <p class="cs-idx-desc">Self-serve onboarding wizard that replaced a manual setup call and cut the sales cycle from 40 to 30 days.</p>
+            <div class="cs-idx-tags">
+              <span class="cs-idx-tag">EdTech</span>
+              <span class="cs-idx-tag">Onboarding</span>
+              <span class="cs-idx-tag">B2B SaaS</span>
+            </div>
+          </button>
+
         </div>
-      </a>
+
+        <!-- Right: sticky preview panel -->
+        <div class="cs-idx-panel-col">
+          <a class="cs-idx-panel" id="cs-idx-panel-link" href="schoolmap-case-study.html">
+            <div class="cs-idx-panel-img" id="cs-idx-panel-img"></div>
+            <div class="cs-idx-panel-body">
+              <div class="cs-idx-panel-meta" id="cs-idx-panel-meta"></div>
+              <h2 class="cs-idx-panel-title" id="cs-idx-panel-title">Rent by School</h2>
+              <p class="cs-idx-panel-desc" id="cs-idx-panel-desc">A platform that helps Toronto families find rentals within their chosen school's catchment area faster.</p>
+              <span class="cs-idx-panel-cta">Read case study →</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
 
     </div>
   </div>
@@ -255,5 +228,53 @@
     <span>Contact</span>
   </a>
 </nav>
-<script>(function(){var l=0,n=document.querySelector(".bottom-nav");if(!n)return;window.addEventListener("scroll",function(){var y=window.scrollY;if(y>l+4)n.classList.add("nav-hidden");else if(y<l-4)n.classList.remove("nav-hidden");l=y},{passive:true})})();</script></body>
+<script>(function(){var l=0,n=document.querySelector(".bottom-nav");if(!n)return;window.addEventListener("scroll",function(){var y=window.scrollY;if(y>l+4)n.classList.add("nav-hidden");else if(y<l-4)n.classList.remove("nav-hidden");l=y},{passive:true})})();</script>
+<script>(function(){
+  var studies=[
+    {
+      href:'schoolmap-case-study.html',
+      title:'Rent by School',
+      year:'2026',
+      tags:['Civic Tech','Research','Mapping','0→1'],
+      desc:'A platform that helps Toronto families find rentals within their chosen school\'s catchment area faster.',
+      img:'<img src="/Rent-by-school-preview.webp?v=2" alt="Rent by School" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">'
+    },
+    {
+      href:'telo-case-study.html',
+      title:'Telo',
+      year:'2026',
+      tags:['B2B SaaS','Research','0→1','AI-assisted'],
+      desc:'A Slack-native alert that tells SaaS founders whether a metric drop is real and what to do next, reducing decision-making time.',
+      img:'<img src="/Iteration%204%20-%20After%20-%20Give%20the%20ability%20to%20leave%20feedback%20with%20the%20comment.webp" alt="Telo" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">'
+    },
+    {
+      href:'ambassador-case-study.html',
+      title:'The Ambassador Platform',
+      year:'2019–22',
+      tags:['EdTech','Onboarding','B2B SaaS'],
+      desc:'Self-serve onboarding wizard that replaced a manual setup call and cut the sales cycle from 40 to 30 days.',
+      img:'<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#fff;padding:28px 32px;position:relative"><img src="/The%20Ambassador%20Platform%20logo.svg" alt="The Ambassador Platform" style="max-width:240px;width:100%;height:auto;display:block"><span class="cs-protected-badge" style="position:absolute;bottom:12px;left:12px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Under NDA · Password required</span></div>'
+    }
+  ];
+  var active=0;
+  function render(i){
+    var s=studies[i];
+    document.getElementById('cs-idx-panel-link').href=s.href;
+    document.getElementById('cs-idx-panel-img').innerHTML=s.img;
+    document.getElementById('cs-idx-panel-title').textContent=s.title;
+    document.getElementById('cs-idx-panel-desc').textContent=s.desc;
+    var m='<span class="cs-idx-panel-year">'+s.year+'</span>';
+    s.tags.forEach(function(t){m+='<span class="cs-idx-tag cs-idx-tag--sm">'+t+'</span>';});
+    document.getElementById('cs-idx-panel-meta').innerHTML=m;
+  }
+  window.csSetActive=function(i){
+    if(i===active)return;
+    active=i;
+    document.querySelectorAll('.cs-idx-row').forEach(function(r,j){r.classList.toggle('is-active',j===i);});
+    render(i);
+  };
+  window.csOpen=function(i){window.location.href=studies[i].href;};
+  render(0);
+})();</script>
+</body>
 </html>

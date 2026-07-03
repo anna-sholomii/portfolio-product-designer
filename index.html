@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="/Logo_upd.webp?v=2" />
 <link rel="apple-touch-icon" href="/Logo_upd.webp?v=2" />
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=59">
 </head>
 <body>
 
@@ -26,118 +26,212 @@
 
 <main class="home-main">
   <div class="home-hero">
-    <p class="home-greeting">Hi, I'm Anna. Product Designer.</p>
-    <h1 class="home-statement"><span style="color:#3F3F47">I design B2B SaaS products</span><br><span style="color:#71717C">from 0→1</span></h1>
-    <p class="home-hero-role">Based in Toronto · Open to full-time / part-time roles</p>
+    <div class="story-eyebrow"><span class="story-dot story-dot--pulse"></span>Hi, I'm Anna. Product Designer.</div>
+    <h1 class="contact-heading">I design B2B SaaS products<br><em>from 0→1</em></h1>
+    <p class="contact-body">Based in Toronto · Open to full-time / part-time roles</p>
   </div>
 
-  <div class="home-grid">
+  <!-- SECTION 01: SELECTED WORK -->
+  <section class="home-section">
+    <h2 class="home-section-title">Case Studies</h2>
 
-    <!-- CARD 1: CASE STUDIES -->
-    <div class="home-card home-card--work">
-      <div class="home-card-preview">
-        <div class="hcp-deck">
-          <div class="hcp-deck-cards">
+    <div class="about-cs-scroll">
+      <div class="about-cs-track">
 
-          <!-- slides - all rendered, position classes control depth -->
-          <div class="hcp-slide pos-mid" data-href="telo-case-study.html">
-            <div class="hcp-slide-img">
-              <img src="/1. Collapsed state.webp" alt="Telo">
-              <div class="hcp-img-overlay"><span class="hcp-glass-btn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View case study</span></div>
-            </div>
-            <div class="hcp-slide-info">
-              <div class="hcp-slide-tags">
-                <span class="hcp-slide-tag">B2B SaaS</span>
-                <span class="hcp-slide-tag hcp-slide-tag--muted">2026</span>
+        <a href="telo-case-study.html" class="cs-preview-card">
+          <div class="cs-preview-visual cs-preview-visual--telo">
+            <span class="cs-preview-label">Slack-native alert</span>
+            <div class="cs-preview-shot">
+              <div class="cs-preview-chrome">
+                <span class="cs-preview-dot cs-preview-dot--red"></span>
+                <span class="cs-preview-dot cs-preview-dot--yellow"></span>
+                <span class="cs-preview-dot cs-preview-dot--green"></span>
+                <span class="cs-preview-url"></span>
               </div>
-              <h3 class="hcp-slide-title">Telo</h3>
-              <p class="hcp-slide-desc">Async video messaging for distributed B2B teams - from research to shipped product.</p>
-            </div>
-          </div>
-
-          <div class="hcp-slide pos-front" data-href="schoolmap-case-study.html">
-            <div class="hcp-slide-img">
-              <img src="/Rent-by-school-preview.webp" alt="Rent by School">
-              <div class="hcp-img-overlay"><span class="hcp-glass-btn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View case study</span></div>
-            </div>
-            <div class="hcp-slide-info">
-              <div class="hcp-slide-tags">
-                <span class="hcp-slide-tag">Civic Tech</span>
-                <span class="hcp-slide-tag hcp-slide-tag--muted">2026</span>
+              <div class="cs-preview-viewport">
+                <img class="cs-preview-img" src="/Telo%20alert%20preview.webp" alt="Telo desktop mockup">
               </div>
-              <h3 class="hcp-slide-title">Rent by School</h3>
-              <p class="hcp-slide-desc">Helping Toronto families find rentals near their school catchment area.</p>
             </div>
           </div>
-
-          <div class="hcp-slide pos-back" data-href="ambassador-case-study.html">
-            <div class="hcp-slide-img" style="background:#ffffff;display:flex;align-items:center;justify-content:center;padding:16px">
-              <img src="/The%20Ambassador%20Platform%20logo.svg" alt="The Ambassador Platform" style="max-width:180px;width:100%;height:auto;display:block">
-              <div class="hcp-img-overlay"><span class="hcp-glass-btn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View experience</span></div>
+          <div class="cs-preview-body">
+            <div class="cs-preview-tags">
+              <span class="cs-preview-tag">B2B SaaS</span>
+              <span class="cs-preview-tag cs-preview-tag--muted">2026</span>
             </div>
-            <div class="hcp-slide-info">
-              <div class="hcp-slide-tags">
-                <span class="hcp-slide-tag">EdTech</span>
-                <span class="hcp-slide-tag hcp-slide-tag--muted">2019–22</span>
+            <h3 class="cs-preview-name">Telo</h3>
+            <p class="cs-preview-desc">Designed from scratch - a Slack-native alert that tells SaaS founders whether a metric drop is real and what to do next.</p>
+          </div>
+        </a>
+
+        <a href="schoolmap-case-study.html" class="cs-preview-card">
+          <div class="cs-preview-visual cs-preview-visual--rbs">
+            <span class="cs-preview-label">Map-first web app</span>
+            <div class="cs-preview-shot">
+              <div class="cs-preview-chrome">
+                <span class="cs-preview-dot cs-preview-dot--red"></span>
+                <span class="cs-preview-dot cs-preview-dot--yellow"></span>
+                <span class="cs-preview-dot cs-preview-dot--green"></span>
+                <span class="cs-preview-url"></span>
               </div>
-              <h3 class="hcp-slide-title">The Ambassador Platform</h3>
-              <p class="hcp-slide-desc">Three years, three platforms, one designer - EdTech at scale.</p>
+              <div class="cs-preview-viewport">
+                <img class="cs-preview-img" src="/Rent-by-school-preview.webp?v=2" alt="Rent by School desktop mockup">
+              </div>
             </div>
           </div>
-
-          </div><!-- /.hcp-deck-cards -->
-
-          <div class="hcp-nav">
-            <button class="hcp-nav-btn" onclick="hcpPrev()" aria-label="Previous case study">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <button class="hcp-nav-btn" onclick="hcpNext()" aria-label="Next case study">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-            </button>
+          <div class="cs-preview-body">
+            <div class="cs-preview-tags">
+              <span class="cs-preview-tag">Civic Tech</span>
+              <span class="cs-preview-tag cs-preview-tag--muted">2026</span>
+            </div>
+            <h3 class="cs-preview-name">Rent by School</h3>
+            <p class="cs-preview-desc">Designed from scratch - a platform that helps Toronto families find rentals within their chosen school's catchment area faster.</p>
           </div>
+        </a>
 
-        </div>
-      </div>
-      <div class="home-card-content">
-        <span class="home-card-num">01</span>
-        <h2 class="home-card-title">Case Studies</h2>
-        <p class="home-card-desc">From messy problems to shipped products. 2 case studies across SaaS and civic tech, plus a 3-year EdTech experience highlight.</p>
+        <a href="ambassador-case-study.html" class="cs-preview-card">
+          <div class="cs-preview-visual cs-preview-visual--ambassador">
+            <span class="cs-preview-label">EdTech · B2B SaaS</span>
+            <div class="cs-preview-shot">
+              <div class="cs-preview-chrome">
+                <span class="cs-preview-dot cs-preview-dot--red"></span>
+                <span class="cs-preview-dot cs-preview-dot--yellow"></span>
+                <span class="cs-preview-dot cs-preview-dot--green"></span>
+                <span class="cs-preview-url"></span>
+              </div>
+              <div class="cs-preview-viewport cs-preview-viewport--logo">
+                <img class="cs-preview-img cs-preview-img--logo" src="/The%20Ambassador%20Platform%20logo.svg" alt="The Ambassador Platform">
+                <span class="cs-protected-badge" aria-label="Under NDA, password required">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  Under NDA · Password required
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="cs-preview-body">
+            <div class="cs-preview-tags">
+              <span class="cs-preview-tag">EdTech</span>
+              <span class="cs-preview-tag cs-preview-tag--muted">2019–22</span>
+            </div>
+            <h3 class="cs-preview-name">The Ambassador Platform</h3>
+            <p class="cs-preview-desc">Owned the full design lifecycle of the platform that helps prospective students choose the right institution, lifting conversion from 8% to 14%.</p>
+          </div>
+        </a>
+
+        <a href="telo-case-study.html" class="cs-preview-card" aria-hidden="true" tabindex="-1">
+          <div class="cs-preview-visual cs-preview-visual--telo">
+            <span class="cs-preview-label">Slack-native alert</span>
+            <div class="cs-preview-shot">
+              <div class="cs-preview-chrome">
+                <span class="cs-preview-dot cs-preview-dot--red"></span>
+                <span class="cs-preview-dot cs-preview-dot--yellow"></span>
+                <span class="cs-preview-dot cs-preview-dot--green"></span>
+                <span class="cs-preview-url"></span>
+              </div>
+              <div class="cs-preview-viewport">
+                <img class="cs-preview-img" src="/Telo%20alert%20preview.webp" alt="" aria-hidden="true">
+              </div>
+            </div>
+          </div>
+          <div class="cs-preview-body">
+            <div class="cs-preview-tags">
+              <span class="cs-preview-tag">B2B SaaS</span>
+              <span class="cs-preview-tag cs-preview-tag--muted">2026</span>
+            </div>
+            <h3 class="cs-preview-name">Telo</h3>
+            <p class="cs-preview-desc">Designed from scratch - a Slack-native alert that tells SaaS founders whether a metric drop is real and what to do next.</p>
+          </div>
+        </a>
+
+        <a href="schoolmap-case-study.html" class="cs-preview-card" aria-hidden="true" tabindex="-1">
+          <div class="cs-preview-visual cs-preview-visual--rbs">
+            <span class="cs-preview-label">Map-first web app</span>
+            <div class="cs-preview-shot">
+              <div class="cs-preview-chrome">
+                <span class="cs-preview-dot cs-preview-dot--red"></span>
+                <span class="cs-preview-dot cs-preview-dot--yellow"></span>
+                <span class="cs-preview-dot cs-preview-dot--green"></span>
+                <span class="cs-preview-url"></span>
+              </div>
+              <div class="cs-preview-viewport">
+                <img class="cs-preview-img" src="/Rent-by-school-preview.webp?v=2" alt="" aria-hidden="true">
+              </div>
+            </div>
+          </div>
+          <div class="cs-preview-body">
+            <div class="cs-preview-tags">
+              <span class="cs-preview-tag">Civic Tech</span>
+              <span class="cs-preview-tag cs-preview-tag--muted">2026</span>
+            </div>
+            <h3 class="cs-preview-name">Rent by School</h3>
+            <p class="cs-preview-desc">Designed from scratch - a platform that helps Toronto families find rentals within their chosen school's catchment area faster.</p>
+          </div>
+        </a>
+
+        <a href="ambassador-case-study.html" class="cs-preview-card" aria-hidden="true" tabindex="-1">
+          <div class="cs-preview-visual cs-preview-visual--ambassador">
+            <span class="cs-preview-label">EdTech · B2B SaaS</span>
+            <div class="cs-preview-shot">
+              <div class="cs-preview-chrome">
+                <span class="cs-preview-dot cs-preview-dot--red"></span>
+                <span class="cs-preview-dot cs-preview-dot--yellow"></span>
+                <span class="cs-preview-dot cs-preview-dot--green"></span>
+                <span class="cs-preview-url"></span>
+              </div>
+              <div class="cs-preview-viewport cs-preview-viewport--logo">
+                <img class="cs-preview-img cs-preview-img--logo" src="/The%20Ambassador%20Platform%20logo.svg" alt="" aria-hidden="true">
+                <span class="cs-protected-badge" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  Under NDA · Password required
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="cs-preview-body">
+            <div class="cs-preview-tags">
+              <span class="cs-preview-tag">EdTech</span>
+              <span class="cs-preview-tag cs-preview-tag--muted">2019–22</span>
+            </div>
+            <h3 class="cs-preview-name">The Ambassador Platform</h3>
+            <p class="cs-preview-desc">Owned the full design lifecycle of the platform that helps prospective students choose the right institution, lifting conversion from 8% to 14%.</p>
+          </div>
+        </a>
+
       </div>
     </div>
+    <a href="work.html" class="cs-preview-more">View all work <span aria-hidden="true">→</span></a>
+  </section>
 
-    <!-- CARD 2: WHO'S ANNA -->
-    <div class="home-card home-card--anna" onclick="window.location.href='about.html'">
-      <div class="anna-marquee-wrap">
+  <!-- SECTION 02: ABOUT ME -->
+  <section class="home-section home-section--anna">
+    <h2 class="home-section-title">About me</h2>
+    <p class="home-section-desc">Background, tools, what I care about, and what kind of team I'm looking for.</p>
+    <div class="home-anna-panel" onclick="window.location.href='about.html'">
+      <div class="anna-marquee-wrap home-anna-photos">
         <div class="anna-marquee-track">
-          <img src="About me section/2.webp" alt="" class="anna-marquee-img">
-          <img src="About me section/3.webp" alt="" class="anna-marquee-img">
-          <img src="About me section/4.webp" alt="" class="anna-marquee-img">
-          <img src="About me section/5.webp" alt="" class="anna-marquee-img" style="object-position:center 30%">
-          <img src="About me section/6.webp" alt="" class="anna-marquee-img">
-          <img src="About me section/7.webp" alt="" class="anna-marquee-img">
-          <img src="About me section/1.webp" alt="" class="anna-marquee-img">
-          <!-- duplicate for seamless loop -->
-          <img src="About me section/2.webp" alt="" class="anna-marquee-img" aria-hidden="true">
-          <img src="About me section/3.webp" alt="" class="anna-marquee-img" aria-hidden="true">
-          <img src="About me section/4.webp" alt="" class="anna-marquee-img" aria-hidden="true">
-          <img src="About me section/5.webp" alt="" class="anna-marquee-img" aria-hidden="true" style="object-position:center 30%">
-          <img src="About me section/6.webp" alt="" class="anna-marquee-img" aria-hidden="true">
-          <img src="About me section/7.webp" alt="" class="anna-marquee-img" aria-hidden="true">
-          <img src="About me section/1.webp" alt="" class="anna-marquee-img" aria-hidden="true">
-        </div>
-      </div>
-      <div class="anna-flex-spacer"></div>
-      <div class="anna-card-bottom">
-        <div class="anna-card-label">
-          <span class="home-card-num">02</span>
-          <h2 class="home-card-title">Who's Anna</h2>
-          <p class="home-card-desc">Background, tools, what I care about, and what kind of team I'm looking for.</p>
+          <img src="About%20me%20section/design_process.webp" alt="" class="anna-marquee-img">
+          <img src="About%20me%20section/with_don_norman.webp" alt="" class="anna-marquee-img">
+          <img src="About%20me%20section/hackathon1.webp" alt="" class="anna-marquee-img">
+          <img src="About%20me%20section/workshop1.webp" alt="" class="anna-marquee-img">
+          <img src="About%20me%20section/hackathon2.webp" alt="" class="anna-marquee-img">
+          <img src="About%20me%20section/Gym2.png" alt="" class="anna-marquee-img">
+          <img src="About%20me%20section/toronto.webp" alt="" class="anna-marquee-img">
+          <img src="About%20me%20section/hackathon3.webp" alt="" class="anna-marquee-img">
+          <img src="About%20me%20section/hackathon4.webp" alt="" class="anna-marquee-img">
+          <img src="About%20me%20section/design_process.webp" alt="" class="anna-marquee-img" aria-hidden="true">
+          <img src="About%20me%20section/with_don_norman.webp" alt="" class="anna-marquee-img" aria-hidden="true">
+          <img src="About%20me%20section/hackathon1.webp" alt="" class="anna-marquee-img" aria-hidden="true">
+          <img src="About%20me%20section/workshop1.webp" alt="" class="anna-marquee-img" aria-hidden="true">
+          <img src="About%20me%20section/hackathon2.webp" alt="" class="anna-marquee-img" aria-hidden="true">
+          <img src="About%20me%20section/Gym2.png" alt="" class="anna-marquee-img" aria-hidden="true">
+          <img src="About%20me%20section/toronto.webp" alt="" class="anna-marquee-img" aria-hidden="true">
+          <img src="About%20me%20section/hackathon3.webp" alt="" class="anna-marquee-img" aria-hidden="true">
+          <img src="About%20me%20section/hackathon4.webp" alt="" class="anna-marquee-img" aria-hidden="true">
         </div>
       </div>
     </div>
+    <a href="about.html" class="cs-preview-more">More about me <span aria-hidden="true">→</span></a>
+  </section>
 
-
-  </div>
 </main>
 
 <footer class="site-footer">
@@ -264,46 +358,6 @@
   function type(){ if(i < text.length){ el.textContent += text[i++]; setTimeout(type, 38); } }
   setTimeout(type, 600);
 })();
-// Case study deck carousel
-(function(){
-  var slides = Array.from(document.querySelectorAll('.hcp-slide'));
-  var pos = ['pos-front','pos-mid','pos-back'];
-  var order = [0,1,2];
-
-  function shuffle(dir){
-    slides.forEach(function(s,i){ s.classList.remove(pos[order[i]]); });
-    order = order.map(function(p){ return dir === -1 ? (p + 1) % 3 : (p + 2) % 3; });
-    slides.forEach(function(s,i){ s.classList.add(pos[order[i]]); });
-  }
-  window.hcpNext = function(){ shuffle(1); };
-  window.hcpPrev = function(){ shuffle(-1); };
-
-  // Auto-advance every 3.5s, pause on hover
-  var deck = document.querySelector('.hcp-deck');
-  var timer = setInterval(function(){ shuffle(1); }, 3500);
-  if(deck){
-    deck.addEventListener('mouseenter', function(){ clearInterval(timer); });
-    deck.addEventListener('mouseleave', function(){ timer = setInterval(function(){ shuffle(1); }, 3500); });
-  }
-
-  // Click on front slide → navigate to case study
-  slides.forEach(function(s){
-    s.addEventListener('click', function(e){
-      if(!s.classList.contains('pos-front')) return;
-      window.location.href = s.dataset.href;
-    });
-  });
-
-  // Click on the card content area (outside preview) → next
-  var workCard = document.querySelector('.home-card--work');
-  if(workCard){
-    workCard.addEventListener('click', function(e){
-      if(e.target.closest('.home-card-preview')) return;
-      if(e.target.closest('.home-card-cta')) return;
-      shuffle(1);
-    });
-  }
-})();
 </script>
 <nav class="bottom-nav" aria-label="Site navigation">
   <a href="index.html" class="bottom-nav-item active">
@@ -323,5 +377,6 @@
     <span>Contact</span>
   </a>
 </nav>
-<script>(function(){var l=0,n=document.querySelector(".bottom-nav");if(!n)return;window.addEventListener("scroll",function(){var y=window.scrollY;if(y>l+4)n.classList.add("nav-hidden");else if(y<l-4)n.classList.remove("nav-hidden");l=y},{passive:true})})();</script></body>
+<script>(function(){var l=0,n=document.querySelector(".bottom-nav");if(!n)return;window.addEventListener("scroll",function(){var y=window.scrollY;if(y>l+4)n.classList.add("nav-hidden");else if(y<l-4)n.classList.remove("nav-hidden");l=y},{passive:true})})();</script>
+</body>
 </html>

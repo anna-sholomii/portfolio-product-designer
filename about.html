@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="/Logo_upd.webp?v=2" />
 <link rel="apple-touch-icon" href="/Logo_upd.webp?v=2" />
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=11">
+<link rel="stylesheet" href="styles.css?v=52">
 </head>
 <body>
 
@@ -24,109 +24,158 @@
   </div>
 </nav>
 
+<div class="about-pnav" id="about-pnav">
+  <span class="about-pnav-label">About me</span>
+  <a href="#getting-started"    data-s="getting-started">How I started</a>
+  <a href="#meaningful-project" data-s="meaningful-project">Side project</a>
+  <a href="#staying-sharp"      data-s="staying-sharp">Staying sharp</a>
+  <a href="#outside-of-work"    data-s="outside-of-work">Outside of work</a>
+  <a href="#principles"         data-s="principles">Principles</a>
+  <a href="#my-work"            data-s="my-work">Case studies</a>
+</div>
+
 <main>
   <div class="container">
 
     <!-- ─── MY STORY ─── -->
     <section class="about-section">
-      <div class="about-section-head">
-        <span class="idx-label">My story</span>
-      </div>
-      <div class="about-header">
-        <h1 class="about-name">Design is decisions.<br><em>I make them with evidence.</em></h1>
-      </div>
 
-      <div style="max-width:720px;margin:28px 0 40px;display:flex;flex-direction:column;gap:18px">
-        <p style="margin:0">I was studying Finance when someone mentioned "user experience design" - just in passing, but it stuck. I started taking courses, practising in the evenings, and eventually an early-stage startup took a chance on me as their first designer. There was no mentor and no design team, so my mistakes went straight into production and real users told me exactly what they thought. Honestly? Best design education I could have asked for.</p>
-        <p style="margin:0">I ended up staying three years. When you're the only designer, you talk to everyone - engineers, customer success, sales, the founders - and you're constantly tweaking not just the screens but the way you all work together. I came in thinking I knew the theory. Turns out theory and the actual job are two different professions, and I'm glad I got thrown into the second one.</p>
-        <p style="margin:0">These days I'm in Toronto. When I'm not working, you'll find me at the gym figuring out how muscles actually work, deep in a book about cognitive biases (useful in design, dangerous at dinner parties), or cooking something new.</p>
-      </div>
-
-      <div class="anna-marquee-wrap about-marquee">
-        <div class="anna-marquee-track">
-          <img src="About%20me%20section/2.webp" alt="" class="anna-marquee-img">
-          <img src="About%20me%20section/3.webp" alt="" class="anna-marquee-img">
-          <img src="About%20me%20section/4.webp" alt="" class="anna-marquee-img">
-          <img src="About%20me%20section/5.webp" alt="" class="anna-marquee-img" style="object-position:center 30%">
-          <img src="About%20me%20section/6.webp" alt="" class="anna-marquee-img">
-          <img src="About%20me%20section/7.webp" alt="" class="anna-marquee-img">
-          <img src="About%20me%20section/1.webp" alt="" class="anna-marquee-img">
-          <!-- duplicate for seamless loop -->
-          <img src="About%20me%20section/2.webp" alt="" class="anna-marquee-img" aria-hidden="true">
-          <img src="About%20me%20section/3.webp" alt="" class="anna-marquee-img" aria-hidden="true">
-          <img src="About%20me%20section/4.webp" alt="" class="anna-marquee-img" aria-hidden="true">
-          <img src="About%20me%20section/5.webp" alt="" class="anna-marquee-img" aria-hidden="true" style="object-position:center 30%">
-          <img src="About%20me%20section/6.webp" alt="" class="anna-marquee-img" aria-hidden="true">
-          <img src="About%20me%20section/7.webp" alt="" class="anna-marquee-img" aria-hidden="true">
-          <img src="About%20me%20section/1.webp" alt="" class="anna-marquee-img" aria-hidden="true">
+      <div class="story-hero">
+        <div class="story-hero-left">
+          <div class="story-eyebrow story-reveal"><span class="story-dot story-dot--pulse"></span>About</div>
+          <h1 class="about-name story-reveal" data-delay="40">Hi - I'm Anna.<br><em>Product designer</em></h1>
+          <div class="story-tags story-reveal" data-delay="160">
+            <span class="story-tag"><span class="story-dot"></span>Based in Toronto</span>
+            <span class="story-tag">3+ years of experience</span>
+          </div>
         </div>
       </div>
+
+      <div class="story-timeline">
+        <div class="story-timeline-rail"><div class="story-timeline-fill"></div></div>
+
+        <div class="story-beat" id="getting-started">
+          <span class="story-beat-node"></span>
+          <div class="story-beat-num story-reveal"><span class="n">01</span><span class="l">How I started</span></div>
+          <h3 class="story-beat-h story-reveal" data-delay="60">My design journey<br><strong>started with learning fast.</strong></h3>
+          <div class="story-beat-row">
+            <div class="story-beat-text story-reveal" data-delay="80">
+              <p>I found out about UX design while doing my Master's in Finance, and it completely hijacked my attention. A few months of intense courses and training later, I landed my first job at an early-stage startup.</p>
+              <p>Small startup meant no mentors to rely on, but I was learning fast through the continuous feedback from our users and the team: engineers, customer support, sales, founders.</p>
+            </div>
+            <div class="story-beat-photo story-reveal" data-delay="160">
+              <img src="About%20me%20section/design_process.webp" alt="Anna in front of a wall of sticky notes from a design workshop, thumbs up">
+            </div>
+          </div>
+        </div>
+
+        <hr class="d">
+        <div class="story-beat story-beat--project" id="meaningful-project">
+          <span class="story-beat-node"></span>
+          <div class="story-beat-num story-reveal"><span class="n">02</span><span class="l">Project beside my work</span></div>
+          <h3 class="story-beat-h story-reveal" data-delay="60">Volunteering for a government<br><strong>on an educational project.</strong></h3>
+          <div class="story-beat-row story-beat-row--impact story-reveal" data-delay="80">
+            <div class="story-impact">
+              <div class="story-impact-label">Live today</div>
+              <div class="story-impact-stat">
+                <span class="story-impact-tilde" aria-hidden="true">~</span>
+                <div class="story-impact-num">2000</div>
+                <div class="story-impact-unit">students</div>
+              </div>
+              <p>reading more and tracking their own growth - on a platform I designed from the ground up.</p>
+            </div>
+            <div class="story-beat-text">
+              <p>I designed a <span style="background-image:repeating-linear-gradient(-52deg,transparent,transparent 1.5px,#EFEAE2 1.5px,#EFEAE2 3px),linear-gradient(var(--color-sage-dark),var(--color-sage-dark));background-size:100% 3px;background-position:0 100%;background-repeat:no-repeat;padding-bottom:3px">reading platform for a national Department of Education in Ukraine</span> - working with a small engineering team (2 front-end, 2 back-end) to get students reading more and track how their skills grew.</p>
+              <p>It shipped, has shown continuous user growth, and is now being rolled out to the European market.</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="d">
+        <div class="story-beat" id="staying-sharp">
+          <span class="story-beat-node"></span>
+          <div class="story-beat-num story-reveal"><span class="n">03</span><span class="l">Staying sharp</span></div>
+          <h3 class="story-beat-h story-reveal" data-delay="60">My favourite classroom<br><strong>is a hackathon.</strong></h3>
+          <div class="story-beat-row reverse" style="margin-bottom:clamp(26px,4vh,40px)">
+            <div class="story-beat-text story-reveal" data-delay="80">
+              <p>I keep showing up to hackathons and design workshops - <span style="background-image:repeating-linear-gradient(-52deg,transparent,transparent 1.5px,#EFEAE2 1.5px,#EFEAE2 3px),linear-gradient(var(--color-sage-dark),var(--color-sage-dark));background-size:100% 3px;background-position:0 100%;background-repeat:no-repeat;padding-bottom:3px">partly for the skills, mostly for the people</span>. Give me a room full of new faces and a ticking clock, and that's where my best ideas show up.</p>
+            </div>
+            <figure class="story-feature-photo story-reveal" data-delay="160">
+              <img src="About%20me%20section/with_don_norman.webp" alt="Anna meeting Don Norman at a conference">
+              <figcaption class="story-badge">Meeting Don Norman (father of UX)</figcaption>
+            </figure>
+          </div>
+          <div class="story-gallery story-reveal" data-delay="120">
+            <div class="story-gallery-item story-tilt-1"><img src="About%20me%20section/hackathon1.webp" alt="Hackathon team, laptops open"></div>
+            <div class="story-gallery-item story-tilt-2"><img src="About%20me%20section/workshop1.webp" alt="Anna at a conference, KRUPA sign"></div>
+            <div class="story-gallery-item story-tilt-3"><img src="About%20me%20section/hackathon2.webp" alt="Design workshop, name tags"></div>
+            <div class="story-gallery-item story-tilt-4"><img src="About%20me%20section/hackathon3.webp" alt="Hackathon team gathered around laptops"></div>
+            <div class="story-gallery-item story-tilt-5"><img src="About%20me%20section/hackathon4.webp" alt="Anna with hackathon teammates, group selfie"></div>
+          </div>
+        </div>
+
+        <hr class="d">
+        <div class="story-beat" id="outside-of-work">
+          <span class="story-beat-node"></span>
+          <div class="story-beat-num story-reveal"><span class="n">04</span><span class="l">Outside of work</span></div>
+          <h3 class="story-beat-h story-reveal" data-delay="60">When I'm not<br><strong>designing.</strong></h3>
+          <div class="story-beat-row">
+            <div class="story-beat-text story-reveal" data-delay="80">
+              <p>You'll find me at the gym, deep in a book about cognitive biases (handy in design, hazardous at dinner parties), or attempting a recipe I've never tried.</p>
+            </div>
+            <div class="story-pair">
+              <div class="story-pair-item story-pair-item--bottom story-reveal" data-delay="140"><img src="About%20me%20section/Gym2.png" alt="Anna at the gym"></div>
+              <div class="story-pair-item story-pair-item--top story-reveal" data-delay="220"><img src="About%20me%20section/toronto.webp" alt="Anna sitting by the water with the Toronto skyline behind her"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </section>
 
+    <hr class="d">
     <!-- ─── PRINCIPLES OF MY WORK ─── -->
-    <section class="about-section about-section--principles">
-      <div class="about-section-head">
-        <span class="idx-label">The principles of my work</span>
-      </div>
-      <div class="defines-list">
-        <div class="defines-item">
-          <div class="defines-icon" style="background:var(--color-coral)">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 3h7l5 5v15H8V3z"/><path d="M15 3v5h5"/><path d="M11 13h4M11 17h6"/>
-            </svg>
-          </div>
-          <div class="defines-item-text">
-            <h3 class="defines-item-title">1. I treat the brief as the starting point, not the answer.</h3>
-            <p class="defines-item-body">The question you start with determines more about the outcome than the solution you build.</p>
-          </div>
+    <section class="about-section story-principles" id="principles">
+      <div class="story-beat-num story-reveal"><span class="n">05</span><span class="l">Principles of my work</span></div>
+      <h3 class="story-beat-h story-reveal" data-delay="60">Three things I keep<br><strong>coming back to.</strong></h3>
+      <div class="story-principle-cards">
+        <div class="story-principle-card story-principle-card--lavender story-reveal" data-delay="80">
+          <div class="story-principle-num">01</div>
+          <h3>Talk to everyone</h3>
+          <p>Engineers, sales, founders, users - the best calls rarely come from the design tool. They come from the conversation.</p>
         </div>
-        <div class="defines-item">
-          <div class="defines-icon" style="background:var(--color-sage)">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round">
-              <circle cx="11.5" cy="11.5" r="6.5"/><path d="M16.5 16.5L22 22"/>
-            </svg>
-          </div>
-          <div class="defines-item-text">
-            <h3 class="defines-item-title">2. Research is a habit, not a phase.</h3>
-            <p class="defines-item-body">What people say they do and what they actually do are rarely the same thing.</p>
-          </div>
+        <div class="story-principle-card story-principle-card--sage story-reveal" data-delay="160">
+          <div class="story-principle-num">02</div>
+          <h3>Ship, then learn</h3>
+          <p>Fast feedback beats a polished plan. Get something real in front of people, learn quickly, and adjust - rather than refining in isolation.</p>
         </div>
-        <div class="defines-item">
-          <div class="defines-icon" style="background:var(--color-lavender)">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round">
-              <circle cx="13" cy="10" r="4"/><path d="M5 23c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
-            </svg>
-          </div>
-          <div class="defines-item-text">
-            <h3 class="defines-item-title">3. I design for how people actually decide - not how they should.</h3>
-            <p class="defines-item-body">I design for someone distracted, uncertain, deciding in under 90 seconds.</p>
-          </div>
-        </div>
-        <div class="defines-item">
-          <div class="defines-icon" style="background:var(--color-sand)">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round">
-              <path d="M4 13s4-7 9-7 9 7 9 7-4 7-9 7-9-7-9-7z"/><circle cx="13" cy="13" r="2.5" fill="white" stroke="none"/>
-            </svg>
-          </div>
-          <div class="defines-item-text">
-            <h3 class="defines-item-title">4. The goal is removing confusion, not adding features.</h3>
-            <p class="defines-item-body">The measure of a good interface is how little the user has to figure out.</p>
-          </div>
+        <div class="story-principle-card story-principle-card--sand story-reveal" data-delay="240">
+          <div class="story-principle-num">03</div>
+          <h3>Make it last</h3>
+          <p>The work I'm proudest of is still running years later. Durability is the truest measure of a good decision.</p>
         </div>
       </div>
     </section>
 
+    <hr class="d">
+    <div class="story-closing">
+      <p class="story-closing-text story-reveal">That's the short version.<br><strong>The long one I'd be happy to tell in person.</strong></p>
+      <a href="contact.html" class="story-closing-cta story-reveal" data-delay="80">Say hello <span>→</span></a>
+    </div>
+
+    <hr class="d">
     <!-- ─── EXPLORE CASE STUDIES ─── -->
-    <section class="about-section" style="padding-bottom:96px">
+    <section class="about-section" id="my-work" style="padding-bottom:120px">
       <div class="about-section-head">
-        <span class="idx-label">Explore my work</span>
+        <span class="idx-label">Explore case studies</span>
       </div>
       <div class="about-cs-scroll">
         <div class="about-cs-track">
 
           <a class="about-cs-card" href="telo-case-study.html">
             <div class="hcp-slide-img">
-              <img src="/1. Collapsed state.webp" alt="Telo">
+              <img src="/Iteration%204%20-%20After%20-%20Give%20the%20ability%20to%20leave%20feedback%20with%20the%20comment.webp" alt="Telo">
               <div class="hcp-img-overlay"><span class="hcp-glass-btn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View case study</span></div>
             </div>
             <div class="hcp-slide-info">
@@ -136,9 +185,10 @@
             </div>
           </a>
 
-          <a class="about-cs-card" href="schoolmap-case-study.html">
+          <a class="about-cs-card rbs-hover-card" href="schoolmap-case-study.html">
             <div class="hcp-slide-img">
-              <img src="/Rent-by-school-preview.webp" alt="Rent by School">
+              <img src="/Rent-by-school-preview.webp?v=2" alt="Rent by School" style="object-fit:cover;object-position:center top">
+              <video class="rbs-hover-video" data-src="/Rent_by_School_app.mp4" muted loop playsinline preload="none"></video>
               <div class="hcp-img-overlay"><span class="hcp-glass-btn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View case study</span></div>
             </div>
             <div class="hcp-slide-info">
@@ -151,7 +201,11 @@
           <a class="about-cs-card" href="ambassador-case-study.html">
             <div class="hcp-slide-img" style="background:#fff;display:flex;align-items:center;justify-content:center;padding:16px">
               <img src="/The%20Ambassador%20Platform%20logo.svg" alt="The Ambassador Platform" style="max-width:180px;width:100%;height:auto;display:block">
-              <div class="hcp-img-overlay"><span class="hcp-glass-btn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View case study</span></div>
+              <span class="cs-protected-badge" aria-label="Under NDA, password required">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Under NDA · Password required
+              </span>
+              <div class="hcp-img-overlay"><span class="hcp-glass-btn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Under NDA · Password required</span></div>
             </div>
             <div class="hcp-slide-info">
               <div class="hcp-slide-tags"><span class="hcp-slide-tag">EdTech</span><span class="hcp-slide-tag hcp-slide-tag--muted">2019–22</span></div>
@@ -163,7 +217,7 @@
           <!-- duplicates for seamless loop -->
           <a class="about-cs-card" href="telo-case-study.html" aria-hidden="true" tabindex="-1">
             <div class="hcp-slide-img">
-              <img src="/1. Collapsed state.webp" alt="" aria-hidden="true">
+              <img src="/Iteration%204%20-%20After%20-%20Give%20the%20ability%20to%20leave%20feedback%20with%20the%20comment.webp" alt="" aria-hidden="true">
               <div class="hcp-img-overlay"><span class="hcp-glass-btn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View case study</span></div>
             </div>
             <div class="hcp-slide-info">
@@ -175,7 +229,7 @@
 
           <a class="about-cs-card" href="schoolmap-case-study.html" aria-hidden="true" tabindex="-1">
             <div class="hcp-slide-img">
-              <img src="/Rent-by-school-preview.webp" alt="" aria-hidden="true">
+              <img src="/Rent-by-school-preview.webp?v=2" alt="" aria-hidden="true" style="object-fit:cover;object-position:center top">
               <div class="hcp-img-overlay"><span class="hcp-glass-btn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View case study</span></div>
             </div>
             <div class="hcp-slide-info">
@@ -188,7 +242,11 @@
           <a class="about-cs-card" href="ambassador-case-study.html" aria-hidden="true" tabindex="-1">
             <div class="hcp-slide-img" style="background:#fff;display:flex;align-items:center;justify-content:center;padding:16px">
               <img src="/The%20Ambassador%20Platform%20logo.svg" alt="" aria-hidden="true" style="max-width:180px;width:100%;height:auto;display:block">
-              <div class="hcp-img-overlay"><span class="hcp-glass-btn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View case study</span></div>
+              <span class="cs-protected-badge" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Under NDA · Password required
+              </span>
+              <div class="hcp-img-overlay"><span class="hcp-glass-btn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Under NDA · Password required</span></div>
             </div>
             <div class="hcp-slide-info">
               <div class="hcp-slide-tags"><span class="hcp-slide-tag">EdTech</span><span class="hcp-slide-tag hcp-slide-tag--muted">2019–22</span></div>
@@ -213,6 +271,21 @@
 </footer>
 
 <style>
+body{overflow-x:hidden}
+hr.d{border:none;border-top:1px solid var(--color-linen);margin:0}
+
+/* ─── ABOUT PAGE SIDE NAV ─── */
+.about-pnav{position:fixed;left:clamp(16px,2.5vw,44px);top:calc(64px + clamp(28px,5vh,52px));z-index:100;display:flex;flex-direction:column;gap:0;min-width:128px}
+.about-pnav-label{font-size:0.75rem;color:var(--color-stone);letter-spacing:.1em;text-transform:uppercase;font-weight:600;white-space:nowrap;margin-bottom:14px;display:block}
+.about-pnav a{font-size:0.875rem;color:var(--color-stone);text-decoration:none;padding:4px 0 4px 14px;white-space:nowrap;display:block;transition:color .2s;position:relative;line-height:1.35}
+.about-pnav a:hover{color:var(--color-ink)}
+.about-pnav a.active{color:var(--color-coral-dark);font-weight:600}
+.about-pnav a.active::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:4px;height:22px;border-radius:3px;background-color:var(--color-coral);background-image:repeating-linear-gradient(-52deg,transparent,transparent 1.5px,#EFEAE2 1.5px,#EFEAE2 3px)}
+@media(max-width:1280px){.about-pnav{display:none}}
+
+/* ─── HIDE TIMELINE SCROLL LINE ─── */
+.story-timeline-rail{display:none}
+
 #anna-bot{position:fixed;bottom:96px;right:20px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .bot-trigger-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer}
 .bot-ask-label{font-family:'Figtree',sans-serif;font-size:0.75rem;font-weight:600;color:#2F2F2C;letter-spacing:-.01em;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);padding:3px 11px;border-radius:20px;box-shadow:0 2px 8px rgba(0,0,0,.09);white-space:nowrap}
@@ -347,5 +420,102 @@
     <span>Contact</span>
   </a>
 </nav>
-<script>(function(){var l=0,n=document.querySelector(".bottom-nav");if(!n)return;window.addEventListener("scroll",function(){var y=window.scrollY;if(y>l+4)n.classList.add("nav-hidden");else if(y<l-4)n.classList.remove("nav-hidden");l=y},{passive:true})})();</script></body>
+<script>(function(){var l=0,n=document.querySelector(".bottom-nav");if(!n)return;window.addEventListener("scroll",function(){var y=window.scrollY;if(y>l+4)n.classList.add("nav-hidden");else if(y<l-4)n.classList.remove("nav-hidden");l=y},{passive:true})})();</script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var reveals = Array.prototype.slice.call(document.querySelectorAll('.story-reveal'));
+  if (reduce) {
+    reveals.forEach(function (el) { el.classList.add('is-in'); });
+  } else {
+    reveals.forEach(function (el) {
+      var d = el.getAttribute('data-delay');
+      if (d) { el.style.transitionDelay = d + 'ms, ' + d + 'ms'; }
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  }
+
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('.story-beat-node'));
+  if (nodes.length) {
+    var nodeIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        e.target.classList.toggle('is-active', e.isIntersecting);
+      });
+    }, { rootMargin: '-46% 0px -46% 0px', threshold: 0 });
+    nodes.forEach(function (n) { nodeIo.observe(n); });
+  }
+
+  var beatSecs = Array.prototype.slice.call(document.querySelectorAll('.story-beat[id]'));
+  if (beatSecs.length) {
+    var beatIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var label = e.target.querySelector('.story-beat-num .l');
+        if (label) label.classList.toggle('is-active', e.isIntersecting);
+      });
+    }, { rootMargin: '-46% 0px -46% 0px', threshold: 0 });
+    beatSecs.forEach(function (s) { beatIo.observe(s); });
+  }
+
+  var track = document.querySelector('.story-timeline-rail');
+  var fill = document.querySelector('.story-timeline-fill');
+  if (track && fill) {
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        var vh = window.innerHeight;
+        var r = track.getBoundingClientRect();
+        var p = Math.max(0, Math.min(1, ((vh * 0.5) - r.top) / r.height));
+        fill.style.height = (p * 100) + '%';
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  }
+})();
+</script>
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.about-pnav a[data-s]'));
+  var targets = links.map(function(a){ return document.getElementById(a.dataset.s); }).filter(Boolean);
+  if(!targets.length) return;
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){ a.classList.remove('active'); });
+        var a = document.querySelector('.about-pnav a[data-s="'+e.target.id+'"]');
+        if(a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-25% 0px -65% 0px' });
+  targets.forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script>(function(){
+  document.querySelectorAll(".rbs-hover-card").forEach(function(card){
+    var video=card.querySelector(".rbs-hover-video");
+    if(!video)return;
+    var loaded=false;
+    card.addEventListener("mouseenter",function(){
+      if(!loaded){video.src=video.dataset.src;loaded=true}
+      video.currentTime=0;
+      video.play().catch(function(){});
+      video.classList.add("is-active");
+    });
+    card.addEventListener("mouseleave",function(){
+      video.classList.remove("is-active");
+      video.pause();
+    });
+  });
+})();</script>
+</body>
 </html>
