@@ -29,7 +29,7 @@ nav.nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,
 .tab-btn{background:none;border:none;cursor:pointer;font-family:'Figtree',sans-serif;font-size:0.875rem;font-weight:500;color:#71717C;padding:8px 16px;border-radius:20px;transition:background .15s,color .15s;white-space:nowrap;text-decoration:none;display:inline-block}
 .tab-btn:hover{background:var(--bg2);color:var(--text)}
 .btn-outline{border:1.5px solid var(--line);color:var(--text)}
-/* PROCESS NAV — single column, no internal scroll */
+/* PROCESS NAV - single column, no internal scroll */
 .pnav{position:fixed;left:clamp(16px,2.5vw,44px);top:calc(64px + clamp(28px,5vh,52px));transform:none;z-index:100;overflow:visible;display:flex;flex-direction:column;gap:0;min-width:128px}
 .pnav-label{font-size:0.75rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:600;white-space:nowrap;margin-bottom:14px;display:block}
 .pnav a{font-size:0.875rem;color:var(--muted);text-decoration:none;padding:4px 0 4px 14px;white-space:nowrap;display:block;transition:color .2s;position:relative;line-height:1.35}
@@ -51,6 +51,10 @@ p:last-child{margin-bottom:0}
 strong{color:#3F3F47;font-weight:600}
 .cs-q{font-size:clamp(1.25rem,2.5vw,1.625rem);color:var(--accent);font-weight:600;line-height:1.3;margin:28px 0 8px;letter-spacing:-.01em}
 .hero{padding:120px 0 40px}
+.story-eyebrow{display:flex;align-items:center;gap:8px;font-size:0.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--color-coral);margin-bottom:28px}
+.story-dot{width:7px;height:7px;border-radius:50%;background:var(--color-coral);flex-shrink:0;display:inline-block}
+.story-dot--pulse{animation:storyPulse 2.6s ease-in-out infinite}
+@keyframes storyPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.4}}
 .hero-sub{font-size:1.125rem;color:#71717C;margin:16px 0 12px;line-height:1.75;max-width:640px}
 .hero-desc{font-size:1.125rem;color:#71717C;line-height:1.75;margin-bottom:0;max-width:640px}
 .exec-summary{margin:28px 0 0;max-width:640px;display:flex;flex-direction:column;gap:0}
@@ -143,8 +147,9 @@ strong{color:#3F3F47;font-weight:600}
 .info-card p{font-size:1.125rem;color:#71717C;margin:0;line-height:1.75}
 .lg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:24px 0}
 .lc{padding:20px 22px;background:var(--white);border:1px solid var(--line);border-radius:10px}
-.lcn{font-family:'Figtree',sans-serif;font-size:1.875rem;color:var(--color-linen);margin-bottom:8px;line-height:1}
-.lc p{font-size:1.125rem;color:#71717C}
+.lcn{font-size:0.75rem;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:8px;line-height:1}
+.lc p{font-size:1.125rem;color:#71717C;margin:0}
+.lc p + p{margin-top:10px}
 .kpi-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
 .kpi-card{padding:24px;background:var(--white);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;gap:10px}
 .kpi-label{font-size:0.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
@@ -187,31 +192,33 @@ strong{color:#3F3F47;font-weight:600}
 .lb-inner img{width:100%;border-radius:10px;display:block;max-height:90vh;object-fit:contain}
 .lb-close{position:absolute;top:-14px;right:-14px;width:32px;height:32px;border-radius:50%;background:#fff;border:none;cursor:pointer;font-size:1.125rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 [id]{scroll-margin-top:108px}
-.next-cs{background:var(--bg2);padding:56px 0}
+.next-cs{background:var(--white);padding:56px 0}
 .next-cs-inner{max-width:var(--wide);margin:0 auto;padding:0 48px}
-.next-cs-label{font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;display:block;margin-bottom:20px}
+.next-cs-head{margin-bottom:40px}
+.story-beat-num{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--color-stone)}
+.story-beat-num .l{line-height:1.45;max-width:none}
+.next-cs-h{font-family:'Figtree',sans-serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:400;line-height:1.1;letter-spacing:-.02em;margin:0;color:#71717C}
+.next-cs-h em{color:#3F3F47;font-weight:700;font-style:normal}
 .next-cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.card{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--white);text-decoration:none;display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.25,.46,.45,.94),box-shadow .3s,border-color .3s;cursor:pointer;position:relative}
-.card:hover{transform:translateY(-8px);box-shadow:0 24px 64px rgba(0,0,0,.13);border-color:transparent}
-.card-thumb{aspect-ratio:16/9;overflow:hidden;background:var(--bg2);position:relative;flex-shrink:0}
-.card-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .5s cubic-bezier(.25,.46,.45,.94)}
-.card:hover .card-thumb img{transform:scale(1.07)}
-.card-overlay{position:absolute;inset:0;background:rgba(26,26,24,0);display:flex;align-items:center;justify-content:center;transition:background .22s}
-.card:hover .card-overlay{background:rgba(26,26,24,.5)}
-.card-overlay-cta{color:#fff;font-size:0.875rem;font-weight:600;letter-spacing:.02em;opacity:0;transform:translateY(8px);transition:opacity .22s,transform .22s cubic-bezier(.25,.46,.45,.94);display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(6px);padding:10px 20px;border-radius:8px;border:1px solid rgba(255,255,255,.25)}
-.card:hover .card-overlay-cta{opacity:1;transform:translateY(0)}
+.about-cs-card{background:var(--white);border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,.07);text-decoration:none;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s cubic-bezier(.25,.46,.45,.94),box-shadow .3s}
+.about-cs-card:hover{transform:translateY(-6px);box-shadow:0 20px 52px rgba(0,0,0,.13)}
+.hcp-slide-img{width:100%;overflow:hidden;background:var(--color-linen);aspect-ratio:16/9;position:relative;flex-shrink:0}
+.hcp-slide-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .4s ease}
+.about-cs-card:hover .hcp-slide-img img{transform:scale(1.04)}
+.hcp-img-overlay{position:absolute;inset:0;background:rgba(26,26,24,0);display:flex;align-items:center;justify-content:center;transition:background .22s}
+.about-cs-card:hover .hcp-img-overlay{background:rgba(26,26,24,.45)}
+.hcp-glass-btn{color:#fff;font-size:0.75rem;font-weight:600;letter-spacing:.02em;opacity:0;transform:translateY(7px);transition:opacity .22s,transform .22s cubic-bezier(.25,.46,.45,.94);display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.15);backdrop-filter:blur(6px);padding:8px 15px;border-radius:8px;border:1px solid rgba(255,255,255,.25);pointer-events:none}
+.about-cs-card:hover .hcp-glass-btn{opacity:1;transform:translateY(0)}
+.hcp-slide-info{padding:16px 20px 20px}
+.cs-preview-tags{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:nowrap}
+.cs-preview-tag{flex:0 0 auto;font-size:0.8125rem;font-weight:600;color:var(--color-ink);background:#F5F5F5;border:1px solid #EBEBEB;padding:6px 12px;border-radius:999px;white-space:nowrap}
+.cs-preview-tag--muted{margin-left:auto;background:transparent;border:none;color:var(--color-stone);font-weight:500;padding:0}
+.hcp-slide-title{font-family:'Figtree',sans-serif;font-size:1.25rem;font-weight:700;color:var(--color-ink);letter-spacing:-.02em;line-height:1.2;margin:0 0 8px}
+.hcp-slide-desc{font-size:0.875rem;color:var(--color-stone);line-height:1.55;margin:0}
+.rbs-hover-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .25s ease;pointer-events:none}
+.rbs-hover-video.is-active{opacity:1}
 .cs-protected-badge{position:absolute;bottom:12px;left:12px;z-index:4;display:inline-flex;align-items:center;gap:5px;font-family:'Figtree',sans-serif;font-size:0.6875rem;font-weight:600;letter-spacing:.02em;line-height:1;color:var(--color-ink);background:rgba(255,255,255,.93);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--color-linen);border-radius:999px;padding:7px 12px 7px 10px;pointer-events:none;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .cs-protected-badge svg{flex-shrink:0;color:var(--color-coral);stroke:var(--color-coral)}
-.card-thumb .cs-protected-badge{bottom:14px;left:14px;z-index:2}
-.card-body{padding:20px 22px 12px;flex:1}
-.card-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
-.card-tag{font-size:0.75rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text);background:var(--line);padding:3px 8px;border-radius:4px}
-.card-title{font-family:'Figtree',sans-serif;font-size:clamp(1.375rem,2.5vw,1.75rem);font-weight:700;color:var(--text);letter-spacing:-.02em;line-height:1.1;margin-bottom:8px}
-.card-desc{font-size:0.875rem;color:var(--muted);line-height:1.6;margin:0}
-.card-foot{padding:12px 22px 18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;margin-top:auto}
-.card-year{font-size:0.875rem;color:var(--muted)}
-.card-arrow{font-size:0.875rem;font-weight:600;color:var(--text);display:flex;align-items:center;gap:4px;transition:gap .15s}
-.card:hover .card-arrow{gap:8px}
 footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);font-size:0.875rem;color:var(--muted);max-width:var(--wide);margin:0 auto}
 #scroll-top{position:fixed;bottom:32px;right:32px;z-index:400;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(15,31,61,.25);opacity:0;transform:translateY(8px);transition:opacity .22s,transform .22s;pointer-events:none}
 #scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
@@ -301,6 +308,7 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
 
 <section class="hero">
   <div class="container">
+    <div class="story-eyebrow"><span class="story-dot story-dot--pulse"></span>Case study</div>
     <div class="title-vec-wrap">
       <img src="Vector_as_in_logo.svg" class="title-vec" aria-hidden="true">
       <h1><span style="color:#3F3F47">Rent by School:</span><br><span style="color:#71717C">Optimizing the residential search</span></h1>
@@ -1034,45 +1042,41 @@ footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:
   <div style="max-width:860px;margin:0 auto">
     <div style="font-family:'Figtree',sans-serif;font-size:clamp(1.25rem,3vw,2.25rem);font-weight:400;font-style:italic;color:#2E3828;line-height:1.2;margin-bottom:48px">"Find your neighbourhood by the school that matters most."</div>
     <div style="width:48px;height:2px;background:#5C6B4A;border-radius:1px;margin-bottom:48px"></div>
-    <p style="color:#6B7560;font-size:0.875rem;margin:0;line-height:1.7">A map-first rental search tool for relocating families in Toronto.<br>Designed and built independently · Conceptual · 2026</p>
+    <p style="color:#6B7560;font-size:0.875rem;margin:0;line-height:1.7">A map-first rental search tool for relocating families in Toronto · 2026</p>
   </div>
 </div>
 
 <div class="next-cs">
   <div class="next-cs-inner">
-    <span class="next-cs-label">More work</span>
+    <div class="next-cs-head">
+      <div class="story-beat-num"><span class="l">Case studies</span></div>
+      <h2 class="next-cs-h">Explore more<br><em>case studies.</em></h2>
+    </div>
     <div class="next-cs-grid">
-      <a href="telo-case-study.html" class="card" data-cs="telo">
-        <div class="card-thumb">
+      <a class="about-cs-card" href="telo-case-study.html">
+        <div class="hcp-slide-img">
           <img src="Iteration%204%20-%20After%20-%20Give%20the%20ability%20to%20leave%20feedback%20with%20the%20comment.webp" alt="Telo" loading="lazy">
-          <div class="card-overlay"><div class="card-overlay-cta"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View case study</div></div>
+          <div class="hcp-img-overlay"><span class="hcp-glass-btn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View case study</span></div>
         </div>
-        <div class="card-body">
-          <div class="card-tags"><span class="card-tag">B2B · SaaS</span><span class="card-tag">Slack</span></div>
-          <div class="card-title">Telo</div>
-          <p class="card-desc">A Slack-native signal intelligence tool that tells early-stage SaaS founders whether a metric drop is real - and what to do about it.</p>
-        </div>
-        <div class="card-foot">
-          <span class="card-year">2026 · Conceptual</span>
-          <span class="card-arrow">Read case study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="hcp-slide-info">
+          <div class="cs-preview-tags"><span class="cs-preview-tag">B2B SaaS</span><span class="cs-preview-tag">Conceptual</span><span class="cs-preview-tag cs-preview-tag--muted">2026</span></div>
+          <h3 class="hcp-slide-title">Telo</h3>
+          <p class="hcp-slide-desc">Designed from scratch - a Slack-native alert that tells SaaS founders whether a metric drop is real and what to do next.</p>
         </div>
       </a>
-      <a href="ambassador-case-study.html" class="card" data-cs="ambassador">
-        <div class="card-thumb" style="background:#EEF6FF url('The%20Ambassador%20Platform%20logo.svg') center/72% auto no-repeat">
+      <a class="about-cs-card" href="ambassador-case-study.html">
+        <div class="hcp-slide-img" style="background:#fff;display:flex;align-items:center;justify-content:center;padding:16px">
+          <img src="The%20Ambassador%20Platform%20logo.svg" alt="The Ambassador Platform" style="max-width:180px;width:100%;height:auto;display:block">
           <span class="cs-protected-badge" aria-label="Under NDA, password required">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             Under NDA · Password required
           </span>
-          <div class="card-overlay"><div class="card-overlay-cta"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Under NDA · Password required</div></div>
+          <div class="hcp-img-overlay"><span class="hcp-glass-btn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Under NDA · Password required</span></div>
         </div>
-        <div class="card-body">
-          <div class="card-tags"><span class="card-tag">Experience highlight</span><span class="card-tag">EdTech</span></div>
-          <div class="card-title">Ambassador Platform</div>
-          <p class="card-desc">Sole designer across 3 products at a B2B EdTech SaaS - widget, mobile app, and admin dashboard. 3 years, acquired by IDP Education.</p>
-        </div>
-        <div class="card-foot">
-          <span class="card-year">2019–22 · Acquired</span>
-          <span class="card-arrow">View experience <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <div class="hcp-slide-info">
+          <div class="cs-preview-tags"><span class="cs-preview-tag">EdTech</span><span class="cs-preview-tag">Startup</span><span class="cs-preview-tag cs-preview-tag--muted">2022</span></div>
+          <h3 class="hcp-slide-title">The Ambassador Platform</h3>
+          <p class="hcp-slide-desc">Owned the full design lifecycle of the platform that helps prospective students choose the right institution, lifting conversion from 8% to 14%.</p>
         </div>
       </a>
     </div>
