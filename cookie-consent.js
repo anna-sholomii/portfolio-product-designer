@@ -87,7 +87,6 @@
       '#cookie-consent-banner{position:fixed;left:14px;bottom:14px;max-width:280px;background:rgba(26,26,24,.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:rgba(255,255,255,.82);font-family:\'Figtree\',sans-serif;font-size:0.6875rem;line-height:1.5;padding:10px 12px;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.12);z-index:9999;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s;pointer-events:none}',
       '#cookie-consent-banner.is-visible{opacity:1;transform:translateY(0);pointer-events:auto}',
       '#cookie-consent-banner p{margin:0 0 8px}',
-      '#cookie-consent-banner a{color:inherit;text-decoration:underline;text-underline-offset:2px}',
       '#cookie-consent-banner .cc-actions{display:flex;gap:14px;justify-content:flex-end}',
       '#cookie-consent-banner button{font-family:\'Figtree\',sans-serif;font-size:0.6875rem;font-weight:500;cursor:pointer;border:none;background:none;color:rgba(255,255,255,.7);padding:0;text-decoration:underline;text-underline-offset:2px;transition:opacity .15s}',
       '#cookie-consent-banner .cc-accept{color:#fff;font-weight:600}',
@@ -104,8 +103,7 @@
     bannerEl.setAttribute('role', 'dialog');
     bannerEl.setAttribute('aria-label', 'Cookie consent');
     bannerEl.innerHTML =
-      '<p>This site uses analytics (Mixpanel, Hotjar). Nothing is sold or shared. ' +
-      '<a href="mailto:anna.sholomii@gmail.com">anna.sholomii@gmail.com</a></p>' +
+      '<p>This site uses analytics (Mixpanel, Hotjar). Nothing is sold or shared.</p>' +
       '<div class="cc-actions">' +
       '<button type="button" class="cc-decline">Decline</button>' +
       '<button type="button" class="cc-accept">Accept</button>' +
