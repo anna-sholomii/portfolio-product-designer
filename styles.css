@@ -528,6 +528,7 @@ main.home-main{
 .home-hero .story-eyebrow{margin-bottom:20px}
 .home-hero .story-tags{margin-top:20px;margin-bottom:0}
 .home-hero .contact-body{margin-bottom:0;max-width:560px}
+.home-hero .contact-heading{text-align:center;font-size:clamp(1.75rem,3.2vw,2.5rem)}
 .home-greeting{
   font-family:'Figtree',sans-serif;
   font-size:clamp(0.75rem,1vw,0.875rem);
