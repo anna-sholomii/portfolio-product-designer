@@ -1,0 +1,12 @@
+/* Shared color tokens - single source of truth for the whole portfolio.
+   Every page links this before its own stylesheet/inline styles, so a
+   palette change (like the ink color) only needs to happen here once.
+   Note: ambassador-case-study.html is excluded on purpose - it's built as
+   one self-contained encrypted file (see _private/README.md) and can't
+   depend on an external stylesheet, so its token block stays inline. */
+:root{
+  --color-coral:#E8644A;--color-coral-dark:#C44A32;--color-coral-tint:#FADBD4;
+  --color-ink:#454545;--color-mute:#71717C;--color-stone:#888780;--color-linen:#EDEAE3;
+  --color-cream:#FAF7F2;--color-white:#FFFFFF;
+  --color-sage:#B5C4B1;--color-sage-dark:#4A6741;--color-sand:#D4C5B0;--color-lavender:#C5C0D4;
+}

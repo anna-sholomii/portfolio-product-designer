@@ -1,7 +1,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --color-coral:#E8644A;--color-coral-dark:#C44A32;--color-coral-tint:#FADBD4;
-  --color-ink:#1A1A18;--color-mute:#71717C;--color-stone:#888780;--color-linen:#EDEAE3;
   --color-cream:#FAF7F2;--color-white:#FFFFFF;
   --color-sage:#B5C4B1;--color-sage-dark:#4A6741;--color-sand:#D4C5B0;--color-lavender:#C5C0D4;
   --green:#1a7a3b;--wide:1040px
