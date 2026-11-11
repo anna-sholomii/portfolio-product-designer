@@ -41,7 +41,6 @@
             <div class="cs-idx-row-head">
               <span class="cs-idx-num">01</span>
               <span class="cs-idx-title">The Ambassador Platform</span>
-              <span class="cs-idx-year">2022</span>
             </div>
             <p class="cs-idx-desc">Self-serve onboarding wizard that replaced a manual setup call and cut the sales cycle by 25%.</p>
           </button>
@@ -50,7 +49,6 @@
             <div class="cs-idx-row-head">
               <span class="cs-idx-num">02</span>
               <span class="cs-idx-title">Rent by School</span>
-              <span class="cs-idx-year">2026</span>
             </div>
             <p class="cs-idx-desc">A platform that helps Toronto families find rentals within their chosen school's catchment area faster.</p>
           </button>
@@ -59,7 +57,6 @@
             <div class="cs-idx-row-head">
               <span class="cs-idx-num">03</span>
               <span class="cs-idx-title">Telo</span>
-              <span class="cs-idx-year">2026</span>
             </div>
             <p class="cs-idx-desc">A Slack-native alert that tells SaaS founders whether a metric drop is real and what to do next, reducing decision-making time.</p>
           </button>
@@ -232,7 +229,6 @@
       href:'schoolmap-case-study.html',
       title:'Rent by School',
       year:'2026',
-      status:'Conceptual',
       tags:['Civic Tech','Research','Mapping','0→1'],
       desc:'A platform that helps Toronto families find rentals within their chosen school\'s catchment area faster.',
       img:'<img src="/Rent-by-school-preview.webp?v=2" alt="Rent by School" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block">'
@@ -255,7 +251,6 @@
     document.getElementById('cs-idx-panel-title').textContent=s.title;
     var m='<span class="cs-idx-tag">'+s.tags[0]+'</span>';
     if(s.status){m+='<span class="cs-idx-tag">'+s.status+'</span>';}
-    m+='<span class="cs-idx-tag cs-idx-tag--muted">'+s.year+'</span>';
     document.getElementById('cs-idx-panel-meta').innerHTML=m;
   }
   window.csSetActive=function(i){

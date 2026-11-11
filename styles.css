@@ -525,10 +525,13 @@ main.home-main{
   margin-left:auto;margin-right:auto;
   padding:32px 48px 24px;
 }
-.home-hero .story-eyebrow{margin-bottom:20px}
-.home-hero .story-tags{margin-top:20px;margin-bottom:0}
+.home-hero .story-tags{margin-top:20px;margin-bottom:0;justify-content:center}
 .home-hero .contact-body{margin-bottom:0;max-width:560px}
-.home-hero .contact-heading{text-align:center;font-size:clamp(1.75rem,3.2vw,2.5rem)}
+.home-hero .contact-heading{text-align:center;font-size:clamp(1rem,4.5vw,3rem)}
+.home-hero-main-line{display:block;line-height:1.05;margin-top:0}
+.home-hero-kicker-line{display:flex;align-items:center;justify-content:center;gap:8px;font-size:clamp(0.75rem,3vw,1.375rem);font-weight:600;color:var(--color-mute);margin-bottom:8px;letter-spacing:-.01em;max-width:100%}
+.home-hero-title{display:flex;flex-direction:column;align-items:center;width:100%}
+.home-hero-main-line{max-width:100%}
 .home-greeting{
   font-family:'Figtree',sans-serif;
   font-size:clamp(0.75rem,1vw,0.875rem);
@@ -591,6 +594,7 @@ main.home-main{
 }
 .home-section-intro{display:flex;flex-direction:column;align-items:flex-start;gap:0;max-width:640px}
 .home-section-num{margin-bottom:24px;align-items:center;gap:10px}
+.home-section-h{font-size:clamp(1.5rem,2.6vw,2rem)}
 .home-section-h em{color:#3F3F47;font-weight:700;font-style:normal}
 .home-section-head .cs-preview-more{flex-shrink:0;margin-top:0.15em}
 .home-section--anna .home-section-head{margin-bottom:28px}
@@ -711,14 +715,14 @@ main.home-main{
   display:inline-flex;align-items:center;gap:6px;flex-shrink:0;
   padding:8px 14px;border-radius:999px;
   font-family:'Figtree',sans-serif;font-size:0.8125rem;font-weight:600;
-  color:var(--color-coral-dark);text-decoration:none;
-  background:var(--color-cream);border:1px solid rgba(232,100,74,.16);
+  color:var(--color-ink);text-decoration:none;
+  background:#F5F5F5;border:1px solid #EBEBEB;
   transition:background .2s ease,border-color .2s ease,color .2s ease,gap .18s ease;
   box-shadow:none;
 }
 .cs-preview-more:hover{
-  background:var(--color-coral-tint);border-color:rgba(232,100,74,.28);
-  color:var(--color-coral);gap:9px;
+  background:#EDEAE3;border-color:#D4C5B0;
+  color:var(--color-ink);gap:9px;
 }
 
 @media(prefers-reduced-motion:reduce){
